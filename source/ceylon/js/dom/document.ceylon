@@ -1,4 +1,5 @@
 import ceylon.js.language { JSString }
+import ceylon.js.html { Window }
 
 shared abstract class DocumentPosition(String name) of documentPositionContainedBy | documentPositionContains |
 												documentPositionDisconnected | documentPositionFollowing | 
@@ -385,6 +386,65 @@ shared class Document(dynamic n) extends Node(n) {
 	shared TreeWalker createTreeWalker(Node root, dynamic whatToShow = null, NodeFilter? filter = null) {
 		dynamic {
 			return TreeWalker(native.createTreeWalker(root, whatToShow, filter));
+		}
+	}
+	
+	shared NodeList anchors() {
+		dynamic {
+			return NodeList(native.anchors);
+		}
+	}
+	
+	shared Boolean getAsync() {
+		dynamic {
+			if (native.async) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+	
+	shared void setAsync(Boolean async) {
+		dynamic {
+			native.async = async;
+		}
+	}
+	
+	shared Node body() {
+		dynamic {
+			return Node(native.body);
+		}
+	}
+	
+	shared JSString getCookie() {
+		dynamic {
+			return JSString(native.cookie);
+		}
+	}
+	
+	shared void setCookie(String|JSString cookie) {
+		switch (cookie)
+		case (is String) {
+			dynamic {
+				native.cookie = cookie;
+			}
+		}
+		case (is JSString) {
+			dynamic {
+				native.cookie = cookie.native;
+			}
+		}
+	}
+	
+	shared Window? defaultView() {
+		dynamic {
+			dynamic view = native.defaultView;
+			if (view != \inull) {
+				return Window(view);
+			} else {
+				return null;
+			}
 		}
 	}
 	
