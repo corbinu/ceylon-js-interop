@@ -1,2 +1,4 @@
 doc("based on the HTML5 working draft")
-module ceylon.js.html "5.0.0" {}
+module ceylon.js.html "5.0.0" {
+	import ceylon.js.language '1.8.5';
+}

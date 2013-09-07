@@ -17,6 +17,11 @@ shared abstract class CompatMode(String name) of css1Compat | backCompat {}
 shared object css1Compat extends CompatMode("CSS1Compat") {}
 shared object backCompat extends CompatMode("BackCompat") {}
 
+shared abstract class DocumentDirection(String name) of rtl | ltr {}
+
+shared object rtl extends DocumentDirection("rtl") {}
+shared object ltr extends DocumentDirection("ltr") {}
+
 shared class Document(dynamic n) extends Node(n) {
 	
 	shared Element activeElement() {
@@ -445,6 +450,88 @@ shared class Document(dynamic n) extends Node(n) {
 			} else {
 				return null;
 			}
+		}
+	}
+	
+	shared Boolean getDesignMode() {
+		dynamic {
+			if (native.designMode == "on") {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+	
+	shared DocumentDirection getDir() {
+		dynamic {
+			if (native.dir == "ltr") {
+				return ltr;
+			} else {
+				return rtl;
+			}
+		}
+	}
+	
+	shared void setDir(DocumentDirection dir) {
+		dynamic {
+			native.dir = dir.string;
+		}
+	}
+	
+	shared JSString getDomain() {
+		dynamic {
+			return JSString(native.domain);
+		}
+	}
+	
+	shared void setDomain(String|JSString domain) {
+		switch (domain)
+		case (is String) {
+			dynamic {
+				native.domain = domain;
+			}
+		}
+		case (is JSString) {
+			dynamic {
+				native.domain = domain.native;
+			}
+		}
+	}
+	
+	shared HTMLCollection forms() {
+		dynamic {
+			return HTMLCollection(native.forms);
+		}
+	}
+	
+	shared Element head() {
+		dynamic {
+			return Element(native.head);
+		}
+	}
+	
+	shared HTMLCollection images() {
+		dynamic {
+			return HTMLCollection(native.images);
+		}
+	}
+	
+	shared JSString lastModified() {
+		dynamic {
+			return JSString(native.lastModified);
+		}
+	}
+	
+	shared JSString lastStyleSheetSet() {
+		dynamic {
+			return JSString(native.lastStyleSheetSet);
+		}
+	}
+	
+	shared HTMLCollection links() {
+		dynamic {
+			return HTMLCollection(native.links);
 		}
 	}
 	
