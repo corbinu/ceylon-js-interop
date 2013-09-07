@@ -1,5 +1,5 @@
 import ceylon.js.language { JSString }
-import ceylon.js.html { Window }
+import ceylon.js.html { Window, Location }
 
 shared abstract class DocumentPosition(String name) of documentPositionContainedBy | documentPositionContains |
 												documentPositionDisconnected | documentPositionFollowing | 
@@ -21,6 +21,12 @@ shared abstract class DocumentDirection(String name) of rtl | ltr {}
 
 shared object rtl extends DocumentDirection("rtl") {}
 shared object ltr extends DocumentDirection("ltr") {}
+
+shared abstract class DocumentReadyState(String name) of loading | interactive | complete {}
+
+shared object loading extends DocumentReadyState("loading") {}
+shared object interactive extends DocumentReadyState("interactive") {}
+shared object complete extends DocumentReadyState("complete") {}
 
 shared class Document(dynamic n) extends Node(n) {
 	
@@ -532,6 +538,74 @@ shared class Document(dynamic n) extends Node(n) {
 	shared HTMLCollection links() {
 		dynamic {
 			return HTMLCollection(native.links);
+		}
+	}
+	
+	shared Location location() {
+		dynamic {
+			return Location(native.location);
+		}
+	}
+	
+	shared HTMLCollection plugins() {
+		dynamic {
+			return HTMLCollection(native.plugins);
+		}
+	}
+	
+	shared JSString? preferredStyleSheetSet() {
+		dynamic {
+			dynamic preferred = document.preferredStyleSheetSet;
+			if (preferred != \inull) {
+				return JSString(preferred);
+			} else {
+				return null;
+			}
+		}
+	}
+	
+	shared DocumentReadyState readyState() {
+		dynamic {
+			dynamic readyState = native.readyState;
+			if (readyState == "loading") {
+				return loading;
+			} else if (readyState == "interactive") {
+				return interactive;
+			} else {
+				return complete;
+			}
+		}
+	}
+	
+	shared JSString referrer() {
+		dynamic {
+			return JSString(native.referrer);
+		}
+	}
+	
+	shared HTMLCollection scripts() {
+		dynamic {
+			return HTMLCollection(native.scripts);
+		}
+	}
+	
+	shared JSString getSelectedStyleSheetSet() {
+		dynamic {
+			return JSString(native.selectedStyleSheetSet);
+		}
+	}
+	
+	shared void setSelectedStyleSheetSet(JSString|String sheet) {
+		switch (sheet)
+		case (is String) {
+			dynamic {
+				native.selectedStyleSheetSet = sheet;
+			}
+		}
+		case (is JSString) {
+			dynamic {
+				native.selectedStyleSheetSet = sheet.native;
+			}
 		}
 	}
 	
