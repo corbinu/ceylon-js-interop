@@ -1,5 +1,6 @@
-import ceylon.js.language { JSString }
+import ceylon.js.language { JSString, JSArray, JSNumber }
 import ceylon.js.html { Window, Location }
+import ceylon.js.dom.stylesheets { StyleSheetList }
 
 shared abstract class DocumentPosition(String name) of documentPositionContainedBy | documentPositionContains |
 												documentPositionDisconnected | documentPositionFollowing | 
@@ -313,14 +314,11 @@ shared class Document(dynamic n) extends Node(n) {
 			}
 		}
 		dynamic {
-			return HTMLCollection(elems);
-			/* TODO figure out hwo to detect which one of these we have
-			if () {
+			if (elems \iinstanceof \iHTMLCollection) {
 				return HTMLCollection(elems);
 			} else {
 				return NodeList(elems);
 			}
-			*/
 		}
 	}
 	
@@ -595,7 +593,7 @@ shared class Document(dynamic n) extends Node(n) {
 		}
 	}
 	
-	shared void setSelectedStyleSheetSet(JSString|String sheet) {
+	shared void setSelectedStyleSheetSet(String|JSString sheet) {
 		switch (sheet)
 		case (is String) {
 			dynamic {
@@ -609,4 +607,160 @@ shared class Document(dynamic n) extends Node(n) {
 		}
 	}
 	
+	shared StyleSheetList styleSheets() {
+		dynamic {
+			return StyleSheetList(native.styleSheets);
+		}
+	}
+	
+	doc("Array of Strings")
+	shared JSArray styleSheetSets() {
+		dynamic {
+			return JSArray(native.styleSheetSets);
+		}
+	}
+	
+	shared JSString title() {
+		dynamic {
+			return JSString(native.title);
+		}
+	}
+	
+	shared void open() {
+		dynamic {
+			native.open();
+		}
+	}
+	
+	shared void close() {
+		dynamic {
+			native.close();
+		}
+	}
+	
+	shared Element elementFromPoint(Integer|JSNumber x, Integer|JSNumber y) {
+		switch (x)
+		case (is Integer) {
+			switch (y)
+			case (is Integer) {
+				dynamic {
+					return Element(native.elementFromPoint(x, y));
+				}
+			}
+			case (is JSNumber) {
+				dynamic {
+					return Element(native.elementFromPoint(x, y.native));
+				}
+			}
+		}
+		case (is JSNumber) {
+			switch (y)
+			case (is Integer) {
+				dynamic {
+					return Element(native.elementFromPoint(x.native, y));
+				}
+			}
+			case (is JSNumber) {
+				dynamic {
+					return Element(native.elementFromPoint(x.native, y.native));
+				}
+			}
+		}
+	}
+	
+	shared HTMLCollection getElementsByName(String|JSString name) {
+		switch (name)
+		case (is String) {
+			dynamic {
+				return HTMLCollection(native.getElementsByName(name));
+			}
+		}
+		case (is JSString) {
+			dynamic {
+				return HTMLCollection(native.getElementsByName(name.native));
+			}
+		}
+	}
+	
+	shared Boolean hasFocus() {
+		dynamic {
+			if (native.hasFocus()) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+	
+	shared Element querySelector(String|JSString selectors) {
+		switch (selectors)
+		case (is String) {
+			dynamic {
+				return Element(native.querySelector(selectors));
+			}
+		}
+		case (is JSString) {
+			dynamic {
+				return Element(native.querySelector(selectors.native));
+			}
+		}
+	}
+	
+	shared NodeList querySelectorAll(String|JSString selectors) {
+		switch (selectors)
+		case (is String) {
+			dynamic {
+				return NodeList(native.querySelectorAll(selectors));
+			}
+		}
+		case (is JSString) {
+			dynamic {
+				return NodeList(native.querySelectorAll(selectors.native));
+			}
+		}
+	}
+	
+	shared void releaseCapture() {
+		dynamic {
+			native.releaseCapture();
+		}
+	}
+	
+	shared void write(String|JSString line) {
+		switch (line)
+		case (is String) {
+			dynamic {
+				native.write(line);
+			}
+		}
+		case (is JSString) {
+			dynamic {
+				native.write(line.native);
+			}
+		}
+	}
+	
+	shared void writeln(String|JSString line) {
+		switch (line)
+		case (is String) {
+			dynamic {
+				native.writeln(line);
+			}
+		}
+		case (is JSString) {
+			dynamic {
+				native.writeln(line.native);
+			}
+		}
+	}
+	
+	/* TODO
+	document.evaluate
+	document.createExpression
+	document.createNSResolver
+	
+	document.ononline
+	document.onoffline
+	document.onreadystatechange
+	*/
 }
