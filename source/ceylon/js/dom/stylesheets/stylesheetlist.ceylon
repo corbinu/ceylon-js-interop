@@ -1,4 +1,4 @@
-import ceylon.js.language { JSNumber, JSString }
+import ceylon.js.language { JSNumber }
 
 shared class StyleSheetList(dynamic n) {
 	shared dynamic native;
@@ -12,7 +12,14 @@ shared class StyleSheetList(dynamic n) {
 		}
 	}
 	
-	shared StyleSheet? item(Integer|JSString item) {
-		
+	shared StyleSheet? item(Integer|JSNumber index) {
+		dynamic {
+			dynamic element = native.item(index);
+			if (element != \inull) {
+				return StyleSheet(element);
+			} else {
+				return null;
+			}
+		}
 	}
 }
