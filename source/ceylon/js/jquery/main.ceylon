@@ -1,15 +1,23 @@
-import ceylon.js.language { Element }
+import ceylon.js.dom { Element }
 
-shared JQuery jQuery = JQuery();
+shared JQuery jQuery = getJQuery();
 
-shared class JQuery() {
-	shared variable dynamic native;
+shared JQuery getJQuery() {
 	dynamic {
-		native = jQuery;
-		if (native == \iundefined || native == \inull) {
+		dynamic jq = jQuery;
+		if (jq == \iundefined || jq == \inull) {
 			throw Exception("jQuery Library was not found. Did you make sure to include jQuery?");
+		} else {
+			return JQuery(jq);
 		}
 	}
+}
+
+shared class JQuery(dynamic n) {
+	shared dynamic native;
+    dynamic {
+        native = n;
+    }	
 	
 	shared JQuery call(String|Element|Element[]|Object|JQuery elem, Element|JQuery? context) {
 		if (!context is Null) {
