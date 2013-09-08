@@ -258,7 +258,6 @@ shared class Node(dynamic n) {
 		}
 	}
 	
-	doc("returns String or Null")
 	shared JSString? prefix() {
 		dynamic {
 			dynamic prefix = native.prefix;

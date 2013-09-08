@@ -1,23 +1,22 @@
+import ceylon.js.language { JSString }
+
 shared class DocumentType(dynamic n) extends Node(n) {
 	
-	doc("returns String")
-    shared dynamic name() {
+    shared JSString name() {
 		dynamic {
-			return native.name;
+			return JSString(native.name);
 		}
 	}
 	
-	doc("returns String")
-    shared dynamic publicId() {
+    shared JSString publicId() {
 		dynamic {
-			return native.publicId;
+			return JSString(native.publicId);
 		}
 	}
 	
-	doc("returns String")
-    shared dynamic systemId() {
+    shared JSString systemId() {
 		dynamic {
-			return native.systemId;
+			return JSString(native.systemId);
 		}
 	}
 }

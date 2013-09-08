@@ -1,21 +1,30 @@
+import ceylon.js.language { JSString }
+
 shared class ProcessingInstruction(dynamic n) extends Node(n) {
     
-    shared dynamic getData() {
+    shared JSString getData() {
         dynamic {
-            return native.data;
+            return JSString(native.data);
        }
     }
     
-    shared void setData(String data) {
-        dynamic {
-            native.data = data;
+    shared void setData(String|JSString data) {
+        switch (data)
+        case (is String) {
+            dynamic {
+            	native.data = data;
+        	}
+        }
+        case (is JSString) {
+            dynamic {
+            	native.data = data.native;
+        	}
         }
     }
     
-    doc("returns String")
-    shared dynamic target() {
+    shared JSString target() {
         dynamic {
-            return native.target;
+            return JSString(native.target);
        }
     }
 }

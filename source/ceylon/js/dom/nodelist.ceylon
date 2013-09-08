@@ -1,12 +1,25 @@
+import ceylon.js.language { JSNumber }
+
 shared class NodeList(dynamic n) {
 	shared dynamic native;
     dynamic {
         native = n;
     }
 	
-    shared Node? item(Integer index) {
+    shared Node? item(Integer|JSNumber index) {
+		dynamic item;
+		switch (index)
+		case (is Integer) {
+			dynamic {
+				item = native.item(index);
+			}
+		}
+		case (is JSNumber) {
+			dynamic {
+				item = native.item(index.native);
+			}
+		}
 		dynamic {
-			dynamic item = native.item(index);
 			if (item != \inull) {
 				return Node(item);
 			} else {
@@ -15,9 +28,9 @@ shared class NodeList(dynamic n) {
 		}
 	}
 	
-    shared Number length() {
+    shared JSNumber length() {
 		dynamic {
-			return Number(native.length);
+			return JSNumber(native.length);
 		}
 	}
 }

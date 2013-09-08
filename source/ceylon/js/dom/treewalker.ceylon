@@ -109,6 +109,4 @@ shared class TreeWalker(dynamic n) {
             }
         }
     }
-    
-    
 }

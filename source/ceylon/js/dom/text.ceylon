@@ -1,17 +1,26 @@
+import ceylon.js.language { JSNumber, JSString }
+
 shared class CDATASection(dynamic n) extends Text(n) {}
 
 shared class Text(dynamic n) extends CharacterData(n) {
 	
-    shared Text splitText(Integer offset) {
-		dynamic {
-			return Text(native.splitText(offset));
+    shared Text splitText(Integer|JSNumber offset) {
+		switch (offset)
+		case (is Integer) {
+			dynamic {
+				return Text(native.splitText(offset));
+			}
+		}
+		case (is JSNumber) {
+			dynamic {
+				return Text(native.splitText(offset.native));
+			}
 		}
 	}
 	
-	doc("returns String")
-    shared dynamic wholeText() {
+    shared JSString wholeText() {
 		dynamic {
-			return native.wholeText;
+			return JSString(native.wholeText);
 		}
 	}
 }

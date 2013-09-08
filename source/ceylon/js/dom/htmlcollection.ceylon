@@ -1,18 +1,31 @@
+import ceylon.js.language { JSNumber, JSString }
+
 shared class HTMLCollection(dynamic n) {
 	shared dynamic native;
     dynamic {
         native = n;
     }
 	
-	shared Number length() {
+	shared JSNumber length() {
 		dynamic {
-			return Number(native.length);
+			return JSNumber(native.length);
 		}
 	}
 	
-	shared Element? item(Integer index) {
+	shared Element? item(Integer|JSNumber index) {
+		dynamic item;
+		switch (index)
+		case (is Integer) {
+			dynamic {
+				item = native.item(index);
+			}
+		}
+		case (is JSNumber) {
+			dynamic {
+				item = native.item(index.native);
+			}
+		}
 		dynamic {
-			dynamic item = native.item(index);
 			if (item != \inull) {
 				return Element(item);
 			} else  {
@@ -21,10 +34,19 @@ shared class HTMLCollection(dynamic n) {
 		}
 	}
 	
+	// TODO
 	doc("returns JSObject or null")
-	shared dynamic namedItem(String name) {
-		dynamic {
-			return native.namedItem(name);
+	shared dynamic namedItem(String|JSString name) {
+		switch (name)
+		case (is String) {
+			dynamic {
+				return native.namedItem(name);
+			}
+		}
+		case (is JSString) {
+			dynamic {
+				return native.namedItem(name.native);
+			}
 		}
 	}
 }
