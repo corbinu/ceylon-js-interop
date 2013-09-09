@@ -70,7 +70,7 @@ shared class JSJSON(dynamic n) {
     
 }
 
-class JSON({Entry<String, String|Boolean|Integer|Float|Object|Array|NullInstance>*} values = {}) extends Object(values) {
+shared class JSON({Entry<String, String|Boolean|Integer|Float|Object|Array|NullInstance>*} values = {}) extends Object(values) {
 	
 	shared JSJSON toJson() {
 		dynamic {
