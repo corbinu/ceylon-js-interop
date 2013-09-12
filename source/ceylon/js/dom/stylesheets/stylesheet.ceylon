@@ -1,11 +1,7 @@
 import ceylon.js.language { JSString }
 import ceylon.js.dom { Node }
 
-shared class StyleSheet(dynamic n) {
-	shared dynamic native;
-    dynamic {
-        native = n;
-    }
+shared class StyleSheet(dynamic n) extends JSObject(n) {
     
     shared JSString type() {
         dynamic {

@@ -1,4 +1,4 @@
-import ceylon.js.language { JSNumber, JSString }
+import ceylon.js.language { JSNumber, JSString, JSObject }
 import ceylon.json { ... }
 
 shared dynamic jsonParse(String text) {
@@ -20,12 +20,7 @@ shared JSString jsonStringify(dynamic val, String|JSString|Integer|JSNumber? spa
 			return JSString(\iJSON.stringify(val, null, space));
 		}
 	}
-	case (is JSString) {
-		dynamic {
-			return JSString(\iJSON.stringify(val, null, space.native));
-		}
-	}
-	case (is JSNumber) {
+	case (is JSString|JSNumber) {
 		dynamic {
 			return JSString(\iJSON.stringify(val, null, space.native));
 		}
@@ -45,12 +40,7 @@ shared JSString jsonStringifyReplacer(dynamic val, Anything replacer(dynamic key
 			return JSString(\iJSON.stringify(val, replacer, space));
 		}
 	}
-	case (is JSString) {
-		dynamic {
-			return JSString(\iJSON.stringify(val, replacer, space.native));
-		}
-	}
-	case (is JSNumber) {
+	case (is JSString|JSNumber) {
 		dynamic {
 			return JSString(\iJSON.stringify(val, replacer, space.native));
 		}
@@ -62,13 +52,7 @@ shared JSString jsonStringifyReplacer(dynamic val, Anything replacer(dynamic key
 	}
 }
 
-shared class JSJSON(dynamic n) {
-	shared dynamic native;
-    dynamic {
-        native = n;
-    }
-    
-}
+shared class JSJSON(dynamic n) extends JSObject(n) {}
 
 shared class JSON({Entry<String, String|Boolean|Integer|Float|Object|Array|NullInstance>*} values = {}) extends Object(values) {
 	

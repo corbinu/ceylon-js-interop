@@ -1,8 +1,6 @@
-shared class TreeWalker(dynamic n) {
-	shared dynamic native;
-    dynamic {
-        native = n;
-    }
+import ceylon.js.language { JSObject }
+
+shared class TreeWalker(dynamic n) extends JSObject(n) {
 	
 	shared Node root() {
         dynamic {

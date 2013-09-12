@@ -1,13 +1,9 @@
-import ceylon.js.language { JSString, JSNumber }
-import ceylon.js.dom { HTMLCollection }
+import ceylon.js.language { JSString, JSNumber, JSObject }
+import ceylon.webapi.dom { HTMLCollection }
 
 shared class HTMLFormControlsCollection(dynamic n) extends HTMLCollection(n) {}
 
-shared class HTMLFormElement(dynamic n) {
-	shared dynamic native;
-    dynamic {
-        native = n;
-    }
+shared class HTMLFormElement(dynamic n) extends JSObject(n) {
     
     shared JSString getAcceptCharset() {
         dynamic {

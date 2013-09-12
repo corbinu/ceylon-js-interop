@@ -28,12 +28,7 @@ shared JSNumber numberPositiveInfinity() {
 	}
 }
 
-shared class JSNumber(dynamic n) {
-	
-	shared dynamic native;
-    dynamic {
-        native = n;
-    }
+shared class JSNumber(dynamic n) extends JSObject(n) {
     
     shared JSString toExponential(Integer|JSNumber? fractionDigits = null) {
         switch (fractionDigits)

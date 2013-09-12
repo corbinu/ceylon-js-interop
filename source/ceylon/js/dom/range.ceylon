@@ -1,4 +1,4 @@
-import ceylon.js.language { JSNumber, JSString }
+import ceylon.js.language { JSNumber, JSString, JSObject }
 
 shared abstract class RangeCompareHow(String name) of endToEnd | endToStart | startToEnd | startToStart {}
 
@@ -7,11 +7,7 @@ shared object endToStart extends RangeCompareHow("endToStart") {}
 shared object startToEnd extends RangeCompareHow("startToEnd") {}
 shared object startToStart extends RangeCompareHow("startToStart") {}
 
-shared class Range(dynamic n) {
-	shared dynamic native;
-    dynamic {
-        native = n;
-    }
+shared class Range(dynamic n) extends JSObject(n) {
     
     shared Node startContainer() {
         dynamic {

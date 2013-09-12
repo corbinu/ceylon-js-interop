@@ -1,4 +1,4 @@
-import ceylon.js.language { JSString, JSDate }
+import ceylon.js.language { JSString, JSDate, JSObject }
 import ceylon.js.json { JSON, JSJSON }
 
 shared abstract class EventPhase(shared Integer num) of none | capturePhase | atTarget | bubblingPhase {}
@@ -32,11 +32,7 @@ shared Event createEvent(String|JSString type, EventInit options) {
 	}
 }
 
-shared class EventTarget(dynamic n) {
-	shared dynamic native;
-    dynamic {
-        native = n;
-    }
+shared class EventTarget(dynamic n) extends JSObject(n) {
     
 	shared void addEventListener(String|JSString type, void callback(Event event), Boolean capture = false) {
         switch (type)
@@ -77,11 +73,7 @@ shared class EventTarget(dynamic n) {
     }
 }
 
-shared class Event(dynamic n) {
-	shared dynamic native;
-    dynamic {
-        native = n;
-    }
+shared class Event(dynamic n) extends JSObject(n) {
     
     shared JSString type() {
         dynamic {

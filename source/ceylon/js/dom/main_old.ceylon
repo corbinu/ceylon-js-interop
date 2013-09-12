@@ -1,116 +1,5 @@
 /*shared Null nativejs() { return null; }
-shared nativejs interface Node {
-    shared formal Integer \iATTRIBUTE_NODE;
-    shared formal Integer \iCDATA_SECTION_NODE;
-    shared formal Integer \iCOMMENT_NODE;
-    shared formal Integer \iDOCUMENT_FRAGMENT_NODE;
-    shared formal Integer \iDOCUMENT_NODE;
-    shared formal Integer \iDOCUMENT_POSITION_CONTAINED_BY;
-    shared formal Integer \iDOCUMENT_POSITION_CONTAINS;
-    shared formal Integer \iDOCUMENT_POSITION_DISCONNECTED;
-    shared formal Integer \iDOCUMENT_POSITION_FOLLOWING;
-    shared formal Integer \iDOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC;
-    shared formal Integer \iDOCUMENT_POSITION_PRECEDING;
-    shared formal Integer \iDOCUMENT_TYPE_NODE;
-    shared formal Integer \iELEMENT_NODE;
-    shared formal Integer \iENTITY_NODE;
-    shared formal Integer \iENTITY_REFERENCE_NODE;
-    shared formal Integer \iNOTATION_NODE;
-    shared formal Integer \iPROCESSING_INSTRUCTION_NODE;
-    shared formal Integer \iTEXT_NODE;
-    shared formal Node appendChild(Node? node0);
-    shared formal NamedNodeMap attributes;
-    shared formal String baseURI;
-    shared formal NodeList childNodes;
-    shared formal Node cloneNode(Boolean boolean0);
-    shared formal Integer compareDocumentPosition(Node? node0);
-    shared formal Node firstChild;
-    shared formal Object getFeature(String? string0, String? string1);
-    shared formal Object getUserData(String? string0);
-    shared formal Boolean hasAttributes();
-    shared formal Boolean hasChildNodes();
-    shared formal Node insertBefore(Node? node0, Node? node1);
-    shared formal Boolean isDefaultNamespace(String? string0);
-    shared formal Boolean isEqualNode(Node? node0);
-    shared formal Boolean isSameNode(Node? node0);
-    shared formal Boolean isSupported(String? string0, String? string1);
-    shared formal Node lastChild;
-    shared formal String localName;
-    shared formal String lookupNamespaceURI(String? string0);
-    shared formal String lookupPrefix(String? string0);
-    shared formal String namespaceURI;
-    shared formal Node nextSibling;
-    shared formal String nodeName;
-    shared formal Integer nodeType;
-    shared formal variable String nodeValue;
-    shared formal void normalize();
-    shared formal Document ownerDocument;
-    shared formal Node parentNode;
-    shared formal variable String prefix;
-    shared formal Node previousSibling;
-    shared formal Node removeChild(Node? node0);
-    shared formal Node replaceChild(Node? node0, Node? node1);
-    shared formal Object setUserData(String? string0, Object? object1, UserDataHandler? userDataHandler2);
-    shared formal variable String textContent;
-}
-shared nativejs interface Element satisfies Node {
-    shared formal String getAttribute(String? string0);
-    shared formal String getAttributeNS(String? string0, String? string1);
-    shared formal Attr getAttributeNode(String? string0);
-    shared formal Attr getAttributeNodeNS(String? string0, String? string1);
-    shared formal NodeList getElementsByTagName(String? string0);
-    shared formal NodeList getElementsByTagNameNS(String? string0, String? string1);
-    shared formal Boolean hasAttribute(String? string0);
-    shared formal Boolean hasAttributeNS(String? string0, String? string1);
-    shared formal void removeAttribute(String? string0);
-    shared formal void removeAttributeNS(String? string0, String? string1);
-    shared formal Attr removeAttributeNode(Attr? attr0);
-    shared formal TypeInfo schemaTypeInfo;
-    shared formal void setAttribute(String? string0, String? string1);
-    shared formal void setAttributeNS(String? string0, String? string1, String? string2);
-    shared formal Attr setAttributeNode(Attr? attr0);
-    shared formal Attr setAttributeNodeNS(Attr? attr0);
-    shared formal void setIdAttribute(String? string0, Boolean boolean1);
-    shared formal void setIdAttributeNS(String? string0, String? string1, Boolean boolean2);
-    shared formal void setIdAttributeNode(Attr? attr0, Boolean boolean1);
-    shared formal String tagName;
-}
-shared nativejs interface TypeInfo {
-    shared formal Integer \iDERIVATION_EXTENSION;
-    shared formal Integer \iDERIVATION_LIST;
-    shared formal Integer \iDERIVATION_RESTRICTION;
-    shared formal Integer \iDERIVATION_UNION;
-    shared formal Boolean isDerivedFrom(String? string0, String? string1, Integer integer2);
-    shared formal String typeName;
-    shared formal String typeNamespace;
-}
-shared nativejs interface Attr satisfies Node {
-    shared formal Boolean id;
-    shared formal String name;
-    shared formal Element ownerElement;
-    shared formal TypeInfo schemaTypeInfo;
-    shared formal Boolean specified;
-    shared formal variable String \ivalue;
-}
-shared nativejs interface CharacterData satisfies Node {
-    shared formal void appendData(String? string0);
-    shared formal variable String data;
-    shared formal void deleteData(Integer integer0, Integer integer1);
-    shared formal void insertData(Integer integer0, String? string1);
-    shared formal Integer length;
-    shared formal void replaceData(Integer integer0, Integer integer1, String? string2);
-    shared formal String substringData(Integer integer0, Integer integer1);
-}
-shared nativejs interface Text satisfies CharacterData {
-    shared formal Boolean elementContentWhitespace;
-    shared formal Text replaceWholeText(String? string0);
-    shared formal Text splitText(Integer integer0);
-    shared formal String wholeText;
-}
-shared nativejs interface CDATASection satisfies Text {
-}
-shared nativejs interface Comment satisfies CharacterData {
-}
+
 shared nativejs interface DOMConfiguration {
     shared formal Boolean canSetParameter(String? string0, Object? object1);
     shared formal Object getParameter(String? string0);
@@ -198,35 +87,7 @@ shared nativejs interface NodeList {
     shared formal Node item(Integer integer0);
     shared formal Integer length;
 }
-shared nativejs interface Document satisfies Node {
-    shared formal Node adoptNode(Node? node0);
-    shared formal Attr createAttribute(String? string0);
-    shared formal Attr createAttributeNS(String? string0, String? string1);
-    shared formal CDATASection createCDATASection(String? string0);
-    shared formal Comment createComment(String? string0);
-    shared formal DocumentFragment createDocumentFragment();
-    shared formal Element createElement(String? string0);
-    shared formal Element createElementNS(String? string0, String? string1);
-    shared formal EntityReference createEntityReference(String? string0);
-    shared formal ProcessingInstruction createProcessingInstruction(String? string0, String? string1);
-    shared formal Text createTextNode(String? string0);
-    shared formal DocumentType doctype;
-    shared formal Element documentElement;
-    shared formal variable String documentURI;
-    shared formal DOMConfiguration domConfig;
-    shared formal Element getElementById(String? string0);
-    shared formal NodeList getElementsByTagName(String? string0);
-    shared formal NodeList getElementsByTagNameNS(String? string0, String? string1);
-    shared formal DOMImplementation implementation;
-    shared formal Node importNode(Node? node0, Boolean boolean1);
-    shared formal String inputEncoding;
-    shared formal void normalizeDocument();
-    shared formal Node renameNode(Node? node0, String? string1, String? string2);
-    shared formal variable Boolean strictErrorChecking;
-    shared formal String xmlEncoding;
-    shared formal variable Boolean xmlStandalone;
-    shared formal variable String xmlVersion;
-}
+
 shared nativejs interface NamedNodeMap {
     shared formal Node getNamedItem(String? string0);
     shared formal Node getNamedItemNS(String? string0, String? string1);
@@ -244,13 +105,6 @@ shared nativejs interface Entity satisfies Node {
     shared formal String systemId;
     shared formal String xmlEncoding;
     shared formal String xmlVersion;
-}
-shared nativejs interface NameList {
-    shared formal Boolean contains(String? string0);
-    shared formal Boolean containsNS(String? string0, String? string1);
-    shared formal String getName(Integer integer0);
-    shared formal String getNamespaceURI(Integer integer0);
-    shared formal Integer length;
 }
 shared nativejs interface Notation satisfies Node {
     shared formal String publicId;

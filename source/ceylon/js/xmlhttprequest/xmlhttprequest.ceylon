@@ -1,6 +1,7 @@
-import ceylon.js.dom { EventTarget, Event, Document }
-import ceylon.js.language { JSString, JSNumber }
+import ceylon.js.dom { Event, Document }
+import ceylon.js.language { JSString, JSNumber, JSObject }
 import ceylon.js.file { Blob }
+import ceylon.js.json { JSON, JSJSON }
 
 shared abstract class XMLHttpRequestResponseType(String name)  of blank | arraybuffer | blob | document | json | text {}
 
@@ -11,121 +12,35 @@ shared object document extends XMLHttpRequestResponseType("document") {}
 shared object json extends XMLHttpRequestResponseType("json") {}
 shared object text extends XMLHttpRequestResponseType("text") {}
 
-shared abstract class ReadyState(Integer num)  of unsent | opened | headersReceived | loading | done {}
+shared abstract class ReadyState(Integer num)  of readyStateUnsent | readyStateOpened | readyStateHeadersReceived | readyStateLoading | readyStateDone {}
 
-shared object unsent extends ReadyState(0) {}
-shared object opened extends ReadyState(1) {}
-shared object headersReceived extends ReadyState(2) {}
-shared object loading extends ReadyState(3) {}
-shared object done extends ReadyState(4) {}
+shared object readyStateUnsent extends ReadyState(0) {}
+shared object readyStateOpened extends ReadyState(1) {}
+shared object readyStateHeadersReceived extends ReadyState(2) {}
+shared object readyStateLoading extends ReadyState(3) {}
+shared object readyStateDone extends ReadyState(4) {}
 
-shared class XMLHttpRequestEventTarget(dynamic n) extends EventTarget(n) {
-	
-	doc("returns a function Anything(Event event)")
-	shared dynamic getOnloadstart() {
-		dynamic {
-			return native.onloadstart;
-		}
+shared class XMLHttpRequestOptions(shared Boolean anon = false) {
+
+	shared JSJSON toJson() {
+		value json = JSON { "anon" -> anon };
+		return json.toJson();
 	}
-	
-	shared void setOnloadstart(void handler(Event event)) {
-		dynamic {
-			native.onloadstart = handler;
-		}
-	}
-	
-	doc("returns a function Anything(Event event)")
-	shared dynamic getOnprogress() {
-		dynamic {
-			return native.onprogress;
-		}
-	}
-	
-	shared void setOnprogress(void handler(Event event)) {
-		dynamic {
-			native.onprogress = handler;
-		}
-	}
-	
-	doc("returns a function Anything(Event event)")
-	shared dynamic getOnabort() {
-		dynamic {
-			return native.onabort;
-		}
-	}
-	
-	shared void setOnabort(void handler(Event event)) {
-		dynamic {
-			native.onabort = handler;
-		}
-	}
-	
-	doc("returns a function Anything(Event event)")
-	shared dynamic getOnerror() {
-		dynamic {
-			return native.onerror;
-		}
-	}
-	
-	shared void setOnerror(void handler(Event event)) {
-		dynamic {
-			native.onerror = handler;
-		}
-	}
-	
-	doc("returns a function Anything(Event event)")
-	shared dynamic getOnload() {
-		dynamic {
-			return native.onload;
-		}
-	}
-	
-	shared void setOnload(void handler(Event event)) {
-		dynamic {
-			native.onload = handler;
-		}
-	}
-	
-	doc("returns a function Anything(Event event)")
-	shared dynamic getOntimeout() {
-		dynamic {
-			return native.ontimeout;
-		}
-	}
-	
-	shared void setOntimeout(void handler(Event event)) {
-		dynamic {
-			native.ontimeout = handler;
-		}
-	}
-	
-	doc("returns a function Anything(Event event)")
-	shared dynamic getOnloadend() {
-		dynamic {
-			return native.onloadend;
-		}
-	}
-	
-	shared void setOnloadend(void handler(Event event)) {
-		dynamic {
-			native.onloadend = handler;
-		}
-	}
-	
 }
 
-shared class XMLHttpRequestUpload(dynamic n) extends XMLHttpRequestEventTarget(n) {}
-
-shared class XMLHttpRequestOptions() {
-	// TODO how to set this
-	shared Boolean anon = false;
+shared XMLHttpRequest createXMLHttpRequest(XMLHttpRequestOptions? options = null) {
+	if (exists o = options) {
+		dynamic {
+			return XMLHttpRequest(\iXMLHttpRequest(o.toJson));
+		}
+	} else {
+		dynamic {
+			return XMLHttpRequest(\iXMLHttpRequest());
+		}
+	}
 }
 
-shared class XMLHttpRequest(dynamic n) {
-	shared dynamic native;
-    dynamic {
-        native = n;
-    }
+shared class XMLHttpRequest(dynamic n) extends JSObject(n) {
 	
 	doc("returns a function Anything(Event event)")
 	shared dynamic getOnreadystatechange() {
@@ -144,15 +59,15 @@ shared class XMLHttpRequest(dynamic n) {
 		dynamic {
 			dynamic readyState = native.readyState;
 			if (readyState == \iXMLHttpRequest.\iUNSENT) {
-				return unsent;
+				return readyStateUnsent;
 			} else if (readyState == \iXMLHttpRequest.\iOPENED) {
-				return opened;
+				return readyStateOpened;
 			} else if (readyState == \iXMLHttpRequest.\iHEADERS_RECEIVED) {
-				return headersReceived;
+				return readyStateHeadersReceived;
 			} else if (readyState == \iXMLHttpRequest.\iLOADING) {
-				return loading;
+				return readyStateLoading;
 			} else {
-				return done;
+				return readyStateDone;
 			}
 		}
 	}

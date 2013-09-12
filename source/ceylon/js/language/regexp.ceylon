@@ -19,7 +19,7 @@ shared RegExp createJSRegExp(String|JSString pattern, RegExpFlag* flags) {
 	}
 }
 
-shared class RegExp(shared dynamic native) {
+shared class RegExp(dynamic n) extends JSObject(n) {
 	
 	shared class RegResult(dynamic n) extends JSArray(n) {
 		

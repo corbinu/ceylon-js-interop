@@ -1,4 +1,4 @@
-import ceylon.js.language { JSString }
+import ceylon.js.language { JSString, JSObject }
 import ceylon.js.file { Blob }
 import ceylon.js.html { HTMLFormElement }
 
@@ -8,11 +8,7 @@ shared FormData createFormData(HTMLFormElement? form = null) {
 	}
 }
 
-shared class FormData(dynamic n) {
-	shared dynamic native;
-    dynamic {
-        native = n;
-    }
+shared class FormData(dynamic n) extends JSObject(n) {
     
     shared void append(String|JSString name, String|JSString val) {
         switch (name)

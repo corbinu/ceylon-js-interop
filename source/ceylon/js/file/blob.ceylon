@@ -1,4 +1,4 @@
-import ceylon.js.language { JSNumber, JSString }
+import ceylon.js.language { JSNumber, JSString, JSObject }
 import ceylon.js.json { JSON, JSJSON }
 
 shared Blob createBlob(String[]? parts = null, BlobPropertyBag? properties = null) {
@@ -52,11 +52,7 @@ shared class BlobPropertyBag(shared String|JSString type = "") {
 	}
 }
 
-shared class Blob(dynamic n) {
-	shared dynamic native;
-    dynamic {
-        native = n;
-    }
+shared class Blob(dynamic n) extends JSObject(n) {
     
     shared JSNumber size() {
         dynamic {

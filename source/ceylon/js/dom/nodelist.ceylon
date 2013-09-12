@@ -1,10 +1,6 @@
-import ceylon.js.language { JSNumber }
+import ceylon.js.language { JSNumber, JSObject }
 
-shared class NodeList(dynamic n) {
-	shared dynamic native;
-    dynamic {
-        native = n;
-    }
+shared class NodeList(dynamic n) extends JSObject(n) {
 	
     shared Node? item(Integer|JSNumber index) {
 		dynamic item;

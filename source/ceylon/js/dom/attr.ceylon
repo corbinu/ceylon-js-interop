@@ -1,10 +1,6 @@
 import ceylon.js.language { JSString }
 
-shared class Attr(dynamic n) {
-	shared dynamic native;
-    dynamic {
-        native = n;
-    }
+shared class Attr(dynamic n)  extends JSObject(n) {
     
     shared Boolean isId() {
         dynamic {

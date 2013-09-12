@@ -1,9 +1,5 @@
-import ceylon.js.language { JSString }
-shared class DOMImplementation(dynamic n) {
-	shared dynamic native;
-    dynamic {
-        native = n;
-    }
+import ceylon.js.language { JSString, JSObject }
+shared class DOMImplementation(dynamic n) extends JSObject(n) {
     
     shared Document createDocument(String|JSString? namespace, String|JSString qualifiedName = "", DocumentType? doctype = null) {
         switch (namespace)

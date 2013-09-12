@@ -1,10 +1,6 @@
-import ceylon.js.language { JSString, JSNumber }
+import ceylon.js.language { JSString, JSNumber, JSObject }
 
-shared class MediaList(dynamic n) {
-	shared dynamic native;
-    dynamic {
-        native = n;
-    }
+shared class MediaList(dynamic n) extends JSObject(n) {
     
     shared JSString getMediaText() {
         dynamic {

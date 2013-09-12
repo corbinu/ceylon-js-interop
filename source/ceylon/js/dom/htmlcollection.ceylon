@@ -1,10 +1,6 @@
-import ceylon.js.language { JSNumber, JSString }
+import ceylon.js.language { JSNumber, JSString, JSObject }
 
-shared class HTMLCollection(dynamic n) {
-	shared dynamic native;
-    dynamic {
-        native = n;
-    }
+shared class HTMLCollection(dynamic n) extends JSObject(n) {
 	
 	shared JSNumber length() {
 		dynamic {
@@ -35,17 +31,24 @@ shared class HTMLCollection(dynamic n) {
 	}
 	
 	// TODO
-	doc("returns JSObject or null")
-	shared dynamic namedItem(String|JSString name) {
+	shared JSObject? namedItem(String|JSString name) {
+		dynamic namedItem;
 		switch (name)
 		case (is String) {
 			dynamic {
-				return native.namedItem(name);
+				namedItem = native.namedItem(name);
 			}
 		}
 		case (is JSString) {
 			dynamic {
-				return native.namedItem(name.native);
+				namedItem = native.namedItem(name.native);
+			}
+		}
+		dynamic {
+			if (namedItem == \inull) {
+				return JSObject(namedItem);
+			} else {
+				return null;
 			}
 		}
 	}

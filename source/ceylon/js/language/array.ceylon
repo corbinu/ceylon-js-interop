@@ -14,11 +14,7 @@ shared Boolean arrayIsArray(dynamic array) {
 	}
 }
 
-shared class JSArray(dynamic n) {
-	shared dynamic native;
-    dynamic {
-        native = n;
-    }
+shared class JSArray(dynamic n) extends JSObject(n) {
     
     shared JSNumber getLength() {
         dynamic {

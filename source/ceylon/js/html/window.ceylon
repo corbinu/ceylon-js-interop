@@ -1,7 +1,5 @@
-shared class Window(dynamic n) {
-	shared dynamic native;
-    dynamic {
-        native = n;
-    }
-    
+import ceylon.js.language { JSObject }
+
+shared class Window(dynamic n) extends JSObject(n) {
+    // TODO add window properties
 }

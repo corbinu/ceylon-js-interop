@@ -1,10 +1,6 @@
-import ceylon.js.language { JSNumber }
+import ceylon.js.language { JSNumber, JSObject }
 
-shared class StyleSheetList(dynamic n) {
-	shared dynamic native;
-    dynamic {
-        native = n;
-    }
+shared class StyleSheetList(dynamic n) extends JSObject(n) {
 	
 	shared JSNumber length() {
 		dynamic {

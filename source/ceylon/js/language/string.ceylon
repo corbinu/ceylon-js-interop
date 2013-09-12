@@ -4,11 +4,7 @@ shared JSString createJSString(dynamic string) {
 	}
 }
 
-shared class JSString(dynamic n) {
-	shared dynamic native;
-    dynamic {
-        native = n;
-    }
+shared class JSString(dynamic n) extends JSObject(n) {
     
     shared JSNumber length() {
         dynamic {
@@ -131,20 +127,7 @@ shared class JSString(dynamic n) {
 	            } 
 			}
 		}
-		case (is JSString) {
-			switch (replace) 
-			case (is String) {
-	        	dynamic {
-	            	return JSString(native.replace(pattern.native, replace));
-	            }
-			}
-			case (is JSString) {
-	             dynamic {
-	                 return JSString(native.replace(pattern.native, replace.native));
-	            }   
-			}  
-		}
-		case (is RegExp) {
+		case (is JSString|RegExp) {
 			switch (replace) 
 			case (is String) {
 	        	dynamic {
@@ -167,12 +150,7 @@ shared class JSString(dynamic n) {
                 return JSString(native.replace(pattern, replace));
             }
 		}
-		case (is JSString) {
-			dynamic {
-				return JSString(native.replace(pattern.native, replace));
-			}
-		}
-		case (is RegExp) {
+		case (is JSString|RegExp) {
 			dynamic {
 				return JSString(native.replace(pattern.native, replace));
 			}
@@ -246,25 +224,7 @@ shared class JSString(dynamic n) {
             	}
         	}
         }
-        case (is JSString) {
-            switch (limit) 
-            case (is Integer) {
-                dynamic {
-                	return JSArray(native.split(separator.native, limit));
-            	}
-            }
-            case (is JSNumber) {
-                dynamic {
-                	return JSArray(native.split(separator.native, limit.native));
-            	}
-            }
-            case (is Null) {
-                dynamic {
-                	return JSArray(native.split(separator));
-            	}
-        	}
-        }
-        case (is RegExp) {
+        case (is JSString|RegExp) {
             switch (limit) 
             case (is Integer) {
                 dynamic {
