@@ -1,5 +1,5 @@
-import ceylon.webapi.dom { Element }
-import ceylon.js.language { JSString, JSObject }
+import ceylon.js.dom { Element }
+import ceylon.js.language { JSString, JSObjectAbs }
 import ceylon.js.json { JSJSON }
 
 shared JQuery jQuery = getJQuery();
@@ -15,7 +15,14 @@ shared JQuery getJQuery() {
 	}
 }
 
-shared class JQuery(dynamic n) extends JSObject(n) {
+shared class JQuery(dynamic n) extends JQueryAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
+
+shared abstract class JQueryAbs() extends JSObjectAbs() {
 	
 	shared JQuery add(String|JQuery append) {
 		switch (append)

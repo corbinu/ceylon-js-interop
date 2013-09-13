@@ -1,6 +1,13 @@
 import ceylon.js.language { JSString }
 
-shared class DocumentType(dynamic n) extends Node(n) {
+shared class DocumentType(dynamic n) extends DocumentTypeAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
+
+shared abstract class DocumentTypeAbs() extends NodeAbs() {
 	
     shared JSString name() {
 		dynamic {

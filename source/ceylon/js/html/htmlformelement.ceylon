@@ -1,9 +1,23 @@
-import ceylon.js.language { JSString, JSNumber, JSObject }
-import ceylon.webapi.dom { HTMLCollection }
+import ceylon.js.language { JSString, JSNumber, JSObjectAbs }
+import ceylon.js.dom { HTMLCollectionAbs }
 
-shared class HTMLFormControlsCollection(dynamic n) extends HTMLCollection(n) {}
+shared class HTMLFormControlsCollection(dynamic n) extends HTMLFormControlsCollectionAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
 
-shared class HTMLFormElement(dynamic n) extends JSObject(n) {
+shared abstract class HTMLFormControlsCollectionAbs() extends HTMLCollectionAbs() {}
+
+shared class HTMLFormElement(dynamic n) extends HTMLFormElementAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
+
+shared abstract class HTMLFormElementAbs() extends JSObjectAbs() {
     
     shared JSString getAcceptCharset() {
         dynamic {

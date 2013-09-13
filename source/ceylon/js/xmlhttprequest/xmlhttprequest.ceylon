@@ -1,5 +1,5 @@
 import ceylon.js.dom { Event, Document }
-import ceylon.js.language { JSString, JSNumber, JSObject }
+import ceylon.js.language { JSString, JSNumber, JSObjectAbs }
 import ceylon.js.file { Blob }
 import ceylon.js.json { JSON, JSJSON }
 
@@ -40,7 +40,14 @@ shared XMLHttpRequest createXMLHttpRequest(XMLHttpRequestOptions? options = null
 	}
 }
 
-shared class XMLHttpRequest(dynamic n) extends JSObject(n) {
+shared class XMLHttpRequest(dynamic n) extends XMLHttpRequestAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
+
+shared abstract class XMLHttpRequestAbs() extends JSObjectAbs() {
 	
 	doc("returns a function Anything(Event event)")
 	shared dynamic getOnreadystatechange() {

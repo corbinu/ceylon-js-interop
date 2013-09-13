@@ -1,6 +1,13 @@
-import ceylon.js.language { JSString, JSObject }
+import ceylon.js.language { JSString, JSObjectAbs }
 
-shared class Location(dynamic n) extends JSObject(n) {
+shared class Location(dynamic n) extends LocationAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
+
+shared abstract class LocationAbs() extends JSObjectAbs() {
 	
 	shared void assignURL(String|JSString url) {
 		switch (url)

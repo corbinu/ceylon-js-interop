@@ -1,4 +1,5 @@
-shared JSArray createJSArray(dynamic* elements) {
+
+shared JSArray createJSArray(Anything* elements) {
 	dynamic {
 		return JSArray(\iArray.prototype.apply(null, elements));
 	}
@@ -14,7 +15,14 @@ shared Boolean arrayIsArray(dynamic array) {
 	}
 }
 
-shared class JSArray(dynamic n) extends JSObject(n) {
+shared class JSArray(dynamic n) extends JSArrayAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
+
+shared abstract class JSArrayAbs() extends JSObjectAbs() {
     
     shared JSNumber getLength() {
         dynamic {
@@ -43,7 +51,7 @@ shared class JSArray(dynamic n) extends JSObject(n) {
         }
     }
     
-    shared JSNumber push(dynamic* elements) {
+    shared JSNumber push(Anything* elements) {
         dynamic {
             return JSNumber(native.push.apply(null, elements));
         }
@@ -74,7 +82,7 @@ shared class JSArray(dynamic n) extends JSObject(n) {
         }
     }
     
-    shared JSArray splice(Integer|JSNumber index, Integer|JSNumber howMany, dynamic* elements) {
+    shared JSArray splice(Integer|JSNumber index, Integer|JSNumber howMany, Anything* elements) {
         switch (index)
         case (is Integer) {
             switch (howMany) 
@@ -105,13 +113,13 @@ shared class JSArray(dynamic n) extends JSObject(n) {
         
     }
     
-    shared JSNumber unshift(dynamic* elements) {
+    shared JSNumber unshift(Anything* elements) {
         dynamic {
             return JSNumber(native.push.unshift(null, elements));
         }
     }
     
-    shared JSArray concat(dynamic* elementsOrArrays) {
+    shared JSArray concat(Anything* elementsOrArrays) {
         dynamic {
             return JSArray(native.concat.apply(null, elementsOrArrays));
         }

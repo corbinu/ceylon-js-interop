@@ -46,7 +46,14 @@ shared JSNumber mathRoot2() {
 	}
 }
 
-shared class Math(dynamic n) extends JSObject(n) {
+shared class Math(dynamic n) extends MathAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
+
+shared abstract class MathAbs() extends JSObjectAbs() {
     
 	shared JSNumber abs(JSNumber x) {
 		dynamic {

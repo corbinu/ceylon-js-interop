@@ -1,5 +1,13 @@
-import ceylon.js.language { JSObject }
-shared class NodeIterator(dynamic n) extends JSObject(n) {
+import ceylon.js.language { JSObjectAbs }
+
+shared class NodeIterator(dynamic n) extends NodeIteratorAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
+
+shared abstract class NodeIteratorAbs() extends JSObjectAbs() {
     
     shared Node root() {
         dynamic {

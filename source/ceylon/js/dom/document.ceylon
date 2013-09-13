@@ -29,7 +29,15 @@ shared object loading extends DocumentReadyState("loading") {}
 shared object interactive extends DocumentReadyState("interactive") {}
 shared object complete extends DocumentReadyState("complete") {}
 
-shared class Document(dynamic n) extends Node(n) {
+
+shared class Document(dynamic n) extends DocumentAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
+
+shared abstract class DocumentAbs() extends NodeAbs() {
 	
 	shared Element activeElement() {
 		dynamic {

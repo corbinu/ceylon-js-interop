@@ -1,4 +1,4 @@
-import ceylon.js.language { JSString, JSObject }
+import ceylon.js.language { JSString, JSObjectAbs }
 
 shared abstract class NodeType(String name) of attributeNode | cdataSectionNode | commentNode | documentFragmentNode |
 												documentNode | documentTypeNode | elementNode | entityNode | entityReferenceNode |
@@ -17,13 +17,32 @@ shared object notationNode extends NodeType("notationNode") {}
 shared object processingInstructionNode extends NodeType("processingInstructionNode") {}
 shared object textNode extends NodeType("textNode") {}
 
+shared class DocumentFragment(dynamic n) extends DocumentFragmentAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
 
-shared class DocumentFragment(dynamic n) extends Node(n) {}
+shared abstract class DocumentFragmentAbs() extends NodeAbs() {}
 
-shared class EntityReference(dynamic n) extends Node(n) {}
+shared class EntityReference(dynamic n) extends EntityReferenceAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
 
-doc("accepts a native DOM Node")
-shared class Node(dynamic n) extends JSObject(n) {
+shared abstract class EntityReferenceAbs() extends NodeAbs() {}
+
+shared class Node(dynamic n) extends NodeAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
+
+shared abstract class NodeAbs() extends JSObjectAbs() {
    
 	shared Node appendChild(Node node) {
 		dynamic {

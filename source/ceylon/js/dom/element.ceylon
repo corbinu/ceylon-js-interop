@@ -1,6 +1,13 @@
 import ceylon.js.language { JSString }
 
-shared class Element(shared dynamic n) extends Node(n) {
+shared class Element(dynamic n) extends ElementAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
+
+shared abstract class ElementAbs() extends NodeAbs() {
 	
     shared JSString? getAttribute(String|JSString attributeName) {
 		dynamic attr;

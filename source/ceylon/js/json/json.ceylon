@@ -1,4 +1,4 @@
-import ceylon.js.language { JSNumber, JSString, JSObject }
+import ceylon.js.language { JSNumber, JSString, JSObjectAbs }
 import ceylon.json { ... }
 
 shared dynamic jsonParse(String text) {
@@ -52,7 +52,14 @@ shared JSString jsonStringifyReplacer(dynamic val, Anything replacer(dynamic key
 	}
 }
 
-shared class JSJSON(dynamic n) extends JSObject(n) {}
+shared class JSJSON(dynamic n) extends JSJSONAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
+
+shared abstract class JSJSONAbs() extends JSObjectAbs() {}
 
 shared class JSON({Entry<String, String|Boolean|Integer|Float|Object|Array|NullInstance>*} values = {}) extends Object(values) {
 	

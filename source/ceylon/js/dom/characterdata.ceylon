@@ -1,8 +1,23 @@
 import ceylon.js.language { JSString, JSNumber }
 
-shared class Comment(dynamic n) extends CharacterData(n) {}
 
-shared class CharacterData(dynamic n) extends Node(n) {
+shared class Comment(dynamic n) extends CommentAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
+
+shared abstract class CommentAbs() extends CharacterDataAbs() {}
+
+shared class CharacterData(dynamic n) extends CharacterDataAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
+
+shared abstract class CharacterDataAbs() extends NodeAbs() {
 	
     shared JSString getData() {
 		dynamic {

@@ -1,4 +1,3 @@
-
 shared abstract class RegExpFlag(String name) of global | ignore | multiple {}
 
 shared object global extends RegExpFlag("g") {}
@@ -19,9 +18,23 @@ shared RegExp createJSRegExp(String|JSString pattern, RegExpFlag* flags) {
 	}
 }
 
-shared class RegExp(dynamic n) extends JSObject(n) {
+shared class RegExp(dynamic n) extends RegExpAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
+
+shared abstract class RegExpAbs() extends JSObjectAbs() {
 	
-	shared class RegResult(dynamic n) extends JSArray(n) {
+	shared class RegResult(dynamic n) extends RegResultAbs() {
+		shared actual dynamic native;
+		dynamic {
+			native = n;
+		}
+	}
+	
+	shared abstract class RegResultAbs() extends JSArrayAbs() {
 		
 		shared JSString input() {
 			dynamic {

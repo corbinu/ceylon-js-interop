@@ -4,7 +4,14 @@ shared JSString createJSString(dynamic string) {
 	}
 }
 
-shared class JSString(dynamic n) extends JSObject(n) {
+shared class JSString(dynamic n) extends JSStringAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
+
+shared abstract class JSStringAbs() extends JSObjectAbs() {
     
     shared JSNumber length() {
         dynamic {
@@ -106,7 +113,7 @@ shared class JSString(dynamic n) extends JSObject(n) {
         }
     }
     
-    shared RegExp.RegResult match(RegExp regexp) {
+    shared RegExpAbs.RegResult match(RegExp regexp) {
         dynamic {
         	return RegExp.RegResult(native.match(regexp.native));
     	}
@@ -143,7 +150,7 @@ shared class JSString(dynamic n) extends JSObject(n) {
     }
     
     doc("replace will recived a set of substrings based on the regex then an Integer for offset, and the examined String")
-    shared JSString replaceCallback(String|JSString|RegExp pattern, JSString replace(String match, dynamic* psOffsetExamined)) {
+    shared JSString replaceCallback(String|JSString|RegExp pattern, JSString replace(String match, dynamic psOffsetExamined)) {
 		switch (pattern) 
 		case (is String) {
             dynamic {
