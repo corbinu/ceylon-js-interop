@@ -1,3 +1,5 @@
+import ceylon.js.language { JSObjectAbs, JSNumber, RegExp, JSArray, RegExpAbs }
+
 shared JSString createJSString(dynamic string) {
 	dynamic {
 		return JSString(\iString(string));
@@ -49,7 +51,7 @@ shared abstract class JSStringAbs() extends JSObjectAbs() {
     
     shared JSString concat(JSString+ strings) {
         dynamic {
-            return JSString(native.concat.apply(null, strings));
+            return JSString(JSFunction(native.concat).apply(null, strings*.native));
         }
     }
     

@@ -43,10 +43,4 @@ shared abstract class LocationAbs() extends JSObjectAbs() {
 		}
 	}
 	
-	shared JSString toString() {
-		dynamic {
-			return JSString(native.toString());
-		}
-	}
-	
 }

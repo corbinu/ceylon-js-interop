@@ -37,7 +37,6 @@ shared abstract class HTMLCollectionAbs() extends JSObjectAbs() {
 		}
 	}
 	
-	// TODO
 	shared JSObject? namedItem(String|JSString name) {
 		dynamic namedItem;
 		switch (name)

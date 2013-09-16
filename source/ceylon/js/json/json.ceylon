@@ -1,4 +1,4 @@
-import ceylon.js.language { JSNumber, JSString, JSObjectAbs }
+import ceylon.js.language { JSNumber, JSString, JSObjectAbs, JSObject, createJSObject, DataDescriptor, JSArray, createJSArray }
 import ceylon.json { ... }
 
 shared dynamic jsonParse(String text) {
@@ -65,54 +65,48 @@ shared class JSON({Entry<String, String|Boolean|Integer|Float|Object|Array|NullI
 	
 	shared JSJSON toJson() {
 		dynamic {
-			return JSJSON(objectToJson(this));
+			return JSJSON(objectToJson(this).native);
 		}
 	}
 	
-	dynamic objectToJson(Object ceylonJSON) {
+	JSObject objectToJson(Object ceylonJSON) {
+		JSObject json = createJSObject();
+		variable dynamic val;
 		dynamic {
-			dynamic json = \iObject();
-			dynamic options = \iObject();
-			options.writable = \itrue;
-			options.enumerable = \itrue;
-			options.configurable = \itrue;
 			for (name -> entry in ceylonJSON) {
 				switch (entry)
 				case (is String) {
-					options.\ivalue = entry;
+					val = entry;
 				}
 				case (is Boolean) {
 					if (entry) {
-						options.\ivalue = \itrue;
+						val = \itrue;
 					} else {
-						options.\ivalue = \ifalse;
+						val = \ifalse;
 					}
 				}
 				case (is Integer|Float) { 
-					options.\ivalue = \iNumber(entry);
+					val = \iNumber(entry);
 				}
 				case (is Object) {
-					dynamic dummy = value {dCarrier=objectToJson(entry);};
-					options.\ivalue = dummy.dCarrier.json;
+					val = objectToJson(entry).native;
 				}
 				case (is Array) {
-					dynamic dummy = value {dCarrier=arrayToArray(entry);};
-					options.\ivalue = dummy.dCarrier.array;
+					val = arrayToArray(entry).native;
 				}
 				case (is NullInstance) {
-					options.\ivalue = \inull;
+					val = \inull;
 				}
-				\iObject.defineProperty(json, name, options);
-				
+				objectDefineProperty(json, name, DataDescriptor(true, false, true, true, val));
 			}
 			
 			return json;
 		}
 	}
 	
-	dynamic arrayToArray(Array ceylonArray) {
+	JSArray arrayToArray(Array ceylonArray) {
+		JSArray array = createJSArray();
 		dynamic {
-			dynamic array = \iArray();
 			for (entry in ceylonArray) {
 				switch (entry)
 				case (is String) {  
@@ -129,19 +123,16 @@ shared class JSON({Entry<String, String|Boolean|Integer|Float|Object|Array|NullI
 					array.push(objectToJson(\iNumber(entry)));
 				}
 				case (is Object) {
-					dynamic dummy = value {dCarrier=objectToJson(entry);};
-					array.push(dummy.dCarrier.json);
+					val = objectToJson(entry).native;
 				}
 				case (is Array) {
-					dynamic dummy = value {dCarrier=arrayToArray(entry);};
-					array.push(dummy.dCarrier.array);
+					val = arrayToArray(entry).native;
 				}
 				case (is NullInstance) {
 					array.push(\inull);
 				}
 
 			}
-			
 			return array;
 		}
 	}

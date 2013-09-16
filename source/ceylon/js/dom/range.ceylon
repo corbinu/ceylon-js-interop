@@ -1,4 +1,4 @@
-import ceylon.js.language { JSNumber, JSString, JSObjectAbs }
+import ceylon.js.language { JSNumber, JSObjectAbs }
 
 shared abstract class RangeCompareHow(String name) of endToEnd | endToStart | startToEnd | startToStart {}
 
@@ -209,12 +209,6 @@ shared abstract class RangeAbs() extends JSObjectAbs() {
             } else {
                 return false;
             }
-        }
-    }
-    
-    shared JSString toString() {
-        dynamic {
-            return JSString(native.toString());
         }
     }
 	

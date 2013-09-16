@@ -1,7 +1,7 @@
 
 shared JSArray createJSArray(Anything* elements) {
 	dynamic {
-		return JSArray(\iArray.prototype.apply(null, elements));
+		return JSArray(JSFunction(\iArray.prototype).apply(null, elements));
 	}
 }
 
@@ -53,7 +53,7 @@ shared abstract class JSArrayAbs() extends JSObjectAbs() {
     
     shared JSNumber push(Anything* elements) {
         dynamic {
-            return JSNumber(native.push.apply(null, elements));
+            return JSNumber(JSFunction(native.push).apply(null, elements));
         }
     }
     
@@ -88,12 +88,13 @@ shared abstract class JSArrayAbs() extends JSObjectAbs() {
             switch (howMany) 
             case (is Integer) {
                 dynamic {
-            		return JSArray(native.splice.apply(null, createArray(index, howMany).concat(elements).native));
+                    // TODO this should be calling applyJS but JSObject is not a super type of JSArray
+            		return JSArray(JSFunction(native.splice).apply(null, createArray(index, howMany).concat(elements).native));
         		}
             }
             case (is JSNumber) {
             	dynamic {
-            		return JSArray(native.splice.apply(null, createArray(index, howMany.native).concat(elements).native));
+            		return JSArray(JSFunction(native.splice).apply(null, createArray(index, howMany.native).concat(elements).native));
         		}
           	}
         }
@@ -101,12 +102,12 @@ shared abstract class JSArrayAbs() extends JSObjectAbs() {
             switch (howMany) 
             case (is Integer) {
                 dynamic {
-            		return JSArray(native.splice.apply(null, createArray(index.native, howMany).concat(elements).native));
+                    return JSArray(JSFunction(native.splice).apply(null, createArray(index.native, howMany).concat(elements).native));
         		}
             }
             case (is JSNumber) {
             	dynamic {
-            		return JSArray(native.splice.apply(null, createArray(index.native, howMany.native).concat(elements).native));
+            		return JSArray(JSFunction(native.splice).apply(null, createArray(index.native, howMany.native).concat(elements).native));
         		}
           	}
         }
@@ -121,13 +122,14 @@ shared abstract class JSArrayAbs() extends JSObjectAbs() {
     
     shared JSArray concat(Anything* elementsOrArrays) {
         dynamic {
-            return JSArray(native.concat.apply(null, elementsOrArrays));
+            return JSArray(JSFunction(native.concat).apply(null, elementsOrArrays));
         }
     }
     
     shared JSArray concatArrays(JSArray* arrays) {
         dynamic {
-            return JSArray(native.concat.apply(null, arrays*.native));
+            // TODO this should be calling applyJS but JSObject is not a super type of JSArray
+            return JSArray(JSFunction(native.concat).apply(null, arrays*.native));
         }
     }
     

@@ -130,10 +130,4 @@ shared abstract class RegExpAbs() extends JSObjectAbs() {
 		}
 	}
 	
-	shared JSString toString() {
-		dynamic {
-			return JSString(native.toString());
-		}
-	}
-	
 }

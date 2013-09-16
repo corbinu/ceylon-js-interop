@@ -679,10 +679,4 @@ shared abstract class JSDateAbs() extends JSObjectAbs() {
 		}
 	}
 	
-	shared JSString toString() {
-		dynamic {
-			return JSString(native.toString());
-		}
-	}
-	
 }

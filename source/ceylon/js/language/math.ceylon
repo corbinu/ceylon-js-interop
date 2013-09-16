@@ -1,3 +1,5 @@
+import ceylon.js.language { JSNumber, JSObjectAbs }
+
 shared JSNumber mathE() {
 	dynamic {
 		return JSNumber(\iMath.\iE);
@@ -111,13 +113,15 @@ shared abstract class MathAbs() extends JSObjectAbs() {
     
 	shared JSNumber max(JSNumber* numbers) {
 		dynamic {
-			return JSNumber(\iMath.max.apply(null, numbers*.native));
+			// TODO this should be calling applyJS but JSObject is not a super type of JSNumber
+			return JSNumber(JSFunction(\iMath.max).apply(null, numbers*.native));
 		}
 	}
 	
 	shared JSNumber min(JSNumber* numbers) {
 		dynamic {
-			return JSNumber(\iMath.min.apply(null, numbers*.native));
+			// TODO this should be calling applyJS but JSObject is not a super type of JSNumber
+			return JSNumber(JSFunction(\iMath.min).apply(null, numbers*.native));
 		}
 	}
 	
