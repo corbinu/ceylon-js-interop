@@ -1,12 +1,5 @@
 import ceylon.js.language { JSString, JSObjectAbs }
 
-shared class Attr(dynamic n) extends AttrAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class AttrAbs() extends JSObjectAbs() {
     
     shared Boolean isId() {
@@ -43,5 +36,12 @@ shared abstract class AttrAbs() extends JSObjectAbs() {
 				native.\ivalue = val.native;
 			}
 		}
+	}
+}
+
+shared class Attr(dynamic n) extends AttrAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
 	}
 }

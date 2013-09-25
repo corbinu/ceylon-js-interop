@@ -1,21 +1,5 @@
 import ceylon.js.dom { Event, EventTargetAbs }
 
-shared class XMLHttpRequestUpload(dynamic n) extends XMLHttpRequestUploadAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
-shared abstract class XMLHttpRequestUploadAbs() extends XMLHttpRequestEventTargetAbs() {}
-
-shared class XMLHttpRequestEventTarget(dynamic n) extends XMLHttpRequestEventTargetAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class XMLHttpRequestEventTargetAbs() extends EventTargetAbs() {
 	
 	doc("returns a function Anything(Event event)")
@@ -109,4 +93,20 @@ shared abstract class XMLHttpRequestEventTargetAbs() extends EventTargetAbs() {
 		}
 	}
 	
+}
+
+shared class XMLHttpRequestEventTarget(dynamic n) extends XMLHttpRequestEventTargetAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
+
+shared abstract class XMLHttpRequestUploadAbs() extends XMLHttpRequestEventTargetAbs() {}
+
+shared class XMLHttpRequestUpload(dynamic n) extends XMLHttpRequestUploadAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
 }

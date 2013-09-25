@@ -1,10 +1,3 @@
-shared class JSFunction(dynamic n) extends JSFunctionAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class JSFunctionAbs() extends JSObjectAbs() {
 	
 	shared JSNumber length() {
@@ -28,5 +21,12 @@ shared abstract class JSFunctionAbs() extends JSObjectAbs() {
 				return false;
 			}
 		}
+	}
+}
+
+shared class JSFunction(dynamic n) extends JSFunctionAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
 	}
 }

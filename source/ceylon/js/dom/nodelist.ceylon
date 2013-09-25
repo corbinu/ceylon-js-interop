@@ -1,12 +1,5 @@
 import ceylon.js.language { JSNumber, JSObjectAbs }
 
-shared class NodeList(dynamic n) extends NodeListAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class NodeListAbs() extends JSObjectAbs() {
 	
     shared Node? item(Integer|JSNumber index) {
@@ -35,5 +28,12 @@ shared abstract class NodeListAbs() extends JSObjectAbs() {
 		dynamic {
 			return JSNumber(native.length);
 		}
+	}
+}
+
+shared class NodeList(dynamic n) extends NodeListAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
 	}
 }

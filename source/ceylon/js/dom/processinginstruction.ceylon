@@ -1,12 +1,5 @@
 import ceylon.js.language { JSString }
 
-shared class ProcessingInstruction(dynamic n) extends ProcessingInstructionAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class ProcessingInstructionAbs() extends NodeAbs() {
     
     shared JSString getData() {
@@ -34,4 +27,11 @@ shared abstract class ProcessingInstructionAbs() extends NodeAbs() {
             return JSString(native.target);
        }
     }
+}
+
+shared class ProcessingInstruction(dynamic n) extends ProcessingInstructionAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
 }

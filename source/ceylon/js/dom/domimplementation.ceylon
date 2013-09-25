@@ -1,12 +1,5 @@
 import ceylon.js.language { JSString, JSObjectAbs }
 
-shared class DOMImplementation(dynamic n) extends DOMImplementationAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class DOMImplementationAbs() extends JSObjectAbs() {
     
     shared Document createDocument(String|JSString? namespace, String|JSString qualifiedName = "", DocumentType? doctype = null) {
@@ -151,4 +144,11 @@ shared abstract class DOMImplementationAbs() extends JSObjectAbs() {
             }
         }
     }
+}
+
+shared class DOMImplementation(dynamic n) extends DOMImplementationAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
 }

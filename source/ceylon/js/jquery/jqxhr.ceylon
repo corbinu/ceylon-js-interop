@@ -2,13 +2,6 @@ import ceylon.js.language { JSNumber, JSObjectAbs, JSString }
 import ceylon.js.dom { Document }
 import ceylon.js.xmlhttprequest { readyStateLoading, readyStateOpened, readyStateHeadersReceived, readyStateUnsent, ReadyState }
 
-shared class JQXHR(dynamic n) extends JQXHRAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class JQXHRAbs() extends JSObjectAbs() {
 	shared variable  Anything(Anything, String, JQXHR)? done = null;
 	shared variable  Anything(JQXHR, String?, String?)? fail = null;
@@ -144,5 +137,12 @@ shared abstract class JQXHRAbs() extends JSObjectAbs() {
 		dynamic {
 			return JSNumber(native.statusCode());
 		}
+	}
+}
+
+shared class JQXHR(dynamic n) extends JQXHRAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
 	}
 }

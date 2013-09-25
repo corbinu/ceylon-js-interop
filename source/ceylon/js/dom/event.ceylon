@@ -9,6 +9,7 @@ shared object atTarget extends EventPhase(2) {}
 shared object bubblingPhase extends EventPhase(3) {}
 
 shared class EventInit(shared Boolean bubbles, shared Boolean cancelable) {
+	
 	shared JSJSON toJson() {
 		value json = JSON {
 			"bubbles" -> bubbles,
@@ -29,13 +30,6 @@ shared Event createEvent(String|JSString type, EventInit options) {
 		dynamic {
 			return Event(\iEvent(type.native, options.toJson()));
 		}
-	}
-}
-
-shared class Event(dynamic n) extends EventAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
 	}
 }
 
@@ -165,4 +159,11 @@ shared abstract class EventAbs() extends JSObjectAbs() {
         }
 	}
 	
+}
+
+shared class Event(dynamic n) extends EventAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
 }

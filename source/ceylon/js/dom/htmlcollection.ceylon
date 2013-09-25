@@ -1,12 +1,5 @@
 import ceylon.js.language { JSNumber, JSString, JSObject, JSObjectAbs }
 
-shared class HTMLCollection(dynamic n) extends HTMLCollectionAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class HTMLCollectionAbs() extends JSObjectAbs() {
 	
 	shared JSNumber length() {
@@ -57,5 +50,12 @@ shared abstract class HTMLCollectionAbs() extends JSObjectAbs() {
 				return null;
 			}
 		}
+	}
+}
+
+shared class HTMLCollection(dynamic n) extends HTMLCollectionAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
 	}
 }

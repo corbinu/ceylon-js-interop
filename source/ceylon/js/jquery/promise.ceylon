@@ -1,12 +1,5 @@
 import ceylon.js.language { JSObjectAbs }
 
-shared class Promise(dynamic n) extends PromiseAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class PromiseAbs() extends JSObjectAbs() {
 	
 	shared Promise always(Anything(Anything*)* alwaysCallbacks) {
@@ -31,5 +24,12 @@ shared abstract class PromiseAbs() extends JSObjectAbs() {
 		dynamic {
 			return Promise(native.\ithen(doneFilter, failFilter, progressFilter));
 		}
+	}
+}
+
+shared class Promise(dynamic n) extends PromiseAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
 	}
 }

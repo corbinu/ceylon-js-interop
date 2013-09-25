@@ -6,13 +6,6 @@ shared object deferredStatePending extends DeferredState("pending") {}
 shared object deferredStateResolved extends DeferredState("resolved") {}
 shared object deferredStateRejected extends DeferredState("rejected") {}
 
-shared class Deferred(dynamic n) extends DeferredAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class DeferredAbs() extends JSObjectAbs() {
 	
 	shared Deferred always(Anything(Anything*)* alwaysCallbacks) {
@@ -97,5 +90,12 @@ shared abstract class DeferredAbs() extends JSObjectAbs() {
 				return deferredStateResolved;
 			}
 		}
+	}
+}
+
+shared class Deferred(dynamic n) extends DeferredAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
 	}
 }

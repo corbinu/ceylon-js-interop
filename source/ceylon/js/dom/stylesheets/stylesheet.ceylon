@@ -1,13 +1,6 @@
 import ceylon.js.language { JSString, JSObjectAbs }
 import ceylon.js.dom { Node }
 
-shared class StyleSheet(dynamic n) extends StyleSheetAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class StyleSheetAbs() extends JSObjectAbs() {
     
     shared JSString type() {
@@ -54,5 +47,12 @@ shared abstract class StyleSheetAbs() extends JSObjectAbs() {
 		dynamic {
 			return MediaList(native.media);
 		}
+	}
+}
+
+shared class StyleSheet(dynamic n) extends StyleSheetAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
 	}
 }

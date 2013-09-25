@@ -1,12 +1,5 @@
 import ceylon.js.language { JSObjectAbs, JSString }
 
-shared class EventTarget(dynamic n) extends EventTargetAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class EventTargetAbs() extends JSObjectAbs() {
 	
 	shared void addEventListener(String|JSString type, void callback(Event event), Boolean capture = false) {
@@ -45,5 +38,12 @@ shared abstract class EventTargetAbs() extends JSObjectAbs() {
 				return false;
 			}
 		}
+	}
+}
+
+shared class EventTarget(dynamic n) extends EventTargetAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
 	}
 }

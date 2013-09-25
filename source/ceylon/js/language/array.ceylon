@@ -15,13 +15,6 @@ shared Boolean arrayIsArray(dynamic array) {
 	}
 }
 
-shared class JSArray(dynamic n) extends JSArrayAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class JSArrayAbs() extends JSObjectAbs() {
     
     shared JSNumber getLength() {
@@ -256,4 +249,11 @@ shared abstract class JSArrayAbs() extends JSObjectAbs() {
             return JSArray(native.reduceRight(callback, initialValue));
         }
     }
+}
+
+shared class JSArray(dynamic n) extends JSArrayAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
 }

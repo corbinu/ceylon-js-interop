@@ -52,13 +52,6 @@ shared class BlobPropertyBag(shared String|JSString type = "") {
 	}
 }
 
-shared class Blob(dynamic n) extends BlobAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class BlobAbs() extends JSObjectAbs() {
     
     shared JSNumber size() {
@@ -253,4 +246,11 @@ shared abstract class BlobAbs() extends JSObjectAbs() {
             native.close();
         }
     }
+}
+
+shared class Blob(dynamic n) extends BlobAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
 }

@@ -1,12 +1,5 @@
 import ceylon.js.language { JSObjectAbs }
 
-shared class TreeWalker(dynamic n) extends TreeWalkerAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class TreeWalkerAbs() extends JSObjectAbs() {
 	
 	shared Node root() {
@@ -114,4 +107,11 @@ shared abstract class TreeWalkerAbs() extends JSObjectAbs() {
             }
         }
     }
+}
+
+shared class TreeWalker(dynamic n) extends TreeWalkerAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
 }

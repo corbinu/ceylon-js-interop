@@ -1,5 +1,5 @@
 import ceylon.js.dom { Element, Event }
-import ceylon.js.language { JSString, JSObjectAbs, JSFunction, createJSString, objectDefineProperty, JSObject, DataDescriptor, createJSObject, JSNumber, JSArray, arrayIsArray }
+import ceylon.js.language { JSString, JSFunction, JSObject, JSNumber, JSArray, JSObjectAbs, createJSObject }
 import ceylon.js.json { JSJSON }
 import ceylon.js.xmlhttprequest { XMLHttpRequest }
 
@@ -424,36 +424,32 @@ shared Promise jQueryWhen(Deferred* deferreds) {
 	}
 }
 
-shared JQuery getjQuery() {
+shared JQuery jq(String|JQuery|JSObject|Element? selector = null, Element|JQuery? context = null) {
 	dynamic {
-		return JQuery(getJQ());
-	}
-}
-
-shared JQuery getjQuerySelector(String selector, Element|JQuery? context = null) {
-	dynamic {
-		dynamic jq = getJQ();
-		switch(context)
-		case (is Element|JQuery) {
-			return JQuery(jq(selector, context.native));
+		dynamic jquery = getJQ();
+		switch (selector) 
+		case (is String) {
+			switch(context)
+			case (is Element|JQuery) {
+				return JQuery(jquery(selector, context.native));
+			}
+			case (is Null) {
+				return JQuery(jquery(selector));
+			}
+		}
+		case (is JQuery|JSObject|Element) {
+			return JQuery(jquery(selector.native));
 		}
 		case (is Null) {
-			return JQuery(jq(selector));
+			return JQuery(jquery());
 		}
 	}
 }
 
-shared JQuery getjQueryElements(Element+ elems) {
+shared JQuery jqElems(Element+ elems) {
 	dynamic {
-		dynamic jq = getJQ();
-		return JQuery(jq(elems*.native));
-	}
-}
-
-shared class JQuery(dynamic n) extends JQueryAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
+		dynamic jquery = getJQ();
+		return JQuery(jquery(elems*.native));
 	}
 }
 
@@ -1391,13 +1387,13 @@ shared abstract class JQueryAbs() extends JSObjectAbs() {
 		}
 	}
 	
-	shared JQuery on(String events, String? selector = null, dynamic data = null, Anything(JQueryEvent)? handler = null) {
+	shared JQuery on(String events, String? selector = null, dynamic data = null, Anything(Anything)? handler = null) {
 		dynamic {
 			return JQuery(native.on(events, selector, data, handler));
 		}
 	}
 	
-	shared JQuery one(String events, String? selector = null, dynamic data = null, Anything(JQueryEvent)? handler = null) {
+	shared JQuery one(String events, String? selector = null, dynamic data = null, Anything(Anything)? handler = null) {
 		dynamic {
 			return JQuery(native.one(events, selector, data, handler));
 		}
@@ -1856,7 +1852,7 @@ shared abstract class JQueryAbs() extends JSObjectAbs() {
 			return JQuery(native.toggleClass(callback, swit));
 		}
 	}
-	
+
 	shared JQuery trigger(String|JQueryEvent event, Anything* extraParameters) {
 		switch (event)
 		case (is String) {
@@ -2006,4 +2002,11 @@ shared abstract class JQueryAbs() extends JSObjectAbs() {
 		}
 	}
 	
+}
+
+shared class JQuery(dynamic n) extends JQueryAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
 }

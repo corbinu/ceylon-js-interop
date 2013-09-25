@@ -1,13 +1,6 @@
 import ceylon.js.dom { EventAbs, Element }
 import ceylon.js.language { JSNumber, JSString }
 
-shared class JQueryEvent(dynamic n) extends JQueryEventAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class JQueryEventAbs() extends EventAbs() {
 	
 	shared dynamic data() {
@@ -96,5 +89,12 @@ shared abstract class JQueryEventAbs() extends EventAbs() {
 		dynamic {
 			return JSNumber(native.which);
 		}
+	}
+}
+
+shared class JQueryEvent(dynamic n) extends JQueryEventAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
 	}
 }

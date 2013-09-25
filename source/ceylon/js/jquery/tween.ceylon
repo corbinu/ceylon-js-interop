@@ -1,12 +1,5 @@
 import ceylon.js.language { JSObjectAbs, JSNumber }
 
-shared class Tween(dynamic n) extends TweenAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class TweenAbs() extends JSObjectAbs() {
 	
 	shared JSNumber getInterval() {
@@ -39,5 +32,12 @@ shared abstract class TweenAbs() extends JSObjectAbs() {
 		dynamic {
 			native.interval = interval;
 		}
+	}
+}
+
+shared class Tween(dynamic n) extends TweenAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
 	}
 }

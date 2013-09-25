@@ -32,13 +32,6 @@ shared JSONPSettings? createJSONPSettings(Boolean jsonp = true, String jsonpCall
 	}
 }
 
-shared class JSONPSettings(dynamic n) extends JSONPSettingsAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class JSONPSettingsAbs() extends JSObjectAbs() {
 	
 	shared Boolean getIsJsonp() {
@@ -75,7 +68,7 @@ shared abstract class JSONPSettingsAbs() extends JSObjectAbs() {
 	}
 }
 
-shared class JQueryAjaxSettings(dynamic n) extends JQueryAjaxSettingsAbs() {
+shared class JSONPSettings(dynamic n) extends JSONPSettingsAbs() {
 	shared actual dynamic native;
 	dynamic {
 		native = n;
@@ -642,4 +635,11 @@ shared abstract class JQueryAjaxSettingsAbs() extends JSObjectAbs() {
 		}
 	}
 	
+}
+
+shared class JQueryAjaxSettings(dynamic n) extends JQueryAjaxSettingsAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
 }

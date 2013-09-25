@@ -1,12 +1,5 @@
 import ceylon.js.language { JSObjectAbs }
 
-shared class Callbacks(dynamic n) extends CallbacksAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class CallbacksAbs() extends JSObjectAbs() {
 	
 	shared Callbacks add(Anything(Anything*)* callbacks) {
@@ -89,5 +82,12 @@ shared abstract class CallbacksAbs() extends JSObjectAbs() {
 		dynamic {
 			return Callbacks(native.remove(callbacks));
 		}
+	}
+}
+
+shared class Callbacks(dynamic n) extends CallbacksAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
 	}
 }

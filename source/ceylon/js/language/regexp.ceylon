@@ -18,13 +18,6 @@ shared RegExp createJSRegExp(String|JSString pattern, RegExpFlag* flags) {
 	}
 }
 
-shared class RegExp(dynamic n) extends RegExpAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class RegExpAbs() extends JSObjectAbs() {
 	
 	shared class RegResult(dynamic n) extends RegResultAbs() {
@@ -130,4 +123,11 @@ shared abstract class RegExpAbs() extends JSObjectAbs() {
 		}
 	}
 	
+}
+
+shared class RegExp(dynamic n) extends RegExpAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
 }

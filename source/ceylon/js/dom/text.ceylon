@@ -1,15 +1,8 @@
 import ceylon.js.language { JSNumber, JSString }
 
-shared class CDATASection(dynamic n) extends CDATASectionAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class CDATASectionAbs() extends TextAbs() {}
 
-shared class Text(dynamic n) extends TextAbs() {
+shared class CDATASection(dynamic n) extends CDATASectionAbs() {
 	shared actual dynamic native;
 	dynamic {
 		native = n;
@@ -36,5 +29,12 @@ shared abstract class TextAbs() extends CharacterDataAbs() {
 		dynamic {
 			return JSString(native.wholeText);
 		}
+	}
+}
+
+shared class Text(dynamic n) extends TextAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
 	}
 }

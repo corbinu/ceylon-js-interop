@@ -13,13 +13,6 @@ shared Coordinates createCoordinates(Integer|Float? top, Integer|Float? left) {
 	}
 }
 
-shared class Coordinates(dynamic n) extends CoordinatesAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class CoordinatesAbs() extends JSObjectAbs() {
 	
 	shared JSNumber getTop() {
@@ -44,5 +37,12 @@ shared abstract class CoordinatesAbs() extends JSObjectAbs() {
 		dynamic {
 			native.left = left;
 		}
+	}
+}
+
+shared class Coordinates(dynamic n) extends CoordinatesAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
 	}
 }

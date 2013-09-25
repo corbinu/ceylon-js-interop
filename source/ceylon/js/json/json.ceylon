@@ -52,15 +52,6 @@ shared JSString jsonStringifyReplacer(dynamic val, Anything replacer(dynamic key
 	}
 }
 
-shared class JSJSON(dynamic n) extends JSJSONAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
-shared abstract class JSJSONAbs() extends JSObjectAbs() {}
-
 shared class JSON({Entry<String, String|Boolean|Integer|Float|Object|Array|NullInstance>*} values = {}) extends Object(values) {
 	
 	shared JSJSON toJson() {
@@ -137,3 +128,14 @@ shared class JSON({Entry<String, String|Boolean|Integer|Float|Object|Array|NullI
 		}
 	}
 }
+
+shared abstract class JSJSONAbs() extends JSObjectAbs() {}
+
+shared class JSJSON(dynamic n) extends JSJSONAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
+}
+
+shared class JSONArray() extends Array() {}

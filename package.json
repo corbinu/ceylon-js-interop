@@ -1,0 +1,17 @@
+{
+    "name": "ceylon-js-interop",
+    "version": "0.1.0",
+    "description": "Ceylon Base JavaScript and DOM API wrappers",
+    "author": "Corbin Uselton <CorbinU@OpenSwimSoftware.com>",
+    "copyright": "2013 © Corbin Uselton",
+    "homepage": "http://ceylonjsvm.wordpress.com",
+    "private": true,
+    "dependencies" : {
+        "grunt": "0.4.1",
+        "grunt-exec": "0.4.2"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=10.0"
+    }
+}

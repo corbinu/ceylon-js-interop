@@ -304,13 +304,6 @@ shared JSDate dateUTCInt(Integer year, Integer month, Integer day, Integer? hour
 	}
 }
 
-shared class JSDate(dynamic n) extends JSDateAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class JSDateAbs() extends JSObjectAbs() {
 	
 	shared JSNumber getDate() {
@@ -678,5 +671,11 @@ shared abstract class JSDateAbs() extends JSObjectAbs() {
 			return JSString(native.toUTCString());
 		}
 	}
-	
+}
+
+shared class JSDate(dynamic n) extends JSDateAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
 }

@@ -29,14 +29,6 @@ shared object loading extends DocumentReadyState("loading") {}
 shared object interactive extends DocumentReadyState("interactive") {}
 shared object complete extends DocumentReadyState("complete") {}
 
-
-shared class Document(dynamic n) extends DocumentAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class DocumentAbs() extends NodeAbs() {
 	
 	shared Element activeElement() {
@@ -771,4 +763,11 @@ shared abstract class DocumentAbs() extends NodeAbs() {
 	document.onoffline
 	document.onreadystatechange
 	*/
+}
+
+shared class Document(dynamic n) extends DocumentAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
 }

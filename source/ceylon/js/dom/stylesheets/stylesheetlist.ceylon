@@ -1,12 +1,5 @@
 import ceylon.js.language { JSNumber, JSObjectAbs }
 
-shared class StyleSheetList(dynamic n) extends StyleSheetListAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class StyleSheetListAbs() extends JSObjectAbs() {
 	
 	shared JSNumber length() {
@@ -24,5 +17,12 @@ shared abstract class StyleSheetListAbs() extends JSObjectAbs() {
 				return null;
 			}
 		}
+	}
+}
+
+shared class StyleSheetList(dynamic n) extends StyleSheetListAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
 	}
 }

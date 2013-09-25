@@ -8,13 +8,6 @@ shared FormData createFormData(HTMLFormElement? form = null) {
 	}
 }
 
-shared class FormData(dynamic n) extends FormDataAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class FormDataAbs() extends JSObjectAbs() {
     
     shared void append(String|JSString name, String|JSString val) {
@@ -86,4 +79,11 @@ shared abstract class FormDataAbs() extends JSObjectAbs() {
 	        }
         }
     }
+}
+
+shared class FormData(dynamic n) extends FormDataAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
 }

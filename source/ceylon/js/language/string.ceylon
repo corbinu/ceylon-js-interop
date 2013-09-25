@@ -6,13 +6,6 @@ shared JSString createJSString(dynamic string) {
 	}
 }
 
-shared class JSString(dynamic n) extends JSStringAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
-	}
-}
-
 shared abstract class JSStringAbs() extends JSObjectAbs() {
     
     shared JSNumber length() {
@@ -356,4 +349,11 @@ shared abstract class JSStringAbs() extends JSObjectAbs() {
 		}
 	}
 	
+}
+
+shared class JSString(dynamic n) extends JSStringAbs() {
+	shared actual dynamic native;
+	dynamic {
+		native = n;
+	}
 }
