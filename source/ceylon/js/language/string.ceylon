@@ -1,4 +1,4 @@
-import ceylon.js.language { JSObjectAbs, JSNumber, RegExp, JSArray, RegExpAbs }
+import ceylon.js.language { JSObjectAbs, JSNumber, RegExp, JSArray, RegExpAbs, JSFunction }
 
 shared JSString createJSString(dynamic string) {
 	dynamic {

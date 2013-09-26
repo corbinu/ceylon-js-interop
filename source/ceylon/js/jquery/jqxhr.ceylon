@@ -3,10 +3,34 @@ import ceylon.js.dom { Document }
 import ceylon.js.xmlhttprequest { readyStateLoading, readyStateOpened, readyStateHeadersReceived, readyStateUnsent, ReadyState }
 
 shared abstract class JQXHRAbs() extends JSObjectAbs() {
-	shared variable  Anything(Anything, String, JQXHR)? done = null;
-	shared variable  Anything(JQXHR, String?, String?)? fail = null;
-	shared variable  Anything(Anything, String, Anything)? always = null;
-	shared variable [Anything(Anything, String, JQXHR), Anything(JQXHR, String?, String?)]? doThen = null;
+	
+	// Anything(Anything, String, JQXHR)
+	shared JQXHR done(dynamic done) {
+		dynamic {
+			return JQXHR(native.done(done));
+		}
+	}
+	
+	// Anything(JQXHR, String?, String?)
+	shared JQXHR fail(dynamic fail) {
+		dynamic {
+			return JQXHR(native.fail(fail));
+		}
+	}
+
+	// Anything(JSObject|JQXHR, String, JXHR|Error)
+	shared JQXHR always(dynamic always) {
+		dynamic {
+			return JQXHR(native.always(always));
+		}
+	}
+
+	// Anything(Anything, String, JQXHR), Anything(JQXHR, String?, String?)
+	shared JQXHR doThen(dynamic done, dynamic fail) {
+		dynamic {
+			return JQXHR(native.\ithen(done, fail));
+		}
+	}
 	
 	shared void overrideMimeType(String|JSString mime) {
 		switch (mime)

@@ -1,4 +1,4 @@
-import ceylon.js.language { JSNumber, JSString, JSObjectAbs, JSObject, createJSObject, DataDescriptor, JSArray, createJSArray }
+import ceylon.js.language { JSNumber, JSString, JSObjectAbs, JSObject, createJSObject, DataDescriptor, JSArray, createJSNumber, createJSArray, objectDefineProperty }
 import ceylon.json { ... }
 
 shared dynamic jsonParse(String text) {
@@ -62,70 +62,91 @@ shared class JSON({Entry<String, String|Boolean|Integer|Float|Object|Array|NullI
 	
 	JSObject objectToJson(Object ceylonJSON) {
 		JSObject json = createJSObject();
-		variable dynamic val;
-		dynamic {
-			for (name -> entry in ceylonJSON) {
-				switch (entry)
-				case (is String) {
-					val = entry;
+		for (name -> entry in ceylonJSON) {
+			dynamic val;
+			switch (entry)
+			case (is String) {
+				dynamic {
+					val = entry.string;
 				}
-				case (is Boolean) {
+			}
+			case (is Boolean) {
+				dynamic {
 					if (entry) {
 						val = \itrue;
 					} else {
 						val = \ifalse;
 					}
 				}
-				case (is Integer|Float) { 
-					val = \iNumber(entry);
-				}
-				case (is Object) {
+			}
+			case (is Integer|Float) { 
+				dynamic {
+					val = createJSNumber(entry).native;
+				}	
+			}
+			case (is Object) {
+				dynamic {
 					val = objectToJson(entry).native;
 				}
-				case (is Array) {
+			}
+			case (is Array) {
+				dynamic {
 					val = arrayToArray(entry).native;
 				}
-				case (is NullInstance) {
+			}
+			case (is NullInstance) {
+				dynamic {
 					val = \inull;
 				}
+			}
+			dynamic {
 				objectDefineProperty(json, name, DataDescriptor(true, false, true, true, val));
 			}
-			
-			return json;
 		}
+			
+		return json;
 	}
 	
 	JSArray arrayToArray(Array ceylonArray) {
 		JSArray array = createJSArray();
-		dynamic {
-			for (entry in ceylonArray) {
-				switch (entry)
-				case (is String) {  
+		for (entry in ceylonArray) {
+			switch (entry)
+			case (is String) {  
+				dynamic {
 					array.push(entry);
 				}
-				case (is Boolean) {
+			}
+			case (is Boolean) {
+				dynamic {
 					if (entry) {
 						array.push(\itrue);
 					} else {
 						array.push(\ifalse);
 					}
 				}
-				case (is Integer|Float) { 
-					array.push(objectToJson(\iNumber(entry)));
+			}
+			case (is Integer|Float) { 
+				dynamic {
+					array.push(createJSNumber(entry).native);
 				}
-				case (is Object) {
-					val = objectToJson(entry).native;
+			}
+			case (is Object) {
+				dynamic {
+					array.push(objectToJson(entry).native);
 				}
-				case (is Array) {
-					val = arrayToArray(entry).native;
+			}
+			case (is Array) {
+				dynamic {
+					array.push(arrayToArray(entry).native);
 				}
-				case (is NullInstance) {
+			}
+			case (is NullInstance) {
+				dynamic {
 					array.push(\inull);
 				}
-
 			}
-			return array;
 		}
+		return array;
 	}
 }
 

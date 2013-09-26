@@ -4,46 +4,44 @@ shared abstract class PropertyDescriptor() {
 	shared formal Boolean descriptor;
 	shared formal Boolean enumerable;
 	
-	shared formal dynamic toNative();
+	shared formal JSObject toNative();
 
 }
 
 // TODO val should be JSObject but it is not actually a super class of anything JSObjectAbs is
 shared class DataDescriptor(shared actual Boolean configurable = false, shared actual Boolean descriptor = false, 
 									shared actual Boolean enumerable = false, shared Boolean writable = false, 
-									shared Anything? val = null) extends PropertyDescriptor() {
-	shared actual dynamic toNative() {
+									shared dynamic val = null) extends PropertyDescriptor() {
+	shared actual JSObject toNative() {
+		JSObject obj = createJSObject();
 		dynamic {
-			dynamic native = \iObject();
-			native.configurable = configurable;
-			native.descriptor = descriptor;
-			native.enumerable = enumerable;
-			native.writable = writable;
-			if (exists v = val) {
-				native.\ivalue = v;
-			}
-			return native;
+			obj.native.configurable = configurable;
+			obj.native.descriptor = descriptor;
+			obj.native.enumerable = enumerable;
+			obj.native.writable = writable;
+			obj.native.\ivalue = val;
 		}
+		return obj;
 	}
 }
 
 shared class AccessorDescriptor(shared actual Boolean configurable, shared actual Boolean descriptor = false, 
 									shared actual Boolean enumerable = false, shared Anything()? get = null, 
 									shared Anything(Anything)? set = null) extends PropertyDescriptor() {
-	shared actual dynamic toNative() {
+	shared actual JSObject toNative() {
+		JSObject obj = createJSObject();
 		dynamic {
-			dynamic native = \iObject();
-			native.configurable = configurable;
-			native.descriptor = descriptor;
-			native.enumerable = enumerable;
+			obj.native.configurable = configurable;
+			obj.native.descriptor = descriptor;
+			obj.native.enumerable = enumerable;
 			if (exists g = get) {
-				native.get = g;
+				obj.native.get = g;
 			}
 			if (exists s = set) {
-				native.set = s;
+				obj.native.set = s;
 			}
-			return native;
 		}
+		return obj;
 	}
 }
 
@@ -250,16 +248,10 @@ shared abstract class JSObjectAbs() {
         }
     }
     
-    shared void apply(Anything? thisArg, Anything[] args) {
-        if (exists a = thisArg) {
-	        dynamic {
-	            native.apply(a, args);
-	        }
-		} else {
-			dynamic {
-				native.apply(null, args);
-			}
-		}
+    shared void apply(dynamic thisArg, Anything[] args) {
+		dynamic {
+	        native.apply(a, args);
+	    }
     }
     
     shared void applyJS(JSObject? thisArg, JSObject[] args) {
@@ -274,9 +266,10 @@ shared abstract class JSObjectAbs() {
         }
     }
     
-    shared void call(Anything? thisArg, Anything* args) {
+    shared void call(dynamic thisArg, dynamic args) {
     	dynamic {
-            JSFunction(native.call).apply(a, args);
+    		//TODO Args should be spread
+    		JSFunction(native.call).apply(thisArg, args);
         }
     }
     

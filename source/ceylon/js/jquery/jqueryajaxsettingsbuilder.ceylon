@@ -14,13 +14,17 @@ shared class JQueryAjaxSettingsBuilder(shared Boolean async = true, shared Boole
 										shared Boolean traditional = false, shared String type = "GET", 
 										shared String? url = null, shared String? username = null) {
 	
-	shared variable Boolean(JQXHR, JQueryAjaxSettings)? beforeSend = null;
+	//JQXHR, then JQueryAjaxSettings
+	shared variable Boolean(Anything, Anything)? beforeSend = null;
 	shared variable Anything(String, String)? dataFilter = null;
 	shared variable Anything()? xhr = null;
 	
-	shared variable Anything(JQXHR, String)[] complete = {};
-	shared variable Anything(JQXHR, String?, String?)[] error = {};
-	shared variable Anything(Anything, String, JQXHR)[] success = {};
+	//JQXHR is first
+	shared variable Anything(Anything, String)[] complete = {};
+	//JQXHR is first
+	shared variable Anything(Anything, String?, String?)[] error = {};
+	//JQXHR is last
+	shared variable Anything(Anything, String, Anything)[] success = {};
 	
 	shared variable Entry<String, String>[] accepts = {};
 	
@@ -30,7 +34,8 @@ shared class JQueryAjaxSettingsBuilder(shared Boolean async = true, shared Boole
 	shared variable Entry<String, JSObject>[] converters = {};
 	shared variable Entry<String, JSObject>[] xhrFields = {};
 	
-	shared variable Entry<Integer, Anything(JQXHR, String?, String?)|Anything(JQXHR, String?, String?)>[] statusCode = {};
+	//JQXHR is first on functions
+	shared variable Entry<Integer, Anything(Anything, String?, String?)|Anything(Anything, String?, String?)>[] statusCode = {};
 	
 	shared JQueryAjaxSettings toNative() {
 		JQueryAjaxSettings settings;
@@ -104,9 +109,9 @@ shared class JQueryAjaxSettingsBuilder(shared Boolean async = true, shared Boole
 		if (exists sC = scriptCharset) {
 			settings.setScriptCharset(sC);
 		}
-		Entry<JSNumber, Anything(JQXHR, String?, String?)|Anything(JQXHR, String?, String?)>[] statusCodeNative;
+		Entry<JSNumber, Anything(Anything, String?, String?)|Anything(JQXHR, String?, String?)>[] statusCodeNative;
 		dynamic {
-			statusCodeNative = [for (key -> val in statusCode) Entry<JSNumber, Anything(JQXHR, String?, String?)|Anything(JQXHR, String?, String?)>(createJSString(key), val)];
+			statusCodeNative = [for (key -> val in statusCode) Entry<JSNumber, Anything(Anything, String?, String?)|Anything(Anything, String?, String?)>(createJSString(key), val)];
 		}
 		settings.setStatusCode(*statusCodeNative);
 		settings.setSuccess(*success);

@@ -1,4 +1,4 @@
-import ceylon.js.language { JSNumber, JSObjectAbs }
+import ceylon.js.language { JSNumber, JSObjectAbs, JSFunction }
 
 shared JSNumber mathE() {
 	dynamic {

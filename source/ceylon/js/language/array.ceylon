@@ -1,7 +1,7 @@
 
 shared JSArray createJSArray(Anything* elements) {
 	dynamic {
-		return JSArray(JSFunction(\iArray.prototype).apply(null, elements));
+		return JSArray(\iArray(*elements));
 	}
 }
 
@@ -44,9 +44,10 @@ shared abstract class JSArrayAbs() extends JSObjectAbs() {
         }
     }
     
-    shared JSNumber push(Anything* elements) {
+    // todo add abilty for multiple elements
+    shared JSNumber push(dynamic element) {
         dynamic {
-            return JSNumber(JSFunction(native.push).apply(null, elements));
+            return JSNumber(native.push(element));
         }
     }
     

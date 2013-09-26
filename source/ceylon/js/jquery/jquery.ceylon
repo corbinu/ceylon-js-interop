@@ -1,7 +1,6 @@
 import ceylon.js.dom { Element, Event }
-import ceylon.js.language { JSString, JSFunction, JSObject, JSNumber, JSArray, JSObjectAbs, createJSObject }
+import ceylon.js.language { JSString, JSFunction, JSObject, JSNumber, JSArray, JSObjectAbs, createJSObject, objectDefineProperty, createJSString, DataDescriptor }
 import ceylon.js.json { JSJSON }
-import ceylon.js.xmlhttprequest { XMLHttpRequest }
 
 shared String allSelector = "*";
 shared String animatedSelector = ":animated";
@@ -38,30 +37,19 @@ shared String targetSelector = ":target";
 shared String textSelector = ":text";
 shared String visibleSelector = ":visible";
 
-dynamic getJQ() {
-	dynamic {
-		dynamic jq = jQuery;
-		if (jq == \iundefined || jq == \inull) {
-			throw Exception("jQuery Library was not found. Did you make sure to include jQuery?");
-		} else {
-			return jq;
-		}
-	}
-}
-
 shared JQXHR jQueryAjax(String? url = null, JQueryAjaxSettingsBuilder? settings = null) {
 	dynamic {
 		if (exists u = url) {
 			if (exists s = settings) {
-				return JQXHR(getJQ().ajax(u, s.toNative()));
+				return JQXHR(jQuery.ajax(u, s.toNative()));
 			} else {
-				return JQXHR(getJQ().ajax(u));
+				return JQXHR(jQuery.ajax(u));
 			}
 		} else {
 			if (exists s = settings) {
-				return JQXHR(getJQ().ajax(s.toNative()));
+				return JQXHR(jQuery.ajax(s.toNative()));
 			} else {
-				return JQXHR(getJQ().ajax());
+				return JQXHR(jQuery.ajax());
 			}
 		}
 	}
@@ -70,34 +58,35 @@ shared JQXHR jQueryAjax(String? url = null, JQueryAjaxSettingsBuilder? settings 
 shared void jQueryAjaxPrefilter(Anything(JQueryAjaxSettings, JQueryAjaxSettings, JQXHR) callback, String? dataTypes = null) {
 	dynamic {
 		if (exists dT = dataTypes) {
-			getJQ().ajaxPrefilter(dT, callback);
+			jQuery.ajaxPrefilter(dT, callback);
 		} else {
-			getJQ().ajaxPrefilter(callback);
+			jQuery.ajaxPrefilter(callback);
 		}
 	}
 }
 
 shared void jQueryAjaxSetup(JQueryAjaxSettingsBuilder options) {
 	dynamic {
-		getJQ().ajaxSetup(options.toNative());
+		jQuery.ajaxSetup(options.toNative());
 	}
 }
 
-shared void jQueryAjaxTransport(String dataType, Anything(JQueryAjaxSettings, JQueryAjaxSettings, JQXHR) callback) {
+//JQueryAjaxSettings, JQueryAjaxSettings, JQXHR
+shared void jQueryAjaxTransport(String dataType, Anything(Anything, Anything, Anything) callback) {
 	dynamic {
-		getJQ().ajaxTransport(dataType, callback);
+		jQuery.ajaxTransport(dataType, callback);
 	}
 }
 
 shared Callbacks jQueryCallbacks(String flags = "") {
 	dynamic {
-		return Callbacks(getJQ().\iCallbacks(flags));
+		return Callbacks(jQuery.\iCallbacks(flags));
 	}
 }
 
 shared Boolean jQueryContains(Element container, Element contained) {
 	dynamic {
-		if (getJQ().contains(container, contained)) {
+		if (jQuery.contains(container, contained)) {
 			return true;
 		} else {
 			return false;
@@ -107,55 +96,56 @@ shared Boolean jQueryContains(Element container, Element contained) {
 
 shared JSObject jQueryCssHooks() {
 	dynamic {
-		return JSObject(getJQ().cssHooks);
+		return JSObject(jQuery.cssHooks);
 	}
 }
 
 shared JSObject jQuerySetData(Element element, String key, dynamic data) {
 	dynamic {
-		return JSObject(getJQ().data(element, key, data));
+		return JSObject(jQuery.data(element, key, data));
 	}
 }
 
 shared JSObject jQueryGetData(Element element, String? key = null) {
 	dynamic {
-		return JSObject(getJQ().data(element, key));
+		return JSObject(jQuery.data(element, key));
 	}
 }
 
-shared Deferred jQueryDeferred(Anything(Deferred)? beforeStart = null) {
+// Deferred
+shared Deferred jQueryDeferred(Anything(Anything)? beforeStart = null) {
 	dynamic {
-		return Deferred(getJQ().\iDeferred(beforeStart));
+		return Deferred(jQuery.\iDeferred(beforeStart));
 	}
 }
 
 shared void jQueryDequeue(Element element, String? queueName = null) {
 	dynamic {
-		getJQ().dequeue(element, queueName);
+		jQuery.dequeue(element, queueName);
 	}
 }
 
 shared JSObject jQueryEach(dynamic collection, Anything(Integer, Anything) callback) {
 	dynamic {
-		return JSObject(getJQ().each(collection, callback));
+		return JSObject(jQuery.each(collection, callback));
 	}
 }
 
 shared void jQueryError(String message) {
 	dynamic {
-		getJQ().error(message);
+		jQuery.error(message);
 	}
 }
 
 shared void jQueryExtend(Anything target, Anything* objects) {
 	dynamic {
-		getJQ().extend(target, *objects);
+		jQuery.extend(target, *objects);
 	}
 }
 
 shared void jQueryExtendDeep(Boolean deep, Anything target, Anything* objects) {
 	dynamic {
-		getJQ().extend(target, *objects);
+		jQuery.extend(target, *objects);
 	}
 }
 
@@ -181,19 +171,22 @@ shared Boolean jQueryFxOff() {
 	}
 }
 
-shared JQXHR jQueryGet(String url, dynamic data = null, Anything(Anything, String, JQXHR)? success = null, String? dataType = null) {
+// last is JQXHR
+shared JQXHR jQueryGet(String url, dynamic data = null, Anything(Anything, String, Anything)? success = null, String? dataType = null) {
 	dynamic {
 		return JQXHR(jQuery.get(url, data, success, dataType));
 	}
 }
 
-shared JQXHR jQueryGetJSON(String url, dynamic data = null, Anything(Anything, String, JQXHR)? success = null) {
+// last is JQXHR
+shared JQXHR jQueryGetJSON(String url, dynamic data = null, Anything(Anything, String, Anything)? success = null) {
 	dynamic {
-		return JQXHR(jQuery.getJSON(url, data, success));
+		return JQXHR(jQuery.\igetJSON(url, data, success));
 	}
 }
 
-shared JQXHR jQueryGetScript(String url, Anything(Anything, String, JQXHR)? success = null) {
+// last is JQXHR
+shared JQXHR jQueryGetScript(String url, Anything(Anything, String, Anything)? success = null) {
 	dynamic {
 		return JQXHR(jQuery.getScript(url, success));
 	}
@@ -363,7 +356,8 @@ shared JSObject jQueryParseXML(String data) {
 	}
 }
 
-shared JQXHR jQueryPost(String url, dynamic data = null, Anything(Anything, String, JQXHR)? success = null, String? dataType = null) {
+// last is JQXHR
+shared JQXHR jQueryPost(String url, dynamic data = null, Anything(Anything, String, Anything)? success = null, String? dataType = null) {
 	dynamic {
 		return JQXHR(jQuery.post(url, data, success, dataType));
 	}
@@ -426,30 +420,34 @@ shared Promise jQueryWhen(Deferred* deferreds) {
 
 shared JQuery jq(String|JQuery|JSObject|Element? selector = null, Element|JQuery? context = null) {
 	dynamic {
-		dynamic jquery = getJQ();
 		switch (selector) 
 		case (is String) {
 			switch(context)
 			case (is Element|JQuery) {
-				return JQuery(jquery(selector, context.native));
+				return JQuery(jQuery(selector, context.native));
 			}
 			case (is Null) {
-				return JQuery(jquery(selector));
+				return JQuery(jQuery(selector));
 			}
 		}
 		case (is JQuery|JSObject|Element) {
-			return JQuery(jquery(selector.native));
+			return JQuery(jQuery(selector.native));
 		}
 		case (is Null) {
-			return JQuery(jquery());
+			return JQuery(jQuery());
 		}
+	}
+}
+
+shared JQuery jqThis() {
+	dynamic {
+		return JQuery(jQuery(\ithis));
 	}
 }
 
 shared JQuery jqElems(Element+ elems) {
 	dynamic {
-		dynamic jquery = getJQ();
-		return JQuery(jquery(elems*.native));
+		return JQuery(jQuery(elems*.native));
 	}
 }
 
@@ -523,19 +521,22 @@ shared abstract class JQueryAbs() extends JSObjectAbs() {
 		}
 	}
 	
-	shared JQuery ajaxComplete(Anything(JQueryEvent, JQXHR, JQueryAjaxSettings) handler) {
+	// JQueryEvent, JQXHR, then JQueryAjaxSettings
+	shared JQuery ajaxComplete(Anything(Anything, Anything, Anything) handler) {
 		dynamic {
 			return JQuery(native.ajaxComplete(handler));
 		}
 	}
 	
-	shared JQuery ajaxError(Anything(JQueryEvent, JQXHR, JQueryAjaxSettings, Exception) handler) {
+	// JQueryEvent, JQXHR, JQueryAjaxSettings, then Exception
+	shared JQuery ajaxError(Anything(Anything, Anything, Anything, Anything) handler) {
 		dynamic {
 			return JQuery(native.ajaxError(handler));
 		}
 	}
 	
-	shared JQuery ajaxSend(Anything(JQueryEvent, JQXHR, JQueryAjaxSettings) handler) {
+	// JQueryEvent, JQXHR, then JQueryAjaxSettings
+	shared JQuery ajaxSend(Anything(Anything, Anything, Anything) handler) {
 		dynamic {
 			return JQuery(native.ajaxSend(handler));
 		}
@@ -553,7 +554,8 @@ shared abstract class JQueryAbs() extends JSObjectAbs() {
 		}
 	}
 	
-	shared JQuery ajaxSuccess(Anything(JQueryEvent, JQXHR, JQueryAjaxSettings) handler) {
+	// JQueryEvent, JQXHR, then JQueryAjaxSettings
+	shared JQuery ajaxSuccess(Anything(Anything, Anything, Anything) handler) {
 		dynamic {
 			return JQuery(native.ajaxSuccess(handler));
 		}
@@ -936,7 +938,7 @@ shared abstract class JQueryAbs() extends JSObjectAbs() {
 	
 	shared JQuery fadeIn(String|Integer? duration = null, String? easing = null, Anything()? complete = null) {
 		dynamic {
-			return JQuery(native.fadeIn(duration, easing, handler));
+			return JQuery(native.fadeIn(duration, easing, complete));
 		}
 	}
 	
@@ -948,7 +950,7 @@ shared abstract class JQueryAbs() extends JSObjectAbs() {
 	
 	shared JQuery fadeOut(String|Integer? duration = null, String? easing = null, Anything()? complete = null) {
 		dynamic {
-			return JQuery(native.fadeOut(duration, easing, handler));
+			return JQuery(native.fadeOut(duration, easing, complete));
 		}
 	}
 	
@@ -966,7 +968,7 @@ shared abstract class JQueryAbs() extends JSObjectAbs() {
 	
 	shared JQuery fadeToggle(String|Integer? duration = null, String? easing = null, Anything()? complete = null) {
 		dynamic {
-			return JQuery(native.fadeOut(duration, easing, handler));
+			return JQuery(native.fadeOut(duration, easing, complete));
 		}
 	}
 	
@@ -1090,7 +1092,7 @@ shared abstract class JQueryAbs() extends JSObjectAbs() {
 	
 	shared JQuery hide(String|Integer? duration = null, String? easing = null, Anything()? complete = null) {
 		dynamic {
-			return JQuery(native.hide(duration, easing, handler));
+			return JQuery(native.hide(duration, easing, complete));
 		}
 	}
 	
@@ -1258,7 +1260,8 @@ shared abstract class JQueryAbs() extends JSObjectAbs() {
 		}
 	}
 	
-	shared JQuery load(String url, dynamic data, Anything(String, String, XMLHttpRequest) complete) {
+	// last is XMLHttpRequest
+	shared JQuery load(String url, dynamic data, Anything(String, String, Anything) complete) {
 		dynamic {
 			return JQuery(native.load(url, data, complete));
 		}
@@ -1357,7 +1360,8 @@ shared abstract class JQueryAbs() extends JSObjectAbs() {
 		}
 	}
 	
-	shared JQuery off(String events, String selector, Anything(JQueryEvent)? handler = null) {
+	// JQueryEvent
+	shared JQuery off(String events, String selector, Anything(Anything)? handler = null) {
 		dynamic {
 			return JQuery(native.mouseover(eventData, handler));
 		}
@@ -1369,9 +1373,15 @@ shared abstract class JQueryAbs() extends JSObjectAbs() {
 		}
 	}
 	
-	shared JQuery setOffset(Coordinates offset) {
-		dynamic {
-			return JQuery(native.offset());
+	shared JQuery setOffset(Coordinates? offset = null) {
+		if (exists o = offset) {
+			dynamic {
+				return JQuery(native.offset(o));
+			}
+		} else {
+			dynamic {
+				return JQuery(native.offset());
+			}
 		}
 	}
 	
@@ -1717,7 +1727,7 @@ shared abstract class JQueryAbs() extends JSObjectAbs() {
 	
 	shared JQuery show(String|Integer? duration = null, String? easing = null, Anything()? complete = null) {
 		dynamic {
-			return JQuery(native.show(duration, easing, handler));
+			return JQuery(native.show(duration, easing, complete));
 		}
 	}
 	
@@ -1741,7 +1751,7 @@ shared abstract class JQueryAbs() extends JSObjectAbs() {
 	
 	shared JQuery slideDown(String|Integer? duration = null, String? easing = null, Anything()? complete = null) {
 		dynamic {
-			return JQuery(native.slideDown(duration, easing, handler));
+			return JQuery(native.slideDown(duration, easing, complete));
 		}
 	}
 	
@@ -1753,7 +1763,7 @@ shared abstract class JQueryAbs() extends JSObjectAbs() {
 	
 	shared JQuery slideToggle(String|Integer? duration = null, String? easing = null, Anything()? complete = null) {
 		dynamic {
-			return JQuery(native.slideToggle(duration, easing, handler));
+			return JQuery(native.slideToggle(duration, easing, complete));
 		}
 	}
 	
@@ -1765,7 +1775,7 @@ shared abstract class JQueryAbs() extends JSObjectAbs() {
 	
 	shared JQuery slideUp(String|Integer? duration = null, String? easing = null, Anything()? complete = null) {
 		dynamic {
-			return JQuery(native.slideUp(duration, easing, handler));
+			return JQuery(native.slideUp(duration, easing, complete));
 		}
 	}
 	
@@ -1819,7 +1829,7 @@ shared abstract class JQueryAbs() extends JSObjectAbs() {
 	
 	shared JQuery toggle(String|Integer? duration = null, String? easing = null, Anything()? complete = null) {
 		dynamic {
-			return JQuery(native.toggle(duration, easing, handler));
+			return JQuery(native.toggle(duration, easing, complete));
 		}
 	}
 	
