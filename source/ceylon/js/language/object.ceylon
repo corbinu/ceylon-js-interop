@@ -59,12 +59,12 @@ shared void objectDefineProperty(JSObject obj, String|JSString prop, DataDescrip
 	switch (prop)
 	case (is String) {
 		dynamic {
-			\iObject.defineProperty(obj.native, prop, descriptor.toNative());
+			\iObject.defineProperty(obj.native, prop, descriptor.toNative().native);
 		}
 	}
 	case (is JSString) {
 		dynamic {
-			\iObject.defineProperty(obj.native, prop.native, descriptor.toNative());
+			\iObject.defineProperty(obj.native, prop.native, descriptor.toNative().native);
 		}
 	}
 }
