@@ -1,7 +1,7 @@
 
-shared JSArray createJSArray(Anything* elements) {
+shared JSArray createJSArray(dynamic arg) {
 	dynamic {
-		return JSArray(\iArray(*elements));
+		return JSArray(\iArray(arg));
 	}
 }
 

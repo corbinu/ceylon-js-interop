@@ -1615,7 +1615,7 @@ shared abstract class JQueryAbs() extends JSObjectAbs() {
 	
 	shared JQuery removeClass(String className) {
 		dynamic {
-			return JQuery(native.removeClass(clasName));
+			return JQuery(native.removeClass(className));
 		}
 	}
 	

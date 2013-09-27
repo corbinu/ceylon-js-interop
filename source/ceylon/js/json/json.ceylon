@@ -1,4 +1,4 @@
-import ceylon.js.language { JSNumber, JSString, JSObjectAbs, JSObject, createJSObject, DataDescriptor, JSArray, createJSNumber, createJSArray, objectDefineProperty }
+import ceylon.js.language { JSNumber, JSString, JSObjectAbs, JSObject, createJSObject, DataDescriptor, JSArray, createJSNumber, objectDefineProperty }
 import ceylon.json { ... }
 
 shared dynamic jsonParse(String text) {
@@ -67,7 +67,7 @@ shared class JSON({Entry<String, String|Boolean|Integer|Float|Object|Array|NullI
 			switch (entry)
 			case (is String) {
 				dynamic {
-					val = entry.string;
+					val = entry;
 				}
 			}
 			case (is Boolean) {
@@ -79,7 +79,7 @@ shared class JSON({Entry<String, String|Boolean|Integer|Float|Object|Array|NullI
 					}
 				}
 			}
-			case (is Integer|Float) { 
+			case (is Integer|Float) {
 				dynamic {
 					val = createJSNumber(entry).native;
 				}	
@@ -90,6 +90,7 @@ shared class JSON({Entry<String, String|Boolean|Integer|Float|Object|Array|NullI
 				}
 			}
 			case (is Array) {
+				print ("adding value Array");
 				dynamic {
 					val = arrayToArray(entry).native;
 				}
@@ -108,7 +109,10 @@ shared class JSON({Entry<String, String|Boolean|Integer|Float|Object|Array|NullI
 	}
 	
 	JSArray arrayToArray(Array ceylonArray) {
-		JSArray array = createJSArray();
+		JSArray array;
+		dynamic {
+			array = JSArray(\iArray());
+		}
 		for (entry in ceylonArray) {
 			switch (entry)
 			case (is String) {  

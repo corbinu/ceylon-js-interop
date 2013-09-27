@@ -1,365 +1,328 @@
 (function(define) { define(function(require, exports, module) {
-var $$METAMODEL$$={"$mod-deps":["ceylon.js.language\/1.8.5","ceylon.js.json\/1.0.0","ceylon.language\/0.6.1"],"$mod-name":"ceylon.js.file","$mod-version":"1.0.0","ceylon.js.file":{"createBlobBlobs":{"$t":{"$pk":"ceylon.js.file","$nm":"Blob"},"$ps":[[{"$t":{"$md":"ceylon.language","$tp":[{"$mt":"tpm","$pk":"ceylon.js.file","$nm":"Blob"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"prm","$nm":"parts"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.js.file","$nm":"BlobPropertyBag"}]},"$mt":"prm","$def":"1","$nm":"properties"}]],"$mt":"mthd","$an":{"shared":[]},"$nm":"createBlobBlobs"},"createBlobJS":{"$t":{"$pk":"ceylon.js.file","$nm":"Blob"},"$ps":[[{"$t":{"$md":"ceylon.language","$tp":[{"$md":"ceylon.js.language","$mt":"tpm","$pk":"ceylon.js.language","$nm":"JSString"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"prm","$nm":"parts"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.js.file","$nm":"BlobPropertyBag"}]},"$mt":"prm","$def":"1","$nm":"properties"}]],"$mt":"mthd","$an":{"shared":[]},"$nm":"createBlobJS"},"$pkg-shared":"1","BlobPropertyBag":{"super":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Basic"},"$ps":[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"ceylon.js.language","$pk":"ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$def":"1","$an":{"shared":[]},"$nm":"type"}],"$mt":"cls","$an":{"shared":[]},"$m":{"toJson":{"$t":{"$md":"ceylon.js.json","$pk":"ceylon.js.json","$nm":"JSJSON"},"$mt":"mthd","$an":{"shared":[]},"$nm":"toJson"}},"$at":{"type":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"ceylon.js.language","$pk":"ceylon.js.language","$nm":"JSString"}]},"$mt":"attr","$an":{"shared":[]},"$nm":"type"}},"$nm":"BlobPropertyBag"},"Blob":{"super":{"$pk":"ceylon.js.file","$nm":"BlobAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[]},"$at":{"native":{"$t":{"$pk":"ceylon.js.file","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"ceylon.js.file","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"Blob"},"BlobAbs":{"abstract":"1","super":{"$md":"ceylon.js.language","$pk":"ceylon.js.language","$nm":"JSObjectAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"slice":{"$t":{"$pk":"ceylon.js.file","$nm":"Blob"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"ceylon.js.language","$pk":"ceylon.js.language","$nm":"JSNumber"}]}]},"$mt":"prm","$def":"1","$nm":"start"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"ceylon.js.language","$pk":"ceylon.js.language","$nm":"JSNumber"}]}]},"$mt":"prm","$def":"1","$nm":"end"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"ceylon.js.language","$pk":"ceylon.js.language","$nm":"JSString"}]}]},"$mt":"prm","$def":"1","$nm":"contentType"}]],"$mt":"mthd","$an":{"shared":[]},"$nm":"slice"},"type":{"$t":{"$md":"ceylon.js.language","$pk":"ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[]},"$nm":"type"},"close":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"mthd","$an":{"shared":[]},"$nm":"close"},"size":{"$t":{"$md":"ceylon.js.language","$pk":"ceylon.js.language","$nm":"JSNumber"},"$mt":"mthd","$an":{"shared":[]},"$nm":"size"}},"$nm":"BlobAbs"},"createBlob":{"$t":{"$pk":"ceylon.js.file","$nm":"Blob"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"ceylon.language","$tp":[{"$md":"ceylon.language","$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Sequential"}]},"$mt":"prm","$def":"1","$nm":"parts"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.js.file","$nm":"BlobPropertyBag"}]},"$mt":"prm","$def":"1","$nm":"properties"}]],"$mt":"mthd","$an":{"shared":[]},"$nm":"createBlob"}}};
+var $$METAMODEL$$={"$mod-deps":["ceylon.language\/0.6.1","ceylon.js.language\/1.8.5","ceylon.js.json\/1.0.0"],"$mod-name":"ceylon.js.file","$mod-version":"1.0.0","ceylon.js.file":{"createBlobBlobs":{"$t":{"$pk":"ceylon.js.file","$nm":"Blob"},"$ps":[[{"$t":{"$md":"ceylon.language","$tp":[{"$mt":"tpm","$pk":"ceylon.js.file","$nm":"Blob"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"prm","$nm":"parts"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.js.file","$nm":"BlobPropertyBag"}]},"$mt":"prm","$def":"1","$nm":"properties"}]],"$mt":"mthd","$an":{"shared":[]},"$nm":"createBlobBlobs"},"createBlobJS":{"$t":{"$pk":"ceylon.js.file","$nm":"Blob"},"$ps":[[{"$t":{"$md":"ceylon.language","$tp":[{"$md":"ceylon.js.language","$mt":"tpm","$pk":"ceylon.js.language","$nm":"JSString"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"prm","$nm":"parts"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.js.file","$nm":"BlobPropertyBag"}]},"$mt":"prm","$def":"1","$nm":"properties"}]],"$mt":"mthd","$an":{"shared":[]},"$nm":"createBlobJS"},"$pkg-shared":"1","BlobPropertyBag":{"super":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Basic"},"$ps":[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"ceylon.js.language","$pk":"ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$def":"1","$an":{"shared":[]},"$nm":"type"}],"$mt":"cls","$an":{"shared":[]},"$m":{"toJson":{"$t":{"$md":"ceylon.js.json","$pk":"ceylon.js.json","$nm":"JSJSON"},"$mt":"mthd","$an":{"shared":[]},"$nm":"toJson"}},"$at":{"type":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"ceylon.js.language","$pk":"ceylon.js.language","$nm":"JSString"}]},"$mt":"attr","$an":{"shared":[]},"$nm":"type"}},"$nm":"BlobPropertyBag"},"Blob":{"super":{"$pk":"ceylon.js.file","$nm":"BlobAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[]},"$at":{"native":{"$t":{"$pk":"ceylon.js.file","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"ceylon.js.file","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"Blob"},"BlobAbs":{"abstract":"1","super":{"$md":"ceylon.js.language","$pk":"ceylon.js.language","$nm":"JSObjectAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"slice":{"$t":{"$pk":"ceylon.js.file","$nm":"Blob"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"ceylon.js.language","$pk":"ceylon.js.language","$nm":"JSNumber"}]}]},"$mt":"prm","$def":"1","$nm":"start"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"ceylon.js.language","$pk":"ceylon.js.language","$nm":"JSNumber"}]}]},"$mt":"prm","$def":"1","$nm":"end"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"ceylon.js.language","$pk":"ceylon.js.language","$nm":"JSString"}]}]},"$mt":"prm","$def":"1","$nm":"contentType"}]],"$mt":"mthd","$an":{"shared":[]},"$nm":"slice"},"type":{"$t":{"$md":"ceylon.js.language","$pk":"ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[]},"$nm":"type"},"close":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"mthd","$an":{"shared":[]},"$nm":"close"},"size":{"$t":{"$md":"ceylon.js.language","$pk":"ceylon.js.language","$nm":"JSNumber"},"$mt":"mthd","$an":{"shared":[]},"$nm":"size"}},"$nm":"BlobAbs"},"createBlob":{"$t":{"$pk":"ceylon.js.file","$nm":"Blob"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"ceylon.language","$tp":[{"$md":"ceylon.language","$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Sequential"}]},"$mt":"prm","$def":"1","$nm":"parts"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.js.file","$nm":"BlobPropertyBag"}]},"$mt":"prm","$def":"1","$nm":"properties"}]],"$mt":"mthd","$an":{"shared":[]},"$nm":"createBlob"}}};
 exports.$$METAMODEL$$=function(){return $$METAMODEL$$;};
-var $$$cl32209=require('ceylon/language/0.6.1/ceylon.language-0.6.1');
-$$$cl32209.$addmod$($$$cl32209,'ceylon.language/0.6.1');
-exports.$pkg$ans$ceylon$js$file=function(){return[$$$cl32209.shared()];};
-exports.$mod$ans$=[];
-var $$$cjl32280=require('ceylon/js/language/1.8.5/ceylon.js.language-1.8.5');
-$$$cl32209.$addmod$($$$cjl32280,'ceylon.js.language/1.8.5');
-var $$$cjj33169=require('ceylon/js/json/1.0.0/ceylon.js.json-1.0.0');
-$$$cl32209.$addmod$($$$cjj33169,'ceylon.js.json/1.0.0');
-
-//MethodDefinition createBlob at blob.ceylon (4:0-12:0)
-function createBlob(parts$34124,properties$34125){
-    if(parts$34124===undefined){parts$34124=null;}
-    if(properties$34125===undefined){properties$34125=null;}
+var $$$cl1=require('ceylon/language/0.6.1/ceylon.language-0.6.1');
+$$$cl1.$addmod$($$$cl1,'ceylon.language/0.6.1');
+var $$$cjl359=require('ceylon/js/language/1.8.5/ceylon.js.language-1.8.5');
+$$$cl1.$addmod$($$$cjl359,'ceylon.js.language/1.8.5');
+var $$$cjj659=require('ceylon/js/json/1.0.0/ceylon.js.json-1.0.0');
+$$$cl1.$addmod$($$$cjj659,'ceylon.js.json/1.0.0');
+function createBlob(parts$925,properties$926){
+    if(parts$925===undefined){parts$925=null;}
+    if(properties$926===undefined){properties$926=null;}
     /*Begin dynamic block*/
-    var props$34126;
-    if((props$34126=properties$34125)!==null){
-        return Blob((typeof Blob==='undefined'||Blob===null?$$$cl32209.throwexc($$$cl32209.Exception($$$cl32209.String("Undefined or null reference: Blob")),'7:15-7:18','blob.ceylon'):Blob)(/*NULL PARAM!*/parts$34124/*NULL PARAM!*/,props$34126.toJson()));
+    var props$927;
+    if((props$927=properties$926)!==null){
+        return Blob((typeof Blob==='undefined'||Blob===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Blob")),'7:15-7:18','blob.ceylon'):Blob)(/*NULL PARAM!*/parts$925/*NULL PARAM!*/,props$927.toJson()));
     }else {
-        return Blob((typeof Blob==='undefined'||Blob===null?$$$cl32209.throwexc($$$cl32209.Exception($$$cl32209.String("Undefined or null reference: Blob")),'9:15-9:18','blob.ceylon'):Blob)(/*NULL PARAM!*/parts$34124));
+        return Blob((typeof Blob==='undefined'||Blob===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Blob")),'9:15-9:18','blob.ceylon'):Blob)(/*NULL PARAM!*/parts$925));
     }/*End dynamic block*/
 }
 exports.createBlob=createBlob;
-createBlob.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Blob},$ps:[{$nm:'parts',$mt:'prm',$def:1,$t:{ t:'u', l:[{t:$$$cl32209.Null},{t:$$$cl32209.Sequential,a:{Element:{t:$$$cl32209.String}}}]},$an:function(){return[];}},{$nm:'properties',$mt:'prm',$def:1,$t:{ t:'u', l:[{t:$$$cl32209.Null},{t:BlobPropertyBag}]},$an:function(){return[];}}],$an:function(){return[$$$cl32209.shared()];},d:['ceylon.js.file','createBlob']};};
-
-//MethodDefinition createBlobJS at blob.ceylon (14:0-22:0)
-function createBlobJS(parts$34127,properties$34128){
-    if(properties$34128===undefined){properties$34128=null;}
+createBlob.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Blob},$ps:[{$nm:'parts',$mt:'prm',$def:1,$t:{ t:'u', l:[{t:$$$cl1.Null},{t:$$$cl1.Sequential,a:{Element:{t:$$$cl1.String}}}]},$an:function(){return[];}},{$nm:'properties',$mt:'prm',$def:1,$t:{ t:'u', l:[{t:$$$cl1.Null},{t:BlobPropertyBag}]},$an:function(){return[];}}],$an:function(){return[$$$cl1.shared()];},d:['ceylon.js.file','createBlob']};};
+function createBlobJS(parts$928,properties$929){
+    if(properties$929===undefined){properties$929=null;}
     /*Begin dynamic block*/
-    var props$34129;
-    if((props$34129=properties$34128)!==null){
-        return Blob((typeof Blob==='undefined'||Blob===null?$$$cl32209.throwexc($$$cl32209.Exception($$$cl32209.String("Undefined or null reference: Blob")),'17:15-17:18','blob.ceylon'):Blob)(/*NULL PARAM!*/(function(){
-            //SpreadOp at 17:22-17:34
-            var lst$34130=[];
-            var it$34131=parts$34127.iterator();
-            var elem$34132;
-            while ((elem$34132=it$34131.next())!==$$$cl32209.getFinished()){
-                lst$34130.push(elem$34132.$native);
+    var props$930;
+    if((props$930=properties$929)!==null){
+        return Blob((typeof Blob==='undefined'||Blob===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Blob")),'17:15-17:18','blob.ceylon'):Blob)(/*NULL PARAM!*/(function(){
+            var lst$931=[];
+            var it$932=parts$928.iterator();
+            var elem$933;
+            while ((elem$933=it$932.next())!==$$$cl1.getFinished()){
+                lst$931.push(elem$933.$native);
             }
-            return $$$cl32209.ArraySequence(lst$34130);
-        }())/*NULL PARAM!*/,props$34129.toJson()));
+            return $$$cl1.ArraySequence(lst$931);
+        }())/*NULL PARAM!*/,props$930.toJson()));
     }else {
-        return Blob((typeof Blob==='undefined'||Blob===null?$$$cl32209.throwexc($$$cl32209.Exception($$$cl32209.String("Undefined or null reference: Blob")),'19:15-19:18','blob.ceylon'):Blob)(/*NULL PARAM!*/parts$34127));
+        return Blob((typeof Blob==='undefined'||Blob===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Blob")),'19:15-19:18','blob.ceylon'):Blob)(/*NULL PARAM!*/parts$928));
     }/*End dynamic block*/
 }
 exports.createBlobJS=createBlobJS;
-createBlobJS.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Blob},$ps:[{$nm:'parts',$mt:'prm',$t:{t:$$$cl32209.Sequential,a:{Element:{t:$$$cjl32280.JSString}}},$an:function(){return[];}},{$nm:'properties',$mt:'prm',$def:1,$t:{ t:'u', l:[{t:$$$cl32209.Null},{t:BlobPropertyBag}]},$an:function(){return[];}}],$an:function(){return[$$$cl32209.shared()];},d:['ceylon.js.file','createBlobJS']};};
-
-//MethodDefinition createBlobBlobs at blob.ceylon (24:0-32:0)
-function createBlobBlobs(parts$34133,properties$34134){
-    if(properties$34134===undefined){properties$34134=null;}
+createBlobJS.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Blob},$ps:[{$nm:'parts',$mt:'prm',$t:{t:$$$cl1.Sequential,a:{Element:{t:$$$cjl359.JSString}}},$an:function(){return[];}},{$nm:'properties',$mt:'prm',$def:1,$t:{ t:'u', l:[{t:$$$cl1.Null},{t:BlobPropertyBag}]},$an:function(){return[];}}],$an:function(){return[$$$cl1.shared()];},d:['ceylon.js.file','createBlobJS']};};
+function createBlobBlobs(parts$934,properties$935){
+    if(properties$935===undefined){properties$935=null;}
     /*Begin dynamic block*/
-    var props$34135;
-    if((props$34135=properties$34134)!==null){
-        return Blob((typeof Blob==='undefined'||Blob===null?$$$cl32209.throwexc($$$cl32209.Exception($$$cl32209.String("Undefined or null reference: Blob")),'27:15-27:18','blob.ceylon'):Blob)(/*NULL PARAM!*/(function(){
-            //SpreadOp at 27:22-27:34
-            var lst$34136=[];
-            var it$34137=parts$34133.iterator();
-            var elem$34138;
-            while ((elem$34138=it$34137.next())!==$$$cl32209.getFinished()){
-                lst$34136.push(elem$34138.$native);
+    var props$936;
+    if((props$936=properties$935)!==null){
+        return Blob((typeof Blob==='undefined'||Blob===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Blob")),'27:15-27:18','blob.ceylon'):Blob)(/*NULL PARAM!*/(function(){
+            var lst$937=[];
+            var it$938=parts$934.iterator();
+            var elem$939;
+            while ((elem$939=it$938.next())!==$$$cl1.getFinished()){
+                lst$937.push(elem$939.$native);
             }
-            return $$$cl32209.ArraySequence(lst$34136);
-        }())/*NULL PARAM!*/,props$34135.toJson()));
+            return $$$cl1.ArraySequence(lst$937);
+        }())/*NULL PARAM!*/,props$936.toJson()));
     }else {
-        return Blob((typeof Blob==='undefined'||Blob===null?$$$cl32209.throwexc($$$cl32209.Exception($$$cl32209.String("Undefined or null reference: Blob")),'29:15-29:18','blob.ceylon'):Blob)(/*NULL PARAM!*/parts$34133));
+        return Blob((typeof Blob==='undefined'||Blob===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Blob")),'29:15-29:18','blob.ceylon'):Blob)(/*NULL PARAM!*/parts$934));
     }/*End dynamic block*/
 }
 exports.createBlobBlobs=createBlobBlobs;
-createBlobBlobs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Blob},$ps:[{$nm:'parts',$mt:'prm',$t:{t:$$$cl32209.Sequential,a:{Element:{t:Blob}}},$an:function(){return[];}},{$nm:'properties',$mt:'prm',$def:1,$t:{ t:'u', l:[{t:$$$cl32209.Null},{t:BlobPropertyBag}]},$an:function(){return[];}}],$an:function(){return[$$$cl32209.shared()];},d:['ceylon.js.file','createBlobBlobs']};};
-
-//ClassDefinition BlobPropertyBag at blob.ceylon (34:0-53:0)
+createBlobBlobs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Blob},$ps:[{$nm:'parts',$mt:'prm',$t:{t:$$$cl1.Sequential,a:{Element:{t:Blob}}},$an:function(){return[];}},{$nm:'properties',$mt:'prm',$def:1,$t:{ t:'u', l:[{t:$$$cl1.Null},{t:BlobPropertyBag}]},$an:function(){return[];}}],$an:function(){return[$$$cl1.shared()];},d:['ceylon.js.file','createBlobBlobs']};};
 function BlobPropertyBag(type, $$blobPropertyBag){
     $init$BlobPropertyBag();
     if ($$blobPropertyBag===undefined)$$blobPropertyBag=new BlobPropertyBag.$$;
-    if(type===undefined){type=$$$cl32209.String("",0);}
+    if(type===undefined){type=$$$cl1.String("",0);}
     $$blobPropertyBag.type_=type;
+    $$$cl1.defineAttr($$blobPropertyBag,'type',function(){return this.type_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{ t:'u', l:[{t:$$$cl1.String},{t:$$$cjl359.JSString}]},$cont:BlobPropertyBag,$an:function(){return[$$$cl1.shared()];},d:['ceylon.js.file','BlobPropertyBag','$at','type']};});
+    function toJson(){
+        var t$940;
+        var json$941;
+        /*Begin dynamic block*/
+        
+        var case$942=$$blobPropertyBag.type;
+        if ($$$cl1.isOfType($$blobPropertyBag.type,{t:$$$cl1.String})) {
+            t$940=case$942;
+        }else if ($$$cl1.isOfType($$blobPropertyBag.type,{t:$$$cjl359.JSString})) {
+            t$940=case$942.$native;
+        }json$941=(values$943=/*NULL PARAM!*/[$$$cl1.Entry($$$cl1.String("type",4),t$940,{})].reifyCeylonType({Absent:{t:$$$cl1.Null},Element:{t:$$$cl1.Anything}}),$$$cjj659.JSON(values$943));/*End dynamic block*/
+        var values$943;
+        return json$941.toJson();
+    }
+    $$blobPropertyBag.toJson=toJson;
+    toJson.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cjj659.JSJSON},$ps:[],$cont:BlobPropertyBag,$an:function(){return[$$$cl1.shared()];},d:['ceylon.js.file','BlobPropertyBag','$m','toJson']};};
     return $$blobPropertyBag;
 }
-BlobPropertyBag.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cl32209.Basic},satisfies:[],$an:function(){return[$$$cl32209.shared()];},d:['ceylon.js.file','BlobPropertyBag']};};
+BlobPropertyBag.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cl1.Basic},satisfies:[],$an:function(){return[$$$cl1.shared()];},d:['ceylon.js.file','BlobPropertyBag']};};
 exports.BlobPropertyBag=BlobPropertyBag;
 function $init$BlobPropertyBag(){
     if (BlobPropertyBag.$$===undefined){
-        $$$cl32209.initTypeProto(BlobPropertyBag,'ceylon.js.file::BlobPropertyBag',$$$cl32209.Basic);
-        (function($$blobPropertyBag){
-            
-            //MethodDefinition toJson at blob.ceylon (36:1-52:1)
-            $$blobPropertyBag.toJson=function toJson(){
-                var $$blobPropertyBag=this;
-                
-                //AttributeDeclaration t at blob.ceylon (37:2-37:11)
-                var t$34139;
-                
-                //AttributeDeclaration json at blob.ceylon (38:2-38:11)
-                var json$34140;
-                /*Begin dynamic block*/
-                //Switch statement at blob.ceylon (40:3-46:3)
-                var case$34141=$$blobPropertyBag.type;
-                if ($$$cl32209.isOfType($$blobPropertyBag.type,{t:$$$cl32209.String})) {
-                    t$34139=case$34141;
-                }else if ($$$cl32209.isOfType($$blobPropertyBag.type,{t:$$$cjl32280.JSString})) {
-                    t$34139=case$34141.$native;
-                }//End switch statement at blob.ceylon (40:3-46:3)
-                json$34140=(values$34142=/*NULL PARAM!*/[$$$cl32209.Entry($$$cl32209.String("type",4),t$34139,{})].reifyCeylonType({Absent:{t:$$$cl32209.Null},Element:{t:$$$cl32209.Anything}}),$$$cjj33169.JSON(values$34142));/*End dynamic block*/
-                var values$34142;
-                return json$34140.toJson();
-            };$$blobPropertyBag.toJson.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cjj33169.JSJSON},$ps:[],$cont:BlobPropertyBag,$an:function(){return[$$$cl32209.shared()];},d:['ceylon.js.file','BlobPropertyBag','$m','toJson']};};
-            $$$cl32209.defineAttr($$blobPropertyBag,'type',function(){return this.type_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{ t:'u', l:[{t:$$$cl32209.String},{t:$$$cjl32280.JSString}]},$cont:BlobPropertyBag,$an:function(){return[$$$cl32209.shared()];},d:['ceylon.js.file','BlobPropertyBag','$at','type']};});
-        })(BlobPropertyBag.$$.prototype);
+        $$$cl1.initTypeProto(BlobPropertyBag,'ceylon.js.file::BlobPropertyBag',$$$cl1.Basic);
     }
     return BlobPropertyBag;
 }
 exports.$init$BlobPropertyBag=$init$BlobPropertyBag;
 $init$BlobPropertyBag();
-
-//ClassDefinition BlobAbs at blob.ceylon (55:0-249:0)
 function BlobAbs($$blobAbs){
     $init$BlobAbs();
-    if ($$blobAbs===undefined)$$$cl32209.throwexc($$$cl32209.InvocationException$meta$model($$$cl32209.String("Cannot instantiate abstract class")),'?','?')
-    $$$cjl32280.JSObjectAbs($$blobAbs);
+    if ($$blobAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
+    $$$cjl359.JSObjectAbs($$blobAbs);
+    function size(){
+        /*Begin dynamic block*/
+        return $$$cjl359.JSNumber($$blobAbs.$native.size);
+        /*End dynamic block*/
+    }
+    $$blobAbs.size=size;
+    size.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cjl359.JSNumber},$ps:[],$cont:BlobAbs,$an:function(){return[$$$cl1.shared()];},d:['ceylon.js.file','BlobAbs','$m','size']};};
+    function type(){
+        /*Begin dynamic block*/
+        return $$$cjl359.JSString($$blobAbs.$native.type);
+        /*End dynamic block*/
+    }
+    $$blobAbs.type=type;
+    type.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cjl359.JSString},$ps:[],$cont:BlobAbs,$an:function(){return[$$$cl1.shared()];},d:['ceylon.js.file','BlobAbs','$m','type']};};
+    $$blobAbs.slice$defs$start=function(start$944,end$945,contentType$946){return null;};
+    $$blobAbs.slice$defs$end=function(start$944,end$945,contentType$946){return null;};
+    $$blobAbs.slice$defs$contentType=function(start$944,end$945,contentType$946){return null;};
+    function slice(start$944,end$945,contentType$946){
+        if(start$944===undefined){start$944=$$blobAbs.slice$defs$start(start$944,end$945,contentType$946);}
+        if(end$945===undefined){end$945=$$blobAbs.slice$defs$end(start$944,end$945,contentType$946);}
+        if(contentType$946===undefined){contentType$946=$$blobAbs.slice$defs$contentType(start$944,end$945,contentType$946);}
+        
+        var case$947=start$944;
+        if ($$$cl1.isOfType(start$944,{t:$$$cl1.Integer})) {
+            
+            var case$948=end$945;
+            if ($$$cl1.isOfType(end$945,{t:$$$cl1.Integer})) {
+                
+                var case$949=contentType$946;
+                if ($$$cl1.isOfType(contentType$946,{t:$$$cl1.String})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$947/*NULL PARAM!*/,case$948/*NULL PARAM!*/,case$949.valueOf()));
+                    /*End dynamic block*/
+                }else if ($$$cl1.isOfType(contentType$946,{t:$$$cjl359.JSString})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$947/*NULL PARAM!*/,case$948/*NULL PARAM!*/,case$949.$native));
+                    /*End dynamic block*/
+                }else if ($$$cl1.isOfType(contentType$946,{t:$$$cl1.Null})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$947/*NULL PARAM!*/,case$948));
+                    /*End dynamic block*/
+                }
+            }else if ($$$cl1.isOfType(end$945,{t:$$$cjl359.JSNumber})) {
+                
+                var case$950=contentType$946;
+                if ($$$cl1.isOfType(contentType$946,{t:$$$cl1.String})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$947/*NULL PARAM!*/,case$948.$native/*NULL PARAM!*/,case$950.valueOf()));
+                    /*End dynamic block*/
+                }else if ($$$cl1.isOfType(contentType$946,{t:$$$cjl359.JSString})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$947/*NULL PARAM!*/,case$948.$native/*NULL PARAM!*/,case$950.$native));
+                    /*End dynamic block*/
+                }else if ($$$cl1.isOfType(contentType$946,{t:$$$cl1.Null})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$947/*NULL PARAM!*/,case$948.$native));
+                    /*End dynamic block*/
+                }
+            }else if ($$$cl1.isOfType(end$945,{t:$$$cl1.Null})) {
+                
+                var case$951=contentType$946;
+                if ($$$cl1.isOfType(contentType$946,{t:$$$cl1.String})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$947/*NULL PARAM!*/,null/*NULL PARAM!*/,case$951.valueOf()));
+                    /*End dynamic block*/
+                }else if ($$$cl1.isOfType(contentType$946,{t:$$$cjl359.JSString})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$947/*NULL PARAM!*/,null/*NULL PARAM!*/,case$951.$native));
+                    /*End dynamic block*/
+                }else if ($$$cl1.isOfType(contentType$946,{t:$$$cl1.Null})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$947));
+                    /*End dynamic block*/
+                }
+            }
+        }else if ($$$cl1.isOfType(start$944,{t:$$$cjl359.JSNumber})) {
+            
+            var case$952=end$945;
+            if ($$$cl1.isOfType(end$945,{t:$$$cl1.Integer})) {
+                
+                var case$953=contentType$946;
+                if ($$$cl1.isOfType(contentType$946,{t:$$$cl1.String})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$947.$native/*NULL PARAM!*/,case$952/*NULL PARAM!*/,case$953.valueOf()));
+                    /*End dynamic block*/
+                }else if ($$$cl1.isOfType(contentType$946,{t:$$$cjl359.JSString})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$947.$native/*NULL PARAM!*/,case$952/*NULL PARAM!*/,case$953.$native));
+                    /*End dynamic block*/
+                }else if ($$$cl1.isOfType(contentType$946,{t:$$$cl1.Null})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$947.$native/*NULL PARAM!*/,case$952));
+                    /*End dynamic block*/
+                }
+            }else if ($$$cl1.isOfType(end$945,{t:$$$cjl359.JSNumber})) {
+                
+                var case$954=contentType$946;
+                if ($$$cl1.isOfType(contentType$946,{t:$$$cl1.String})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$947.$native/*NULL PARAM!*/,case$952.$native/*NULL PARAM!*/,case$954.valueOf()));
+                    /*End dynamic block*/
+                }else if ($$$cl1.isOfType(contentType$946,{t:$$$cjl359.JSString})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$947.$native/*NULL PARAM!*/,case$952.$native/*NULL PARAM!*/,case$954.$native));
+                    /*End dynamic block*/
+                }else if ($$$cl1.isOfType(contentType$946,{t:$$$cl1.Null})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$947.$native/*NULL PARAM!*/,case$952.$native));
+                    /*End dynamic block*/
+                }
+            }else if ($$$cl1.isOfType(end$945,{t:$$$cl1.Null})) {
+                
+                var case$955=contentType$946;
+                if ($$$cl1.isOfType(contentType$946,{t:$$$cl1.String})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$947.$native/*NULL PARAM!*/,null/*NULL PARAM!*/,case$955.valueOf()));
+                    /*End dynamic block*/
+                }else if ($$$cl1.isOfType(contentType$946,{t:$$$cjl359.JSString})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$947.$native/*NULL PARAM!*/,null/*NULL PARAM!*/,case$955.$native));
+                    /*End dynamic block*/
+                }else if ($$$cl1.isOfType(contentType$946,{t:$$$cl1.Null})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$947.$native));
+                    /*End dynamic block*/
+                }
+            }
+        }else if ($$$cl1.isOfType(start$944,{t:$$$cl1.Null})) {
+            
+            var case$956=end$945;
+            if ($$$cl1.isOfType(end$945,{t:$$$cl1.Integer})) {
+                
+                var case$957=contentType$946;
+                if ($$$cl1.isOfType(contentType$946,{t:$$$cl1.String})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/null/*NULL PARAM!*/,case$956/*NULL PARAM!*/,case$957.valueOf()));
+                    /*End dynamic block*/
+                }else if ($$$cl1.isOfType(contentType$946,{t:$$$cjl359.JSString})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/null/*NULL PARAM!*/,case$956/*NULL PARAM!*/,case$957.$native));
+                    /*End dynamic block*/
+                }else if ($$$cl1.isOfType(contentType$946,{t:$$$cl1.Null})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/null/*NULL PARAM!*/,case$956));
+                    /*End dynamic block*/
+                }
+            }else if ($$$cl1.isOfType(end$945,{t:$$$cjl359.JSNumber})) {
+                
+                var case$958=contentType$946;
+                if ($$$cl1.isOfType(contentType$946,{t:$$$cl1.String})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/null/*NULL PARAM!*/,case$956.$native/*NULL PARAM!*/,case$958.valueOf()));
+                    /*End dynamic block*/
+                }else if ($$$cl1.isOfType(contentType$946,{t:$$$cjl359.JSString})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/null/*NULL PARAM!*/,case$956.$native/*NULL PARAM!*/,case$958.$native));
+                    /*End dynamic block*/
+                }else if ($$$cl1.isOfType(contentType$946,{t:$$$cl1.Null})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/null/*NULL PARAM!*/,case$956.$native));
+                    /*End dynamic block*/
+                }
+            }else if ($$$cl1.isOfType(end$945,{t:$$$cl1.Null})) {
+                
+                var case$959=contentType$946;
+                if ($$$cl1.isOfType(contentType$946,{t:$$$cl1.String})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/null/*NULL PARAM!*/,null/*NULL PARAM!*/,case$959.valueOf()));
+                    /*End dynamic block*/
+                }else if ($$$cl1.isOfType(contentType$946,{t:$$$cjl359.JSString})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/null/*NULL PARAM!*/,null/*NULL PARAM!*/,case$959.$native));
+                    /*End dynamic block*/
+                }else if ($$$cl1.isOfType(contentType$946,{t:$$$cl1.Null})) {
+                    /*Begin dynamic block*/
+                    return Blob($$blobAbs.$native.slice());
+                    /*End dynamic block*/
+                }
+            }
+        }
+    }
+    $$blobAbs.slice=slice;
+    slice.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Blob},$ps:[{$nm:'start',$mt:'prm',$def:1,$t:{ t:'u', l:[{t:$$$cl1.Integer},{ t:'u', l:[{t:$$$cl1.Null},{t:$$$cjl359.JSNumber}]}]},$an:function(){return[];}},{$nm:'end',$mt:'prm',$def:1,$t:{ t:'u', l:[{t:$$$cl1.Integer},{ t:'u', l:[{t:$$$cl1.Null},{t:$$$cjl359.JSNumber}]}]},$an:function(){return[];}},{$nm:'contentType',$mt:'prm',$def:1,$t:{ t:'u', l:[{t:$$$cl1.String},{ t:'u', l:[{t:$$$cl1.Null},{t:$$$cjl359.JSString}]}]},$an:function(){return[];}}],$cont:BlobAbs,$an:function(){return[$$$cl1.shared()];},d:['ceylon.js.file','BlobAbs','$m','slice']};};
+    function close(){
+        /*Begin dynamic block*/
+        $$blobAbs.$native.close();
+        /*End dynamic block*/
+    }
+    $$blobAbs.close=close;
+    close.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[],$cont:BlobAbs,$an:function(){return[$$$cl1.shared()];},d:['ceylon.js.file','BlobAbs','$m','close']};};
     return $$blobAbs;
 }
-BlobAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cjl32280.JSObjectAbs},satisfies:[],$an:function(){return[$$$cl32209.shared(),$$$cl32209.abstract()];},d:['ceylon.js.file','BlobAbs']};};
+BlobAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cjl359.JSObjectAbs},satisfies:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['ceylon.js.file','BlobAbs']};};
 exports.BlobAbs=BlobAbs;
 function $init$BlobAbs(){
     if (BlobAbs.$$===undefined){
-        $$$cl32209.initTypeProto(BlobAbs,'ceylon.js.file::BlobAbs',$$$cjl32280.JSObjectAbs);
-        (function($$blobAbs){
-            
-            //MethodDefinition size at blob.ceylon (57:4-61:4)
-            $$blobAbs.size=function size(){
-                var $$blobAbs=this;
-                /*Begin dynamic block*/
-                return $$$cjl32280.JSNumber($$blobAbs.$native.size);
-                /*End dynamic block*/
-            };$$blobAbs.size.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cjl32280.JSNumber},$ps:[],$cont:BlobAbs,$an:function(){return[$$$cl32209.shared()];},d:['ceylon.js.file','BlobAbs','$m','size']};};
-            
-            //MethodDefinition type at blob.ceylon (63:4-67:4)
-            $$blobAbs.type=function type(){
-                var $$blobAbs=this;
-                /*Begin dynamic block*/
-                return $$$cjl32280.JSString($$blobAbs.$native.type);
-                /*End dynamic block*/
-            };$$blobAbs.type.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cjl32280.JSString},$ps:[],$cont:BlobAbs,$an:function(){return[$$$cl32209.shared()];},d:['ceylon.js.file','BlobAbs','$m','type']};};
-            
-            //MethodDefinition slice at blob.ceylon (69:4-242:4)
-            $$blobAbs.slice$defs$start=function(start$34143,end$34144,contentType$34145){var $$blobAbs=this;
-            return null;};
-            $$blobAbs.slice$defs$end=function(start$34143,end$34144,contentType$34145){var $$blobAbs=this;
-            return null;};
-            $$blobAbs.slice$defs$contentType=function(start$34143,end$34144,contentType$34145){var $$blobAbs=this;
-            return null;};
-            $$blobAbs.slice=function slice(start$34143,end$34144,contentType$34145){
-                var $$blobAbs=this;
-                if(start$34143===undefined){start$34143=$$blobAbs.slice$defs$start(start$34143,end$34144,contentType$34145);}
-                if(end$34144===undefined){end$34144=$$blobAbs.slice$defs$end(start$34143,end$34144,contentType$34145);}
-                if(contentType$34145===undefined){contentType$34145=$$blobAbs.slice$defs$contentType(start$34143,end$34144,contentType$34145);}
-                //Switch statement at blob.ceylon (70:8-241:8)
-                var case$34146=start$34143;
-                if ($$$cl32209.isOfType(start$34143,{t:$$$cl32209.Integer})) {
-                    //Switch statement at blob.ceylon (72:12-126:9)
-                    var case$34147=end$34144;
-                    if ($$$cl32209.isOfType(end$34144,{t:$$$cl32209.Integer})) {
-                        //Switch statement at blob.ceylon (74:13-89:10)
-                        var case$34148=contentType$34145;
-                        if ($$$cl32209.isOfType(contentType$34145,{t:$$$cl32209.String})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$34146/*NULL PARAM!*/,case$34147/*NULL PARAM!*/,case$34148.valueOf()));
-                            /*End dynamic block*/
-                        }else if ($$$cl32209.isOfType(contentType$34145,{t:$$$cjl32280.JSString})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$34146/*NULL PARAM!*/,case$34147/*NULL PARAM!*/,case$34148.$native));
-                            /*End dynamic block*/
-                        }else if ($$$cl32209.isOfType(contentType$34145,{t:$$$cl32209.Null})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$34146/*NULL PARAM!*/,case$34147));
-                            /*End dynamic block*/
-                        }//End switch statement at blob.ceylon (74:13-89:10)
-                    }else if ($$$cl32209.isOfType(end$34144,{t:$$$cjl32280.JSNumber})) {
-                        //Switch statement at blob.ceylon (92:13-107:10)
-                        var case$34149=contentType$34145;
-                        if ($$$cl32209.isOfType(contentType$34145,{t:$$$cl32209.String})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$34146/*NULL PARAM!*/,case$34147.$native/*NULL PARAM!*/,case$34149.valueOf()));
-                            /*End dynamic block*/
-                        }else if ($$$cl32209.isOfType(contentType$34145,{t:$$$cjl32280.JSString})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$34146/*NULL PARAM!*/,case$34147.$native/*NULL PARAM!*/,case$34149.$native));
-                            /*End dynamic block*/
-                        }else if ($$$cl32209.isOfType(contentType$34145,{t:$$$cl32209.Null})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$34146/*NULL PARAM!*/,case$34147.$native));
-                            /*End dynamic block*/
-                        }//End switch statement at blob.ceylon (92:13-107:10)
-                    }else if ($$$cl32209.isOfType(end$34144,{t:$$$cl32209.Null})) {
-                        //Switch statement at blob.ceylon (110:13-125:10)
-                        var case$34150=contentType$34145;
-                        if ($$$cl32209.isOfType(contentType$34145,{t:$$$cl32209.String})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$34146/*NULL PARAM!*/,null/*NULL PARAM!*/,case$34150.valueOf()));
-                            /*End dynamic block*/
-                        }else if ($$$cl32209.isOfType(contentType$34145,{t:$$$cjl32280.JSString})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$34146/*NULL PARAM!*/,null/*NULL PARAM!*/,case$34150.$native));
-                            /*End dynamic block*/
-                        }else if ($$$cl32209.isOfType(contentType$34145,{t:$$$cl32209.Null})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$34146));
-                            /*End dynamic block*/
-                        }//End switch statement at blob.ceylon (110:13-125:10)
-                    }//End switch statement at blob.ceylon (72:12-126:9)
-                }else if ($$$cl32209.isOfType(start$34143,{t:$$$cjl32280.JSNumber})) {
-                    //Switch statement at blob.ceylon (129:12-183:9)
-                    var case$34151=end$34144;
-                    if ($$$cl32209.isOfType(end$34144,{t:$$$cl32209.Integer})) {
-                        //Switch statement at blob.ceylon (131:13-146:10)
-                        var case$34152=contentType$34145;
-                        if ($$$cl32209.isOfType(contentType$34145,{t:$$$cl32209.String})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$34146.$native/*NULL PARAM!*/,case$34151/*NULL PARAM!*/,case$34152.valueOf()));
-                            /*End dynamic block*/
-                        }else if ($$$cl32209.isOfType(contentType$34145,{t:$$$cjl32280.JSString})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$34146.$native/*NULL PARAM!*/,case$34151/*NULL PARAM!*/,case$34152.$native));
-                            /*End dynamic block*/
-                        }else if ($$$cl32209.isOfType(contentType$34145,{t:$$$cl32209.Null})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$34146.$native/*NULL PARAM!*/,case$34151));
-                            /*End dynamic block*/
-                        }//End switch statement at blob.ceylon (131:13-146:10)
-                    }else if ($$$cl32209.isOfType(end$34144,{t:$$$cjl32280.JSNumber})) {
-                        //Switch statement at blob.ceylon (149:13-164:10)
-                        var case$34153=contentType$34145;
-                        if ($$$cl32209.isOfType(contentType$34145,{t:$$$cl32209.String})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$34146.$native/*NULL PARAM!*/,case$34151.$native/*NULL PARAM!*/,case$34153.valueOf()));
-                            /*End dynamic block*/
-                        }else if ($$$cl32209.isOfType(contentType$34145,{t:$$$cjl32280.JSString})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$34146.$native/*NULL PARAM!*/,case$34151.$native/*NULL PARAM!*/,case$34153.$native));
-                            /*End dynamic block*/
-                        }else if ($$$cl32209.isOfType(contentType$34145,{t:$$$cl32209.Null})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$34146.$native/*NULL PARAM!*/,case$34151.$native));
-                            /*End dynamic block*/
-                        }//End switch statement at blob.ceylon (149:13-164:10)
-                    }else if ($$$cl32209.isOfType(end$34144,{t:$$$cl32209.Null})) {
-                        //Switch statement at blob.ceylon (167:13-182:10)
-                        var case$34154=contentType$34145;
-                        if ($$$cl32209.isOfType(contentType$34145,{t:$$$cl32209.String})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$34146.$native/*NULL PARAM!*/,null/*NULL PARAM!*/,case$34154.valueOf()));
-                            /*End dynamic block*/
-                        }else if ($$$cl32209.isOfType(contentType$34145,{t:$$$cjl32280.JSString})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$34146.$native/*NULL PARAM!*/,null/*NULL PARAM!*/,case$34154.$native));
-                            /*End dynamic block*/
-                        }else if ($$$cl32209.isOfType(contentType$34145,{t:$$$cl32209.Null})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/case$34146.$native));
-                            /*End dynamic block*/
-                        }//End switch statement at blob.ceylon (167:13-182:10)
-                    }//End switch statement at blob.ceylon (129:12-183:9)
-                }else if ($$$cl32209.isOfType(start$34143,{t:$$$cl32209.Null})) {
-                    //Switch statement at blob.ceylon (186:12-240:9)
-                    var case$34155=end$34144;
-                    if ($$$cl32209.isOfType(end$34144,{t:$$$cl32209.Integer})) {
-                        //Switch statement at blob.ceylon (188:13-203:10)
-                        var case$34156=contentType$34145;
-                        if ($$$cl32209.isOfType(contentType$34145,{t:$$$cl32209.String})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/null/*NULL PARAM!*/,case$34155/*NULL PARAM!*/,case$34156.valueOf()));
-                            /*End dynamic block*/
-                        }else if ($$$cl32209.isOfType(contentType$34145,{t:$$$cjl32280.JSString})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/null/*NULL PARAM!*/,case$34155/*NULL PARAM!*/,case$34156.$native));
-                            /*End dynamic block*/
-                        }else if ($$$cl32209.isOfType(contentType$34145,{t:$$$cl32209.Null})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/null/*NULL PARAM!*/,case$34155));
-                            /*End dynamic block*/
-                        }//End switch statement at blob.ceylon (188:13-203:10)
-                    }else if ($$$cl32209.isOfType(end$34144,{t:$$$cjl32280.JSNumber})) {
-                        //Switch statement at blob.ceylon (206:13-221:10)
-                        var case$34157=contentType$34145;
-                        if ($$$cl32209.isOfType(contentType$34145,{t:$$$cl32209.String})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/null/*NULL PARAM!*/,case$34155.$native/*NULL PARAM!*/,case$34157.valueOf()));
-                            /*End dynamic block*/
-                        }else if ($$$cl32209.isOfType(contentType$34145,{t:$$$cjl32280.JSString})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/null/*NULL PARAM!*/,case$34155.$native/*NULL PARAM!*/,case$34157.$native));
-                            /*End dynamic block*/
-                        }else if ($$$cl32209.isOfType(contentType$34145,{t:$$$cl32209.Null})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/null/*NULL PARAM!*/,case$34155.$native));
-                            /*End dynamic block*/
-                        }//End switch statement at blob.ceylon (206:13-221:10)
-                    }else if ($$$cl32209.isOfType(end$34144,{t:$$$cl32209.Null})) {
-                        //Switch statement at blob.ceylon (224:13-239:10)
-                        var case$34158=contentType$34145;
-                        if ($$$cl32209.isOfType(contentType$34145,{t:$$$cl32209.String})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/null/*NULL PARAM!*/,null/*NULL PARAM!*/,case$34158.valueOf()));
-                            /*End dynamic block*/
-                        }else if ($$$cl32209.isOfType(contentType$34145,{t:$$$cjl32280.JSString})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(/*NULL PARAM!*/null/*NULL PARAM!*/,null/*NULL PARAM!*/,case$34158.$native));
-                            /*End dynamic block*/
-                        }else if ($$$cl32209.isOfType(contentType$34145,{t:$$$cl32209.Null})) {
-                            /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice());
-                            /*End dynamic block*/
-                        }//End switch statement at blob.ceylon (224:13-239:10)
-                    }//End switch statement at blob.ceylon (186:12-240:9)
-                }//End switch statement at blob.ceylon (70:8-241:8)
-            };$$blobAbs.slice.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Blob},$ps:[{$nm:'start',$mt:'prm',$def:1,$t:{ t:'u', l:[{t:$$$cl32209.Integer},{ t:'u', l:[{t:$$$cl32209.Null},{t:$$$cjl32280.JSNumber}]}]},$an:function(){return[];}},{$nm:'end',$mt:'prm',$def:1,$t:{ t:'u', l:[{t:$$$cl32209.Integer},{ t:'u', l:[{t:$$$cl32209.Null},{t:$$$cjl32280.JSNumber}]}]},$an:function(){return[];}},{$nm:'contentType',$mt:'prm',$def:1,$t:{ t:'u', l:[{t:$$$cl32209.String},{ t:'u', l:[{t:$$$cl32209.Null},{t:$$$cjl32280.JSString}]}]},$an:function(){return[];}}],$cont:BlobAbs,$an:function(){return[$$$cl32209.shared()];},d:['ceylon.js.file','BlobAbs','$m','slice']};};
-            
-            //MethodDefinition close at blob.ceylon (244:4-248:4)
-            $$blobAbs.close=function close(){
-                var $$blobAbs=this;
-                /*Begin dynamic block*/
-                $$blobAbs.$native.close();
-                /*End dynamic block*/
-            };$$blobAbs.close.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl32209.Anything},$ps:[],$cont:BlobAbs,$an:function(){return[$$$cl32209.shared()];},d:['ceylon.js.file','BlobAbs','$m','close']};};
-        })(BlobAbs.$$.prototype);
+        $$$cl1.initTypeProto(BlobAbs,'ceylon.js.file::BlobAbs',$$$cjl359.JSObjectAbs);
     }
     return BlobAbs;
 }
 exports.$init$BlobAbs=$init$BlobAbs;
 $init$BlobAbs();
-
-//ClassDefinition Blob at blob.ceylon (251:0-256:0)
-function Blob(n$34159, $$blob){
+function Blob(n$960, $$blob){
     $init$Blob();
     if ($$blob===undefined)$$blob=new Blob.$$;
-    $$blob.n$34159_=n$34159;
+    $$blob.n$960_=n$960;
     BlobAbs($$blob);
-    
-    //AttributeDeclaration native at blob.ceylon (252:1-252:29)
-    $$blob.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl32209.Anything},$cont:Blob,$an:function(){return[$$$cl32209.shared(),$$$cl32209.actual()];},d:['ceylon.js.file','Blob','$at','native']};}};
+    $$$cl1.defineAttr($$blob,'n$960',function(){return this.n$960_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:Blob,d:['ceylon.js.file','Blob','$at','n']};});
+    $$blob.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:Blob,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['ceylon.js.file','Blob','$at','native']};}};
     /*Begin dynamic block*/
-    $$blob.$native=$$blob.n$34159;/*End dynamic block*/
+    $$blob.$native=n$960;/*End dynamic block*/
     return $$blob;
 }
-Blob.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:BlobAbs},satisfies:[],$an:function(){return[$$$cl32209.shared()];},d:['ceylon.js.file','Blob']};};
+Blob.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:BlobAbs},satisfies:[],$an:function(){return[$$$cl1.shared()];},d:['ceylon.js.file','Blob']};};
 exports.Blob=Blob;
 function $init$Blob(){
     if (Blob.$$===undefined){
-        $$$cl32209.initTypeProto(Blob,'ceylon.js.file::Blob',$init$BlobAbs());
-        (function($$blob){
-            
-            //AttributeDeclaration native at blob.ceylon (252:1-252:29)
-            $$$cl32209.defineAttr($$blob,'n$34159',function(){return this.n$34159_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl32209.Anything},$cont:Blob,d:['ceylon.js.file','Blob','$at','n']};});
-        })(Blob.$$.prototype);
+        $$$cl1.initTypeProto(Blob,'ceylon.js.file::Blob',$init$BlobAbs());
     }
     return Blob;
 }
 exports.$init$Blob=$init$Blob;
 $init$Blob();
+exports.$mod$ans$=[];
+exports.$pkg$ans$ceylon$js$file=function(){return[$$$cl1.shared()];};
 });
 }(typeof define==='function' && define.amd ? define : function (factory) {
 if (typeof exports!=='undefined') { factory(require, exports, module);
