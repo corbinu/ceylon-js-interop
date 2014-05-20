@@ -810,7 +810,7 @@ shared abstract class JQueryAbs() extends JSObjectAbs() {
 		}
 	}
 	
-	shared JQuery setCss(String property, String|Number val) {
+	shared JQuery setCss(String property, String|Number<Integer> val) {
 		dynamic {
 			return JQuery(native.css(property, val));
 		}

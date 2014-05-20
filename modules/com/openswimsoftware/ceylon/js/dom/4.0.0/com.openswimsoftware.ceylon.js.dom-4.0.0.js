@@ -1,2976 +1,2882 @@
-(function(define) { define(function(require, exports, module) {
-var $$METAMODEL$$={"$mod-deps":["ceylon.language\/1.0.0","com.openswimsoftware.ceylon.js.language\/1.8.0","com.openswimsoftware.ceylon.js.html\/5.0.0","com.openswimsoftware.ceylon.js.json\/1.0.0"],"$mod-name":"com.openswimsoftware.ceylon.js.dom","$mod-version":"4.0.0","com.openswimsoftware.ceylon.js.dom":{"attributeNode":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeType"},"$mt":"obj","$an":{"shared":[]},"$nm":"attributeNode"},"endToStart":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"RangeCompareHow"},"$mt":"obj","$an":{"shared":[]},"$nm":"endToStart"},"Attr":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"AttrAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["a DOM Attr"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"Attr"},"documentTypeNode":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeType"},"$mt":"obj","$an":{"shared":[]},"$nm":"documentTypeNode"},"ltr":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentDirection"},"$mt":"obj","$an":{"shared":[]},"$nm":"ltr"},"TextAbs":{"abstract":"1","super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"CharacterDataAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"wholeText":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["get the Text node as a String"]},"$nm":"wholeText"},"splitText":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Text"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"}]},"$mt":"prm","$nm":"offset"}]],"$mt":"mthd","$an":{"shared":[],"doc":["split the node in two at the offset"]},"$nm":"splitText"}},"$nm":"TextAbs"},"notationNode":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeType"},"$mt":"obj","$an":{"shared":[]},"$nm":"notationNode"},"capturePhase":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"EventPhase"},"$mt":"obj","$an":{"shared":[]},"$nm":"capturePhase"},"ProcessingInstructionAbs":{"abstract":"1","super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"getData":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["get the processing instruction data"]},"$nm":"getData"},"target":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["the processing instruction target"]},"$nm":"target"},"setData":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"data"}]],"$mt":"mthd","$an":{"shared":[],"doc":["set the processing instruction data"]},"$nm":"setData"}},"$nm":"ProcessingInstructionAbs"},"filterSkip":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeFilterResult"},"$mt":"obj","$an":{"shared":[]},"$nm":"filterSkip"},"filterAccept":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeFilterResult"},"$mt":"obj","$an":{"shared":[]},"$nm":"filterAccept"},"$pkg-shared":"1","documentPositionFollowing":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentPosition"},"$mt":"obj","$an":{"shared":[]},"$nm":"documentPositionFollowing"},"css1Compat":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"CompatMode"},"$mt":"obj","$an":{"shared":[]},"$nm":"css1Compat"},"EventInit":{"super":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Basic"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$mt":"prm","$an":{"shared":[]},"$nm":"bubbles"},{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$mt":"prm","$an":{"shared":[]},"$nm":"cancelable"}],"$mt":"cls","$an":{"shared":[],"doc":["Event creation options"]},"$m":{"toJson":{"$t":{"$md":"com.openswimsoftware.ceylon.js.json","$pk":"com.openswimsoftware.ceylon.js.json","$nm":"JSJSON"},"$mt":"mthd","$an":{"shared":[],"doc":["convert to native JSON"]},"$nm":"toJson"}},"$at":{"bubbles":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[]},"$nm":"bubbles"},"cancelable":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[]},"$nm":"cancelable"}},"$nm":"EventInit"},"EventTargetAbs":{"abstract":"1","super":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSObjectAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"addEventListener":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"type"},{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Event"},"$mt":"prm","$nm":"event"}]],"$mt":"prm","$pt":"f","$nm":"callback"},{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$mt":"prm","$def":"1","$nm":"capture"}]],"$mt":"mthd","$an":{"shared":[],"doc":["add an event listener to the target"]},"$m":{"callback":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Event"},"$mt":"prm","$nm":"event"}]],"$mt":"mthd","$nm":"callback"}},"$nm":"addEventListener"},"dispatchEvent":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Event"},"$mt":"prm","$nm":"event"}]],"$mt":"mthd","$an":{"shared":[],"doc":["dispatch an event at the target"]},"$nm":"dispatchEvent"},"removeEventListener":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"type"},{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Event"},"$mt":"prm","$nm":"event"}]],"$mt":"prm","$pt":"f","$nm":"callback"},{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$mt":"prm","$def":"1","$nm":"capture"}]],"$mt":"mthd","$an":{"shared":[],"doc":["remove an event listener from the target"]},"$m":{"callback":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Event"},"$mt":"prm","$nm":"event"}]],"$mt":"mthd","$nm":"callback"}},"$nm":"removeEventListener"}},"$nm":"EventTargetAbs"},"CDATASectionAbs":{"abstract":"1","super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"TextAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$nm":"CDATASectionAbs"},"none":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"EventPhase"},"$mt":"obj","$an":{"shared":[]},"$nm":"none"},"filterReject":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeFilterResult"},"$mt":"obj","$an":{"shared":[]},"$nm":"filterReject"},"DocumentTypeAbs":{"abstract":"1","super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"name":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the document type name"]},"$nm":"name"},"publicId":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the document types public id string"]},"$nm":"publicId"},"systemId":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the document types system id string"]},"$nm":"systemId"}},"$nm":"DocumentTypeAbs"},"NodeListAbs":{"abstract":"1","super":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSObjectAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"item":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"}]},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"}]},"$mt":"prm","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns he node at the given index"]},"$nm":"item"},"length":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the length of the node collection"]},"$nm":"length"}},"$nm":"NodeListAbs"},"EntityReference":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"EntityReferenceAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["a DOM EntityReference"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"EntityReference"},"documentPositionImplementationSpecific":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentPosition"},"$mt":"obj","$an":{"shared":[]},"$nm":"documentPositionImplementationSpecific"},"ElementAbs":{"abstract":"1","super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"hasAttribute":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"attName"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns if attribute exists the element"]},"$nm":"hasAttribute"},"getAttributeNS":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"namespace"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"attributeName"}]],"$mt":"mthd","$an":{"shared":[],"doc":["get the value of the attribute on this element within the given namespace"]},"$nm":"getAttributeNS"},"getElementsByTagName":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"HTMLCollection"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$def":"1","$nm":"tagName"}]],"$mt":"mthd","$an":{"shared":[],"doc":["get elements on this element by the tagname"]},"$nm":"getElementsByTagName"},"getElementsByTagNameNS":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"HTMLCollection"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"namespace"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$def":"1","$nm":"tagName"}]],"$mt":"mthd","$an":{"shared":[],"doc":["get elements on this element by the tagname within the given namespace"]},"$nm":"getElementsByTagNameNS"},"removeAttributeNS":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"namespace"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"attrName"}]],"$mt":"mthd","$an":{"shared":[],"doc":["remove an attribute on the element within the given namespace"]},"$nm":"removeAttributeNS"},"tagName":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the elements tag name"]},"$nm":"tagName"},"removeAttribute":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"attrName"}]],"$mt":"mthd","$an":{"shared":[],"doc":["remove an attribute on the element"]},"$nm":"removeAttribute"},"setAttributeNS":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"namespace"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"name"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"val"}]],"$mt":"mthd","$an":{"shared":[],"doc":["set an attribute on the element within the given namespace"]},"$nm":"setAttributeNS"},"setAttribute":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"name"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"val"}]],"$mt":"mthd","$an":{"shared":[],"doc":["set an attribute on the element"]},"$nm":"setAttribute"},"getAttribute":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"attributeName"}]],"$mt":"mthd","$an":{"shared":[],"doc":["get the value of the attribute on this element"]},"$nm":"getAttribute"},"hasAttributeNS":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"namespace"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"attName"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns if attribute exists the element within the given namespace"]},"$nm":"hasAttributeNS"}},"$nm":"ElementAbs"},"startToStart":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"RangeCompareHow"},"$mt":"obj","$an":{"shared":[]},"$nm":"startToStart"},"CompatMode":{"abstract":"1","super":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Basic"},"of":[{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"css1Compat"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"backCompat"}],"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$nm":"name"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"doc":["Document Compatablity Mode"]},"$at":{"name":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$nm":"name"}},"$nm":"CompatMode"},"rtl":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentDirection"},"$mt":"obj","$an":{"shared":[]},"$nm":"rtl"},"DocumentFragment":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentFragmentAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["a DOM DocumentFragment"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"DocumentFragment"},"loading":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentReadyState"},"$mt":"obj","$an":{"shared":[]},"$nm":"loading"},"documentPositionContainedBy":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentPosition"},"$mt":"obj","$an":{"shared":[]},"$nm":"documentPositionContainedBy"},"Event":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"EventAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["a DOM Event"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"Event"},"Comment":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"CommentAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["a DOM comment"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"Comment"},"EventAbs":{"abstract":"1","super":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSObjectAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"defaultPrevented":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"doc":["has the default been prevented"]},"$nm":"defaultPrevented"},"timeStamp":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSDate"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the time the event was created"]},"$nm":"timeStamp"},"stopPropagation":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"mthd","$an":{"shared":[],"doc":["stops event propagation through further DOM elements"]},"$nm":"stopPropagation"},"eventPhase":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"EventPhase"},"$mt":"mthd","$an":{"shared":[],"doc":["returns current event phase"]},"$nm":"eventPhase"},"currentTarget":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"EventTarget"}]},"$mt":"mthd","$an":{"shared":[],"doc":["returns the current event target"]},"$nm":"currentTarget"},"bubbles":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"doc":["does the event bubble through the dom or not"]},"$nm":"bubbles"},"stopImmediatePropagation":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the event propagation immidately"]},"$nm":"stopImmediatePropagation"},"target":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"EventTarget"}]},"$mt":"mthd","$an":{"shared":[],"doc":["returns the event target"]},"$nm":"target"},"isTrusted":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"doc":["was the event created by the browser or a script"]},"$nm":"isTrusted"},"cancelable":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"doc":["is the event cancelable or not"]},"$nm":"cancelable"},"preventDefault":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"mthd","$an":{"shared":[],"doc":["cancels the event if it is cancelable"]},"$nm":"preventDefault"},"type":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the Event type"]},"$nm":"type"}},"$nm":"EventAbs"},"NodeFilterResult":{"abstract":"1","super":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Basic"},"of":[{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"filterAccept"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"filterReject"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"filterSkip"}],"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$nm":"name"}],"$mt":"cls","$an":{"abstract":[],"shared":[]},"$at":{"name":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$nm":"name"}},"$nm":"NodeFilterResult"},"documentPositionPreceding":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentPosition"},"$mt":"obj","$an":{"shared":[]},"$nm":"documentPositionPreceding"},"DocumentDirection":{"abstract":"1","super":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Basic"},"of":[{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"rtl"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"ltr"}],"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$nm":"name"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"doc":["Document Direction"]},"$at":{"name":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$nm":"name"}},"$nm":"DocumentDirection"},"createEvent":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Event"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"type"},{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"EventInit"},"$mt":"prm","$nm":"options"}]],"$mt":"mthd","$an":{"shared":[],"doc":["create a new Event"]},"$nm":"createEvent"},"DocumentFragmentAbs":{"abstract":"1","super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$nm":"DocumentFragmentAbs"},"RangeAbs":{"abstract":"1","super":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSObjectAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"extractContents":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentFragment"},"$mt":"mthd","$an":{"shared":[],"doc":["move the contents of the range from their document to a new document fragment"]},"$nm":"extractContents"},"detach":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"mthd","$an":{"shared":[],"doc":["detach a range from use to free resources"]},"$nm":"detach"},"compareBoundaryPoints":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"RangeCompareHow"},"$mt":"prm","$nm":"how"},{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Range"},"$mt":"prm","$nm":"sourceRange"}]],"$mt":"mthd","$an":{"shared":[],"doc":["compare the boundery points of one range with another"]},"$nm":"compareBoundaryPoints"},"selectNodeContents":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"refNode"}]],"$mt":"mthd","$an":{"shared":[],"doc":["set the range to contain the contents of the given node"]},"$nm":"selectNodeContents"},"insertNode":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"newNode"}]],"$mt":"mthd","$an":{"shared":[],"doc":["insert a node at the start of the range"]},"$nm":"insertNode"},"deleteContents":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"mthd","$an":{"shared":[],"doc":["remove the contents of range from the document"]},"$nm":"deleteContents"},"setStartAfter":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"refNode"}]],"$mt":"mthd","$an":{"shared":[],"doc":["set the start position of the range relative to the given node"]},"$nm":"setStartAfter"},"startOffset":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"},"$mt":"mthd","$an":{"shared":[],"doc":["returns a number where the container range begins"]},"$nm":"startOffset"},"collapsed":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"doc":["is the start and end nodes the same node"]},"$nm":"collapsed"},"cloneRange":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Range"},"$mt":"mthd","$an":{"shared":[],"doc":["clone the range"]},"$nm":"cloneRange"},"surroundContents":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"newNode"}]],"$mt":"mthd","$an":{"shared":[],"doc":["move the contents of the range into the new node"]},"$nm":"surroundContents"},"cloneContents":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentFragment"},"$mt":"mthd","$an":{"shared":[],"doc":["creates a new document copying the nodes inside of the range"]},"$nm":"cloneContents"},"selectNode":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"refNode"}]],"$mt":"mthd","$an":{"shared":[],"doc":["set the range to contain node and its contents"]},"$nm":"selectNode"},"endOffset":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"},"$mt":"mthd","$an":{"shared":[],"doc":["returns a number where the container range ends"]},"$nm":"endOffset"},"setStart":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"startNode"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"}]},"$mt":"prm","$nm":"startOffset"}]],"$mt":"mthd","$an":{"shared":[],"doc":["set the start position of the range"]},"$nm":"setStart"},"isPointInRange":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"node"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"}]},"$mt":"prm","$nm":"offset"}]],"$mt":"mthd","$an":{"shared":[],"doc":["is the the current point in the range"]},"$nm":"isPointInRange"},"commonAncestorContainer":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the deepest Node that contains the startContainer and endContainer nodes"]},"$nm":"commonAncestorContainer"},"startContainer":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the node where the container range begins"]},"$nm":"startContainer"},"endContainer":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the node where the container range ends"]},"$nm":"endContainer"},"setEndAfter":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"refNode"}]],"$mt":"mthd","$an":{"shared":[],"doc":["set the end position of the range relative to the given node"]},"$nm":"setEndAfter"},"setStartBefore":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"refNode"}]],"$mt":"mthd","$an":{"shared":[],"doc":["set the start position of the range relative to the given node"]},"$nm":"setStartBefore"},"setEndBefore":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"refNode"}]],"$mt":"mthd","$an":{"shared":[],"doc":["set the end position of the range relative to the given node"]},"$nm":"setEndBefore"},"setEnd":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"endNode"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"}]},"$mt":"prm","$nm":"endOffset"}]],"$mt":"mthd","$an":{"shared":[],"doc":["set the end position of the range"]},"$nm":"setEnd"},"collapse":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"}]},"$mt":"prm","$def":"1","$nm":"toStart"}]],"$mt":"mthd","$an":{"shared":[],"doc":["collapses the range to one of its boundery points"]},"$nm":"collapse"}},"$nm":"RangeAbs"},"Node":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["a DOM Node"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"Node"},"NodeType":{"abstract":"1","super":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Basic"},"of":[{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"attributeNode"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"cdataSectionNode"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"commentNode"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"documentFragmentNode"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"documentNode"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"documentTypeNode"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"elementNode"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"entityNode"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"entityReferenceNode"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"notationNode"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"processingInstructionNode"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"textNode"}],"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$nm":"name"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"doc":["specific NodeType"]},"$at":{"name":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$nm":"name"}},"$nm":"NodeType"},"processingInstructionNode":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeType"},"$mt":"obj","$an":{"shared":[]},"$nm":"processingInstructionNode"},"endToEnd":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"RangeCompareHow"},"$mt":"obj","$an":{"shared":[]},"$nm":"endToEnd"},"CharacterDataAbs":{"abstract":"1","super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"replaceData":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"}]},"$mt":"prm","$nm":"offset"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"}]},"$mt":"prm","$nm":"count"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"data"}]],"$mt":"mthd","$an":{"shared":[],"doc":["replace the Characters starting at offset to count using the String data"]},"$nm":"replaceData"},"getData":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the CharacterData"]},"$nm":"getData"},"deleteData":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"}]},"$mt":"prm","$nm":"offset"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"}]},"$mt":"prm","$nm":"count"}]],"$mt":"mthd","$an":{"shared":[]},"$nm":"deleteData"},"length":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the length of the CharacterData"]},"$nm":"length"},"insertData":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"}]},"$mt":"prm","$nm":"offset"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"data"}]],"$mt":"mthd","$an":{"shared":[],"doc":["insert the Characters starting at offset using the String data"]},"$nm":"insertData"},"appendData":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"data"}]],"$mt":"mthd","$an":{"shared":[],"doc":["append the Characters with String data"]},"$nm":"appendData"},"substringData":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"}]},"$mt":"prm","$nm":"offset"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"}]},"$mt":"prm","$nm":"count"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns a subtstring starting at offset and through a count"]},"$nm":"substringData"},"setData":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"data"}]],"$mt":"mthd","$an":{"shared":[],"doc":["set the CharacterData"]},"$nm":"setData"}},"$nm":"CharacterDataAbs"},"commentNode":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeType"},"$mt":"obj","$an":{"shared":[]},"$nm":"commentNode"},"NodeList":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeListAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["collection of DOM nodes"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"NodeList"},"documentPositionContains":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentPosition"},"$mt":"obj","$an":{"shared":[]},"$nm":"documentPositionContains"},"TreeWalkerAbs":{"abstract":"1","super":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSObjectAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"previousSibling":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"}]},"$mt":"mthd","$an":{"shared":[],"doc":["move the tree to the current nodes previous sibling"]},"$nm":"previousSibling"},"whatToShow":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"mthd","$an":{"shared":[],"doc":["returns what type of nodes are present on the tree"]},"$nm":"whatToShow"},"parentNode":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"}]},"$mt":"mthd","$an":{"shared":[],"doc":["move the tree to the first node in the document order"]},"$nm":"parentNode"},"root":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the node where the tree walker was created"]},"$nm":"root"},"firstChild":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"}]},"$mt":"mthd","$an":{"shared":[],"doc":["move the tree to the first child of the current node"]},"$nm":"firstChild"},"currentNode":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the current document node"]},"$nm":"currentNode"},"nextNode":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"}]},"$mt":"mthd","$an":{"shared":[],"doc":["move the tree to the next node and returns"]},"$nm":"nextNode"},"nextSibling":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"}]},"$mt":"mthd","$an":{"shared":[],"doc":["move the tree to the current nodes next sibling"]},"$nm":"nextSibling"},"filter":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeFilter"}]},"$mt":"mthd","$an":{"shared":[],"doc":["returns the node filter used to select the tree nodes"]},"$nm":"filter"},"previousNode":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"}]},"$mt":"mthd","$an":{"shared":[],"doc":["move the tree to the previous node and returns"]},"$nm":"previousNode"},"lastChild":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"}]},"$mt":"mthd","$an":{"shared":[],"doc":["move the tree to the last child of the current node"]},"$nm":"lastChild"}},"$nm":"TreeWalkerAbs"},"CharacterData":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"CharacterDataAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["a DOM CharacterData segment used by Text, Comment and Processing Instruction"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"CharacterData"},"DOMImplementationAbs":{"abstract":"1","super":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSObjectAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"createDocument":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Document"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]}]},"$mt":"prm","$nm":"namespace"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$def":"1","$nm":"qualifiedName"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentType"}]},"$mt":"prm","$def":"1","$nm":"doctype"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns a new Document"]},"$nm":"createDocument"},"createDocumentType":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentType"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"qualifiedName"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"publicId"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"systemId"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns a new DocumentType"]},"$nm":"createDocumentType"},"hasFeature":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"feature"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$def":"1","$nm":"version"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns if the DOM has the given feature at the specified or greater version"]},"$nm":"hasFeature"}},"$nm":"DOMImplementationAbs"},"documentFragmentNode":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeType"},"$mt":"obj","$an":{"shared":[]},"$nm":"documentFragmentNode"},"DocumentPosition":{"abstract":"1","super":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Basic"},"of":[{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"documentPositionContainedBy"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"documentPositionContains"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"documentPositionDisconnected"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"documentPositionFollowing"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"documentPositionImplementationSpecific"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"documentPositionPreceding"}],"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$nm":"name"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"doc":["Document Positon Type"]},"$at":{"name":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$nm":"name"}},"$nm":"DocumentPosition"},"HTMLCollectionAbs":{"abstract":"1","super":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSObjectAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"item":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Element"}]},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"}]},"$mt":"prm","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"doc":["return the node at the given index"]},"$nm":"item"},"length":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the length of the collection"]},"$nm":"length"},"namedItem":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSObject"}]},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"name"}]],"$mt":"mthd","$an":{"shared":[],"doc":["return the node whose id or name matches the passed name"]},"$nm":"namedItem"}},"$nm":"HTMLCollectionAbs"},"RangeCompareHow":{"abstract":"1","super":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Basic"},"of":[{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"endToEnd"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"endToStart"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"startToEnd"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"startToStart"}],"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$nm":"name"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"doc":["how to comare ranges"]},"$at":{"name":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$nm":"name"}},"$nm":"RangeCompareHow"},"NodeIteratorAbs":{"abstract":"1","super":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSObjectAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"whatToShow":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"mthd","$an":{"shared":[],"doc":["return long representing what types of nodes the iterator shows"]},"$nm":"whatToShow"},"root":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the iterators root node"]},"$nm":"root"},"nextNode":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"}]},"$mt":"mthd","$an":{"shared":[],"doc":["return the next node"]},"$nm":"nextNode"},"filter":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeFilter"}]},"$mt":"mthd","$an":{"shared":[],"doc":["return the iterator filter if any"]},"$nm":"filter"},"previousNode":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"}]},"$mt":"mthd","$an":{"shared":[],"doc":["return the previous node"]},"$nm":"previousNode"}},"$nm":"NodeIteratorAbs"},"entityNode":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeType"},"$mt":"obj","$an":{"shared":[]},"$nm":"entityNode"},"backCompat":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"CompatMode"},"$mt":"obj","$an":{"shared":[]},"$nm":"backCompat"},"HTMLCollection":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"HTMLCollectionAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["a DOM HTMLCollection"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"HTMLCollection"},"textNode":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeType"},"$mt":"obj","$an":{"shared":[]},"$nm":"textNode"},"interactive":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentReadyState"},"$mt":"obj","$an":{"shared":[]},"$nm":"interactive"},"complete":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentReadyState"},"$mt":"obj","$an":{"shared":[]},"$nm":"complete"},"NodeIterator":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeIteratorAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["a DOM NodeIterator"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"NodeIterator"},"startToEnd":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"RangeCompareHow"},"$mt":"obj","$an":{"shared":[]},"$nm":"startToEnd"},"DOMImplementation":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DOMImplementationAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["a DOMImplementation"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"DOMImplementation"},"cdataSectionNode":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeType"},"$mt":"obj","$an":{"shared":[]},"$nm":"cdataSectionNode"},"DocumentType":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentTypeAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["a DocumentType"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"DocumentType"},"CommentAbs":{"abstract":"1","super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"CharacterDataAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$nm":"CommentAbs"},"Range":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"RangeAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["DOM range"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"Range"},"Document":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["a DOM Document"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"Document"},"entityReferenceNode":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeType"},"$mt":"obj","$an":{"shared":[]},"$nm":"entityReferenceNode"},"atTarget":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"EventPhase"},"$mt":"obj","$an":{"shared":[]},"$nm":"atTarget"},"EntityReferenceAbs":{"abstract":"1","super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$nm":"EntityReferenceAbs"},"AttrAbs":{"abstract":"1","super":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSObjectAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"getValue":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the Attr value string"]},"$nm":"getValue"},"name":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the Attr name"]},"$nm":"name"},"setValue":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"val"}]],"$mt":"mthd","$an":{"shared":[],"doc":["sets the Attr value string"]},"$nm":"setValue"},"isId":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the Attr is an ID or not"]},"$nm":"isId"}},"$nm":"AttrAbs"},"elementNode":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeType"},"$mt":"obj","$an":{"shared":[]},"$nm":"elementNode"},"NodeFilter":{"super":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Basic"},"$ps":[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeFilterResult"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"n"}]],"$mt":"prm","$pt":"f","$nm":"acceptNode"}],"$mt":"cls","$an":{"shared":[],"doc":["Node Filter"]},"$m":{"acceptNode":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeFilterResult"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"n"}]],"$mt":"mthd","$nm":"acceptNode"}},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"}},"$nm":"NodeFilter"},"documentPositionDisconnected":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentPosition"},"$mt":"obj","$an":{"shared":[]},"$nm":"documentPositionDisconnected"},"getWindow":{"$t":{"$md":"com.openswimsoftware.ceylon.js.html","$pk":"com.openswimsoftware.ceylon.js.html","$nm":"Window"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the current browser window"]},"$nm":"getWindow"},"Text":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"TextAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["a DOM Text element"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"Text"},"CDATASection":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"CDATASectionAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["a DOM CDATASection"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"CDATASection"},"documentNode":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeType"},"$mt":"obj","$an":{"shared":[]},"$nm":"documentNode"},"TreeWalker":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"TreeWalkerAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["a Document TreeWalker"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"TreeWalker"},"EventPhase":{"abstract":"1","super":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Basic"},"of":[{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"none"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"capturePhase"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"atTarget"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"bubblingPhase"}],"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$an":{"shared":[]},"$nm":"num"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"doc":["current Event Phase"]},"$at":{"num":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[]},"$nm":"num"}},"$nm":"EventPhase"},"bubblingPhase":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"EventPhase"},"$mt":"obj","$an":{"shared":[]},"$nm":"bubblingPhase"},"NodeAbs":{"abstract":"1","super":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSObjectAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"firstChild":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the nodes first child node"]},"$nm":"firstChild"},"nodeName":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the nodes name"]},"$nm":"nodeName"},"childNodes":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeList"},"$mt":"mthd","$an":{"shared":[],"doc":["returns a list of child nodes"]},"$nm":"childNodes"},"baseURI":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the nodes baseURI"]},"$nm":"baseURI"},"replaceChild":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"newChild"},{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"oldChild"}]],"$mt":"mthd","$an":{"shared":[],"doc":["replaces the old node with the new one and returns the old node"]},"$nm":"replaceChild"},"setTextContent":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"content"}]],"$mt":"mthd","$an":{"shared":[],"doc":["set the text content of the node and its descendents"]},"$nm":"setTextContent"},"lastChild":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"}]},"$mt":"mthd","$an":{"shared":[],"doc":["returns the last child node of this node"]},"$nm":"lastChild"},"normalize":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"mthd","$an":{"shared":[],"doc":["clean up all the text nodes under this on"]},"$nm":"normalize"},"lookupPrefix":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]}]},"$mt":"prm","$nm":"namespaceURI"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns the prefix for the given namespaceURI"]},"$nm":"lookupPrefix"},"previousSibling":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"}]},"$mt":"mthd","$an":{"shared":[],"doc":["returns the node immediately proceding this node in the parents child nodes or null if none"]},"$nm":"previousSibling"},"parentNode":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"}]},"$mt":"mthd","$an":{"shared":[],"doc":["returns the parent node if any"]},"$nm":"parentNode"},"hasChildNodes":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"doc":["if the node has children"]},"$nm":"hasChildNodes"},"nodeType":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeType"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the nodes type"]},"$nm":"nodeType"},"cloneNode":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$ps":[[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$mt":"prm","$def":"1","$nm":"bool"}]],"$mt":"mthd","$an":{"shared":[],"doc":["clones the current node pass true for deep copy"]},"$nm":"cloneNode"},"nextSibling":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"}]},"$mt":"mthd","$an":{"shared":[],"doc":["returns the node immediately after this node in the parents child nodes or null if none"]},"$nm":"nextSibling"},"isDefaultNamespace":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"namespaceURI"}]],"$mt":"mthd","$an":{"shared":[],"doc":["is the passed namespace the default one"]},"$nm":"isDefaultNamespace"},"insertBefore":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"newElement"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"}]},"$mt":"prm","$nm":"referenceElement"}]],"$mt":"mthd","$an":{"shared":[],"doc":["insert the passed node to children before the reference node"]},"$nm":"insertBefore"},"appendChild":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"node"}]],"$mt":"mthd","$an":{"shared":[],"doc":["append the node to the nodes children"]},"$nm":"appendChild"},"setNodeValue":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"val"}]],"$mt":"mthd","$an":{"shared":[],"doc":["set the value of the current node"]},"$nm":"setNodeValue"},"compareDocumentPosition":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentPosition"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"node"}]],"$mt":"mthd","$an":{"shared":[],"doc":["return the node document position compared to the passed node"]},"$nm":"compareDocumentPosition"},"removeChild":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"node"}]],"$mt":"mthd","$an":{"shared":[],"doc":["removes the child node and returns the removed node"]},"$nm":"removeChild"},"prefix":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"mthd","$an":{"shared":[],"doc":["string of the nodes namespace prefix"]},"$nm":"prefix"},"getTextContent":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"mthd","$an":{"shared":[],"doc":["returns the text content of the node and its descendents"]},"$nm":"getTextContent"},"isEqualNode":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"node"}]],"$mt":"mthd","$an":{"shared":[],"doc":["is the passed node equal to this one"]},"$nm":"isEqualNode"},"getNodeValue":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"mthd","$an":{"shared":[],"doc":["returns the value of the current node"]},"$nm":"getNodeValue"}},"$at":{"ownerDocument":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Document"},"$mt":"gttr","$an":{"shared":[],"doc":["returns nodes owning document"]},"$nm":"ownerDocument"}},"$nm":"NodeAbs"},"EventTarget":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"EventTargetAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["a DOM EventTarget"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"EventTarget"},"ProcessingInstruction":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"ProcessingInstructionAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["Processing Instruction"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"ProcessingInstruction"},"DocumentReadyState":{"abstract":"1","super":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Basic"},"of":[{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"loading"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"interactive"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"complete"}],"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$nm":"name"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"doc":["Document Ready State"]},"$at":{"name":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$nm":"name"}},"$nm":"DocumentReadyState"},"DocumentAbs":{"abstract":"1","super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"writeln":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"line"}]],"$mt":"mthd","$an":{"shared":[],"doc":["write the string to the document as a line"]},"$nm":"writeln"},"body":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the body node on the document"]},"$nm":"body"},"getElementsByName":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"HTMLCollection"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"name"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns a list of elements in the document with the given name"]},"$nm":"getElementsByName"},"createNodeIterator":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeIterator"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"root"},{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$def":"1","$nm":"whatToShow"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeFilter"}]},"$mt":"prm","$def":"1","$nm":"filter"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns a new node iterator the document"]},"$nm":"createNodeIterator"},"location":{"$t":{"$md":"com.openswimsoftware.ceylon.js.html","$pk":"com.openswimsoftware.ceylon.js.html","$nm":"Location"},"$mt":"mthd","$an":{"shared":[],"doc":["returns location information about the URL of the document"]},"$nm":"location"},"hasFocus":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"doc":["returns whether the document or any element in the document currently has focus"]},"$nm":"hasFocus"},"defaultView":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"com.openswimsoftware.ceylon.js.html","$pk":"com.openswimsoftware.ceylon.js.html","$nm":"Window"}]},"$mt":"mthd","$an":{"shared":[],"doc":["returns the browser window object associated with the document"]},"$nm":"defaultView"},"close":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"mthd","$an":{"shared":[],"doc":["finishes writing to a document opened with Document.open()"]},"$nm":"close"},"open":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"mthd","$an":{"shared":[],"doc":["opens a document for writing"]},"$nm":"open"},"scripts":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"HTMLCollection"},"$mt":"mthd","$an":{"shared":[],"doc":["returns a collection of all the script elements in the document"]},"$nm":"scripts"},"createAttributeNS":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Attr"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]}]},"$mt":"prm","$nm":"namespace"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"name"}]],"$mt":"mthd","$an":{"shared":[],"doc":["creates a attribute with the given namespace"]},"$nm":"createAttributeNS"},"getElementsByClassName":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"HTMLCollection"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"names"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns a collection of elements on the document by the class name"]},"$nm":"getElementsByClassName"},"createAttribute":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Attr"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"name"}]],"$mt":"mthd","$an":{"shared":[],"doc":["creates a new attribute"]},"$nm":"createAttribute"},"querySelector":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Element"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"selectors"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns the first element which matches the selectors"]},"$nm":"querySelector"},"activeElement":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Element"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the currently focused element on the document"]},"$nm":"activeElement"},"head":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Element"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the document head element"]},"$nm":"head"},"documentElement":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Element"}]},"$mt":"mthd","$an":{"shared":[],"doc":["returns the element that is a direct child of the document"]},"$nm":"documentElement"},"setAsync":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$mt":"prm","$nm":"async"}]],"$mt":"mthd","$an":{"shared":[],"doc":["sets whether a document.load call should be made asynchronously"]},"$nm":"setAsync"},"getElementById":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Element"}]},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"id"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns element on the document by the id"]},"$nm":"getElementById"},"releaseCapture":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"mthd","$an":{"shared":[],"doc":["release current mouse capture"]},"$nm":"releaseCapture"},"styleSheetSets":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSArray"},"$mt":"mthd","$an":{"shared":[],"doc":["returns Array of Strings naming the avaiable StyleSheets"]},"$nm":"styleSheetSets"},"getElementsByTagNameNS":{"$t":{"comp":"u","$ts":[{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"HTMLCollection"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeList"}]},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"namespace"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$def":"1","$nm":"name"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns a collection of elements on the document by the tagname in a namespace"]},"$nm":"getElementsByTagNameNS"},"getAsync":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"doc":["gets whether a document.load call will be made asynchronously"]},"$nm":"getAsync"},"getCookie":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns cookies associated with the document in the form of a comma sepearted list of key=value pairs"]},"$nm":"getCookie"},"getDir":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentDirection"},"$mt":"mthd","$an":{"shared":[],"doc":["get the document direction"]},"$nm":"getDir"},"setDir":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentDirection"},"$mt":"prm","$nm":"dir"}]],"$mt":"mthd","$an":{"shared":[],"doc":["set the document direction"]},"$nm":"setDir"},"elementFromPoint":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Element"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"}]},"$mt":"prm","$nm":"x"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"}]},"$mt":"prm","$nm":"y"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns element at the given point coordinates"]},"$nm":"elementFromPoint"},"preferredStyleSheetSet":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"mthd","$an":{"shared":[],"doc":["returns the prefurred name of the StyleSheet set on the document"]},"$nm":"preferredStyleSheetSet"},"url":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the document url"]},"$nm":"url"},"createComment":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Comment"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"data"}]],"$mt":"mthd","$an":{"shared":[],"doc":["creates a new comment"]},"$nm":"createComment"},"referrer":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns uri of the page which linked to this document"]},"$nm":"referrer"},"documentURI":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns documents URI"]},"$nm":"documentURI"},"setSelectedStyleSheetSet":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"sheet"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns a linked to or embeded in the document by its name"]},"$nm":"setSelectedStyleSheetSet"},"images":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"HTMLCollection"},"$mt":"mthd","$an":{"shared":[],"doc":["returns a collection of all image elements in the document"]},"$nm":"images"},"styleSheets":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom.stylesheets","$nm":"StyleSheetList"},"$mt":"mthd","$an":{"shared":[],"doc":["returns collection of StyleSheets linked to or embeded in the document"]},"$nm":"styleSheets"},"doctype":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentType"}]},"$mt":"mthd","$an":{"shared":[],"doc":["returns the documents doctype"]},"$nm":"doctype"},"createCDATASection":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"CDATASection"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"data"}]],"$mt":"mthd","$an":{"shared":[],"doc":["creates a new CDATASection"]},"$nm":"createCDATASection"},"getDomain":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["get the documents domain"]},"$nm":"getDomain"},"importNode":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"externalNode"},{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$mt":"prm","$def":"1","$nm":"deep"}]],"$mt":"mthd","$an":{"shared":[],"doc":["creates a copy of a node from another document that can be inserted into the current document"]},"$nm":"importNode"},"adoptNode":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"node"}]],"$mt":"mthd","$an":{"shared":[],"doc":["adapts a node from a external document"]},"$nm":"adoptNode"},"getDesignMode":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"doc":["returns if the documents design mode is on"]},"$nm":"getDesignMode"},"plugins":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"HTMLCollection"},"$mt":"mthd","$an":{"shared":[],"doc":["returns collection of all the plugin elements on the document"]},"$nm":"plugins"},"compatMode":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"CompatMode"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the documents compatablity mode"]},"$nm":"compatMode"},"createTextNode":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Text"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"data"}]],"$mt":"mthd","$an":{"shared":[],"doc":["creates a new text node"]},"$nm":"createTextNode"},"createElementNS":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Element"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"namespaceURI"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"qualifiedName"}]],"$mt":"mthd","$an":{"shared":[],"doc":["creates a new element in the given namespace"]},"$nm":"createElementNS"},"querySelectorAll":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeList"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"selectors"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns a list of all elements within the document"]},"$nm":"querySelectorAll"},"createDocumentFragment":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentFragment"},"$mt":"mthd","$an":{"shared":[],"doc":["creates a document fragment"]},"$nm":"createDocumentFragment"},"title":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the documents title"]},"$nm":"title"},"getElementsByTagName":{"$t":{"comp":"u","$ts":[{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"HTMLCollection"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeList"}]},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$def":"1","$nm":"name"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns a collection of elements on the document by the tagname"]},"$nm":"getElementsByTagName"},"write":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"line"}]],"$mt":"mthd","$an":{"shared":[],"doc":["write the string to the document"]},"$nm":"write"},"setDomain":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"domain"}]],"$mt":"mthd","$an":{"shared":[],"doc":["set the domain string of the document"]},"$nm":"setDomain"},"forms":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"HTMLCollection"},"$mt":"mthd","$an":{"shared":[],"doc":["returns a collection of all form elements in the document"]},"$nm":"forms"},"characterSet":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns documents CharacterSet"]},"$nm":"characterSet"},"lastModified":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the date the document was last modified as a string"]},"$nm":"lastModified"},"links":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"HTMLCollection"},"$mt":"mthd","$an":{"shared":[],"doc":["returns all of the link elements in the document"]},"$nm":"links"},"readyState":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DocumentReadyState"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the current ready state of the document"]},"$nm":"readyState"},"createRange":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Range"},"$mt":"mthd","$an":{"shared":[],"doc":["create a new range"]},"$nm":"createRange"},"anchors":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeList"},"$mt":"mthd","$an":{"shared":[],"doc":["returns a collection of all anchors in the document"]},"$nm":"anchors"},"selectedStyleSheetSet":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the name of the StyleSheet set that is currently in use on the document"]},"$nm":"selectedStyleSheetSet"},"implementation":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"DOMImplementation"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the DOM implementation associated with the document"]},"$nm":"implementation"},"setCookie":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"cookie"}]],"$mt":"mthd","$an":{"shared":[],"doc":["set cookies associated with the document in the form of a comma sepearted list of key=value pairs"]},"$nm":"setCookie"},"lastStyleSheetSet":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the name of the last enabled StyleSheet Set for the document"]},"$nm":"lastStyleSheetSet"},"createTreeWalker":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"TreeWalker"},"$ps":[[{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"prm","$nm":"root"},{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$def":"1","$nm":"whatToShow"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"NodeFilter"}]},"$mt":"prm","$def":"1","$nm":"filter"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns a new tree walker for walking the document"]},"$nm":"createTreeWalker"},"createElement":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Element"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"tagName"}]],"$mt":"mthd","$an":{"shared":[],"doc":["creates a new element"]},"$nm":"createElement"},"createProcessingInstruction":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"ProcessingInstruction"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"target"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"data"}]],"$mt":"mthd","$an":{"shared":[],"doc":["creates a processing instruction node"]},"$nm":"createProcessingInstruction"}},"$nm":"DocumentAbs"},"Element":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"ElementAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["a DOM Element"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"Element"}},"$mod-bin":"6.0","com.openswimsoftware.ceylon.js.dom.stylesheets":{"StyleSheetAbs":{"abstract":"1","super":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSObjectAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"title":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns StyleSheet title"]},"$nm":"title"},"ownerNode":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"Node"},"$mt":"mthd","$an":{"shared":[],"doc":["returns StyleSheets owning node"]},"$nm":"ownerNode"},"type":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns StyleSheets mime type string"]},"$nm":"type"},"media":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom.stylesheets","$nm":"MediaList"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the collection of Media Queries associated with the StyleSheet"]},"$nm":"media"},"href":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns StyleSheet location"]},"$nm":"href"},"parentStyleSheet":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom.stylesheets","$nm":"StyleSheet"},"$mt":"mthd","$an":{"shared":[],"doc":["returns StyleSheets parent"]},"$nm":"parentStyleSheet"},"disabled":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"doc":["returns if the StyleSheet is disabled or not"]},"$nm":"disabled"}},"$nm":"StyleSheetAbs"},"MediaListAbs":{"abstract":"1","super":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSObjectAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"appendMedium":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"newMedium"}]],"$mt":"mthd","$an":{"shared":[],"doc":["appends the passed Media Query to the collection"]},"$nm":"appendMedium"},"setMediaText":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"text"}]],"$mt":"mthd","$an":{"shared":[],"doc":["sets the media list to a string of Media Queries"]},"$nm":"setMediaText"},"item":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"}]},"$mt":"prm","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns Media Query at the specified index"]},"$nm":"item"},"length":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the number of Media Queries in the Collection"]},"$nm":"length"},"deleteMedium":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$nm":"oldMedium"}]],"$mt":"mthd","$an":{"shared":[],"doc":["removes any media querys which match the passed query string"]},"$nm":"deleteMedium"},"getMediaText":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["serializes Media Queries"]},"$nm":"getMediaText"}},"$nm":"MediaListAbs"},"$pkg-shared":"1","MediaList":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom.stylesheets","$nm":"MediaListAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["Collection of Media Queries"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"MediaList"},"StyleSheet":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom.stylesheets","$nm":"StyleSheetAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["represents a basic StyleSheet"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"StyleSheet"},"StyleSheetListAbs":{"abstract":"1","super":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSObjectAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"item":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.dom.stylesheets","$nm":"StyleSheet"}]},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"}]},"$mt":"prm","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns the StyleSheet at the specified index"]},"$nm":"item"},"length":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the length of the StyleSheet Collection"]},"$nm":"length"}},"$nm":"StyleSheetListAbs"},"StyleSheetList":{"super":{"$pk":"com.openswimsoftware.ceylon.js.dom.stylesheets","$nm":"StyleSheetListAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["a collection of StyleSheets"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.dom","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"StyleSheetList"}}};
-exports.$$METAMODEL$$=function(){return $$METAMODEL$$;};
-var $$$cl1=require('ceylon/language/1.0.0/ceylon.language-1.0.0');
-$$$cl1.$addmod$($$$cl1,'ceylon.language/1.0.0');
-var $$$cocjl339=require('com/openswimsoftware/ceylon/js/language/1.8.0/com.openswimsoftware.ceylon.js.language-1.8.0');
-$$$cl1.$addmod$($$$cocjl339,'com.openswimsoftware.ceylon.js.language/1.8.0');
-function AttrAbs($$attrAbs){
+(function(define) { define(function(require, ex$, module) {
+var $CCMM$={"$mod-deps":["ceylon.language\/1.1.0",{path:"com.openswimsoftware.ceylon.js.language\/1.8.0",exp:1},{path:"com.openswimsoftware.ceylon.js.html\/5.0.0",exp:1},{path:"com.openswimsoftware.ceylon.js.json\/1.0.0",exp:1}],"$mod-name":"com.openswimsoftware.ceylon.js.dom","$mod-version":"4.0.0","com.openswimsoftware.ceylon.js.dom":{attributeNode:{super:{$pk:".",$nm:"NodeType"},$mt:"o",$an:{shared:[]},$nm:"attributeNode"},endToStart:{super:{$pk:".",$nm:"RangeCompareHow"},$mt:"o",$an:{shared:[]},$nm:"endToStart"},Attr:{super:{$pk:".",$nm:"AttrAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["a DOM Attr"]},$at:{native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"},n$pmg84x:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"}},$nm:"Attr"},documentTypeNode:{super:{$pk:".",$nm:"NodeType"},$mt:"o",$an:{shared:[]},$nm:"documentTypeNode"},ltr:{super:{$pk:".",$nm:"DocumentDirection"},$mt:"o",$an:{shared:[]},$nm:"ltr"},TextAbs:{abstract:1,super:{$pk:".",$nm:"CharacterDataAbs"},$mt:"c",$an:{abstract:[],shared:[]},$m:{wholeText:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["get the Text node as a String"]},$nm:"wholeText"},splitText:{$t:{$pk:".",$nm:"Text"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Integer"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"}]},$mt:"prm",$nm:"offset"}]],$mt:"m",$an:{shared:[],doc:["split the node in two at the offset"]},$nm:"splitText"}},$nm:"TextAbs"},notationNode:{super:{$pk:".",$nm:"NodeType"},$mt:"o",$an:{shared:[]},$nm:"notationNode"},capturePhase:{super:{$pk:".",$nm:"EventPhase"},$mt:"o",$an:{shared:[]},$nm:"capturePhase"},ProcessingInstructionAbs:{abstract:1,super:{$pk:".",$nm:"NodeAbs"},$mt:"c",$an:{abstract:[],shared:[]},$m:{getData:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["get the processing instruction data"]},$nm:"getData"},target:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["the processing instruction target"]},$nm:"target"},setData:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"data"}]],$mt:"m",$an:{shared:[],doc:["set the processing instruction data"]},$nm:"setData"}},$nm:"ProcessingInstructionAbs"},filterSkip:{super:{$pk:".",$nm:"NodeFilterResult"},$mt:"o",$an:{shared:[]},$nm:"filterSkip"},filterAccept:{super:{$pk:".",$nm:"NodeFilterResult"},$mt:"o",$an:{shared:[]},$nm:"filterAccept"},"$pkg-shared":1,documentPositionFollowing:{super:{$pk:".",$nm:"DocumentPosition"},$mt:"o",$an:{shared:[]},$nm:"documentPositionFollowing"},css1Compat:{super:{$pk:".",$nm:"CompatMode"},$mt:"o",$an:{shared:[]},$nm:"css1Compat"},EventInit:{super:{$md:"ceylon.language",$pk:"$",$nm:"Basic"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$mt:"prm",$an:{shared:[]},$nm:"bubbles"},{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$mt:"prm",$an:{shared:[]},$nm:"cancelable"}],$mt:"c",$an:{shared:[],doc:["Event creation options"]},$m:{toJson:{$t:{$md:"com.openswimsoftware.ceylon.js.json",$pk:"com.openswimsoftware.ceylon.js.json",$nm:"JSJSON"},$mt:"m",$an:{shared:[],doc:["convert to native JSON"]},$nm:"toJson"}},$at:{bubbles:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$mt:"a",$an:{shared:[]},$nm:"bubbles"},cancelable:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$mt:"a",$an:{shared:[]},$nm:"cancelable"}},$nm:"EventInit"},EventTargetAbs:{abstract:1,super:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSObjectAbs"},$mt:"c",$an:{abstract:[],shared:[]},$m:{addEventListener:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"type"},{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{$pk:".",$nm:"Event"},$mt:"prm",$nm:"event"}]],$mt:"prm",$pt:"f",$nm:"callback"},{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$mt:"prm",$def:1,$nm:"capture"}]],$mt:"m",$an:{shared:[],doc:["add an event listener to the target"]},$m:{callback$hamudv:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{$pk:".",$nm:"Event"},$mt:"prm",$nm:"event"}]],$mt:"m",$nm:"callback"}},$nm:"addEventListener"},dispatchEvent:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$ps:[[{$t:{$pk:".",$nm:"Event"},$mt:"prm",$nm:"event"}]],$mt:"m",$an:{shared:[],doc:["dispatch an event at the target"]},$nm:"dispatchEvent"},removeEventListener:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"type"},{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{$pk:".",$nm:"Event"},$mt:"prm",$nm:"event"}]],$mt:"prm",$pt:"f",$nm:"callback"},{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$mt:"prm",$def:1,$nm:"capture"}]],$mt:"m",$an:{shared:[],doc:["remove an event listener from the target"]},$m:{callback$mkktu0:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{$pk:".",$nm:"Event"},$mt:"prm",$nm:"event"}]],$mt:"m",$nm:"callback"}},$nm:"removeEventListener"}},$nm:"EventTargetAbs"},CDATASectionAbs:{abstract:1,super:{$pk:".",$nm:"TextAbs"},$mt:"c",$an:{abstract:[],shared:[]},$nm:"CDATASectionAbs"},none:{super:{$pk:".",$nm:"EventPhase"},$mt:"o",$an:{shared:[]},$nm:"none"},filterReject:{super:{$pk:".",$nm:"NodeFilterResult"},$mt:"o",$an:{shared:[]},$nm:"filterReject"},DocumentTypeAbs:{abstract:1,super:{$pk:".",$nm:"NodeAbs"},$mt:"c",$an:{abstract:[],shared:[]},$m:{name:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns the document type name"]},$nm:"name"},publicId:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns the document types public id string"]},$nm:"publicId"},systemId:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns the document types system id string"]},$nm:"systemId"}},$nm:"DocumentTypeAbs"},NodeListAbs:{abstract:1,super:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSObjectAbs"},$mt:"c",$an:{abstract:[],shared:[]},$m:{item:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"Node"}]},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Integer"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"}]},$mt:"prm",$nm:"index"}]],$mt:"m",$an:{shared:[],doc:["returns he node at the given index"]},$nm:"item"},length:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"},$mt:"m",$an:{shared:[],doc:["returns the length of the node collection"]},$nm:"length"}},$nm:"NodeListAbs"},EntityReference:{super:{$pk:".",$nm:"EntityReferenceAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["a DOM EntityReference"]},$at:{native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"},n$sed50g:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"}},$nm:"EntityReference"},documentPositionImplementationSpecific:{super:{$pk:".",$nm:"DocumentPosition"},$mt:"o",$an:{shared:[]},$nm:"documentPositionImplementationSpecific"},ElementAbs:{abstract:1,super:{$pk:".",$nm:"NodeAbs"},$mt:"c",$an:{abstract:[],shared:[]},$m:{hasAttribute:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"attName"}]],$mt:"m",$an:{shared:[],doc:["returns if attribute exists the element"]},$nm:"hasAttribute"},getAttributeNS:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"namespace"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"attributeName"}]],$mt:"m",$an:{shared:[],doc:["get the value of the attribute on this element within the given namespace"]},$nm:"getAttributeNS"},getElementsByTagName:{$t:{$pk:".",$nm:"HTMLCollection"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$def:1,$nm:"tagName"}]],$mt:"m",$an:{shared:[],doc:["get elements on this element by the tagname"]},$nm:"getElementsByTagName"},getElementsByTagNameNS:{$t:{$pk:".",$nm:"HTMLCollection"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"namespace"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$def:1,$nm:"tagName"}]],$mt:"m",$an:{shared:[],doc:["get elements on this element by the tagname within the given namespace"]},$nm:"getElementsByTagNameNS"},removeAttributeNS:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"namespace"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"attrName"}]],$mt:"m",$an:{shared:[],doc:["remove an attribute on the element within the given namespace"]},$nm:"removeAttributeNS"},tagName:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns the elements tag name"]},$nm:"tagName"},removeAttribute:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"attrName"}]],$mt:"m",$an:{shared:[],doc:["remove an attribute on the element"]},$nm:"removeAttribute"},setAttributeNS:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"namespace"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"name"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"val"}]],$mt:"m",$an:{shared:[],doc:["set an attribute on the element within the given namespace"]},$nm:"setAttributeNS"},setAttribute:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"name"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"val"}]],$mt:"m",$an:{shared:[],doc:["set an attribute on the element"]},$nm:"setAttribute"},getAttribute:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"attributeName"}]],$mt:"m",$an:{shared:[],doc:["get the value of the attribute on this element"]},$nm:"getAttribute"},hasAttributeNS:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"namespace"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"attName"}]],$mt:"m",$an:{shared:[],doc:["returns if attribute exists the element within the given namespace"]},$nm:"hasAttributeNS"}},$nm:"ElementAbs"},startToStart:{super:{$pk:".",$nm:"RangeCompareHow"},$mt:"o",$an:{shared:[]},$nm:"startToStart"},CompatMode:{abstract:1,super:{$md:"ceylon.language",$pk:"$",$nm:"Basic"},of:[{$pk:".",$nm:"css1Compat"},{$pk:".",$nm:"backCompat"}],$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"String"},$mt:"prm",$nm:"name"}],$mt:"c",$an:{abstract:[],shared:[],doc:["Document Compatablity Mode"]},$at:{name$8prl16:{$t:{$md:"ceylon.language",$pk:"$",$nm:"String"},$mt:"a",$nm:"name"}},$nm:"CompatMode"},rtl:{super:{$pk:".",$nm:"DocumentDirection"},$mt:"o",$an:{shared:[]},$nm:"rtl"},DocumentFragment:{super:{$pk:".",$nm:"DocumentFragmentAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["a DOM DocumentFragment"]},$at:{native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"},n$wld4o5:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"}},$nm:"DocumentFragment"},loading:{super:{$pk:".",$nm:"DocumentReadyState"},$mt:"o",$an:{shared:[]},$nm:"loading"},documentPositionContainedBy:{super:{$pk:".",$nm:"DocumentPosition"},$mt:"o",$an:{shared:[]},$nm:"documentPositionContainedBy"},Event:{super:{$pk:".",$nm:"EventAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["a DOM Event"]},$at:{native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"},n$2vytsu:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"}},$nm:"Event"},Comment:{super:{$pk:".",$nm:"CommentAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["a DOM comment"]},$at:{native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"},n$kbgwgf:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"}},$nm:"Comment"},EventAbs:{abstract:1,super:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSObjectAbs"},$mt:"c",$an:{abstract:[],shared:[]},$m:{defaultPrevented:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$mt:"m",$an:{shared:[],doc:["has the default been prevented"]},$nm:"defaultPrevented"},timeStamp:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSDate"},$mt:"m",$an:{shared:[],doc:["returns the time the event was created"]},$nm:"timeStamp"},stopPropagation:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"m",$an:{shared:[],doc:["stops event propagation through further DOM elements"]},$nm:"stopPropagation"},eventPhase:{$t:{$pk:".",$nm:"EventPhase"},$mt:"m",$an:{shared:[],doc:["returns current event phase"]},$nm:"eventPhase"},currentTarget:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"EventTarget"}]},$mt:"m",$an:{shared:[],doc:["returns the current event target"]},$nm:"currentTarget"},bubbles:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$mt:"m",$an:{shared:[],doc:["does the event bubble through the dom or not"]},$nm:"bubbles"},stopImmediatePropagation:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"m",$an:{shared:[],doc:["returns the event propagation immidately"]},$nm:"stopImmediatePropagation"},target:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"EventTarget"}]},$mt:"m",$an:{shared:[],doc:["returns the event target"]},$nm:"target"},isTrusted:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$mt:"m",$an:{shared:[],doc:["was the event created by the browser or a script"]},$nm:"isTrusted"},cancelable:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$mt:"m",$an:{shared:[],doc:["is the event cancelable or not"]},$nm:"cancelable"},preventDefault:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"m",$an:{shared:[],doc:["cancels the event if it is cancelable"]},$nm:"preventDefault"},type:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns the Event type"]},$nm:"type"}},$nm:"EventAbs"},NodeFilterResult:{abstract:1,super:{$md:"ceylon.language",$pk:"$",$nm:"Basic"},of:[{$pk:".",$nm:"filterAccept"},{$pk:".",$nm:"filterReject"},{$pk:".",$nm:"filterSkip"}],$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"String"},$mt:"prm",$nm:"name"}],$mt:"c",$an:{abstract:[],shared:[]},$at:{name$utqdb0:{$t:{$md:"ceylon.language",$pk:"$",$nm:"String"},$mt:"a",$nm:"name"}},$nm:"NodeFilterResult"},documentPositionPreceding:{super:{$pk:".",$nm:"DocumentPosition"},$mt:"o",$an:{shared:[]},$nm:"documentPositionPreceding"},DocumentDirection:{abstract:1,super:{$md:"ceylon.language",$pk:"$",$nm:"Basic"},of:[{$pk:".",$nm:"rtl"},{$pk:".",$nm:"ltr"}],$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"String"},$mt:"prm",$nm:"name"}],$mt:"c",$an:{abstract:[],shared:[],doc:["Document Direction"]},$at:{name$t0mykx:{$t:{$md:"ceylon.language",$pk:"$",$nm:"String"},$mt:"a",$nm:"name"}},$nm:"DocumentDirection"},createEvent:{$t:{$pk:".",$nm:"Event"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"type"},{$t:{$pk:".",$nm:"EventInit"},$mt:"prm",$nm:"options"}]],$mt:"m",$an:{shared:[],doc:["create a new Event"]},$nm:"createEvent"},DocumentFragmentAbs:{abstract:1,super:{$pk:".",$nm:"NodeAbs"},$mt:"c",$an:{abstract:[],shared:[]},$nm:"DocumentFragmentAbs"},RangeAbs:{abstract:1,super:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSObjectAbs"},$mt:"c",$an:{abstract:[],shared:[]},$m:{extractContents:{$t:{$pk:".",$nm:"DocumentFragment"},$mt:"m",$an:{shared:[],doc:["move the contents of the range from their document to a new document fragment"]},$nm:"extractContents"},detach:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"m",$an:{shared:[],doc:["detach a range from use to free resources"]},$nm:"detach"},compareBoundaryPoints:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"},$ps:[[{$t:{$pk:".",$nm:"RangeCompareHow"},$mt:"prm",$nm:"how"},{$t:{$pk:".",$nm:"Range"},$mt:"prm",$nm:"sourceRange"}]],$mt:"m",$an:{shared:[],doc:["compare the boundery points of one range with another"]},$nm:"compareBoundaryPoints"},selectNodeContents:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"refNode"}]],$mt:"m",$an:{shared:[],doc:["set the range to contain the contents of the given node"]},$nm:"selectNodeContents"},insertNode:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"newNode"}]],$mt:"m",$an:{shared:[],doc:["insert a node at the start of the range"]},$nm:"insertNode"},deleteContents:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"m",$an:{shared:[],doc:["remove the contents of range from the document"]},$nm:"deleteContents"},setStartAfter:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"refNode"}]],$mt:"m",$an:{shared:[],doc:["set the start position of the range relative to the given node"]},$nm:"setStartAfter"},startOffset:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"},$mt:"m",$an:{shared:[],doc:["returns a number where the container range begins"]},$nm:"startOffset"},collapsed:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$mt:"m",$an:{shared:[],doc:["is the start and end nodes the same node"]},$nm:"collapsed"},cloneRange:{$t:{$pk:".",$nm:"Range"},$mt:"m",$an:{shared:[],doc:["clone the range"]},$nm:"cloneRange"},surroundContents:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"newNode"}]],$mt:"m",$an:{shared:[],doc:["move the contents of the range into the new node"]},$nm:"surroundContents"},cloneContents:{$t:{$pk:".",$nm:"DocumentFragment"},$mt:"m",$an:{shared:[],doc:["creates a new document copying the nodes inside of the range"]},$nm:"cloneContents"},selectNode:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"refNode"}]],$mt:"m",$an:{shared:[],doc:["set the range to contain node and its contents"]},$nm:"selectNode"},endOffset:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"},$mt:"m",$an:{shared:[],doc:["returns a number where the container range ends"]},$nm:"endOffset"},setStart:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"startNode"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Integer"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"}]},$mt:"prm",$nm:"startOffset"}]],$mt:"m",$an:{shared:[],doc:["set the start position of the range"]},$nm:"setStart"},isPointInRange:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"node"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Integer"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"}]},$mt:"prm",$nm:"offset"}]],$mt:"m",$an:{shared:[],doc:["is the the current point in the range"]},$nm:"isPointInRange"},commonAncestorContainer:{$t:{$pk:".",$nm:"Node"},$mt:"m",$an:{shared:[],doc:["returns the deepest Node that contains the startContainer and endContainer nodes"]},$nm:"commonAncestorContainer"},startContainer:{$t:{$pk:".",$nm:"Node"},$mt:"m",$an:{shared:[],doc:["returns the node where the container range begins"]},$nm:"startContainer"},endContainer:{$t:{$pk:".",$nm:"Node"},$mt:"m",$an:{shared:[],doc:["returns the node where the container range ends"]},$nm:"endContainer"},setEndAfter:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"refNode"}]],$mt:"m",$an:{shared:[],doc:["set the end position of the range relative to the given node"]},$nm:"setEndAfter"},setStartBefore:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"refNode"}]],$mt:"m",$an:{shared:[],doc:["set the start position of the range relative to the given node"]},$nm:"setStartBefore"},setEndBefore:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"refNode"}]],$mt:"m",$an:{shared:[],doc:["set the end position of the range relative to the given node"]},$nm:"setEndBefore"},setEnd:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"endNode"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Integer"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"}]},$mt:"prm",$nm:"endOffset"}]],$mt:"m",$an:{shared:[],doc:["set the end position of the range"]},$nm:"setEnd"},collapse:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$md:"ceylon.language",$pk:"$",$nm:"Boolean"}]},$mt:"prm",$def:1,$nm:"toStart"}]],$mt:"m",$an:{shared:[],doc:["collapses the range to one of its boundery points"]},$nm:"collapse"}},$nm:"RangeAbs"},Node:{super:{$pk:".",$nm:"NodeAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["a DOM Node"]},$at:{native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"},n$75hoja:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"}},$nm:"Node"},NodeType:{abstract:1,super:{$md:"ceylon.language",$pk:"$",$nm:"Basic"},of:[{$pk:".",$nm:"attributeNode"},{$pk:".",$nm:"cdataSectionNode"},{$pk:".",$nm:"commentNode"},{$pk:".",$nm:"documentFragmentNode"},{$pk:".",$nm:"documentNode"},{$pk:".",$nm:"documentTypeNode"},{$pk:".",$nm:"elementNode"},{$pk:".",$nm:"entityNode"},{$pk:".",$nm:"entityReferenceNode"},{$pk:".",$nm:"notationNode"},{$pk:".",$nm:"processingInstructionNode"},{$pk:".",$nm:"textNode"}],$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"String"},$mt:"prm",$nm:"name"}],$mt:"c",$an:{abstract:[],shared:[],doc:["specific NodeType"]},$at:{name$3p2n2h:{$t:{$md:"ceylon.language",$pk:"$",$nm:"String"},$mt:"a",$nm:"name"}},$nm:"NodeType"},processingInstructionNode:{super:{$pk:".",$nm:"NodeType"},$mt:"o",$an:{shared:[]},$nm:"processingInstructionNode"},endToEnd:{super:{$pk:".",$nm:"RangeCompareHow"},$mt:"o",$an:{shared:[]},$nm:"endToEnd"},CharacterDataAbs:{abstract:1,super:{$pk:".",$nm:"NodeAbs"},$mt:"c",$an:{abstract:[],shared:[]},$m:{replaceData:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Integer"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"}]},$mt:"prm",$nm:"offset"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Integer"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"}]},$mt:"prm",$nm:"count"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"data"}]],$mt:"m",$an:{shared:[],doc:["replace the Characters starting at offset to count using the String data"]},$nm:"replaceData"},getData:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns the CharacterData"]},$nm:"getData"},deleteData:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Integer"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"}]},$mt:"prm",$nm:"offset"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Integer"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"}]},$mt:"prm",$nm:"count"}]],$mt:"m",$an:{shared:[]},$nm:"deleteData"},length:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"},$mt:"m",$an:{shared:[],doc:["returns the length of the CharacterData"]},$nm:"length"},insertData:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Integer"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"}]},$mt:"prm",$nm:"offset"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"data"}]],$mt:"m",$an:{shared:[],doc:["insert the Characters starting at offset using the String data"]},$nm:"insertData"},appendData:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"data"}]],$mt:"m",$an:{shared:[],doc:["append the Characters with String data"]},$nm:"appendData"},substringData:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Integer"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"}]},$mt:"prm",$nm:"offset"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Integer"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"}]},$mt:"prm",$nm:"count"}]],$mt:"m",$an:{shared:[],doc:["returns a subtstring starting at offset and through a count"]},$nm:"substringData"},setData:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"data"}]],$mt:"m",$an:{shared:[],doc:["set the CharacterData"]},$nm:"setData"}},$nm:"CharacterDataAbs"},commentNode:{super:{$pk:".",$nm:"NodeType"},$mt:"o",$an:{shared:[]},$nm:"commentNode"},NodeList:{super:{$pk:".",$nm:"NodeListAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["collection of DOM nodes"]},$at:{native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"},n$9hmxc8:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"}},$nm:"NodeList"},documentPositionContains:{super:{$pk:".",$nm:"DocumentPosition"},$mt:"o",$an:{shared:[]},$nm:"documentPositionContains"},TreeWalkerAbs:{abstract:1,super:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSObjectAbs"},$mt:"c",$an:{abstract:[],shared:[]},$m:{previousSibling:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"Node"}]},$mt:"m",$an:{shared:[],doc:["move the tree to the current nodes previous sibling"]},$nm:"previousSibling"},whatToShow:{$t:{$pk:".",$nm:"unknown"},$mt:"m",$an:{shared:[],doc:["returns what type of nodes are present on the tree"]},$nm:"whatToShow"},parentNode:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"Node"}]},$mt:"m",$an:{shared:[],doc:["move the tree to the first node in the document order"]},$nm:"parentNode"},root:{$t:{$pk:".",$nm:"Node"},$mt:"m",$an:{shared:[],doc:["returns the node where the tree walker was created"]},$nm:"root"},firstChild:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"Node"}]},$mt:"m",$an:{shared:[],doc:["move the tree to the first child of the current node"]},$nm:"firstChild"},currentNode:{$t:{$pk:".",$nm:"Node"},$mt:"m",$an:{shared:[],doc:["returns the current document node"]},$nm:"currentNode"},nextNode:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"Node"}]},$mt:"m",$an:{shared:[],doc:["move the tree to the next node and returns"]},$nm:"nextNode"},nextSibling:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"Node"}]},$mt:"m",$an:{shared:[],doc:["move the tree to the current nodes next sibling"]},$nm:"nextSibling"},filter:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"NodeFilter"}]},$mt:"m",$an:{shared:[],doc:["returns the node filter used to select the tree nodes"]},$nm:"filter"},previousNode:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"Node"}]},$mt:"m",$an:{shared:[],doc:["move the tree to the previous node and returns"]},$nm:"previousNode"},lastChild:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"Node"}]},$mt:"m",$an:{shared:[],doc:["move the tree to the last child of the current node"]},$nm:"lastChild"}},$nm:"TreeWalkerAbs"},CharacterData:{super:{$pk:".",$nm:"CharacterDataAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["a DOM CharacterData segment used by Text, Comment and Processing Instruction"]},$at:{native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"},n$xysemb:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"}},$nm:"CharacterData"},DOMImplementationAbs:{abstract:1,super:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSObjectAbs"},$mt:"c",$an:{abstract:[],shared:[]},$m:{createDocument:{$t:{$pk:".",$nm:"Document"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]}]},$mt:"prm",$nm:"namespace"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$def:1,$nm:"qualifiedName"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"DocumentType"}]},$mt:"prm",$def:1,$nm:"doctype"}]],$mt:"m",$an:{shared:[],doc:["returns a new Document"]},$nm:"createDocument"},createDocumentType:{$t:{$pk:".",$nm:"DocumentType"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"qualifiedName"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"publicId"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"systemId"}]],$mt:"m",$an:{shared:[],doc:["returns a new DocumentType"]},$nm:"createDocumentType"},hasFeature:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"feature"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$def:1,$nm:"version"}]],$mt:"m",$an:{shared:[],doc:["returns if the DOM has the given feature at the specified or greater version"]},$nm:"hasFeature"}},$nm:"DOMImplementationAbs"},documentFragmentNode:{super:{$pk:".",$nm:"NodeType"},$mt:"o",$an:{shared:[]},$nm:"documentFragmentNode"},DocumentPosition:{abstract:1,super:{$md:"ceylon.language",$pk:"$",$nm:"Basic"},of:[{$pk:".",$nm:"documentPositionContainedBy"},{$pk:".",$nm:"documentPositionContains"},{$pk:".",$nm:"documentPositionDisconnected"},{$pk:".",$nm:"documentPositionFollowing"},{$pk:".",$nm:"documentPositionImplementationSpecific"},{$pk:".",$nm:"documentPositionPreceding"}],$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"String"},$mt:"prm",$nm:"name"}],$mt:"c",$an:{abstract:[],shared:[],doc:["Document Positon Type"]},$at:{name$ka23jj:{$t:{$md:"ceylon.language",$pk:"$",$nm:"String"},$mt:"a",$nm:"name"}},$nm:"DocumentPosition"},HTMLCollectionAbs:{abstract:1,super:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSObjectAbs"},$mt:"c",$an:{abstract:[],shared:[]},$m:{item:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"Element"}]},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Integer"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"}]},$mt:"prm",$nm:"index"}]],$mt:"m",$an:{shared:[],doc:["return the node at the given index"]},$nm:"item"},length:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"},$mt:"m",$an:{shared:[],doc:["returns the length of the collection"]},$nm:"length"},namedItem:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSObject"}]},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"name"}]],$mt:"m",$an:{shared:[],doc:["return the node whose id or name matches the passed name"]},$nm:"namedItem"}},$nm:"HTMLCollectionAbs"},RangeCompareHow:{abstract:1,super:{$md:"ceylon.language",$pk:"$",$nm:"Basic"},of:[{$pk:".",$nm:"endToEnd"},{$pk:".",$nm:"endToStart"},{$pk:".",$nm:"startToEnd"},{$pk:".",$nm:"startToStart"}],$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"String"},$mt:"prm",$nm:"name"}],$mt:"c",$an:{abstract:[],shared:[],doc:["how to comare ranges"]},$at:{name$96w8b:{$t:{$md:"ceylon.language",$pk:"$",$nm:"String"},$mt:"a",$nm:"name"}},$nm:"RangeCompareHow"},NodeIteratorAbs:{abstract:1,super:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSObjectAbs"},$mt:"c",$an:{abstract:[],shared:[]},$m:{whatToShow:{$t:{$pk:".",$nm:"unknown"},$mt:"m",$an:{shared:[],doc:["return long representing what types of nodes the iterator shows"]},$nm:"whatToShow"},root:{$t:{$pk:".",$nm:"Node"},$mt:"m",$an:{shared:[],doc:["returns the iterators root node"]},$nm:"root"},nextNode:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"Node"}]},$mt:"m",$an:{shared:[],doc:["return the next node"]},$nm:"nextNode"},filter:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"NodeFilter"}]},$mt:"m",$an:{shared:[],doc:["return the iterator filter if any"]},$nm:"filter"},previousNode:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"Node"}]},$mt:"m",$an:{shared:[],doc:["return the previous node"]},$nm:"previousNode"}},$nm:"NodeIteratorAbs"},entityNode:{super:{$pk:".",$nm:"NodeType"},$mt:"o",$an:{shared:[]},$nm:"entityNode"},backCompat:{super:{$pk:".",$nm:"CompatMode"},$mt:"o",$an:{shared:[]},$nm:"backCompat"},HTMLCollection:{super:{$pk:".",$nm:"HTMLCollectionAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["a DOM HTMLCollection"]},$at:{native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"},n$qxfu5z:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"}},$nm:"HTMLCollection"},textNode:{super:{$pk:".",$nm:"NodeType"},$mt:"o",$an:{shared:[]},$nm:"textNode"},interactive:{super:{$pk:".",$nm:"DocumentReadyState"},$mt:"o",$an:{shared:[]},$nm:"interactive"},complete:{super:{$pk:".",$nm:"DocumentReadyState"},$mt:"o",$an:{shared:[]},$nm:"complete"},NodeIterator:{super:{$pk:".",$nm:"NodeIteratorAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["a DOM NodeIterator"]},$at:{native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"},n$jxak94:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"}},$nm:"NodeIterator"},startToEnd:{super:{$pk:".",$nm:"RangeCompareHow"},$mt:"o",$an:{shared:[]},$nm:"startToEnd"},DOMImplementation:{super:{$pk:".",$nm:"DOMImplementationAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["a DOMImplementation"]},$at:{native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"},n$5tcvl8:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"}},$nm:"DOMImplementation"},cdataSectionNode:{super:{$pk:".",$nm:"NodeType"},$mt:"o",$an:{shared:[]},$nm:"cdataSectionNode"},DocumentType:{super:{$pk:".",$nm:"DocumentTypeAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["a DocumentType"]},$at:{native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"},n$ct6wtn:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"}},$nm:"DocumentType"},CommentAbs:{abstract:1,super:{$pk:".",$nm:"CharacterDataAbs"},$mt:"c",$an:{abstract:[],shared:[]},$nm:"CommentAbs"},Range:{super:{$pk:".",$nm:"RangeAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["DOM range"]},$at:{native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"},n$fqs61p:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"}},$nm:"Range"},Document:{super:{$pk:".",$nm:"DocumentAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["a DOM Document"]},$at:{native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"},n$xxawbv:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"}},$nm:"Document"},entityReferenceNode:{super:{$pk:".",$nm:"NodeType"},$mt:"o",$an:{shared:[]},$nm:"entityReferenceNode"},atTarget:{super:{$pk:".",$nm:"EventPhase"},$mt:"o",$an:{shared:[]},$nm:"atTarget"},EntityReferenceAbs:{abstract:1,super:{$pk:".",$nm:"NodeAbs"},$mt:"c",$an:{abstract:[],shared:[]},$nm:"EntityReferenceAbs"},AttrAbs:{abstract:1,super:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSObjectAbs"},$mt:"c",$an:{abstract:[],shared:[]},$m:{getValue:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns the Attr value string"]},$nm:"getValue"},name:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns the Attr name"]},$nm:"name"},setValue:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"val"}]],$mt:"m",$an:{shared:[],doc:["sets the Attr value string"]},$nm:"setValue"},isId:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$mt:"m",$an:{shared:[],doc:["returns the Attr is an ID or not"]},$nm:"isId"}},$nm:"AttrAbs"},elementNode:{super:{$pk:".",$nm:"NodeType"},$mt:"o",$an:{shared:[]},$nm:"elementNode"},NodeFilter:{super:{$md:"ceylon.language",$pk:"$",$nm:"Basic"},$ps:[{$t:{$pk:".",$nm:"NodeFilterResult"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"n"}]],$mt:"prm",$pt:"f",$nm:"acceptNode"}],$mt:"c",$an:{shared:[],doc:["Node Filter"]},$m:{acceptNode$x5puf6:{$t:{$pk:".",$nm:"NodeFilterResult"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"n"}]],$mt:"m",$nm:"acceptNode"}},$at:{native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"}},$nm:"NodeFilter"},documentPositionDisconnected:{super:{$pk:".",$nm:"DocumentPosition"},$mt:"o",$an:{shared:[]},$nm:"documentPositionDisconnected"},getWindow:{$t:{$md:"com.openswimsoftware.ceylon.js.html",$pk:"com.openswimsoftware.ceylon.js.html",$nm:"Window"},$mt:"m",$an:{shared:[],doc:["returns the current browser window"]},$nm:"getWindow"},Text:{super:{$pk:".",$nm:"TextAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["a DOM Text element"]},$at:{n$olmx83:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"},native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"}},$nm:"Text"},CDATASection:{super:{$pk:".",$nm:"CDATASectionAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["a DOM CDATASection"]},$at:{n$lbe6r4:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"},native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"}},$nm:"CDATASection"},documentNode:{super:{$pk:".",$nm:"NodeType"},$mt:"o",$an:{shared:[]},$nm:"documentNode"},TreeWalker:{super:{$pk:".",$nm:"TreeWalkerAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["a Document TreeWalker"]},$at:{native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"},n$czj3ec:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"}},$nm:"TreeWalker"},EventPhase:{abstract:1,super:{$md:"ceylon.language",$pk:"$",$nm:"Basic"},of:[{$pk:".",$nm:"none"},{$pk:".",$nm:"capturePhase"},{$pk:".",$nm:"atTarget"},{$pk:".",$nm:"bubblingPhase"}],$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Integer"},$mt:"prm",$an:{shared:[]},$nm:"num"}],$mt:"c",$an:{abstract:[],shared:[],doc:["current Event Phase"]},$at:{num:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Integer"},$mt:"a",$an:{shared:[]},$nm:"num"}},$nm:"EventPhase"},bubblingPhase:{super:{$pk:".",$nm:"EventPhase"},$mt:"o",$an:{shared:[]},$nm:"bubblingPhase"},NodeAbs:{abstract:1,super:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSObjectAbs"},$mt:"c",$an:{abstract:[],shared:[]},$m:{firstChild:{$t:{$pk:".",$nm:"Node"},$mt:"m",$an:{shared:[],doc:["returns the nodes first child node"]},$nm:"firstChild"},nodeName:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns the nodes name"]},$nm:"nodeName"},childNodes:{$t:{$pk:".",$nm:"NodeList"},$mt:"m",$an:{shared:[],doc:["returns a list of child nodes"]},$nm:"childNodes"},baseURI:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns the nodes baseURI"]},$nm:"baseURI"},replaceChild:{$t:{$pk:".",$nm:"Node"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"newChild"},{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"oldChild"}]],$mt:"m",$an:{shared:[],doc:["replaces the old node with the new one and returns the old node"]},$nm:"replaceChild"},setTextContent:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"content"}]],$mt:"m",$an:{shared:[],doc:["set the text content of the node and its descendents"]},$nm:"setTextContent"},lastChild:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"Node"}]},$mt:"m",$an:{shared:[],doc:["returns the last child node of this node"]},$nm:"lastChild"},normalize:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"m",$an:{shared:[],doc:["clean up all the text nodes under this on"]},$nm:"normalize"},lookupPrefix:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]}]},$mt:"prm",$nm:"namespaceURI"}]],$mt:"m",$an:{shared:[],doc:["returns the prefix for the given namespaceURI"]},$nm:"lookupPrefix"},previousSibling:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"Node"}]},$mt:"m",$an:{shared:[],doc:["returns the node immediately proceding this node in the parents child nodes or null if none"]},$nm:"previousSibling"},parentNode:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"Node"}]},$mt:"m",$an:{shared:[],doc:["returns the parent node if any"]},$nm:"parentNode"},hasChildNodes:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$mt:"m",$an:{shared:[],doc:["if the node has children"]},$nm:"hasChildNodes"},nodeType:{$t:{$pk:".",$nm:"NodeType"},$mt:"m",$an:{shared:[],doc:["returns the nodes type"]},$nm:"nodeType"},cloneNode:{$t:{$pk:".",$nm:"Node"},$ps:[[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$mt:"prm",$def:1,$nm:"bool"}]],$mt:"m",$an:{shared:[],doc:["clones the current node pass true for deep copy"]},$nm:"cloneNode"},nextSibling:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"Node"}]},$mt:"m",$an:{shared:[],doc:["returns the node immediately after this node in the parents child nodes or null if none"]},$nm:"nextSibling"},isDefaultNamespace:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"namespaceURI"}]],$mt:"m",$an:{shared:[],doc:["is the passed namespace the default one"]},$nm:"isDefaultNamespace"},insertBefore:{$t:{$pk:".",$nm:"Node"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"newElement"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"Node"}]},$mt:"prm",$nm:"referenceElement"}]],$mt:"m",$an:{shared:[],doc:["insert the passed node to children before the reference node"]},$nm:"insertBefore"},appendChild:{$t:{$pk:".",$nm:"Node"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"node"}]],$mt:"m",$an:{shared:[],doc:["append the node to the nodes children"]},$nm:"appendChild"},setNodeValue:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"val"}]],$mt:"m",$an:{shared:[],doc:["set the value of the current node"]},$nm:"setNodeValue"},compareDocumentPosition:{$t:{$pk:".",$nm:"DocumentPosition"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"node"}]],$mt:"m",$an:{shared:[],doc:["return the node document position compared to the passed node"]},$nm:"compareDocumentPosition"},removeChild:{$t:{$pk:".",$nm:"Node"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"node"}]],$mt:"m",$an:{shared:[],doc:["removes the child node and returns the removed node"]},$nm:"removeChild"},prefix:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"m",$an:{shared:[],doc:["string of the nodes namespace prefix"]},$nm:"prefix"},getTextContent:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"m",$an:{shared:[],doc:["returns the text content of the node and its descendents"]},$nm:"getTextContent"},isEqualNode:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"node"}]],$mt:"m",$an:{shared:[],doc:["is the passed node equal to this one"]},$nm:"isEqualNode"},getNodeValue:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"m",$an:{shared:[],doc:["returns the value of the current node"]},$nm:"getNodeValue"}},$at:{ownerDocument:{$t:{$pk:".",$nm:"Document"},$mt:"g",$an:{shared:[],doc:["returns nodes owning document"]},$nm:"ownerDocument"}},$nm:"NodeAbs"},EventTarget:{super:{$pk:".",$nm:"EventTargetAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["a DOM EventTarget"]},$at:{n$u466ed:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"},native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"}},$nm:"EventTarget"},ProcessingInstruction:{super:{$pk:".",$nm:"ProcessingInstructionAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["Processing Instruction"]},$at:{n$q9rf4b:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"},native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"}},$nm:"ProcessingInstruction"},DocumentReadyState:{abstract:1,super:{$md:"ceylon.language",$pk:"$",$nm:"Basic"},of:[{$pk:".",$nm:"loading"},{$pk:".",$nm:"interactive"},{$pk:".",$nm:"complete"}],$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"String"},$mt:"prm",$nm:"name"}],$mt:"c",$an:{abstract:[],shared:[],doc:["Document Ready State"]},$at:{name$ldmlz6:{$t:{$md:"ceylon.language",$pk:"$",$nm:"String"},$mt:"a",$nm:"name"}},$nm:"DocumentReadyState"},DocumentAbs:{abstract:1,super:{$pk:".",$nm:"NodeAbs"},$mt:"c",$an:{abstract:[],shared:[]},$m:{writeln:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"line"}]],$mt:"m",$an:{shared:[],doc:["write the string to the document as a line"]},$nm:"writeln"},body:{$t:{$pk:".",$nm:"Node"},$mt:"m",$an:{shared:[],doc:["returns the body node on the document"]},$nm:"body"},getElementsByName:{$t:{$pk:".",$nm:"HTMLCollection"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"name"}]],$mt:"m",$an:{shared:[],doc:["returns a list of elements in the document with the given name"]},$nm:"getElementsByName"},createNodeIterator:{$t:{$pk:".",$nm:"NodeIterator"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"root"},{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$def:1,$nm:"whatToShow"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"NodeFilter"}]},$mt:"prm",$def:1,$nm:"filter"}]],$mt:"m",$an:{shared:[],doc:["returns a new node iterator the document"]},$nm:"createNodeIterator"},location:{$t:{$md:"com.openswimsoftware.ceylon.js.html",$pk:"com.openswimsoftware.ceylon.js.html",$nm:"Location"},$mt:"m",$an:{shared:[],doc:["returns location information about the URL of the document"]},$nm:"location"},hasFocus:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$mt:"m",$an:{shared:[],doc:["returns whether the document or any element in the document currently has focus"]},$nm:"hasFocus"},defaultView:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$md:"com.openswimsoftware.ceylon.js.html",$pk:"com.openswimsoftware.ceylon.js.html",$nm:"Window"}]},$mt:"m",$an:{shared:[],doc:["returns the browser window object associated with the document"]},$nm:"defaultView"},close:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"m",$an:{shared:[],doc:["finishes writing to a document opened with Document.open()"]},$nm:"close"},open:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"m",$an:{shared:[],doc:["opens a document for writing"]},$nm:"open"},scripts:{$t:{$pk:".",$nm:"HTMLCollection"},$mt:"m",$an:{shared:[],doc:["returns a collection of all the script elements in the document"]},$nm:"scripts"},createAttributeNS:{$t:{$pk:".",$nm:"Attr"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]}]},$mt:"prm",$nm:"namespace"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"name"}]],$mt:"m",$an:{shared:[],doc:["creates a attribute with the given namespace"]},$nm:"createAttributeNS"},getElementsByClassName:{$t:{$pk:".",$nm:"HTMLCollection"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"names"}]],$mt:"m",$an:{shared:[],doc:["returns a collection of elements on the document by the class name"]},$nm:"getElementsByClassName"},createAttribute:{$t:{$pk:".",$nm:"Attr"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"name"}]],$mt:"m",$an:{shared:[],doc:["creates a new attribute"]},$nm:"createAttribute"},querySelector:{$t:{$pk:".",$nm:"Element"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"selectors"}]],$mt:"m",$an:{shared:[],doc:["returns the first element which matches the selectors"]},$nm:"querySelector"},activeElement:{$t:{$pk:".",$nm:"Element"},$mt:"m",$an:{shared:[],doc:["returns the currently focused element on the document"]},$nm:"activeElement"},head:{$t:{$pk:".",$nm:"Element"},$mt:"m",$an:{shared:[],doc:["returns the document head element"]},$nm:"head"},documentElement:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"Element"}]},$mt:"m",$an:{shared:[],doc:["returns the element that is a direct child of the document"]},$nm:"documentElement"},setAsync:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$mt:"prm",$nm:"async"}]],$mt:"m",$an:{shared:[],doc:["sets whether a document.load call should be made asynchronously"]},$nm:"setAsync"},getElementById:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"Element"}]},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"id"}]],$mt:"m",$an:{shared:[],doc:["returns element on the document by the id"]},$nm:"getElementById"},releaseCapture:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"m",$an:{shared:[],doc:["release current mouse capture"]},$nm:"releaseCapture"},styleSheetSets:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSArray"},$mt:"m",$an:{shared:[],doc:["returns Array of Strings naming the avaiable StyleSheets"]},$nm:"styleSheetSets"},getElementsByTagNameNS:{$t:{comp:"u",$ts:[{$pk:".",$nm:"HTMLCollection"},{$pk:".",$nm:"NodeList"}]},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"namespace"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$def:1,$nm:"name"}]],$mt:"m",$an:{shared:[],doc:["returns a collection of elements on the document by the tagname in a namespace"]},$nm:"getElementsByTagNameNS"},getAsync:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$mt:"m",$an:{shared:[],doc:["gets whether a document.load call will be made asynchronously"]},$nm:"getAsync"},getCookie:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns cookies associated with the document in the form of a comma sepearted list of key=value pairs"]},$nm:"getCookie"},getDir:{$t:{$pk:".",$nm:"DocumentDirection"},$mt:"m",$an:{shared:[],doc:["get the document direction"]},$nm:"getDir"},setDir:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{$pk:".",$nm:"DocumentDirection"},$mt:"prm",$nm:"dir"}]],$mt:"m",$an:{shared:[],doc:["set the document direction"]},$nm:"setDir"},elementFromPoint:{$t:{$pk:".",$nm:"Element"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Integer"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"}]},$mt:"prm",$nm:"x"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Integer"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"}]},$mt:"prm",$nm:"y"}]],$mt:"m",$an:{shared:[],doc:["returns element at the given point coordinates"]},$nm:"elementFromPoint"},preferredStyleSheetSet:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"m",$an:{shared:[],doc:["returns the prefurred name of the StyleSheet set on the document"]},$nm:"preferredStyleSheetSet"},url:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns the document url"]},$nm:"url"},createComment:{$t:{$pk:".",$nm:"Comment"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"data"}]],$mt:"m",$an:{shared:[],doc:["creates a new comment"]},$nm:"createComment"},referrer:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns uri of the page which linked to this document"]},$nm:"referrer"},documentURI:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns documents URI"]},$nm:"documentURI"},setSelectedStyleSheetSet:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"sheet"}]],$mt:"m",$an:{shared:[],doc:["returns a linked to or embeded in the document by its name"]},$nm:"setSelectedStyleSheetSet"},images:{$t:{$pk:".",$nm:"HTMLCollection"},$mt:"m",$an:{shared:[],doc:["returns a collection of all image elements in the document"]},$nm:"images"},styleSheets:{$t:{$pk:"com.openswimsoftware.ceylon.js.dom.stylesheets",$nm:"StyleSheetList"},$mt:"m",$an:{shared:[],doc:["returns collection of StyleSheets linked to or embeded in the document"]},$nm:"styleSheets"},doctype:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"DocumentType"}]},$mt:"m",$an:{shared:[],doc:["returns the documents doctype"]},$nm:"doctype"},createCDATASection:{$t:{$pk:".",$nm:"CDATASection"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"data"}]],$mt:"m",$an:{shared:[],doc:["creates a new CDATASection"]},$nm:"createCDATASection"},getDomain:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["get the documents domain"]},$nm:"getDomain"},importNode:{$t:{$pk:".",$nm:"Node"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"externalNode"},{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$mt:"prm",$def:1,$nm:"deep"}]],$mt:"m",$an:{shared:[],doc:["creates a copy of a node from another document that can be inserted into the current document"]},$nm:"importNode"},adoptNode:{$t:{$pk:".",$nm:"Node"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"node"}]],$mt:"m",$an:{shared:[],doc:["adapts a node from a external document"]},$nm:"adoptNode"},getDesignMode:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$mt:"m",$an:{shared:[],doc:["returns if the documents design mode is on"]},$nm:"getDesignMode"},plugins:{$t:{$pk:".",$nm:"HTMLCollection"},$mt:"m",$an:{shared:[],doc:["returns collection of all the plugin elements on the document"]},$nm:"plugins"},compatMode:{$t:{$pk:".",$nm:"CompatMode"},$mt:"m",$an:{shared:[],doc:["returns the documents compatablity mode"]},$nm:"compatMode"},createTextNode:{$t:{$pk:".",$nm:"Text"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"data"}]],$mt:"m",$an:{shared:[],doc:["creates a new text node"]},$nm:"createTextNode"},createElementNS:{$t:{$pk:".",$nm:"Element"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"namespaceURI"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"qualifiedName"}]],$mt:"m",$an:{shared:[],doc:["creates a new element in the given namespace"]},$nm:"createElementNS"},querySelectorAll:{$t:{$pk:".",$nm:"NodeList"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"selectors"}]],$mt:"m",$an:{shared:[],doc:["returns a list of all elements within the document"]},$nm:"querySelectorAll"},createDocumentFragment:{$t:{$pk:".",$nm:"DocumentFragment"},$mt:"m",$an:{shared:[],doc:["creates a document fragment"]},$nm:"createDocumentFragment"},title:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns the documents title"]},$nm:"title"},getElementsByTagName:{$t:{comp:"u",$ts:[{$pk:".",$nm:"HTMLCollection"},{$pk:".",$nm:"NodeList"}]},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$def:1,$nm:"name"}]],$mt:"m",$an:{shared:[],doc:["returns a collection of elements on the document by the tagname"]},$nm:"getElementsByTagName"},write:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"line"}]],$mt:"m",$an:{shared:[],doc:["write the string to the document"]},$nm:"write"},setDomain:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"domain"}]],$mt:"m",$an:{shared:[],doc:["set the domain string of the document"]},$nm:"setDomain"},forms:{$t:{$pk:".",$nm:"HTMLCollection"},$mt:"m",$an:{shared:[],doc:["returns a collection of all form elements in the document"]},$nm:"forms"},characterSet:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns documents CharacterSet"]},$nm:"characterSet"},lastModified:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns the date the document was last modified as a string"]},$nm:"lastModified"},links:{$t:{$pk:".",$nm:"HTMLCollection"},$mt:"m",$an:{shared:[],doc:["returns all of the link elements in the document"]},$nm:"links"},readyState:{$t:{$pk:".",$nm:"DocumentReadyState"},$mt:"m",$an:{shared:[],doc:["returns the current ready state of the document"]},$nm:"readyState"},createRange:{$t:{$pk:".",$nm:"Range"},$mt:"m",$an:{shared:[],doc:["create a new range"]},$nm:"createRange"},anchors:{$t:{$pk:".",$nm:"NodeList"},$mt:"m",$an:{shared:[],doc:["returns a collection of all anchors in the document"]},$nm:"anchors"},selectedStyleSheetSet:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns the name of the StyleSheet set that is currently in use on the document"]},$nm:"selectedStyleSheetSet"},implementation:{$t:{$pk:".",$nm:"DOMImplementation"},$mt:"m",$an:{shared:[],doc:["returns the DOM implementation associated with the document"]},$nm:"implementation"},setCookie:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"cookie"}]],$mt:"m",$an:{shared:[],doc:["set cookies associated with the document in the form of a comma sepearted list of key=value pairs"]},$nm:"setCookie"},lastStyleSheetSet:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns the name of the last enabled StyleSheet Set for the document"]},$nm:"lastStyleSheetSet"},createTreeWalker:{$t:{$pk:".",$nm:"TreeWalker"},$ps:[[{$t:{$pk:".",$nm:"Node"},$mt:"prm",$nm:"root"},{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$def:1,$nm:"whatToShow"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"NodeFilter"}]},$mt:"prm",$def:1,$nm:"filter"}]],$mt:"m",$an:{shared:[],doc:["returns a new tree walker for walking the document"]},$nm:"createTreeWalker"},createElement:{$t:{$pk:".",$nm:"Element"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"tagName"}]],$mt:"m",$an:{shared:[],doc:["creates a new element"]},$nm:"createElement"},createProcessingInstruction:{$t:{$pk:".",$nm:"ProcessingInstruction"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"target"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"data"}]],$mt:"m",$an:{shared:[],doc:["creates a processing instruction node"]},$nm:"createProcessingInstruction"}},$nm:"DocumentAbs"},Element:{super:{$pk:".",$nm:"ElementAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["a DOM Element"]},$at:{native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"},n$hfpsvg:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"}},$nm:"Element"}},"$mod-bin":"7.0","com.openswimsoftware.ceylon.js.dom.stylesheets":{StyleSheetAbs:{abstract:1,super:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSObjectAbs"},$mt:"c",$an:{abstract:[],shared:[]},$m:{title:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns StyleSheet title"]},$nm:"title"},ownerNode:{$t:{$pk:"com.openswimsoftware.ceylon.js.dom",$nm:"Node"},$mt:"m",$an:{shared:[],doc:["returns StyleSheets owning node"]},$nm:"ownerNode"},type:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns StyleSheets mime type string"]},$nm:"type"},media:{$t:{$pk:".",$nm:"MediaList"},$mt:"m",$an:{shared:[],doc:["returns the collection of Media Queries associated with the StyleSheet"]},$nm:"media"},href:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns StyleSheet location"]},$nm:"href"},parentStyleSheet:{$t:{$pk:".",$nm:"StyleSheet"},$mt:"m",$an:{shared:[],doc:["returns StyleSheets parent"]},$nm:"parentStyleSheet"},disabled:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Boolean"},$mt:"m",$an:{shared:[],doc:["returns if the StyleSheet is disabled or not"]},$nm:"disabled"}},$nm:"StyleSheetAbs"},MediaListAbs:{abstract:1,super:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSObjectAbs"},$mt:"c",$an:{abstract:[],shared:[]},$m:{appendMedium:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"newMedium"}]],$mt:"m",$an:{shared:[],doc:["appends the passed Media Query to the collection"]},$nm:"appendMedium"},setMediaText:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"text"}]],$mt:"m",$an:{shared:[],doc:["sets the media list to a string of Media Queries"]},$nm:"setMediaText"},item:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Integer"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"}]},$mt:"prm",$nm:"index"}]],$mt:"m",$an:{shared:[],doc:["returns Media Query at the specified index"]},$nm:"item"},length:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"},$mt:"m",$an:{shared:[],doc:["returns the number of Media Queries in the Collection"]},$nm:"length"},deleteMedium:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$nm:"oldMedium"}]],$mt:"m",$an:{shared:[],doc:["removes any media querys which match the passed query string"]},$nm:"deleteMedium"},getMediaText:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["serializes Media Queries"]},$nm:"getMediaText"}},$nm:"MediaListAbs"},"$pkg-shared":1,MediaList:{super:{$pk:".",$nm:"MediaListAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["Collection of Media Queries"]},$at:{native:{$t:{$pk:"com.openswimsoftware.ceylon.js.dom",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"},n$6r3bd3:{$t:{$pk:"com.openswimsoftware.ceylon.js.dom",$nm:"unknown"},$mt:"a",$nm:"n"}},$nm:"MediaList"},StyleSheet:{super:{$pk:".",$nm:"StyleSheetAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["represents a basic StyleSheet"]},$at:{native:{$t:{$pk:"com.openswimsoftware.ceylon.js.dom",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"},n$k6r7ub:{$t:{$pk:"com.openswimsoftware.ceylon.js.dom",$nm:"unknown"},$mt:"a",$nm:"n"}},$nm:"StyleSheet"},StyleSheetListAbs:{abstract:1,super:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSObjectAbs"},$mt:"c",$an:{abstract:[],shared:[]},$m:{item:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"StyleSheet"}]},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Integer"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"}]},$mt:"prm",$nm:"index"}]],$mt:"m",$an:{shared:[],doc:["returns the StyleSheet at the specified index"]},$nm:"item"},length:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"},$mt:"m",$an:{shared:[],doc:["returns the length of the StyleSheet Collection"]},$nm:"length"}},$nm:"StyleSheetListAbs"},StyleSheetList:{super:{$pk:".",$nm:"StyleSheetListAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["a collection of StyleSheets"]},$at:{n$qzz87z:{$t:{$pk:"com.openswimsoftware.ceylon.js.dom",$nm:"unknown"},$mt:"a",$nm:"n"},native:{$t:{$pk:"com.openswimsoftware.ceylon.js.dom",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"}},$nm:"StyleSheetList"}}};
+ex$.$CCMM$=function(){return $CCMM$;};
+var m$1=require('ceylon/language/1.1.0/ceylon.language-1.1.0');
+m$1.$addmod$(m$1,'ceylon.language/1.1.0');
+var m$9f=require('com/openswimsoftware/ceylon/js/language/1.8.0/com.openswimsoftware.ceylon.js.language-1.8.0');
+m$1.$addmod$(m$9f,'com.openswimsoftware.ceylon.js.language/1.8.0');
+function AttrAbs(attrAbs$){
     $init$AttrAbs();
-    if ($$attrAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$$cocjl339.JSObjectAbs($$attrAbs);
-    return $$attrAbs;
+    if(attrAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    m$9f.JSObjectAbs(attrAbs$);
+    return attrAbs$;
 }
-AttrAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cocjl339.JSObjectAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','AttrAbs']};};
-exports.AttrAbs=AttrAbs;
+AttrAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$9f.JSObjectAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','AttrAbs']};};
+ex$.AttrAbs=AttrAbs;
 function $init$AttrAbs(){
-    if (AttrAbs.$$===undefined){
-        $$$cl1.initTypeProto(AttrAbs,'com.openswimsoftware.ceylon.js.dom::AttrAbs',$$$cocjl339.JSObjectAbs);
-        (function($$attrAbs){
-            $$attrAbs.isId=function isId(){
-                var $$attrAbs=this;
+    if(AttrAbs.$$===undefined){
+        m$1.initTypeProto(AttrAbs,'com.openswimsoftware.ceylon.js.dom::AttrAbs',m$9f.JSObjectAbs);
+        (function(attrAbs$){
+            attrAbs$.isId=function isId(){
+                var attrAbs$=this;
                 /*Begin dynamic block*/
-                if($$attrAbs.$native.isId){
+                if(attrAbs$.$_native.isId){
                     return true;
                 }else {
                     return false;
                 }/*End dynamic block*/
-            };$$attrAbs.isId.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Boolean},$ps:[],$cont:AttrAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the Attr is an ID or not",32)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','AttrAbs','$m','isId']};};
-            $$attrAbs.name=function name(){
-                var $$attrAbs=this;
+            };attrAbs$.isId.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.$_Boolean},$ps:[],$cont:AttrAbs,$an:function(){return[m$1.doc("returns the Attr is an ID or not"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','AttrAbs','$m','isId']};};
+            attrAbs$.name=function name(){
+                var attrAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$attrAbs.$native.name);
+                return m$9f.JSString(attrAbs$.$_native.name);
                 /*End dynamic block*/
-            };$$attrAbs.name.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:AttrAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the Attr name",21)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','AttrAbs','$m','name']};};
-            $$attrAbs.getValue=function getValue(){
-                var $$attrAbs=this;
+            };attrAbs$.name.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:AttrAbs,$an:function(){return[m$1.doc("returns the Attr name"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','AttrAbs','$m','name']};};
+            attrAbs$.getValue=function getValue(){
+                var attrAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$attrAbs.$native.value);
+                return m$9f.JSString(attrAbs$.$_native.value);
                 /*End dynamic block*/
-            };$$attrAbs.getValue.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:AttrAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the Attr value string",29)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','AttrAbs','$m','getValue']};};
-            $$attrAbs.setValue=function setValue(val$395){
-                var $$attrAbs=this;
-                
-                var case$396=val$395;
-                if ($$$cl1.isOfType(val$395,{t:$$$cl1.String})) {
+            };attrAbs$.getValue.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:AttrAbs,$an:function(){return[m$1.doc("returns the Attr value string"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','AttrAbs','$m','getValue']};};
+            attrAbs$.setValue=function setValue($az){
+                var attrAbs$=this;
+                var $b0=$az;
+                if(m$1.is$($az,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    $$attrAbs.$native.value=case$396.valueOf();
+                    attrAbs$.$_native.value=$b0.valueOf();
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(val$395,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($az,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    $$attrAbs.$native.value=case$396.$native;
+                    attrAbs$.$_native.value=$b0.$_native;
                     /*End dynamic block*/
                 }
-            };$$attrAbs.setValue.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'val',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:AttrAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("sets the Attr value string",26)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','AttrAbs','$m','setValue']};};
+            };attrAbs$.setValue.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'val',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:AttrAbs,$an:function(){return[m$1.doc("sets the Attr value string"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','AttrAbs','$m','setValue']};};
         })(AttrAbs.$$.prototype);
     }
     return AttrAbs;
 }
-exports.$init$AttrAbs=$init$AttrAbs;
+ex$.$init$AttrAbs=$init$AttrAbs;
 $init$AttrAbs();
-function Attr(n$397, $$attr){
+function Attr($b1,attr$){
     $init$Attr();
-    if ($$attr===undefined)$$attr=new Attr.$$;
-    $$attr.n$397_=n$397;
-    AttrAbs($$attr);
-    $$attr.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:Attr,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','Attr','$at','native']};}};
+    if(attr$===undefined)attr$=new Attr.$$;
+    attr$.$b1_=$b1;
+    AttrAbs(attr$);
+    attr$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:Attr,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','Attr','$at','native']};}};
     /*Begin dynamic block*/
-    $$attr.$native=$$attr.n$397;/*End dynamic block*/
-    return $$attr;
+    attr$.$_native=attr$.$b1;/*End dynamic block*/
+    return attr$;
 }
-Attr.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:AttrAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("a DOM Attr",10)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','Attr']};};
-exports.Attr=Attr;
+Attr.$crtmm$=function(){return{mod:$CCMM$,'super':{t:AttrAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("a DOM Attr"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','Attr']};};
+ex$.Attr=Attr;
 function $init$Attr(){
-    if (Attr.$$===undefined){
-        $$$cl1.initTypeProto(Attr,'com.openswimsoftware.ceylon.js.dom::Attr',$init$AttrAbs());
-        (function($$attr){
-            $$$cl1.defineAttr($$attr,'n$397',function(){return this.n$397_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:Attr,d:['com.openswimsoftware.ceylon.js.dom','Attr','$at','n']};});
+    if(Attr.$$===undefined){
+        m$1.initTypeProto(Attr,'com.openswimsoftware.ceylon.js.dom::Attr',$init$AttrAbs());
+        (function(attr$){
+            m$1.atr$(attr$,'$b1',function(){return this.$b1_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:Attr,d:['com.openswimsoftware.ceylon.js.dom','Attr','$at','n$pmg84x']};});
         })(Attr.$$.prototype);
     }
     return Attr;
 }
-exports.$init$Attr=$init$Attr;
+ex$.$init$Attr=$init$Attr;
 $init$Attr();
-function CommentAbs($$commentAbs){
+function CommentAbs(commentAbs$){
     $init$CommentAbs();
-    if ($$commentAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    CharacterDataAbs($$commentAbs);
-    return $$commentAbs;
+    if(commentAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    CharacterDataAbs(commentAbs$);
+    return commentAbs$;
 }
-CommentAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:CharacterDataAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','CommentAbs']};};
-exports.CommentAbs=CommentAbs;
+CommentAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:CharacterDataAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','CommentAbs']};};
+ex$.CommentAbs=CommentAbs;
 function $init$CommentAbs(){
-    if (CommentAbs.$$===undefined){
-        $$$cl1.initTypeProto(CommentAbs,'com.openswimsoftware.ceylon.js.dom::CommentAbs',$init$CharacterDataAbs());
+    if(CommentAbs.$$===undefined){
+        m$1.initTypeProto(CommentAbs,'com.openswimsoftware.ceylon.js.dom::CommentAbs',$init$CharacterDataAbs());
     }
     return CommentAbs;
 }
-exports.$init$CommentAbs=$init$CommentAbs;
+ex$.$init$CommentAbs=$init$CommentAbs;
 $init$CommentAbs();
-function Comment(n$398, $$comment){
+function Comment($b2,comment$){
     $init$Comment();
-    if ($$comment===undefined)$$comment=new Comment.$$;
-    $$comment.n$398_=n$398;
-    CommentAbs($$comment);
-    $$comment.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:Comment,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','Comment','$at','native']};}};
+    if(comment$===undefined)comment$=new Comment.$$;
+    comment$.$b2_=$b2;
+    CommentAbs(comment$);
+    comment$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:Comment,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','Comment','$at','native']};}};
     /*Begin dynamic block*/
-    $$comment.$native=$$comment.n$398;/*End dynamic block*/
-    return $$comment;
+    comment$.$_native=comment$.$b2;/*End dynamic block*/
+    return comment$;
 }
-Comment.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:CommentAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("a DOM comment",13)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','Comment']};};
-exports.Comment=Comment;
+Comment.$crtmm$=function(){return{mod:$CCMM$,'super':{t:CommentAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("a DOM comment"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','Comment']};};
+ex$.Comment=Comment;
 function $init$Comment(){
-    if (Comment.$$===undefined){
-        $$$cl1.initTypeProto(Comment,'com.openswimsoftware.ceylon.js.dom::Comment',$init$CommentAbs());
-        (function($$comment){
-            $$$cl1.defineAttr($$comment,'n$398',function(){return this.n$398_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:Comment,d:['com.openswimsoftware.ceylon.js.dom','Comment','$at','n']};});
+    if(Comment.$$===undefined){
+        m$1.initTypeProto(Comment,'com.openswimsoftware.ceylon.js.dom::Comment',$init$CommentAbs());
+        (function(comment$){
+            m$1.atr$(comment$,'$b2',function(){return this.$b2_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:Comment,d:['com.openswimsoftware.ceylon.js.dom','Comment','$at','n$kbgwgf']};});
         })(Comment.$$.prototype);
     }
     return Comment;
 }
-exports.$init$Comment=$init$Comment;
+ex$.$init$Comment=$init$Comment;
 $init$Comment();
-function CharacterDataAbs($$characterDataAbs){
+function CharacterDataAbs(characterDataAbs$){
     $init$CharacterDataAbs();
-    if ($$characterDataAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    NodeAbs($$characterDataAbs);
-    return $$characterDataAbs;
+    if(characterDataAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    NodeAbs(characterDataAbs$);
+    return characterDataAbs$;
 }
-CharacterDataAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterDataAbs']};};
-exports.CharacterDataAbs=CharacterDataAbs;
+CharacterDataAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterDataAbs']};};
+ex$.CharacterDataAbs=CharacterDataAbs;
 function $init$CharacterDataAbs(){
-    if (CharacterDataAbs.$$===undefined){
-        $$$cl1.initTypeProto(CharacterDataAbs,'com.openswimsoftware.ceylon.js.dom::CharacterDataAbs',$init$NodeAbs());
-        (function($$characterDataAbs){
-            $$characterDataAbs.getData=function getData(){
-                var $$characterDataAbs=this;
+    if(CharacterDataAbs.$$===undefined){
+        m$1.initTypeProto(CharacterDataAbs,'com.openswimsoftware.ceylon.js.dom::CharacterDataAbs',$init$NodeAbs());
+        (function(characterDataAbs$){
+            characterDataAbs$.getData=function getData(){
+                var characterDataAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$characterDataAbs.$native.data);
+                return m$9f.JSString(characterDataAbs$.$_native.data);
                 /*End dynamic block*/
-            };$$characterDataAbs.getData.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:CharacterDataAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the CharacterData",25)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterDataAbs','$m','getData']};};
-            $$characterDataAbs.setData=function setData(data$399){
-                var $$characterDataAbs=this;
-                
-                var case$400=data$399;
-                if ($$$cl1.isOfType(data$399,{t:$$$cl1.String})) {
+            };characterDataAbs$.getData.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:CharacterDataAbs,$an:function(){return[m$1.doc("returns the CharacterData"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterDataAbs','$m','getData']};};
+            characterDataAbs$.setData=function setData($b3){
+                var characterDataAbs$=this;
+                var $b4=$b3;
+                if(m$1.is$($b3,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    $$characterDataAbs.$native.data=case$400.valueOf();
+                    characterDataAbs$.$_native.data=$b4.valueOf();
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(data$399,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($b3,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    $$characterDataAbs.$native.data=case$400.$native;
+                    characterDataAbs$.$_native.data=$b4.$_native;
                     /*End dynamic block*/
                 }
-            };$$characterDataAbs.setData.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'data',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:CharacterDataAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("set the CharacterData",21)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterDataAbs','$m','setData']};};
-            $$characterDataAbs.length=function length(){
-                var $$characterDataAbs=this;
+            };characterDataAbs$.setData.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'data',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:CharacterDataAbs,$an:function(){return[m$1.doc("set the CharacterData"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterDataAbs','$m','setData']};};
+            characterDataAbs$.length=function length(){
+                var characterDataAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSNumber($$characterDataAbs.$native.length);
+                return m$9f.JSNumber(characterDataAbs$.$_native.length);
                 /*End dynamic block*/
-            };$$characterDataAbs.length.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSNumber},$ps:[],$cont:CharacterDataAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the length of the CharacterData",39)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterDataAbs','$m','length']};};
-            $$characterDataAbs.substringData=function substringData(offset$401,count$402){
-                var $$characterDataAbs=this;
-                
-                var case$403=offset$401;
-                if ($$$cl1.isOfType(offset$401,{t:$$$cl1.Integer})) {
-                    
-                    var case$404=count$402;
-                    if ($$$cl1.isOfType(count$402,{t:$$$cl1.Integer})) {
+            };characterDataAbs$.length.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSNumber},$ps:[],$cont:CharacterDataAbs,$an:function(){return[m$1.doc("returns the length of the CharacterData"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterDataAbs','$m','length']};};
+            characterDataAbs$.substringData=function substringData($b5,$b6){
+                var characterDataAbs$=this;
+                var $b7=$b5;
+                if(m$1.is$($b5,{t:m$1.Integer})) {
+                    var $b8=$b6;
+                    if(m$1.is$($b6,{t:m$1.Integer})) {
                         /*Begin dynamic block*/
-                        return $$$cocjl339.JSString($$characterDataAbs.$native.substringData(case$403,case$404));
+                        return m$9f.JSString(characterDataAbs$.$_native.substringData($b7,$b8));
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(count$402,{t:$$$cocjl339.JSNumber})) {
+                    }else if(m$1.is$($b6,{t:m$9f.JSNumber})) {
                         /*Begin dynamic block*/
-                        return $$$cocjl339.JSString($$characterDataAbs.$native.substringData(case$403,case$404.$native));
+                        return m$9f.JSString(characterDataAbs$.$_native.substringData($b7,$b8.$_native));
                         /*End dynamic block*/
                     }
-                }else if ($$$cl1.isOfType(offset$401,{t:$$$cocjl339.JSNumber})) {
-                    
-                    var case$405=count$402;
-                    if ($$$cl1.isOfType(count$402,{t:$$$cl1.Integer})) {
+                }else if(m$1.is$($b5,{t:m$9f.JSNumber})) {
+                    var $b9=$b6;
+                    if(m$1.is$($b6,{t:m$1.Integer})) {
                         /*Begin dynamic block*/
-                        return $$$cocjl339.JSString($$characterDataAbs.$native.substringData(case$403.$native,case$405));
+                        return m$9f.JSString(characterDataAbs$.$_native.substringData($b7.$_native,$b9));
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(count$402,{t:$$$cocjl339.JSNumber})) {
+                    }else if(m$1.is$($b6,{t:m$9f.JSNumber})) {
                         /*Begin dynamic block*/
-                        return $$$cocjl339.JSString($$characterDataAbs.$native.substringData(case$403.$native,case$405.$native));
+                        return m$9f.JSString(characterDataAbs$.$_native.substringData($b7.$_native,$b9.$_native));
                         /*End dynamic block*/
                     }
                 }
-            };$$characterDataAbs.substringData.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[{$nm:'offset',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.Integer},{t:$$$cocjl339.JSNumber}]},$an:function(){return[];}},{$nm:'count',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.Integer},{t:$$$cocjl339.JSNumber}]},$an:function(){return[];}}],$cont:CharacterDataAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns a subtstring starting at offset and through a count",59)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterDataAbs','$m','substringData']};};
-            $$characterDataAbs.appendData=function appendData(data$406){
-                var $$characterDataAbs=this;
-                
-                var case$407=data$406;
-                if ($$$cl1.isOfType(data$406,{t:$$$cl1.String})) {
+            };characterDataAbs$.substringData.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[{$nm:'offset',$mt:'prm',$t:{t:'u',l:[{t:m$1.Integer},{t:m$9f.JSNumber}]},$an:function(){return[];}},{$nm:'count',$mt:'prm',$t:{t:'u',l:[{t:m$1.Integer},{t:m$9f.JSNumber}]},$an:function(){return[];}}],$cont:CharacterDataAbs,$an:function(){return[m$1.doc("returns a subtstring starting at offset and through a count"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterDataAbs','$m','substringData']};};
+            characterDataAbs$.appendData=function appendData($ba){
+                var characterDataAbs$=this;
+                var $bb=$ba;
+                if(m$1.is$($ba,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    $$characterDataAbs.$native.appendData(case$407.valueOf());
+                    characterDataAbs$.$_native.appendData($bb.valueOf());
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(data$406,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($ba,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    $$characterDataAbs.$native.appendData(case$407.$native);
+                    characterDataAbs$.$_native.appendData($bb.$_native);
                     /*End dynamic block*/
                 }
-            };$$characterDataAbs.appendData.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'data',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:CharacterDataAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("append the Characters with String data",38)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterDataAbs','$m','appendData']};};
-            $$characterDataAbs.insertData=function insertData(offset$408,data$409){
-                var $$characterDataAbs=this;
-                
-                var case$410=offset$408;
-                if ($$$cl1.isOfType(offset$408,{t:$$$cl1.Integer})) {
-                    
-                    var case$411=data$409;
-                    if ($$$cl1.isOfType(data$409,{t:$$$cl1.String})) {
+            };characterDataAbs$.appendData.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'data',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:CharacterDataAbs,$an:function(){return[m$1.doc("append the Characters with String data"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterDataAbs','$m','appendData']};};
+            characterDataAbs$.insertData=function insertData($bc,$bd){
+                var characterDataAbs$=this;
+                var $be=$bc;
+                if(m$1.is$($bc,{t:m$1.Integer})) {
+                    var $bf=$bd;
+                    if(m$1.is$($bd,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        $$characterDataAbs.$native.insertData(case$410,case$411.valueOf());
+                        characterDataAbs$.$_native.insertData($be,$bf.valueOf());
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(data$409,{t:$$$cocjl339.JSString})) {
+                    }else if(m$1.is$($bd,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        $$characterDataAbs.$native.insertData(case$410,case$411.$native);
+                        characterDataAbs$.$_native.insertData($be,$bf.$_native);
                         /*End dynamic block*/
                     }
-                }else if ($$$cl1.isOfType(offset$408,{t:$$$cocjl339.JSNumber})) {
-                    
-                    var case$412=data$409;
-                    if ($$$cl1.isOfType(data$409,{t:$$$cl1.String})) {
+                }else if(m$1.is$($bc,{t:m$9f.JSNumber})) {
+                    var $bg=$bd;
+                    if(m$1.is$($bd,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        $$characterDataAbs.$native.insertData(case$410.$native,case$412.valueOf());
+                        characterDataAbs$.$_native.insertData($be.$_native,$bg.valueOf());
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(data$409,{t:$$$cocjl339.JSString})) {
+                    }else if(m$1.is$($bd,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        $$characterDataAbs.$native.insertData(case$410.$native,case$412.$native);
+                        characterDataAbs$.$_native.insertData($be.$_native,$bg.$_native);
                         /*End dynamic block*/
                     }
                 }
-            };$$characterDataAbs.insertData.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'offset',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.Integer},{t:$$$cocjl339.JSNumber}]},$an:function(){return[];}},{$nm:'data',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:CharacterDataAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("insert the Characters starting at offset using the String data",62)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterDataAbs','$m','insertData']};};
-            $$characterDataAbs.deleteData=function deleteData(offset$413,count$414){
-                var $$characterDataAbs=this;
-                
-                var case$415=offset$413;
-                if ($$$cl1.isOfType(offset$413,{t:$$$cl1.Integer})) {
-                    
-                    var case$416=count$414;
-                    if ($$$cl1.isOfType(count$414,{t:$$$cl1.Integer})) {
+            };characterDataAbs$.insertData.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'offset',$mt:'prm',$t:{t:'u',l:[{t:m$1.Integer},{t:m$9f.JSNumber}]},$an:function(){return[];}},{$nm:'data',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:CharacterDataAbs,$an:function(){return[m$1.doc("insert the Characters starting at offset using the String data"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterDataAbs','$m','insertData']};};
+            characterDataAbs$.deleteData=function deleteData($bh,$bi){
+                var characterDataAbs$=this;
+                var $bj=$bh;
+                if(m$1.is$($bh,{t:m$1.Integer})) {
+                    var $bk=$bi;
+                    if(m$1.is$($bi,{t:m$1.Integer})) {
                         /*Begin dynamic block*/
-                        $$characterDataAbs.$native.deleteData(case$415,case$416);
+                        characterDataAbs$.$_native.deleteData($bj,$bk);
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(count$414,{t:$$$cocjl339.JSNumber})) {
+                    }else if(m$1.is$($bi,{t:m$9f.JSNumber})) {
                         /*Begin dynamic block*/
-                        $$characterDataAbs.$native.deleteData(case$415,case$416.$native);
+                        characterDataAbs$.$_native.deleteData($bj,$bk.$_native);
                         /*End dynamic block*/
                     }
-                }else if ($$$cl1.isOfType(offset$413,{t:$$$cocjl339.JSNumber})) {
-                    
-                    var case$417=count$414;
-                    if ($$$cl1.isOfType(count$414,{t:$$$cl1.Integer})) {
+                }else if(m$1.is$($bh,{t:m$9f.JSNumber})) {
+                    var $bl=$bi;
+                    if(m$1.is$($bi,{t:m$1.Integer})) {
                         /*Begin dynamic block*/
-                        $$characterDataAbs.$native.deleteData(case$415.$native,case$417);
+                        characterDataAbs$.$_native.deleteData($bj.$_native,$bl);
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(count$414,{t:$$$cocjl339.JSNumber})) {
+                    }else if(m$1.is$($bi,{t:m$9f.JSNumber})) {
                         /*Begin dynamic block*/
-                        $$characterDataAbs.$native.deleteData(case$415.$native,case$417.$native);
+                        characterDataAbs$.$_native.deleteData($bj.$_native,$bl.$_native);
                         /*End dynamic block*/
                     }
                 }
-            };$$characterDataAbs.deleteData.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'offset',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.Integer},{t:$$$cocjl339.JSNumber}]},$an:function(){return[];}},{$nm:'count',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.Integer},{t:$$$cocjl339.JSNumber}]},$an:function(){return[];}}],$cont:CharacterDataAbs,$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterDataAbs','$m','deleteData']};};
-            $$characterDataAbs.replaceData=function replaceData(offset$418,count$419,data$420){
-                var $$characterDataAbs=this;
-                
-                var case$421=offset$418;
-                if ($$$cl1.isOfType(offset$418,{t:$$$cl1.Integer})) {
-                    
-                    var case$422=count$419;
-                    if ($$$cl1.isOfType(count$419,{t:$$$cl1.Integer})) {
-                        
-                        var case$423=data$420;
-                        if ($$$cl1.isOfType(data$420,{t:$$$cl1.String})) {
+            };characterDataAbs$.deleteData.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'offset',$mt:'prm',$t:{t:'u',l:[{t:m$1.Integer},{t:m$9f.JSNumber}]},$an:function(){return[];}},{$nm:'count',$mt:'prm',$t:{t:'u',l:[{t:m$1.Integer},{t:m$9f.JSNumber}]},$an:function(){return[];}}],$cont:CharacterDataAbs,$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterDataAbs','$m','deleteData']};};
+            characterDataAbs$.replaceData=function replaceData($bm,$bn,$bo){
+                var characterDataAbs$=this;
+                var $bp=$bm;
+                if(m$1.is$($bm,{t:m$1.Integer})) {
+                    var $bq=$bn;
+                    if(m$1.is$($bn,{t:m$1.Integer})) {
+                        var $br=$bo;
+                        if(m$1.is$($bo,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            $$characterDataAbs.$native.replaceData(case$421,case$422,case$423.valueOf());
+                            characterDataAbs$.$_native.replaceData($bp,$bq,$br.valueOf());
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(data$420,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($bo,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            $$characterDataAbs.$native.replaceData(case$421,case$422,case$423.$native);
+                            characterDataAbs$.$_native.replaceData($bp,$bq,$br.$_native);
                             /*End dynamic block*/
                         }
-                    }else if ($$$cl1.isOfType(count$419,{t:$$$cocjl339.JSNumber})) {
-                        
-                        var case$424=data$420;
-                        if ($$$cl1.isOfType(data$420,{t:$$$cl1.String})) {
+                    }else if(m$1.is$($bn,{t:m$9f.JSNumber})) {
+                        var $bs=$bo;
+                        if(m$1.is$($bo,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            $$characterDataAbs.$native.replaceData(case$421,case$422.$native,case$424.valueOf());
+                            characterDataAbs$.$_native.replaceData($bp,$bq.$_native,$bs.valueOf());
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(data$420,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($bo,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            $$characterDataAbs.$native.replaceData(case$421,case$422.$native,case$424.$native);
+                            characterDataAbs$.$_native.replaceData($bp,$bq.$_native,$bs.$_native);
                             /*End dynamic block*/
                         }
                     }
-                }else if ($$$cl1.isOfType(offset$418,{t:$$$cocjl339.JSNumber})) {
-                    
-                    var case$425=count$419;
-                    if ($$$cl1.isOfType(count$419,{t:$$$cl1.Integer})) {
-                        
-                        var case$426=data$420;
-                        if ($$$cl1.isOfType(data$420,{t:$$$cl1.String})) {
+                }else if(m$1.is$($bm,{t:m$9f.JSNumber})) {
+                    var $bt=$bn;
+                    if(m$1.is$($bn,{t:m$1.Integer})) {
+                        var $bu=$bo;
+                        if(m$1.is$($bo,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            $$characterDataAbs.$native.replaceData(case$421.$native,case$425,case$426.valueOf());
+                            characterDataAbs$.$_native.replaceData($bp.$_native,$bt,$bu.valueOf());
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(data$420,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($bo,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            $$characterDataAbs.$native.replaceData(case$421.$native,case$425,case$426.$native);
+                            characterDataAbs$.$_native.replaceData($bp.$_native,$bt,$bu.$_native);
                             /*End dynamic block*/
                         }
-                    }else if ($$$cl1.isOfType(count$419,{t:$$$cocjl339.JSNumber})) {
-                        
-                        var case$427=data$420;
-                        if ($$$cl1.isOfType(data$420,{t:$$$cl1.String})) {
+                    }else if(m$1.is$($bn,{t:m$9f.JSNumber})) {
+                        var $bv=$bo;
+                        if(m$1.is$($bo,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            $$characterDataAbs.$native.replaceData(case$421.$native,case$425.$native,case$427.valueOf());
+                            characterDataAbs$.$_native.replaceData($bp.$_native,$bt.$_native,$bv.valueOf());
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(data$420,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($bo,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            $$characterDataAbs.$native.replaceData(case$421.$native,case$425.$native,case$427.$native);
+                            characterDataAbs$.$_native.replaceData($bp.$_native,$bt.$_native,$bv.$_native);
                             /*End dynamic block*/
                         }
                     }
                 }
-            };$$characterDataAbs.replaceData.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'offset',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.Integer},{t:$$$cocjl339.JSNumber}]},$an:function(){return[];}},{$nm:'count',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.Integer},{t:$$$cocjl339.JSNumber}]},$an:function(){return[];}},{$nm:'data',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:CharacterDataAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("replace the Characters starting at offset to count using the String data",72)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterDataAbs','$m','replaceData']};};
+            };characterDataAbs$.replaceData.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'offset',$mt:'prm',$t:{t:'u',l:[{t:m$1.Integer},{t:m$9f.JSNumber}]},$an:function(){return[];}},{$nm:'count',$mt:'prm',$t:{t:'u',l:[{t:m$1.Integer},{t:m$9f.JSNumber}]},$an:function(){return[];}},{$nm:'data',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:CharacterDataAbs,$an:function(){return[m$1.doc("replace the Characters starting at offset to count using the String data"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterDataAbs','$m','replaceData']};};
         })(CharacterDataAbs.$$.prototype);
     }
     return CharacterDataAbs;
 }
-exports.$init$CharacterDataAbs=$init$CharacterDataAbs;
+ex$.$init$CharacterDataAbs=$init$CharacterDataAbs;
 $init$CharacterDataAbs();
-function CharacterData(n$428, $$characterData){
+function CharacterData($bw,characterData$){
     $init$CharacterData();
-    if ($$characterData===undefined)$$characterData=new CharacterData.$$;
-    $$characterData.n$428_=n$428;
-    CharacterDataAbs($$characterData);
+    if(characterData$===undefined)characterData$=new CharacterData.$$;
+    characterData$.$bw_=$bw;
+    CharacterDataAbs(characterData$);
+    characterData$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:CharacterData,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterData','$at','native']};}};
     /*Begin dynamic block*/
-    $$characterData.$native=$$characterData.n$428;/*End dynamic block*/
-    return $$characterData;
+    characterData$.$_native=characterData$.$bw;/*End dynamic block*/
+    return characterData$;
 }
-CharacterData.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:CharacterDataAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("a DOM CharacterData segment used by Text, Comment and Processing Instruction",76)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterData']};};
-exports.CharacterData=CharacterData;
+CharacterData.$crtmm$=function(){return{mod:$CCMM$,'super':{t:CharacterDataAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("a DOM CharacterData segment used by Text, Comment and Processing Instruction"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','CharacterData']};};
+ex$.CharacterData=CharacterData;
 function $init$CharacterData(){
-    if (CharacterData.$$===undefined){
-        $$$cl1.initTypeProto(CharacterData,'com.openswimsoftware.ceylon.js.dom::CharacterData',$init$CharacterDataAbs());
-        (function($$characterData){
-            $$$cl1.defineAttr($$characterData,'n$428',function(){return this.n$428_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:CharacterData,d:['com.openswimsoftware.ceylon.js.dom','CharacterData','$at','n']};});
+    if(CharacterData.$$===undefined){
+        m$1.initTypeProto(CharacterData,'com.openswimsoftware.ceylon.js.dom::CharacterData',$init$CharacterDataAbs());
+        (function(characterData$){
+            m$1.atr$(characterData$,'$bw',function(){return this.$bw_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:CharacterData,d:['com.openswimsoftware.ceylon.js.dom','CharacterData','$at','n$xysemb']};});
         })(CharacterData.$$.prototype);
     }
     return CharacterData;
 }
-exports.$init$CharacterData=$init$CharacterData;
+ex$.$init$CharacterData=$init$CharacterData;
 $init$CharacterData();
-var $$$cocjh429=require('com/openswimsoftware/ceylon/js/html/5.0.0/com.openswimsoftware.ceylon.js.html-5.0.0');
-$$$cl1.$addmod$($$$cocjh429,'com.openswimsoftware.ceylon.js.html/5.0.0');
-function DocumentPosition(name$430, $$documentPosition){
+var m$bx=require('com/openswimsoftware/ceylon/js/html/5.0.0/com.openswimsoftware.ceylon.js.html-5.0.0');
+m$1.$addmod$(m$bx,'com.openswimsoftware.ceylon.js.html/5.0.0');
+function DocumentPosition($by,documentPosition$){
     $init$DocumentPosition();
-    if ($$documentPosition===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$documentPosition.name$430_=name$430;
-    return $$documentPosition;
+    if(documentPosition$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    documentPosition$.$by_=$by;
+    return documentPosition$;
 }
-DocumentPosition.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cl1.Basic},$ps:[{$nm:'name',$mt:'prm',$t:{t:$$$cl1.String},$an:function(){return[];}}],of:[{t:documentPositionContainedBy$431},{t:documentPositionContains$432},{t:documentPositionDisconnected$433},{t:documentPositionFollowing$434},{t:documentPositionImplementationSpecific$435},{t:documentPositionPreceding$436}],$an:function(){return[$$$cl1.doc($$$cl1.String("Document Positon Type",21)),$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentPosition']};};
-exports.DocumentPosition=DocumentPosition;
+DocumentPosition.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$1.Basic},$ps:[{$nm:'name',$mt:'prm',$t:{t:m$1.String},$an:function(){return[];}}],of:[$prop$get$bz,$prop$get$c0,$prop$get$c1,$prop$get$c2,$prop$get$c3,$prop$get$c4],$an:function(){return[m$1.doc("Document Positon Type"),m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentPosition']};};
+ex$.DocumentPosition=DocumentPosition;
 function $init$DocumentPosition(){
-    if (DocumentPosition.$$===undefined){
-        $$$cl1.initTypeProto(DocumentPosition,'com.openswimsoftware.ceylon.js.dom::DocumentPosition',$$$cl1.Basic);
-        (function($$documentPosition){
-            $$$cl1.defineAttr($$documentPosition,'name$430',function(){return this.name$430_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.String},$cont:DocumentPosition,d:['com.openswimsoftware.ceylon.js.dom','DocumentPosition','$at','name']};});
+    if(DocumentPosition.$$===undefined){
+        m$1.initTypeProto(DocumentPosition,'com.openswimsoftware.ceylon.js.dom::DocumentPosition',m$1.Basic);
+        (function(documentPosition$){
+            m$1.atr$(documentPosition$,'$by',function(){return this.$by_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.String},$cont:DocumentPosition,d:['com.openswimsoftware.ceylon.js.dom','DocumentPosition','$at','name$ka23jj']};});
         })(DocumentPosition.$$.prototype);
     }
     return DocumentPosition;
 }
-exports.$init$DocumentPosition=$init$DocumentPosition;
+ex$.$init$DocumentPosition=$init$DocumentPosition;
 $init$DocumentPosition();
-function documentPositionContainedBy$431(){
-    var $$documentPositionContainedBy=new documentPositionContainedBy$431.$$;
-    DocumentPosition($$$cl1.String("documentPositionContainedBy",27),$$documentPositionContainedBy);
-    return $$documentPositionContainedBy;
-};documentPositionContainedBy$431.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:DocumentPosition},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionContainedBy']};};
-function $init$documentPositionContainedBy$431(){
-    if (documentPositionContainedBy$431.$$===undefined){
-        $$$cl1.initTypeProto(documentPositionContainedBy$431,'com.openswimsoftware.ceylon.js.dom::documentPositionContainedBy',$init$DocumentPosition());
+function $bz(){
+    var documentPositionContainedBy$=new $bz.$$;
+    DocumentPosition("documentPositionContainedBy",documentPositionContainedBy$);
+    return documentPositionContainedBy$;
+};$bz.$crtmm$=function(){return{mod:$CCMM$,'super':{t:DocumentPosition},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionContainedBy']};};
+function $init$$bz(){
+    if($bz.$$===undefined){
+        m$1.initTypeProto($bz,'com.openswimsoftware.ceylon.js.dom::documentPositionContainedBy',$init$DocumentPosition());
     }
-    return documentPositionContainedBy$431;
+    return $bz;
 }
-exports.$init$documentPositionContainedBy$431=$init$documentPositionContainedBy$431;
-$init$documentPositionContainedBy$431();
-var documentPositionContainedBy$437;
+ex$.$init$$bz=$init$$bz;
+$init$$bz();
+var $c5;
 function getDocumentPositionContainedBy(){
-    if (documentPositionContainedBy$437===undefined){documentPositionContainedBy$437=$init$documentPositionContainedBy$431()();documentPositionContainedBy$437.$$metamodel$$=getDocumentPositionContainedBy.$$metamodel$$;}
-    return documentPositionContainedBy$437;
+    if($c5===undefined){$c5=$init$$bz()();$c5.$crtmm$=getDocumentPositionContainedBy.$crtmm$;}
+    return $c5;
 }
-exports.getDocumentPositionContainedBy=getDocumentPositionContainedBy;
-getDocumentPositionContainedBy.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:documentPositionContainedBy$431},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionContainedBy']};};
-$prop$getDocumentPositionContainedBy={get:getDocumentPositionContainedBy,$$metamodel$$:getDocumentPositionContainedBy.$$metamodel$$};
-exports.$prop$getDocumentPositionContainedBy=$prop$getDocumentPositionContainedBy;
-function documentPositionContains$432(){
-    var $$documentPositionContains=new documentPositionContains$432.$$;
-    DocumentPosition($$$cl1.String("documentPositionContains",24),$$documentPositionContains);
-    return $$documentPositionContains;
-};documentPositionContains$432.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:DocumentPosition},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionContains']};};
-function $init$documentPositionContains$432(){
-    if (documentPositionContains$432.$$===undefined){
-        $$$cl1.initTypeProto(documentPositionContains$432,'com.openswimsoftware.ceylon.js.dom::documentPositionContains',$init$DocumentPosition());
+ex$.getDocumentPositionContainedBy=getDocumentPositionContainedBy;
+getDocumentPositionContainedBy.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$bz},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionContainedBy']};};
+$prop$getDocumentPositionContainedBy={get:getDocumentPositionContainedBy,$crtmm$:getDocumentPositionContainedBy.$crtmm$};
+get$bz=getDocumentPositionContainedBy;$prop$get$bz=getDocumentPositionContainedBy;
+ex$.$prop$getDocumentPositionContainedBy=$prop$getDocumentPositionContainedBy;
+function $c0(){
+    var documentPositionContains$=new $c0.$$;
+    DocumentPosition("documentPositionContains",documentPositionContains$);
+    return documentPositionContains$;
+};$c0.$crtmm$=function(){return{mod:$CCMM$,'super':{t:DocumentPosition},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionContains']};};
+function $init$$c0(){
+    if($c0.$$===undefined){
+        m$1.initTypeProto($c0,'com.openswimsoftware.ceylon.js.dom::documentPositionContains',$init$DocumentPosition());
     }
-    return documentPositionContains$432;
+    return $c0;
 }
-exports.$init$documentPositionContains$432=$init$documentPositionContains$432;
-$init$documentPositionContains$432();
-var documentPositionContains$438;
+ex$.$init$$c0=$init$$c0;
+$init$$c0();
+var $c6;
 function getDocumentPositionContains(){
-    if (documentPositionContains$438===undefined){documentPositionContains$438=$init$documentPositionContains$432()();documentPositionContains$438.$$metamodel$$=getDocumentPositionContains.$$metamodel$$;}
-    return documentPositionContains$438;
+    if($c6===undefined){$c6=$init$$c0()();$c6.$crtmm$=getDocumentPositionContains.$crtmm$;}
+    return $c6;
 }
-exports.getDocumentPositionContains=getDocumentPositionContains;
-getDocumentPositionContains.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:documentPositionContains$432},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionContains']};};
-$prop$getDocumentPositionContains={get:getDocumentPositionContains,$$metamodel$$:getDocumentPositionContains.$$metamodel$$};
-exports.$prop$getDocumentPositionContains=$prop$getDocumentPositionContains;
-function documentPositionDisconnected$433(){
-    var $$documentPositionDisconnected=new documentPositionDisconnected$433.$$;
-    DocumentPosition($$$cl1.String("documentPositionDisconnected",28),$$documentPositionDisconnected);
-    return $$documentPositionDisconnected;
-};documentPositionDisconnected$433.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:DocumentPosition},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionDisconnected']};};
-function $init$documentPositionDisconnected$433(){
-    if (documentPositionDisconnected$433.$$===undefined){
-        $$$cl1.initTypeProto(documentPositionDisconnected$433,'com.openswimsoftware.ceylon.js.dom::documentPositionDisconnected',$init$DocumentPosition());
+ex$.getDocumentPositionContains=getDocumentPositionContains;
+getDocumentPositionContains.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$c0},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionContains']};};
+$prop$getDocumentPositionContains={get:getDocumentPositionContains,$crtmm$:getDocumentPositionContains.$crtmm$};
+get$c0=getDocumentPositionContains;$prop$get$c0=getDocumentPositionContains;
+ex$.$prop$getDocumentPositionContains=$prop$getDocumentPositionContains;
+function $c1(){
+    var documentPositionDisconnected$=new $c1.$$;
+    DocumentPosition("documentPositionDisconnected",documentPositionDisconnected$);
+    return documentPositionDisconnected$;
+};$c1.$crtmm$=function(){return{mod:$CCMM$,'super':{t:DocumentPosition},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionDisconnected']};};
+function $init$$c1(){
+    if($c1.$$===undefined){
+        m$1.initTypeProto($c1,'com.openswimsoftware.ceylon.js.dom::documentPositionDisconnected',$init$DocumentPosition());
     }
-    return documentPositionDisconnected$433;
+    return $c1;
 }
-exports.$init$documentPositionDisconnected$433=$init$documentPositionDisconnected$433;
-$init$documentPositionDisconnected$433();
-var documentPositionDisconnected$439;
+ex$.$init$$c1=$init$$c1;
+$init$$c1();
+var $c7;
 function getDocumentPositionDisconnected(){
-    if (documentPositionDisconnected$439===undefined){documentPositionDisconnected$439=$init$documentPositionDisconnected$433()();documentPositionDisconnected$439.$$metamodel$$=getDocumentPositionDisconnected.$$metamodel$$;}
-    return documentPositionDisconnected$439;
+    if($c7===undefined){$c7=$init$$c1()();$c7.$crtmm$=getDocumentPositionDisconnected.$crtmm$;}
+    return $c7;
 }
-exports.getDocumentPositionDisconnected=getDocumentPositionDisconnected;
-getDocumentPositionDisconnected.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:documentPositionDisconnected$433},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionDisconnected']};};
-$prop$getDocumentPositionDisconnected={get:getDocumentPositionDisconnected,$$metamodel$$:getDocumentPositionDisconnected.$$metamodel$$};
-exports.$prop$getDocumentPositionDisconnected=$prop$getDocumentPositionDisconnected;
-function documentPositionFollowing$434(){
-    var $$documentPositionFollowing=new documentPositionFollowing$434.$$;
-    DocumentPosition($$$cl1.String("documentPositionFollowing",25),$$documentPositionFollowing);
-    return $$documentPositionFollowing;
-};documentPositionFollowing$434.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:DocumentPosition},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionFollowing']};};
-function $init$documentPositionFollowing$434(){
-    if (documentPositionFollowing$434.$$===undefined){
-        $$$cl1.initTypeProto(documentPositionFollowing$434,'com.openswimsoftware.ceylon.js.dom::documentPositionFollowing',$init$DocumentPosition());
+ex$.getDocumentPositionDisconnected=getDocumentPositionDisconnected;
+getDocumentPositionDisconnected.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$c1},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionDisconnected']};};
+$prop$getDocumentPositionDisconnected={get:getDocumentPositionDisconnected,$crtmm$:getDocumentPositionDisconnected.$crtmm$};
+get$c1=getDocumentPositionDisconnected;$prop$get$c1=getDocumentPositionDisconnected;
+ex$.$prop$getDocumentPositionDisconnected=$prop$getDocumentPositionDisconnected;
+function $c2(){
+    var documentPositionFollowing$=new $c2.$$;
+    DocumentPosition("documentPositionFollowing",documentPositionFollowing$);
+    return documentPositionFollowing$;
+};$c2.$crtmm$=function(){return{mod:$CCMM$,'super':{t:DocumentPosition},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionFollowing']};};
+function $init$$c2(){
+    if($c2.$$===undefined){
+        m$1.initTypeProto($c2,'com.openswimsoftware.ceylon.js.dom::documentPositionFollowing',$init$DocumentPosition());
     }
-    return documentPositionFollowing$434;
+    return $c2;
 }
-exports.$init$documentPositionFollowing$434=$init$documentPositionFollowing$434;
-$init$documentPositionFollowing$434();
-var documentPositionFollowing$440;
+ex$.$init$$c2=$init$$c2;
+$init$$c2();
+var $c8;
 function getDocumentPositionFollowing(){
-    if (documentPositionFollowing$440===undefined){documentPositionFollowing$440=$init$documentPositionFollowing$434()();documentPositionFollowing$440.$$metamodel$$=getDocumentPositionFollowing.$$metamodel$$;}
-    return documentPositionFollowing$440;
+    if($c8===undefined){$c8=$init$$c2()();$c8.$crtmm$=getDocumentPositionFollowing.$crtmm$;}
+    return $c8;
 }
-exports.getDocumentPositionFollowing=getDocumentPositionFollowing;
-getDocumentPositionFollowing.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:documentPositionFollowing$434},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionFollowing']};};
-$prop$getDocumentPositionFollowing={get:getDocumentPositionFollowing,$$metamodel$$:getDocumentPositionFollowing.$$metamodel$$};
-exports.$prop$getDocumentPositionFollowing=$prop$getDocumentPositionFollowing;
-function documentPositionImplementationSpecific$435(){
-    var $$documentPositionImplementationSpecific=new documentPositionImplementationSpecific$435.$$;
-    DocumentPosition($$$cl1.String("documentPositionImplementationSpecific",38),$$documentPositionImplementationSpecific);
-    return $$documentPositionImplementationSpecific;
-};documentPositionImplementationSpecific$435.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:DocumentPosition},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionImplementationSpecific']};};
-function $init$documentPositionImplementationSpecific$435(){
-    if (documentPositionImplementationSpecific$435.$$===undefined){
-        $$$cl1.initTypeProto(documentPositionImplementationSpecific$435,'com.openswimsoftware.ceylon.js.dom::documentPositionImplementationSpecific',$init$DocumentPosition());
+ex$.getDocumentPositionFollowing=getDocumentPositionFollowing;
+getDocumentPositionFollowing.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$c2},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionFollowing']};};
+$prop$getDocumentPositionFollowing={get:getDocumentPositionFollowing,$crtmm$:getDocumentPositionFollowing.$crtmm$};
+get$c2=getDocumentPositionFollowing;$prop$get$c2=getDocumentPositionFollowing;
+ex$.$prop$getDocumentPositionFollowing=$prop$getDocumentPositionFollowing;
+function $c3(){
+    var documentPositionImplementationSpecific$=new $c3.$$;
+    DocumentPosition("documentPositionImplementationSpecific",documentPositionImplementationSpecific$);
+    return documentPositionImplementationSpecific$;
+};$c3.$crtmm$=function(){return{mod:$CCMM$,'super':{t:DocumentPosition},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionImplementationSpecific']};};
+function $init$$c3(){
+    if($c3.$$===undefined){
+        m$1.initTypeProto($c3,'com.openswimsoftware.ceylon.js.dom::documentPositionImplementationSpecific',$init$DocumentPosition());
     }
-    return documentPositionImplementationSpecific$435;
+    return $c3;
 }
-exports.$init$documentPositionImplementationSpecific$435=$init$documentPositionImplementationSpecific$435;
-$init$documentPositionImplementationSpecific$435();
-var documentPositionImplementationSpecific$441;
+ex$.$init$$c3=$init$$c3;
+$init$$c3();
+var $c9;
 function getDocumentPositionImplementationSpecific(){
-    if (documentPositionImplementationSpecific$441===undefined){documentPositionImplementationSpecific$441=$init$documentPositionImplementationSpecific$435()();documentPositionImplementationSpecific$441.$$metamodel$$=getDocumentPositionImplementationSpecific.$$metamodel$$;}
-    return documentPositionImplementationSpecific$441;
+    if($c9===undefined){$c9=$init$$c3()();$c9.$crtmm$=getDocumentPositionImplementationSpecific.$crtmm$;}
+    return $c9;
 }
-exports.getDocumentPositionImplementationSpecific=getDocumentPositionImplementationSpecific;
-getDocumentPositionImplementationSpecific.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:documentPositionImplementationSpecific$435},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionImplementationSpecific']};};
-$prop$getDocumentPositionImplementationSpecific={get:getDocumentPositionImplementationSpecific,$$metamodel$$:getDocumentPositionImplementationSpecific.$$metamodel$$};
-exports.$prop$getDocumentPositionImplementationSpecific=$prop$getDocumentPositionImplementationSpecific;
-function documentPositionPreceding$436(){
-    var $$documentPositionPreceding=new documentPositionPreceding$436.$$;
-    DocumentPosition($$$cl1.String("documentPositionPreceding",25),$$documentPositionPreceding);
-    return $$documentPositionPreceding;
-};documentPositionPreceding$436.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:DocumentPosition},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionPreceding']};};
-function $init$documentPositionPreceding$436(){
-    if (documentPositionPreceding$436.$$===undefined){
-        $$$cl1.initTypeProto(documentPositionPreceding$436,'com.openswimsoftware.ceylon.js.dom::documentPositionPreceding',$init$DocumentPosition());
+ex$.getDocumentPositionImplementationSpecific=getDocumentPositionImplementationSpecific;
+getDocumentPositionImplementationSpecific.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$c3},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionImplementationSpecific']};};
+$prop$getDocumentPositionImplementationSpecific={get:getDocumentPositionImplementationSpecific,$crtmm$:getDocumentPositionImplementationSpecific.$crtmm$};
+get$c3=getDocumentPositionImplementationSpecific;$prop$get$c3=getDocumentPositionImplementationSpecific;
+ex$.$prop$getDocumentPositionImplementationSpecific=$prop$getDocumentPositionImplementationSpecific;
+function $c4(){
+    var documentPositionPreceding$=new $c4.$$;
+    DocumentPosition("documentPositionPreceding",documentPositionPreceding$);
+    return documentPositionPreceding$;
+};$c4.$crtmm$=function(){return{mod:$CCMM$,'super':{t:DocumentPosition},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionPreceding']};};
+function $init$$c4(){
+    if($c4.$$===undefined){
+        m$1.initTypeProto($c4,'com.openswimsoftware.ceylon.js.dom::documentPositionPreceding',$init$DocumentPosition());
     }
-    return documentPositionPreceding$436;
+    return $c4;
 }
-exports.$init$documentPositionPreceding$436=$init$documentPositionPreceding$436;
-$init$documentPositionPreceding$436();
-var documentPositionPreceding$442;
+ex$.$init$$c4=$init$$c4;
+$init$$c4();
+var $ca;
 function getDocumentPositionPreceding(){
-    if (documentPositionPreceding$442===undefined){documentPositionPreceding$442=$init$documentPositionPreceding$436()();documentPositionPreceding$442.$$metamodel$$=getDocumentPositionPreceding.$$metamodel$$;}
-    return documentPositionPreceding$442;
+    if($ca===undefined){$ca=$init$$c4()();$ca.$crtmm$=getDocumentPositionPreceding.$crtmm$;}
+    return $ca;
 }
-exports.getDocumentPositionPreceding=getDocumentPositionPreceding;
-getDocumentPositionPreceding.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:documentPositionPreceding$436},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionPreceding']};};
-$prop$getDocumentPositionPreceding={get:getDocumentPositionPreceding,$$metamodel$$:getDocumentPositionPreceding.$$metamodel$$};
-exports.$prop$getDocumentPositionPreceding=$prop$getDocumentPositionPreceding;
-function CompatMode(name$443, $$compatMode){
+ex$.getDocumentPositionPreceding=getDocumentPositionPreceding;
+getDocumentPositionPreceding.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$c4},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentPositionPreceding']};};
+$prop$getDocumentPositionPreceding={get:getDocumentPositionPreceding,$crtmm$:getDocumentPositionPreceding.$crtmm$};
+get$c4=getDocumentPositionPreceding;$prop$get$c4=getDocumentPositionPreceding;
+ex$.$prop$getDocumentPositionPreceding=$prop$getDocumentPositionPreceding;
+function CompatMode($cb,compatMode$){
     $init$CompatMode();
-    if ($$compatMode===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$compatMode.name$443_=name$443;
-    return $$compatMode;
+    if(compatMode$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    compatMode$.$cb_=$cb;
+    return compatMode$;
 }
-CompatMode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cl1.Basic},$ps:[{$nm:'name',$mt:'prm',$t:{t:$$$cl1.String},$an:function(){return[];}}],of:[{t:css1Compat$444},{t:backCompat$445}],$an:function(){return[$$$cl1.doc($$$cl1.String("Document Compatablity Mode",26)),$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','CompatMode']};};
-exports.CompatMode=CompatMode;
+CompatMode.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$1.Basic},$ps:[{$nm:'name',$mt:'prm',$t:{t:m$1.String},$an:function(){return[];}}],of:[$prop$get$cc,$prop$get$cd],$an:function(){return[m$1.doc("Document Compatablity Mode"),m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','CompatMode']};};
+ex$.CompatMode=CompatMode;
 function $init$CompatMode(){
-    if (CompatMode.$$===undefined){
-        $$$cl1.initTypeProto(CompatMode,'com.openswimsoftware.ceylon.js.dom::CompatMode',$$$cl1.Basic);
-        (function($$compatMode){
-            $$$cl1.defineAttr($$compatMode,'name$443',function(){return this.name$443_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.String},$cont:CompatMode,d:['com.openswimsoftware.ceylon.js.dom','CompatMode','$at','name']};});
+    if(CompatMode.$$===undefined){
+        m$1.initTypeProto(CompatMode,'com.openswimsoftware.ceylon.js.dom::CompatMode',m$1.Basic);
+        (function(compatMode$){
+            m$1.atr$(compatMode$,'$cb',function(){return this.$cb_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.String},$cont:CompatMode,d:['com.openswimsoftware.ceylon.js.dom','CompatMode','$at','name$8prl16']};});
         })(CompatMode.$$.prototype);
     }
     return CompatMode;
 }
-exports.$init$CompatMode=$init$CompatMode;
+ex$.$init$CompatMode=$init$CompatMode;
 $init$CompatMode();
-function css1Compat$444(){
-    var $$css1Compat=new css1Compat$444.$$;
-    CompatMode($$$cl1.String("CSS1Compat",10),$$css1Compat);
-    return $$css1Compat;
-};css1Compat$444.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:CompatMode},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','css1Compat']};};
-function $init$css1Compat$444(){
-    if (css1Compat$444.$$===undefined){
-        $$$cl1.initTypeProto(css1Compat$444,'com.openswimsoftware.ceylon.js.dom::css1Compat',$init$CompatMode());
+function $cc(){
+    var css1Compat$=new $cc.$$;
+    CompatMode("CSS1Compat",css1Compat$);
+    return css1Compat$;
+};$cc.$crtmm$=function(){return{mod:$CCMM$,'super':{t:CompatMode},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','css1Compat']};};
+function $init$$cc(){
+    if($cc.$$===undefined){
+        m$1.initTypeProto($cc,'com.openswimsoftware.ceylon.js.dom::css1Compat',$init$CompatMode());
     }
-    return css1Compat$444;
+    return $cc;
 }
-exports.$init$css1Compat$444=$init$css1Compat$444;
-$init$css1Compat$444();
-var css1Compat$446;
+ex$.$init$$cc=$init$$cc;
+$init$$cc();
+var $ce;
 function getCss1Compat(){
-    if (css1Compat$446===undefined){css1Compat$446=$init$css1Compat$444()();css1Compat$446.$$metamodel$$=getCss1Compat.$$metamodel$$;}
-    return css1Compat$446;
+    if($ce===undefined){$ce=$init$$cc()();$ce.$crtmm$=getCss1Compat.$crtmm$;}
+    return $ce;
 }
-exports.getCss1Compat=getCss1Compat;
-getCss1Compat.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:css1Compat$444},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','css1Compat']};};
-$prop$getCss1Compat={get:getCss1Compat,$$metamodel$$:getCss1Compat.$$metamodel$$};
-exports.$prop$getCss1Compat=$prop$getCss1Compat;
-function backCompat$445(){
-    var $$backCompat=new backCompat$445.$$;
-    CompatMode($$$cl1.String("BackCompat",10),$$backCompat);
-    return $$backCompat;
-};backCompat$445.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:CompatMode},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','backCompat']};};
-function $init$backCompat$445(){
-    if (backCompat$445.$$===undefined){
-        $$$cl1.initTypeProto(backCompat$445,'com.openswimsoftware.ceylon.js.dom::backCompat',$init$CompatMode());
+ex$.getCss1Compat=getCss1Compat;
+getCss1Compat.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$cc},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','css1Compat']};};
+$prop$getCss1Compat={get:getCss1Compat,$crtmm$:getCss1Compat.$crtmm$};
+get$cc=getCss1Compat;$prop$get$cc=getCss1Compat;
+ex$.$prop$getCss1Compat=$prop$getCss1Compat;
+function $cd(){
+    var backCompat$=new $cd.$$;
+    CompatMode("BackCompat",backCompat$);
+    return backCompat$;
+};$cd.$crtmm$=function(){return{mod:$CCMM$,'super':{t:CompatMode},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','backCompat']};};
+function $init$$cd(){
+    if($cd.$$===undefined){
+        m$1.initTypeProto($cd,'com.openswimsoftware.ceylon.js.dom::backCompat',$init$CompatMode());
     }
-    return backCompat$445;
+    return $cd;
 }
-exports.$init$backCompat$445=$init$backCompat$445;
-$init$backCompat$445();
-var backCompat$447;
+ex$.$init$$cd=$init$$cd;
+$init$$cd();
+var $cf;
 function getBackCompat(){
-    if (backCompat$447===undefined){backCompat$447=$init$backCompat$445()();backCompat$447.$$metamodel$$=getBackCompat.$$metamodel$$;}
-    return backCompat$447;
+    if($cf===undefined){$cf=$init$$cd()();$cf.$crtmm$=getBackCompat.$crtmm$;}
+    return $cf;
 }
-exports.getBackCompat=getBackCompat;
-getBackCompat.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:backCompat$445},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','backCompat']};};
-$prop$getBackCompat={get:getBackCompat,$$metamodel$$:getBackCompat.$$metamodel$$};
-exports.$prop$getBackCompat=$prop$getBackCompat;
-function DocumentDirection(name$448, $$documentDirection){
+ex$.getBackCompat=getBackCompat;
+getBackCompat.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$cd},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','backCompat']};};
+$prop$getBackCompat={get:getBackCompat,$crtmm$:getBackCompat.$crtmm$};
+get$cd=getBackCompat;$prop$get$cd=getBackCompat;
+ex$.$prop$getBackCompat=$prop$getBackCompat;
+function DocumentDirection($cg,documentDirection$){
     $init$DocumentDirection();
-    if ($$documentDirection===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$documentDirection.name$448_=name$448;
-    return $$documentDirection;
+    if(documentDirection$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    documentDirection$.$cg_=$cg;
+    return documentDirection$;
 }
-DocumentDirection.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cl1.Basic},$ps:[{$nm:'name',$mt:'prm',$t:{t:$$$cl1.String},$an:function(){return[];}}],of:[{t:rtl$449},{t:ltr$450}],$an:function(){return[$$$cl1.doc($$$cl1.String("Document Direction",18)),$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentDirection']};};
-exports.DocumentDirection=DocumentDirection;
+DocumentDirection.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$1.Basic},$ps:[{$nm:'name',$mt:'prm',$t:{t:m$1.String},$an:function(){return[];}}],of:[$prop$get$ch,$prop$get$ci],$an:function(){return[m$1.doc("Document Direction"),m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentDirection']};};
+ex$.DocumentDirection=DocumentDirection;
 function $init$DocumentDirection(){
-    if (DocumentDirection.$$===undefined){
-        $$$cl1.initTypeProto(DocumentDirection,'com.openswimsoftware.ceylon.js.dom::DocumentDirection',$$$cl1.Basic);
-        (function($$documentDirection){
-            $$$cl1.defineAttr($$documentDirection,'name$448',function(){return this.name$448_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.String},$cont:DocumentDirection,d:['com.openswimsoftware.ceylon.js.dom','DocumentDirection','$at','name']};});
+    if(DocumentDirection.$$===undefined){
+        m$1.initTypeProto(DocumentDirection,'com.openswimsoftware.ceylon.js.dom::DocumentDirection',m$1.Basic);
+        (function(documentDirection$){
+            m$1.atr$(documentDirection$,'$cg',function(){return this.$cg_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.String},$cont:DocumentDirection,d:['com.openswimsoftware.ceylon.js.dom','DocumentDirection','$at','name$t0mykx']};});
         })(DocumentDirection.$$.prototype);
     }
     return DocumentDirection;
 }
-exports.$init$DocumentDirection=$init$DocumentDirection;
+ex$.$init$DocumentDirection=$init$DocumentDirection;
 $init$DocumentDirection();
-function rtl$449(){
-    var $$rtl=new rtl$449.$$;
-    DocumentDirection($$$cl1.String("rtl",3),$$rtl);
-    return $$rtl;
-};rtl$449.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:DocumentDirection},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','rtl']};};
-function $init$rtl$449(){
-    if (rtl$449.$$===undefined){
-        $$$cl1.initTypeProto(rtl$449,'com.openswimsoftware.ceylon.js.dom::rtl',$init$DocumentDirection());
+function $ch(){
+    var rtl$=new $ch.$$;
+    DocumentDirection("rtl",rtl$);
+    return rtl$;
+};$ch.$crtmm$=function(){return{mod:$CCMM$,'super':{t:DocumentDirection},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','rtl']};};
+function $init$$ch(){
+    if($ch.$$===undefined){
+        m$1.initTypeProto($ch,'com.openswimsoftware.ceylon.js.dom::rtl',$init$DocumentDirection());
     }
-    return rtl$449;
+    return $ch;
 }
-exports.$init$rtl$449=$init$rtl$449;
-$init$rtl$449();
-var rtl$451;
+ex$.$init$$ch=$init$$ch;
+$init$$ch();
+var $cj;
 function getRtl(){
-    if (rtl$451===undefined){rtl$451=$init$rtl$449()();rtl$451.$$metamodel$$=getRtl.$$metamodel$$;}
-    return rtl$451;
+    if($cj===undefined){$cj=$init$$ch()();$cj.$crtmm$=getRtl.$crtmm$;}
+    return $cj;
 }
-exports.getRtl=getRtl;
-getRtl.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:rtl$449},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','rtl']};};
-$prop$getRtl={get:getRtl,$$metamodel$$:getRtl.$$metamodel$$};
-exports.$prop$getRtl=$prop$getRtl;
-function ltr$450(){
-    var $$ltr=new ltr$450.$$;
-    DocumentDirection($$$cl1.String("ltr",3),$$ltr);
-    return $$ltr;
-};ltr$450.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:DocumentDirection},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ltr']};};
-function $init$ltr$450(){
-    if (ltr$450.$$===undefined){
-        $$$cl1.initTypeProto(ltr$450,'com.openswimsoftware.ceylon.js.dom::ltr',$init$DocumentDirection());
+ex$.getRtl=getRtl;
+getRtl.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$ch},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','rtl']};};
+$prop$getRtl={get:getRtl,$crtmm$:getRtl.$crtmm$};
+get$ch=getRtl;$prop$get$ch=getRtl;
+ex$.$prop$getRtl=$prop$getRtl;
+function $ci(){
+    var ltr$=new $ci.$$;
+    DocumentDirection("ltr",ltr$);
+    return ltr$;
+};$ci.$crtmm$=function(){return{mod:$CCMM$,'super':{t:DocumentDirection},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ltr']};};
+function $init$$ci(){
+    if($ci.$$===undefined){
+        m$1.initTypeProto($ci,'com.openswimsoftware.ceylon.js.dom::ltr',$init$DocumentDirection());
     }
-    return ltr$450;
+    return $ci;
 }
-exports.$init$ltr$450=$init$ltr$450;
-$init$ltr$450();
-var ltr$452;
+ex$.$init$$ci=$init$$ci;
+$init$$ci();
+var $ck;
 function getLtr(){
-    if (ltr$452===undefined){ltr$452=$init$ltr$450()();ltr$452.$$metamodel$$=getLtr.$$metamodel$$;}
-    return ltr$452;
+    if($ck===undefined){$ck=$init$$ci()();$ck.$crtmm$=getLtr.$crtmm$;}
+    return $ck;
 }
-exports.getLtr=getLtr;
-getLtr.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:ltr$450},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ltr']};};
-$prop$getLtr={get:getLtr,$$metamodel$$:getLtr.$$metamodel$$};
-exports.$prop$getLtr=$prop$getLtr;
-function DocumentReadyState(name$453, $$documentReadyState){
+ex$.getLtr=getLtr;
+getLtr.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$ci},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ltr']};};
+$prop$getLtr={get:getLtr,$crtmm$:getLtr.$crtmm$};
+get$ci=getLtr;$prop$get$ci=getLtr;
+ex$.$prop$getLtr=$prop$getLtr;
+function DocumentReadyState($cl,documentReadyState$){
     $init$DocumentReadyState();
-    if ($$documentReadyState===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$documentReadyState.name$453_=name$453;
-    return $$documentReadyState;
+    if(documentReadyState$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    documentReadyState$.$cl_=$cl;
+    return documentReadyState$;
 }
-DocumentReadyState.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cl1.Basic},$ps:[{$nm:'name',$mt:'prm',$t:{t:$$$cl1.String},$an:function(){return[];}}],of:[{t:loading$454},{t:interactive$455},{t:complete$456}],$an:function(){return[$$$cl1.doc($$$cl1.String("Document Ready State",20)),$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentReadyState']};};
-exports.DocumentReadyState=DocumentReadyState;
+DocumentReadyState.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$1.Basic},$ps:[{$nm:'name',$mt:'prm',$t:{t:m$1.String},$an:function(){return[];}}],of:[$prop$get$cm,$prop$get$cn,$prop$get$co],$an:function(){return[m$1.doc("Document Ready State"),m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentReadyState']};};
+ex$.DocumentReadyState=DocumentReadyState;
 function $init$DocumentReadyState(){
-    if (DocumentReadyState.$$===undefined){
-        $$$cl1.initTypeProto(DocumentReadyState,'com.openswimsoftware.ceylon.js.dom::DocumentReadyState',$$$cl1.Basic);
-        (function($$documentReadyState){
-            $$$cl1.defineAttr($$documentReadyState,'name$453',function(){return this.name$453_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.String},$cont:DocumentReadyState,d:['com.openswimsoftware.ceylon.js.dom','DocumentReadyState','$at','name']};});
+    if(DocumentReadyState.$$===undefined){
+        m$1.initTypeProto(DocumentReadyState,'com.openswimsoftware.ceylon.js.dom::DocumentReadyState',m$1.Basic);
+        (function(documentReadyState$){
+            m$1.atr$(documentReadyState$,'$cl',function(){return this.$cl_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.String},$cont:DocumentReadyState,d:['com.openswimsoftware.ceylon.js.dom','DocumentReadyState','$at','name$ldmlz6']};});
         })(DocumentReadyState.$$.prototype);
     }
     return DocumentReadyState;
 }
-exports.$init$DocumentReadyState=$init$DocumentReadyState;
+ex$.$init$DocumentReadyState=$init$DocumentReadyState;
 $init$DocumentReadyState();
-function loading$454(){
-    var $$loading=new loading$454.$$;
-    DocumentReadyState($$$cl1.String("loading",7),$$loading);
-    return $$loading;
-};loading$454.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:DocumentReadyState},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','loading']};};
-function $init$loading$454(){
-    if (loading$454.$$===undefined){
-        $$$cl1.initTypeProto(loading$454,'com.openswimsoftware.ceylon.js.dom::loading',$init$DocumentReadyState());
+function $cm(){
+    var loading$=new $cm.$$;
+    DocumentReadyState("loading",loading$);
+    return loading$;
+};$cm.$crtmm$=function(){return{mod:$CCMM$,'super':{t:DocumentReadyState},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','loading']};};
+function $init$$cm(){
+    if($cm.$$===undefined){
+        m$1.initTypeProto($cm,'com.openswimsoftware.ceylon.js.dom::loading',$init$DocumentReadyState());
     }
-    return loading$454;
+    return $cm;
 }
-exports.$init$loading$454=$init$loading$454;
-$init$loading$454();
-var loading$457;
+ex$.$init$$cm=$init$$cm;
+$init$$cm();
+var $cp;
 function getLoading(){
-    if (loading$457===undefined){loading$457=$init$loading$454()();loading$457.$$metamodel$$=getLoading.$$metamodel$$;}
-    return loading$457;
+    if($cp===undefined){$cp=$init$$cm()();$cp.$crtmm$=getLoading.$crtmm$;}
+    return $cp;
 }
-exports.getLoading=getLoading;
-getLoading.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:loading$454},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','loading']};};
-$prop$getLoading={get:getLoading,$$metamodel$$:getLoading.$$metamodel$$};
-exports.$prop$getLoading=$prop$getLoading;
-function interactive$455(){
-    var $$interactive=new interactive$455.$$;
-    DocumentReadyState($$$cl1.String("interactive",11),$$interactive);
-    return $$interactive;
-};interactive$455.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:DocumentReadyState},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','interactive']};};
-function $init$interactive$455(){
-    if (interactive$455.$$===undefined){
-        $$$cl1.initTypeProto(interactive$455,'com.openswimsoftware.ceylon.js.dom::interactive',$init$DocumentReadyState());
+ex$.getLoading=getLoading;
+getLoading.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$cm},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','loading']};};
+$prop$getLoading={get:getLoading,$crtmm$:getLoading.$crtmm$};
+get$cm=getLoading;$prop$get$cm=getLoading;
+ex$.$prop$getLoading=$prop$getLoading;
+function $cn(){
+    var interactive$=new $cn.$$;
+    DocumentReadyState("interactive",interactive$);
+    return interactive$;
+};$cn.$crtmm$=function(){return{mod:$CCMM$,'super':{t:DocumentReadyState},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','interactive']};};
+function $init$$cn(){
+    if($cn.$$===undefined){
+        m$1.initTypeProto($cn,'com.openswimsoftware.ceylon.js.dom::interactive',$init$DocumentReadyState());
     }
-    return interactive$455;
+    return $cn;
 }
-exports.$init$interactive$455=$init$interactive$455;
-$init$interactive$455();
-var interactive$458;
+ex$.$init$$cn=$init$$cn;
+$init$$cn();
+var $cq;
 function getInteractive(){
-    if (interactive$458===undefined){interactive$458=$init$interactive$455()();interactive$458.$$metamodel$$=getInteractive.$$metamodel$$;}
-    return interactive$458;
+    if($cq===undefined){$cq=$init$$cn()();$cq.$crtmm$=getInteractive.$crtmm$;}
+    return $cq;
 }
-exports.getInteractive=getInteractive;
-getInteractive.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:interactive$455},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','interactive']};};
-$prop$getInteractive={get:getInteractive,$$metamodel$$:getInteractive.$$metamodel$$};
-exports.$prop$getInteractive=$prop$getInteractive;
-function complete$456(){
-    var $$complete=new complete$456.$$;
-    DocumentReadyState($$$cl1.String("complete",8),$$complete);
-    return $$complete;
-};complete$456.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:DocumentReadyState},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','complete']};};
-function $init$complete$456(){
-    if (complete$456.$$===undefined){
-        $$$cl1.initTypeProto(complete$456,'com.openswimsoftware.ceylon.js.dom::complete',$init$DocumentReadyState());
+ex$.getInteractive=getInteractive;
+getInteractive.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$cn},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','interactive']};};
+$prop$getInteractive={get:getInteractive,$crtmm$:getInteractive.$crtmm$};
+get$cn=getInteractive;$prop$get$cn=getInteractive;
+ex$.$prop$getInteractive=$prop$getInteractive;
+function $co(){
+    var complete$=new $co.$$;
+    DocumentReadyState("complete",complete$);
+    return complete$;
+};$co.$crtmm$=function(){return{mod:$CCMM$,'super':{t:DocumentReadyState},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','complete']};};
+function $init$$co(){
+    if($co.$$===undefined){
+        m$1.initTypeProto($co,'com.openswimsoftware.ceylon.js.dom::complete',$init$DocumentReadyState());
     }
-    return complete$456;
+    return $co;
 }
-exports.$init$complete$456=$init$complete$456;
-$init$complete$456();
-var complete$459;
+ex$.$init$$co=$init$$co;
+$init$$co();
+var $cr;
 function getComplete(){
-    if (complete$459===undefined){complete$459=$init$complete$456()();complete$459.$$metamodel$$=getComplete.$$metamodel$$;}
-    return complete$459;
+    if($cr===undefined){$cr=$init$$co()();$cr.$crtmm$=getComplete.$crtmm$;}
+    return $cr;
 }
-exports.getComplete=getComplete;
-getComplete.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:complete$456},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','complete']};};
-$prop$getComplete={get:getComplete,$$metamodel$$:getComplete.$$metamodel$$};
-exports.$prop$getComplete=$prop$getComplete;
-function DocumentAbs($$documentAbs){
+ex$.getComplete=getComplete;
+getComplete.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$co},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','complete']};};
+$prop$getComplete={get:getComplete,$crtmm$:getComplete.$crtmm$};
+get$co=getComplete;$prop$get$co=getComplete;
+ex$.$prop$getComplete=$prop$getComplete;
+function DocumentAbs(documentAbs$){
     $init$DocumentAbs();
-    if ($$documentAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    NodeAbs($$documentAbs);
-    return $$documentAbs;
+    if(documentAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    NodeAbs(documentAbs$);
+    return documentAbs$;
 }
-DocumentAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs']};};
-exports.DocumentAbs=DocumentAbs;
+DocumentAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs']};};
+ex$.DocumentAbs=DocumentAbs;
 function $init$DocumentAbs(){
-    if (DocumentAbs.$$===undefined){
-        $$$cl1.initTypeProto(DocumentAbs,'com.openswimsoftware.ceylon.js.dom::DocumentAbs',$init$NodeAbs());
-        (function($$documentAbs){
-            $$documentAbs.activeElement=function activeElement(){
-                var $$documentAbs=this;
+    if(DocumentAbs.$$===undefined){
+        m$1.initTypeProto(DocumentAbs,'com.openswimsoftware.ceylon.js.dom::DocumentAbs',$init$NodeAbs());
+        (function(documentAbs$){
+            documentAbs$.activeElement=function activeElement(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return Element($$documentAbs.$native.activeElement);
+                return Element(documentAbs$.$_native.activeElement);
                 /*End dynamic block*/
-            };$$documentAbs.activeElement.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Element},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the currently focused element on the document",53)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','activeElement']};};
-            $$documentAbs.adoptNode=function adoptNode(node$460){
-                var $$documentAbs=this;
+            };documentAbs$.activeElement.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Element},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns the currently focused element on the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','activeElement']};};
+            documentAbs$.adoptNode=function adoptNode($cs){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return Node($$documentAbs.$native.adoptNode(node$460.$native));
+                return Node(documentAbs$.$_native.adoptNode($cs.$_native));
                 /*End dynamic block*/
-            };$$documentAbs.adoptNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Node},$ps:[{$nm:'node',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("adapts a node from a external document",38)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','adoptNode']};};
-            $$documentAbs.createRange=function createRange(){
-                var $$documentAbs=this;
+            };documentAbs$.adoptNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Node},$ps:[{$nm:'node',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("adapts a node from a external document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','adoptNode']};};
+            documentAbs$.createRange=function createRange(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return Range($$documentAbs.$native.createRange());
+                return Range(documentAbs$.$_native.createRange());
                 /*End dynamic block*/
-            };$$documentAbs.createRange.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Range},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("create a new range",18)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createRange']};};
-            $$documentAbs.url=function url(){
-                var $$documentAbs=this;
+            };documentAbs$.createRange.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Range},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("create a new range"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createRange']};};
+            documentAbs$.url=function url(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$documentAbs.$native.URL);
+                return m$9f.JSString(documentAbs$.$_native.URL);
                 /*End dynamic block*/
-            };$$documentAbs.url.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the document url",24)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','url']};};
-            $$documentAbs.createAttribute=function createAttribute(name$461){
-                var $$documentAbs=this;
-                
-                var case$462=name$461;
-                if ($$$cl1.isOfType(name$461,{t:$$$cl1.String})) {
+            };documentAbs$.url.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns the document url"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','url']};};
+            documentAbs$.createAttribute=function createAttribute($ct){
+                var documentAbs$=this;
+                var $cu=$ct;
+                if(m$1.is$($ct,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    return Attr($$documentAbs.$native.createAttribute(case$462.valueOf()));
+                    return Attr(documentAbs$.$_native.createAttribute($cu.valueOf()));
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(name$461,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($ct,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    return Attr($$documentAbs.$native.createAttribute(case$462.$native));
+                    return Attr(documentAbs$.$_native.createAttribute($cu.$_native));
                     /*End dynamic block*/
                 }
-            };$$documentAbs.createAttribute.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Attr},$ps:[{$nm:'name',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("creates a new attribute",23)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createAttribute']};};
-            $$documentAbs.createAttributeNS=function createAttributeNS(namespace$463,name$464){
-                var $$documentAbs=this;
-                
-                var case$465=namespace$463;
-                if ($$$cl1.isOfType(namespace$463,{t:$$$cl1.String})) {
-                    
-                    var case$466=name$464;
-                    if ($$$cl1.isOfType(name$464,{t:$$$cl1.String})) {
+            };documentAbs$.createAttribute.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Attr},$ps:[{$nm:'name',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("creates a new attribute"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createAttribute']};};
+            documentAbs$.createAttributeNS=function createAttributeNS($cv,$cw){
+                var documentAbs$=this;
+                var $cx=$cv;
+                if(m$1.is$($cv,{t:m$1.String})) {
+                    var $cy=$cw;
+                    if(m$1.is$($cw,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        return Attr($$documentAbs.$native.createAttributeNS(case$465.valueOf(),case$466.valueOf()));
+                        return Attr(documentAbs$.$_native.createAttributeNS($cx.valueOf(),$cy.valueOf()));
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(name$464,{t:$$$cocjl339.JSString})) {
+                    }else if(m$1.is$($cw,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        return Attr($$documentAbs.$native.createAttributeNS(case$465.valueOf(),case$466.$native));
+                        return Attr(documentAbs$.$_native.createAttributeNS($cx.valueOf(),$cy.$_native));
                         /*End dynamic block*/
                     }
-                }else if ($$$cl1.isOfType(namespace$463,{t:$$$cocjl339.JSString})) {
-                    
-                    var case$467=name$464;
-                    if ($$$cl1.isOfType(name$464,{t:$$$cl1.String})) {
+                }else if(m$1.is$($cv,{t:m$9f.JSString})) {
+                    var $cz=$cw;
+                    if(m$1.is$($cw,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        return Attr($$documentAbs.$native.createAttributeNS(case$465.$native,case$467.valueOf()));
+                        return Attr(documentAbs$.$_native.createAttributeNS($cx.$_native,$cz.valueOf()));
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(name$464,{t:$$$cocjl339.JSString})) {
+                    }else if(m$1.is$($cw,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        return Attr($$documentAbs.$native.createAttributeNS(case$465.$native,case$467.$native));
+                        return Attr(documentAbs$.$_native.createAttributeNS($cx.$_native,$cz.$_native));
                         /*End dynamic block*/
                     }
-                }else if ($$$cl1.isOfType(namespace$463,{t:$$$cl1.Null})) {
-                    
-                    var case$468=name$464;
-                    if ($$$cl1.isOfType(name$464,{t:$$$cl1.String})) {
+                }else if(m$1.is$($cv,{t:m$1.Null})) {
+                    var $d0=$cw;
+                    if(m$1.is$($cw,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        return Attr($$documentAbs.$native.createAttributeNS(null,case$468.valueOf()));
+                        return Attr(documentAbs$.$_native.createAttributeNS(null,$d0.valueOf()));
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(name$464,{t:$$$cocjl339.JSString})) {
+                    }else if(m$1.is$($cw,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        return Attr($$documentAbs.$native.createAttributeNS(null,case$468.$native));
+                        return Attr(documentAbs$.$_native.createAttributeNS(null,$d0.$_native));
                         /*End dynamic block*/
                     }
                 }
-            };$$documentAbs.createAttributeNS.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Attr},$ps:[{$nm:'namespace',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:'u', l:[{t:$$$cl1.Null},{t:$$$cocjl339.JSString}]}]},$an:function(){return[];}},{$nm:'name',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("creates a attribute with the given namespace",44)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createAttributeNS']};};
-            $$documentAbs.createCDATASection=function createCDATASection(data$469){
-                var $$documentAbs=this;
-                
-                var case$470=data$469;
-                if ($$$cl1.isOfType(data$469,{t:$$$cl1.String})) {
+            };documentAbs$.createAttributeNS.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Attr},$ps:[{$nm:'namespace',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:'u',l:[{t:m$1.Null},{t:m$9f.JSString}]}]},$an:function(){return[];}},{$nm:'name',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("creates a attribute with the given namespace"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createAttributeNS']};};
+            documentAbs$.createCDATASection=function createCDATASection($d1){
+                var documentAbs$=this;
+                var $d2=$d1;
+                if(m$1.is$($d1,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    return CDATASection($$documentAbs.$native.createCDATASection(case$470.valueOf()));
+                    return CDATASection(documentAbs$.$_native.createCDATASection($d2.valueOf()));
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(data$469,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($d1,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    return CDATASection($$documentAbs.$native.createCDATASection(case$470.$native));
-                    /*End dynamic block*/
-                }
-            };$$documentAbs.createCDATASection.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:CDATASection},$ps:[{$nm:'data',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("creates a new CDATASection",26)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createCDATASection']};};
-            $$documentAbs.createComment=function createComment(data$471){
-                var $$documentAbs=this;
-                
-                var case$472=data$471;
-                if ($$$cl1.isOfType(data$471,{t:$$$cl1.String})) {
-                    /*Begin dynamic block*/
-                    return Comment($$documentAbs.$native.createComment(case$472.valueOf()));
-                    /*End dynamic block*/
-                }else if ($$$cl1.isOfType(data$471,{t:$$$cocjl339.JSString})) {
-                    /*Begin dynamic block*/
-                    return Comment($$documentAbs.$native.createComment(case$472.$native));
+                    return CDATASection(documentAbs$.$_native.createCDATASection($d2.$_native));
                     /*End dynamic block*/
                 }
-            };$$documentAbs.createComment.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Comment},$ps:[{$nm:'data',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("creates a new comment",21)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createComment']};};
-            $$documentAbs.createDocumentFragment=function createDocumentFragment(){
-                var $$documentAbs=this;
+            };documentAbs$.createCDATASection.$crtmm$=function(){return{mod:$CCMM$,$t:{t:CDATASection},$ps:[{$nm:'data',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("creates a new CDATASection"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createCDATASection']};};
+            documentAbs$.createComment=function createComment($d3){
+                var documentAbs$=this;
+                var $d4=$d3;
+                if(m$1.is$($d3,{t:m$1.String})) {
+                    /*Begin dynamic block*/
+                    return Comment(documentAbs$.$_native.createComment($d4.valueOf()));
+                    /*End dynamic block*/
+                }else if(m$1.is$($d3,{t:m$9f.JSString})) {
+                    /*Begin dynamic block*/
+                    return Comment(documentAbs$.$_native.createComment($d4.$_native));
+                    /*End dynamic block*/
+                }
+            };documentAbs$.createComment.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Comment},$ps:[{$nm:'data',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("creates a new comment"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createComment']};};
+            documentAbs$.createDocumentFragment=function createDocumentFragment(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return DocumentFragment($$documentAbs.$native.createDocumentFragment());
+                return DocumentFragment(documentAbs$.$_native.createDocumentFragment());
                 /*End dynamic block*/
-            };$$documentAbs.createDocumentFragment.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:DocumentFragment},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("creates a document fragment",27)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createDocumentFragment']};};
-            $$documentAbs.createElement=function createElement(tagName$473){
-                var $$documentAbs=this;
-                
-                var case$474=tagName$473;
-                if ($$$cl1.isOfType(tagName$473,{t:$$$cl1.String})) {
+            };documentAbs$.createDocumentFragment.$crtmm$=function(){return{mod:$CCMM$,$t:{t:DocumentFragment},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("creates a document fragment"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createDocumentFragment']};};
+            documentAbs$.createElement=function createElement($d5){
+                var documentAbs$=this;
+                var $d6=$d5;
+                if(m$1.is$($d5,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    return Element($$documentAbs.$native.createElement(case$474.valueOf()));
+                    return Element(documentAbs$.$_native.createElement($d6.valueOf()));
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(tagName$473,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($d5,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    return Element($$documentAbs.$native.createElement(case$474.$native));
+                    return Element(documentAbs$.$_native.createElement($d6.$_native));
                     /*End dynamic block*/
                 }
-            };$$documentAbs.createElement.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Element},$ps:[{$nm:'tagName',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("creates a new element",21)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createElement']};};
-            $$documentAbs.createElementNS=function createElementNS(namespaceURI$475,qualifiedName$476){
-                var $$documentAbs=this;
-                
-                var case$477=namespaceURI$475;
-                if ($$$cl1.isOfType(namespaceURI$475,{t:$$$cl1.String})) {
-                    
-                    var case$478=qualifiedName$476;
-                    if ($$$cl1.isOfType(qualifiedName$476,{t:$$$cl1.String})) {
+            };documentAbs$.createElement.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Element},$ps:[{$nm:'tagName',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("creates a new element"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createElement']};};
+            documentAbs$.createElementNS=function createElementNS($d7,$d8){
+                var documentAbs$=this;
+                var $d9=$d7;
+                if(m$1.is$($d7,{t:m$1.String})) {
+                    var $da=$d8;
+                    if(m$1.is$($d8,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        return Element($$documentAbs.$native.createElementNS(case$477.valueOf(),case$478.valueOf()));
+                        return Element(documentAbs$.$_native.createElementNS($d9.valueOf(),$da.valueOf()));
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(qualifiedName$476,{t:$$$cocjl339.JSString})) {
+                    }else if(m$1.is$($d8,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        return Element($$documentAbs.$native.createElementNS(case$477.valueOf(),case$478.$native));
+                        return Element(documentAbs$.$_native.createElementNS($d9.valueOf(),$da.$_native));
                         /*End dynamic block*/
                     }
-                }else if ($$$cl1.isOfType(namespaceURI$475,{t:$$$cocjl339.JSString})) {
-                    
-                    var case$479=qualifiedName$476;
-                    if ($$$cl1.isOfType(qualifiedName$476,{t:$$$cl1.String})) {
+                }else if(m$1.is$($d7,{t:m$9f.JSString})) {
+                    var $db=$d8;
+                    if(m$1.is$($d8,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        return Element($$documentAbs.$native.createElementNS(case$477,case$479.valueOf()));
+                        return Element(documentAbs$.$_native.createElementNS($d9,$db.valueOf()));
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(qualifiedName$476,{t:$$$cocjl339.JSString})) {
+                    }else if(m$1.is$($d8,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        return Element($$documentAbs.$native.createElementNS(case$477.$native,case$479.$native));
+                        return Element(documentAbs$.$_native.createElementNS($d9.$_native,$db.$_native));
                         /*End dynamic block*/
                     }
                 }
-            };$$documentAbs.createElementNS.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Element},$ps:[{$nm:'namespaceURI',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}},{$nm:'qualifiedName',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("creates a new element in the given namespace",44)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createElementNS']};};
-            $$documentAbs.createProcessingInstruction=function createProcessingInstruction(target$480,data$481){
-                var $$documentAbs=this;
-                
-                var case$482=target$480;
-                if ($$$cl1.isOfType(target$480,{t:$$$cl1.String})) {
-                    
-                    var case$483=data$481;
-                    if ($$$cl1.isOfType(data$481,{t:$$$cl1.String})) {
+            };documentAbs$.createElementNS.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Element},$ps:[{$nm:'namespaceURI',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}},{$nm:'qualifiedName',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("creates a new element in the given namespace"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createElementNS']};};
+            documentAbs$.createProcessingInstruction=function createProcessingInstruction($dc,$dd){
+                var documentAbs$=this;
+                var $de=$dc;
+                if(m$1.is$($dc,{t:m$1.String})) {
+                    var $df=$dd;
+                    if(m$1.is$($dd,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        return ProcessingInstruction($$documentAbs.$native.createProcessingInstruction(case$482.valueOf(),case$483.valueOf()));
+                        return ProcessingInstruction(documentAbs$.$_native.createProcessingInstruction($de.valueOf(),$df.valueOf()));
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(data$481,{t:$$$cocjl339.JSString})) {
+                    }else if(m$1.is$($dd,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        return ProcessingInstruction($$documentAbs.$native.createProcessingInstruction(case$482.valueOf(),case$483.$native));
+                        return ProcessingInstruction(documentAbs$.$_native.createProcessingInstruction($de.valueOf(),$df.$_native));
                         /*End dynamic block*/
                     }
-                }else if ($$$cl1.isOfType(target$480,{t:$$$cocjl339.JSString})) {
-                    
-                    var case$484=data$481;
-                    if ($$$cl1.isOfType(data$481,{t:$$$cl1.String})) {
+                }else if(m$1.is$($dc,{t:m$9f.JSString})) {
+                    var $dg=$dd;
+                    if(m$1.is$($dd,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        return ProcessingInstruction($$documentAbs.$native.createProcessingInstruction(case$482.$native,case$484.valueOf()));
+                        return ProcessingInstruction(documentAbs$.$_native.createProcessingInstruction($de.$_native,$dg.valueOf()));
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(data$481,{t:$$$cocjl339.JSString})) {
+                    }else if(m$1.is$($dd,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        return ProcessingInstruction($$documentAbs.$native.createProcessingInstruction(case$482.$native,case$484.$native));
+                        return ProcessingInstruction(documentAbs$.$_native.createProcessingInstruction($de.$_native,$dg.$_native));
                         /*End dynamic block*/
                     }
                 }
-            };$$documentAbs.createProcessingInstruction.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:ProcessingInstruction},$ps:[{$nm:'target',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}},{$nm:'data',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("creates a processing instruction node",37)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createProcessingInstruction']};};
-            $$documentAbs.createTextNode=function createTextNode(data$485){
-                var $$documentAbs=this;
-                
-                var case$486=data$485;
-                if ($$$cl1.isOfType(data$485,{t:$$$cl1.String})) {
+            };documentAbs$.createProcessingInstruction.$crtmm$=function(){return{mod:$CCMM$,$t:{t:ProcessingInstruction},$ps:[{$nm:'target',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}},{$nm:'data',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("creates a processing instruction node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createProcessingInstruction']};};
+            documentAbs$.createTextNode=function createTextNode($dh){
+                var documentAbs$=this;
+                var $di=$dh;
+                if(m$1.is$($dh,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    return Text($$documentAbs.$native.createTextNode(case$486.valueOf()));
+                    return Text(documentAbs$.$_native.createTextNode($di.valueOf()));
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(data$485,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($dh,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    return Text($$documentAbs.$native.createTextNode(case$486.$native));
+                    return Text(documentAbs$.$_native.createTextNode($di.$_native));
                     /*End dynamic block*/
                 }
-            };$$documentAbs.createTextNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Text},$ps:[{$nm:'data',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("creates a new text node",23)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createTextNode']};};
-            $$documentAbs.doctype=function doctype(){
-                var $$documentAbs=this;
+            };documentAbs$.createTextNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Text},$ps:[{$nm:'data',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("creates a new text node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createTextNode']};};
+            documentAbs$.doctype=function doctype(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                var doctype$487=$$documentAbs.$native.doctype;
-                $prop$getDoctype$487={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','doctype','$at','doctype']};}};
-                $prop$getDoctype$487.get=function(){return doctype$487};
-                if((tmpvar$488=doctype$487,tmpvar$489=null,(tmpvar$488.equals&&!tmpvar$488.equals(tmpvar$489))||tmpvar$488!==tmpvar$489)){
-                    return DocumentType(doctype$487);
+                var $dj=documentAbs$.$_native.doctype;
+                if(($dk=$dj,$dl=null,($dk.equals&&!$dk.equals($dl))||$dk!==$dl)){
+                    return DocumentType($dj);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$documentAbs.doctype.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:DocumentType}]},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the documents doctype",29)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','doctype']};};
-            $$documentAbs.documentElement=function documentElement(){
-                var $$documentAbs=this;
+            };documentAbs$.doctype.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:DocumentType}]},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns the documents doctype"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','doctype']};};
+            documentAbs$.documentElement=function documentElement(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                var element$490=$$documentAbs.$native.documentElement;
-                $prop$getElement$490={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','documentElement','$at','element']};}};
-                $prop$getElement$490.get=function(){return element$490};
-                if((tmpvar$491=element$490,tmpvar$492=null,(tmpvar$491.equals&&!tmpvar$491.equals(tmpvar$492))||tmpvar$491!==tmpvar$492)){
-                    return Element(element$490);
+                var $dm=documentAbs$.$_native.documentElement;
+                if(($dn=$dm,$do=null,($dn.equals&&!$dn.equals($do))||$dn!==$do)){
+                    return Element($dm);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$documentAbs.documentElement.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:Element}]},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the element that is a direct child of the document",58)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','documentElement']};};
-            $$documentAbs.documentURI=function documentURI(){
-                var $$documentAbs=this;
+            };documentAbs$.documentElement.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:Element}]},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns the element that is a direct child of the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','documentElement']};};
+            documentAbs$.documentURI=function documentURI(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$documentAbs.$native.documentURI);
+                return m$9f.JSString(documentAbs$.$_native.documentURI);
                 /*End dynamic block*/
-            };$$documentAbs.documentURI.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns documents URI",21)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','documentURI']};};
-            $$documentAbs.compatMode=function compatMode(){
-                var $$documentAbs=this;
+            };documentAbs$.documentURI.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns documents URI"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','documentURI']};};
+            documentAbs$.compatMode=function compatMode(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                if((tmpvar$493=$$documentAbs.$native.compatMode,tmpvar$494=$$$cl1.String("BackCompat",10),(tmpvar$493.equals&&tmpvar$493.equals(tmpvar$494))||tmpvar$493===tmpvar$494)){
+                if(($dp=documentAbs$.$_native.compatMode,$dq="BackCompat",($dp.equals&&$dp.equals($dq))||$dp===$dq)){
                     return getBackCompat();
                 }else {
                     return getCss1Compat();
                 }/*End dynamic block*/
-            };$$documentAbs.compatMode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:CompatMode},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the documents compatablity mode",39)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','compatMode']};};
-            $$documentAbs.characterSet=function characterSet(){
-                var $$documentAbs=this;
+            };documentAbs$.compatMode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:CompatMode},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns the documents compatablity mode"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','compatMode']};};
+            documentAbs$.characterSet=function characterSet(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$documentAbs.$native.characterSet);
+                return m$9f.JSString(documentAbs$.$_native.characterSet);
                 /*End dynamic block*/
-            };$$documentAbs.characterSet.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns documents CharacterSet",30)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','characterSet']};};
-            $$documentAbs.getElementById=function getElementById(id$495){
-                var $$documentAbs=this;
-                var element$496;
-                
-                var case$497=id$495;
-                if ($$$cl1.isOfType(id$495,{t:$$$cl1.String})) {
+            };documentAbs$.characterSet.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns documents CharacterSet"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','characterSet']};};
+            documentAbs$.getElementById=function getElementById($dr){
+                var documentAbs$=this;
+                var $ds;
+                var $dt=$dr;
+                if(m$1.is$($dr,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    element$496=$$documentAbs.$native.getElementById(case$497.valueOf());/*End dynamic block*/
-                }else if ($$$cl1.isOfType(id$495,{t:$$$cocjl339.JSString})) {
+                    $ds=documentAbs$.$_native.getElementById($dt.valueOf());/*End dynamic block*/
+                }else if(m$1.is$($dr,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    element$496=$$documentAbs.$native.getElementById(case$497.$native);/*End dynamic block*/
+                    $ds=documentAbs$.$_native.getElementById($dt.$_native);/*End dynamic block*/
                 }
                 /*Begin dynamic block*/
-                if((tmpvar$498=element$496,tmpvar$499=null,(tmpvar$498.equals&&!tmpvar$498.equals(tmpvar$499))||tmpvar$498!==tmpvar$499)){
-                    return Element(element$496);
+                if(($du=$ds,$dv=null,($du.equals&&!$du.equals($dv))||$du!==$dv)){
+                    return Element($ds);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$documentAbs.getElementById.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:Element}]},$ps:[{$nm:'id',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns element on the document by the id",41)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','getElementById']};};
-            $$documentAbs.getElementsByTagName$defs$name=function(name$500){var $$documentAbs=this;
-            return $$$cl1.String("*",1);};
-            $$documentAbs.getElementsByTagName=function getElementsByTagName(name$500){
-                var $$documentAbs=this;
-                if(name$500===undefined){name$500=$$documentAbs.getElementsByTagName$defs$name(name$500);}
-                var elems$501;
-                
-                var case$502=name$500;
-                if ($$$cl1.isOfType(name$500,{t:$$$cl1.String})) {
+            };documentAbs$.getElementById.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:Element}]},$ps:[{$nm:'id',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns element on the document by the id"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','getElementById']};};
+            documentAbs$.getElementsByTagName$defs$name=function($dw){return "*";};
+            documentAbs$.getElementsByTagName=function getElementsByTagName($dw){
+                var documentAbs$=this;
+                if($dw===undefined){$dw=documentAbs$.getElementsByTagName$defs$name($dw);}
+                var $dx;
+                var $dy=$dw;
+                if(m$1.is$($dw,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    elems$501=$$documentAbs.$native.getElementsByTagName(case$502.valueOf());/*End dynamic block*/
-                }else if ($$$cl1.isOfType(name$500,{t:$$$cocjl339.JSString})) {
+                    $dx=documentAbs$.$_native.getElementsByTagName($dy.valueOf());/*End dynamic block*/
+                }else if(m$1.is$($dw,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    elems$501=$$documentAbs.$native.getElementsByTagName(case$502.$native);/*End dynamic block*/
+                    $dx=documentAbs$.$_native.getElementsByTagName($dy.$_native);/*End dynamic block*/
                 }
                 /*Begin dynamic block*/
-                if(elems$501.instanceof((typeof HTMLCollection==='undefined'||HTMLCollection===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: HTMLCollection")),'341:26-341:39','document.ceylon'):HTMLCollection))){
-                    return HTMLCollection(elems$501);
+                if($dx.instanceof((typeof HTMLCollection==='undefined'||HTMLCollection===null?m$1.throwexc(m$1.Exception("Undefined or null reference: HTMLCollection"),'341:26-341:39','document.ceylon'):HTMLCollection))){
+                    return HTMLCollection($dx);
                 }else {
-                    return NodeList(elems$501);
+                    return NodeList($dx);
                 }/*End dynamic block*/
-            };$$documentAbs.getElementsByTagName.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:HTMLCollection},{t:NodeList}]},$ps:[{$nm:'name',$mt:'prm',$def:1,$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns a collection of elements on the document by the tagname",63)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','getElementsByTagName']};};
-            $$documentAbs.getElementsByTagNameNS$defs$name=function(namespace$503,name$504){var $$documentAbs=this;
-            return $$$cl1.String("*",1);};
-            $$documentAbs.getElementsByTagNameNS=function getElementsByTagNameNS(namespace$503,name$504){
-                var $$documentAbs=this;
-                if(name$504===undefined){name$504=$$documentAbs.getElementsByTagNameNS$defs$name(namespace$503,name$504);}
-                var elems$505;
-                
-                var case$506=namespace$503;
-                if ($$$cl1.isOfType(namespace$503,{t:$$$cl1.String})) {
-                    
-                    var case$507=name$504;
-                    if ($$$cl1.isOfType(name$504,{t:$$$cl1.String})) {
+            };documentAbs$.getElementsByTagName.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:HTMLCollection},{t:NodeList}]},$ps:[{$nm:'name',$mt:'prm',$def:1,$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns a collection of elements on the document by the tagname"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','getElementsByTagName']};};
+            documentAbs$.getElementsByTagNameNS$defs$name=function($dz,$e0){return "*";};
+            documentAbs$.getElementsByTagNameNS=function getElementsByTagNameNS($dz,$e0){
+                var documentAbs$=this;
+                if($e0===undefined){$e0=documentAbs$.getElementsByTagNameNS$defs$name($dz,$e0);}
+                var $e1;
+                var $e2=$dz;
+                if(m$1.is$($dz,{t:m$1.String})) {
+                    var $e3=$e0;
+                    if(m$1.is$($e0,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        elems$505=$$documentAbs.$native.getElementsByTagNameNS(case$506.valueOf(),case$507.valueOf());/*End dynamic block*/
-                    }else if ($$$cl1.isOfType(name$504,{t:$$$cocjl339.JSString})) {
+                        $e1=documentAbs$.$_native.getElementsByTagNameNS($e2.valueOf(),$e3.valueOf());/*End dynamic block*/
+                    }else if(m$1.is$($e0,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        elems$505=$$documentAbs.$native.getElementsByTagNameNS(case$506.valueOf(),case$507.$native);/*End dynamic block*/
+                        $e1=documentAbs$.$_native.getElementsByTagNameNS($e2.valueOf(),$e3.$_native);/*End dynamic block*/
                     }
-                }else if ($$$cl1.isOfType(namespace$503,{t:$$$cocjl339.JSString})) {
-                    
-                    var case$508=name$504;
-                    if ($$$cl1.isOfType(name$504,{t:$$$cl1.String})) {
+                }else if(m$1.is$($dz,{t:m$9f.JSString})) {
+                    var $e4=$e0;
+                    if(m$1.is$($e0,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        elems$505=$$documentAbs.$native.getElementsByTagNameNS(case$506,case$508.valueOf());/*End dynamic block*/
-                    }else if ($$$cl1.isOfType(name$504,{t:$$$cocjl339.JSString})) {
+                        $e1=documentAbs$.$_native.getElementsByTagNameNS($e2,$e4.valueOf());/*End dynamic block*/
+                    }else if(m$1.is$($e0,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        elems$505=$$documentAbs.$native.getElementsByTagNameNS(case$506.$native,case$508.$native);/*End dynamic block*/
+                        $e1=documentAbs$.$_native.getElementsByTagNameNS($e2.$_native,$e4.$_native);/*End dynamic block*/
                     }
                 }
                 /*Begin dynamic block*/
-                if(elems$505.instanceof((typeof HTMLCollection==='undefined'||HTMLCollection===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: HTMLCollection")),'380:26-380:39','document.ceylon'):HTMLCollection))){
-                    return HTMLCollection(elems$505);
+                if($e1.instanceof((typeof HTMLCollection==='undefined'||HTMLCollection===null?m$1.throwexc(m$1.Exception("Undefined or null reference: HTMLCollection"),'380:26-380:39','document.ceylon'):HTMLCollection))){
+                    return HTMLCollection($e1);
                 }else {
-                    return NodeList(elems$505);
+                    return NodeList($e1);
                 }/*End dynamic block*/
-            };$$documentAbs.getElementsByTagNameNS.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:HTMLCollection},{t:NodeList}]},$ps:[{$nm:'namespace',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}},{$nm:'name',$mt:'prm',$def:1,$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns a collection of elements on the document by the tagname in a namespace",78)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','getElementsByTagNameNS']};};
-            $$documentAbs.getElementsByClassName=function getElementsByClassName(names$509){
-                var $$documentAbs=this;
-                
-                var case$510=names$509;
-                if ($$$cl1.isOfType(names$509,{t:$$$cl1.String})) {
+            };documentAbs$.getElementsByTagNameNS.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:HTMLCollection},{t:NodeList}]},$ps:[{$nm:'namespace',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}},{$nm:'name',$mt:'prm',$def:1,$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns a collection of elements on the document by the tagname in a namespace"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','getElementsByTagNameNS']};};
+            documentAbs$.getElementsByClassName=function getElementsByClassName($e5){
+                var documentAbs$=this;
+                var $e6=$e5;
+                if(m$1.is$($e5,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    return HTMLCollection($$documentAbs.$native.getElementsByTagNameNS(case$510.valueOf()));
+                    return HTMLCollection(documentAbs$.$_native.getElementsByTagNameNS($e6.valueOf()));
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(names$509,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($e5,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    return HTMLCollection($$documentAbs.$native.getElementsByTagNameNS(case$510.$native));
+                    return HTMLCollection(documentAbs$.$_native.getElementsByTagNameNS($e6.$_native));
                     /*End dynamic block*/
                 }
-            };$$documentAbs.getElementsByClassName.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:HTMLCollection},$ps:[{$nm:'names',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns a collection of elements on the document by the class name",66)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','getElementsByClassName']};};
-            $$documentAbs.implementation=function implementation(){
-                var $$documentAbs=this;
+            };documentAbs$.getElementsByClassName.$crtmm$=function(){return{mod:$CCMM$,$t:{t:HTMLCollection},$ps:[{$nm:'names',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns a collection of elements on the document by the class name"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','getElementsByClassName']};};
+            documentAbs$.implementation=function implementation(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return DOMImplementation($$documentAbs.$native.implementation);
+                return DOMImplementation(documentAbs$.$_native.implementation);
                 /*End dynamic block*/
-            };$$documentAbs.implementation.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:DOMImplementation},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the DOM implementation associated with the document",59)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','implementation']};};
-            $$documentAbs.importNode$defs$deep=function(externalNode$511,deep$512){var $$documentAbs=this;
-            return true;};
-            $$documentAbs.importNode=function importNode(externalNode$511,deep$512){
-                var $$documentAbs=this;
-                if(deep$512===undefined){deep$512=$$documentAbs.importNode$defs$deep(externalNode$511,deep$512);}
+            };documentAbs$.implementation.$crtmm$=function(){return{mod:$CCMM$,$t:{t:DOMImplementation},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns the DOM implementation associated with the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','implementation']};};
+            documentAbs$.importNode$defs$deep=function($e7,$e8){return true;};
+            documentAbs$.importNode=function importNode($e7,$e8){
+                var documentAbs$=this;
+                if($e8===undefined){$e8=documentAbs$.importNode$defs$deep($e7,$e8);}
                 /*Begin dynamic block*/
-                return Node($$documentAbs.$native.importNode(externalNode$511,deep$512));
+                return Node(documentAbs$.$_native.importNode($e7,$e8));
                 /*End dynamic block*/
-            };$$documentAbs.importNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Node},$ps:[{$nm:'externalNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}},{$nm:'deep',$mt:'prm',$def:1,$t:{t:$$$cl1.Boolean},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("creates a copy of a node from another document that can be inserted into the current document",93)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','importNode']};};
-            $$documentAbs.createNodeIterator$defs$whatToShow=function(root$513,whatToShow$514,filter$515){var $$documentAbs=this;
-            return null;};
-            $$documentAbs.createNodeIterator$defs$filter=function(root$513,whatToShow$514,filter$515){var $$documentAbs=this;
-            return null;};
-            $$documentAbs.createNodeIterator=function createNodeIterator(root$513,whatToShow$514,filter$515){
-                var $$documentAbs=this;
-                if(whatToShow$514===undefined){whatToShow$514=$$documentAbs.createNodeIterator$defs$whatToShow(root$513,whatToShow$514,filter$515);}
-                if(filter$515===undefined){filter$515=$$documentAbs.createNodeIterator$defs$filter(root$513,whatToShow$514,filter$515);}
+            };documentAbs$.importNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Node},$ps:[{$nm:'externalNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}},{$nm:'deep',$mt:'prm',$def:1,$t:{t:m$1.$_Boolean},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("creates a copy of a node from another document that can be inserted into the current document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','importNode']};};
+            documentAbs$.createNodeIterator$defs$whatToShow=function($e9,$ea,$eb){return null;};
+            documentAbs$.createNodeIterator$defs$filter=function($e9,$ea,$eb){return null;};
+            documentAbs$.createNodeIterator=function createNodeIterator($e9,$ea,$eb){
+                var documentAbs$=this;
+                if($ea===undefined){$ea=documentAbs$.createNodeIterator$defs$whatToShow($e9,$ea,$eb);}
+                if($eb===undefined){$eb=documentAbs$.createNodeIterator$defs$filter($e9,$ea,$eb);}
                 /*Begin dynamic block*/
-                return NodeIterator($$documentAbs.$native.createNodeIterator(root$513,whatToShow$514,filter$515));
+                return NodeIterator(documentAbs$.$_native.createNodeIterator($e9,$ea,$eb));
                 /*End dynamic block*/
-            };$$documentAbs.createNodeIterator.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:NodeIterator},$ps:[{$nm:'root',$mt:'prm',$t:{t:Node},$an:function(){return[];}},{$nm:'whatToShow',$mt:'prm',$def:1,$t:{t:$$$cl1.Anything},$an:function(){return[];}},{$nm:'filter',$mt:'prm',$def:1,$t:{t:'u', l:[{t:$$$cl1.Null},{t:NodeFilter}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns a new node iterator the document",40)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createNodeIterator']};};
-            $$documentAbs.createTreeWalker$defs$whatToShow=function(root$516,whatToShow$517,filter$518){var $$documentAbs=this;
-            return null;};
-            $$documentAbs.createTreeWalker$defs$filter=function(root$516,whatToShow$517,filter$518){var $$documentAbs=this;
-            return null;};
-            $$documentAbs.createTreeWalker=function createTreeWalker(root$516,whatToShow$517,filter$518){
-                var $$documentAbs=this;
-                if(whatToShow$517===undefined){whatToShow$517=$$documentAbs.createTreeWalker$defs$whatToShow(root$516,whatToShow$517,filter$518);}
-                if(filter$518===undefined){filter$518=$$documentAbs.createTreeWalker$defs$filter(root$516,whatToShow$517,filter$518);}
+            };documentAbs$.createNodeIterator.$crtmm$=function(){return{mod:$CCMM$,$t:{t:NodeIterator},$ps:[{$nm:'root',$mt:'prm',$t:{t:Node},$an:function(){return[];}},{$nm:'whatToShow',$mt:'prm',$def:1,$t:{t:m$1.Anything},$an:function(){return[];}},{$nm:'filter',$mt:'prm',$def:1,$t:{t:'u',l:[{t:m$1.Null},{t:NodeFilter}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns a new node iterator the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createNodeIterator']};};
+            documentAbs$.createTreeWalker$defs$whatToShow=function($ec,$ed,$ee){return null;};
+            documentAbs$.createTreeWalker$defs$filter=function($ec,$ed,$ee){return null;};
+            documentAbs$.createTreeWalker=function createTreeWalker($ec,$ed,$ee){
+                var documentAbs$=this;
+                if($ed===undefined){$ed=documentAbs$.createTreeWalker$defs$whatToShow($ec,$ed,$ee);}
+                if($ee===undefined){$ee=documentAbs$.createTreeWalker$defs$filter($ec,$ed,$ee);}
                 /*Begin dynamic block*/
-                return TreeWalker($$documentAbs.$native.createTreeWalker(root$516,whatToShow$517,filter$518));
+                return TreeWalker(documentAbs$.$_native.createTreeWalker($ec,$ed,$ee));
                 /*End dynamic block*/
-            };$$documentAbs.createTreeWalker.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:TreeWalker},$ps:[{$nm:'root',$mt:'prm',$t:{t:Node},$an:function(){return[];}},{$nm:'whatToShow',$mt:'prm',$def:1,$t:{t:$$$cl1.Anything},$an:function(){return[];}},{$nm:'filter',$mt:'prm',$def:1,$t:{t:'u', l:[{t:$$$cl1.Null},{t:NodeFilter}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns a new tree walker for walking the document",50)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createTreeWalker']};};
-            $$documentAbs.anchors=function anchors(){
-                var $$documentAbs=this;
+            };documentAbs$.createTreeWalker.$crtmm$=function(){return{mod:$CCMM$,$t:{t:TreeWalker},$ps:[{$nm:'root',$mt:'prm',$t:{t:Node},$an:function(){return[];}},{$nm:'whatToShow',$mt:'prm',$def:1,$t:{t:m$1.Anything},$an:function(){return[];}},{$nm:'filter',$mt:'prm',$def:1,$t:{t:'u',l:[{t:m$1.Null},{t:NodeFilter}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns a new tree walker for walking the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','createTreeWalker']};};
+            documentAbs$.anchors=function anchors(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return NodeList($$documentAbs.$native.anchors);
+                return NodeList(documentAbs$.$_native.anchors);
                 /*End dynamic block*/
-            };$$documentAbs.anchors.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:NodeList},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns a collection of all anchors in the document",51)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','anchors']};};
-            $$documentAbs.getAsync=function getAsync(){
-                var $$documentAbs=this;
+            };documentAbs$.anchors.$crtmm$=function(){return{mod:$CCMM$,$t:{t:NodeList},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns a collection of all anchors in the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','anchors']};};
+            documentAbs$.getAsync=function getAsync(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                if($$documentAbs.$native.async){
+                if(documentAbs$.$_native.async){
                     return true;
                 }else {
                     return false;
                 }/*End dynamic block*/
-            };$$documentAbs.getAsync.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Boolean},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("gets whether a document.load call will be made asynchronously",61)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','getAsync']};};
-            $$documentAbs.setAsync=function setAsync(async$519){
-                var $$documentAbs=this;
+            };documentAbs$.getAsync.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.$_Boolean},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("gets whether a document.load call will be made asynchronously"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','getAsync']};};
+            documentAbs$.setAsync=function setAsync($ef){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                $$documentAbs.$native.async=async$519;
+                documentAbs$.$_native.async=$ef;
                 /*End dynamic block*/
-            };$$documentAbs.setAsync.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'async',$mt:'prm',$t:{t:$$$cl1.Boolean},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("sets whether a document.load call should be made asynchronously",63)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','setAsync']};};
-            $$documentAbs.body=function body(){
-                var $$documentAbs=this;
+            };documentAbs$.setAsync.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'async',$mt:'prm',$t:{t:m$1.$_Boolean},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("sets whether a document.load call should be made asynchronously"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','setAsync']};};
+            documentAbs$.body=function body(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return Node($$documentAbs.$native.body);
+                return Node(documentAbs$.$_native.body);
                 /*End dynamic block*/
-            };$$documentAbs.body.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Node},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the body node on the document",37)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','body']};};
-            $$documentAbs.getCookie=function getCookie(){
-                var $$documentAbs=this;
+            };documentAbs$.body.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Node},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns the body node on the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','body']};};
+            documentAbs$.getCookie=function getCookie(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$documentAbs.$native.cookie);
+                return m$9f.JSString(documentAbs$.$_native.cookie);
                 /*End dynamic block*/
-            };$$documentAbs.getCookie.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns cookies associated with the document in the form of a comma sepearted list of key=value pairs",101)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','getCookie']};};
-            $$documentAbs.setCookie=function setCookie(cookie$520){
-                var $$documentAbs=this;
-                
-                var case$521=cookie$520;
-                if ($$$cl1.isOfType(cookie$520,{t:$$$cl1.String})) {
+            };documentAbs$.getCookie.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns cookies associated with the document in the form of a comma sepearted list of key=value pairs"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','getCookie']};};
+            documentAbs$.setCookie=function setCookie($eg){
+                var documentAbs$=this;
+                var $eh=$eg;
+                if(m$1.is$($eg,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    $$documentAbs.$native.cookie=case$521.valueOf();
+                    documentAbs$.$_native.cookie=$eh.valueOf();
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(cookie$520,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($eg,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    $$documentAbs.$native.cookie=case$521.$native;
+                    documentAbs$.$_native.cookie=$eh.$_native;
                     /*End dynamic block*/
                 }
-            };$$documentAbs.setCookie.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'cookie',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("set cookies associated with the document in the form of a comma sepearted list of key=value pairs",97)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','setCookie']};};
-            $$documentAbs.defaultView=function defaultView(){
-                var $$documentAbs=this;
+            };documentAbs$.setCookie.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'cookie',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("set cookies associated with the document in the form of a comma sepearted list of key=value pairs"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','setCookie']};};
+            documentAbs$.defaultView=function defaultView(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                var view$522=$$documentAbs.$native.defaultView;
-                $prop$getView$522={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','defaultView','$at','view']};}};
-                $prop$getView$522.get=function(){return view$522};
-                if((tmpvar$523=view$522,tmpvar$524=null,(tmpvar$523.equals&&!tmpvar$523.equals(tmpvar$524))||tmpvar$523!==tmpvar$524)){
-                    return $$$cocjh429.Window(view$522);
+                var $ei=documentAbs$.$_native.defaultView;
+                if(($ej=$ei,$ek=null,($ej.equals&&!$ej.equals($ek))||$ej!==$ek)){
+                    return m$bx.Window($ei);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$documentAbs.defaultView.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:$$$cocjh429.Window}]},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the browser window object associated with the document",62)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','defaultView']};};
-            $$documentAbs.getDesignMode=function getDesignMode(){
-                var $$documentAbs=this;
+            };documentAbs$.defaultView.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:m$bx.Window}]},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns the browser window object associated with the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','defaultView']};};
+            documentAbs$.getDesignMode=function getDesignMode(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                if((tmpvar$525=$$documentAbs.$native.designMode,tmpvar$526=$$$cl1.String("on",2),(tmpvar$525.equals&&tmpvar$525.equals(tmpvar$526))||tmpvar$525===tmpvar$526)){
+                if(($el=documentAbs$.$_native.designMode,$em="on",($el.equals&&$el.equals($em))||$el===$em)){
                     return true;
                 }else {
                     return false;
                 }/*End dynamic block*/
-            };$$documentAbs.getDesignMode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Boolean},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns if the documents design mode is on",42)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','getDesignMode']};};
-            $$documentAbs.getDir=function getDir(){
-                var $$documentAbs=this;
+            };documentAbs$.getDesignMode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.$_Boolean},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns if the documents design mode is on"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','getDesignMode']};};
+            documentAbs$.getDir=function getDir(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                if((tmpvar$527=$$documentAbs.$native.dir,tmpvar$528=$$$cl1.String("ltr",3),(tmpvar$527.equals&&tmpvar$527.equals(tmpvar$528))||tmpvar$527===tmpvar$528)){
+                if(($en=documentAbs$.$_native.dir,$eo="ltr",($en.equals&&$en.equals($eo))||$en===$eo)){
                     return getLtr();
                 }else {
                     return getRtl();
                 }/*End dynamic block*/
-            };$$documentAbs.getDir.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:DocumentDirection},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("get the document direction",26)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','getDir']};};
-            $$documentAbs.setDir=function setDir(dir$529){
-                var $$documentAbs=this;
+            };documentAbs$.getDir.$crtmm$=function(){return{mod:$CCMM$,$t:{t:DocumentDirection},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("get the document direction"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','getDir']};};
+            documentAbs$.setDir=function setDir($ep){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                $$documentAbs.$native.dir=dir$529.string.valueOf();
+                documentAbs$.$_native.dir=$ep.string.valueOf();
                 /*End dynamic block*/
-            };$$documentAbs.setDir.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'dir',$mt:'prm',$t:{t:DocumentDirection},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("set the document direction",26)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','setDir']};};
-            $$documentAbs.getDomain=function getDomain(){
-                var $$documentAbs=this;
+            };documentAbs$.setDir.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'dir',$mt:'prm',$t:{t:DocumentDirection},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("set the document direction"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','setDir']};};
+            documentAbs$.getDomain=function getDomain(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$documentAbs.$native.domain);
+                return m$9f.JSString(documentAbs$.$_native.domain);
                 /*End dynamic block*/
-            };$$documentAbs.getDomain.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("get the documents domain",24)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','getDomain']};};
-            $$documentAbs.setDomain=function setDomain(domain$530){
-                var $$documentAbs=this;
-                
-                var case$531=domain$530;
-                if ($$$cl1.isOfType(domain$530,{t:$$$cl1.String})) {
+            };documentAbs$.getDomain.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("get the documents domain"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','getDomain']};};
+            documentAbs$.setDomain=function setDomain($eq){
+                var documentAbs$=this;
+                var $er=$eq;
+                if(m$1.is$($eq,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    $$documentAbs.$native.domain=case$531.valueOf();
+                    documentAbs$.$_native.domain=$er.valueOf();
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(domain$530,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($eq,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    $$documentAbs.$native.domain=case$531.$native;
+                    documentAbs$.$_native.domain=$er.$_native;
                     /*End dynamic block*/
                 }
-            };$$documentAbs.setDomain.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'domain',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("set the domain string of the document",37)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','setDomain']};};
-            $$documentAbs.forms=function forms(){
-                var $$documentAbs=this;
+            };documentAbs$.setDomain.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'domain',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("set the domain string of the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','setDomain']};};
+            documentAbs$.forms=function forms(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return HTMLCollection($$documentAbs.$native.forms);
+                return HTMLCollection(documentAbs$.$_native.forms);
                 /*End dynamic block*/
-            };$$documentAbs.forms.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:HTMLCollection},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns a collection of all form elements in the document",57)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','forms']};};
-            $$documentAbs.head=function head(){
-                var $$documentAbs=this;
+            };documentAbs$.forms.$crtmm$=function(){return{mod:$CCMM$,$t:{t:HTMLCollection},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns a collection of all form elements in the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','forms']};};
+            documentAbs$.head=function head(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return Element($$documentAbs.$native.head);
+                return Element(documentAbs$.$_native.head);
                 /*End dynamic block*/
-            };$$documentAbs.head.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Element},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the document head element",33)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','head']};};
-            $$documentAbs.images=function images(){
-                var $$documentAbs=this;
+            };documentAbs$.head.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Element},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns the document head element"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','head']};};
+            documentAbs$.images=function images(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return HTMLCollection($$documentAbs.$native.images);
+                return HTMLCollection(documentAbs$.$_native.images);
                 /*End dynamic block*/
-            };$$documentAbs.images.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:HTMLCollection},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns a collection of all image elements in the document",58)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','images']};};
-            $$documentAbs.lastModified=function lastModified(){
-                var $$documentAbs=this;
+            };documentAbs$.images.$crtmm$=function(){return{mod:$CCMM$,$t:{t:HTMLCollection},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns a collection of all image elements in the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','images']};};
+            documentAbs$.lastModified=function lastModified(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$documentAbs.$native.lastModified);
+                return m$9f.JSString(documentAbs$.$_native.lastModified);
                 /*End dynamic block*/
-            };$$documentAbs.lastModified.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the date the document was last modified as a string",59)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','lastModified']};};
-            $$documentAbs.lastStyleSheetSet=function lastStyleSheetSet(){
-                var $$documentAbs=this;
+            };documentAbs$.lastModified.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns the date the document was last modified as a string"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','lastModified']};};
+            documentAbs$.lastStyleSheetSet=function lastStyleSheetSet(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$documentAbs.$native.lastStyleSheetSet);
+                return m$9f.JSString(documentAbs$.$_native.lastStyleSheetSet);
                 /*End dynamic block*/
-            };$$documentAbs.lastStyleSheetSet.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the name of the last enabled StyleSheet Set for the document",68)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','lastStyleSheetSet']};};
-            $$documentAbs.links=function links(){
-                var $$documentAbs=this;
+            };documentAbs$.lastStyleSheetSet.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns the name of the last enabled StyleSheet Set for the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','lastStyleSheetSet']};};
+            documentAbs$.links=function links(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return HTMLCollection($$documentAbs.$native.links);
+                return HTMLCollection(documentAbs$.$_native.links);
                 /*End dynamic block*/
-            };$$documentAbs.links.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:HTMLCollection},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns all of the link elements in the document",48)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','links']};};
-            $$documentAbs.location=function location(){
-                var $$documentAbs=this;
+            };documentAbs$.links.$crtmm$=function(){return{mod:$CCMM$,$t:{t:HTMLCollection},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns all of the link elements in the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','links']};};
+            documentAbs$.location=function location(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjh429.Location($$documentAbs.$native.location);
+                return m$bx.Location(documentAbs$.$_native.location);
                 /*End dynamic block*/
-            };$$documentAbs.location.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjh429.Location},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns location information about the URL of the document",58)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','location']};};
-            $$documentAbs.plugins=function plugins(){
-                var $$documentAbs=this;
+            };documentAbs$.location.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$bx.Location},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns location information about the URL of the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','location']};};
+            documentAbs$.plugins=function plugins(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return HTMLCollection($$documentAbs.$native.plugins);
+                return HTMLCollection(documentAbs$.$_native.plugins);
                 /*End dynamic block*/
-            };$$documentAbs.plugins.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:HTMLCollection},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns collection of all the plugin elements on the document",61)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','plugins']};};
-            $$documentAbs.preferredStyleSheetSet=function preferredStyleSheetSet(){
-                var $$documentAbs=this;
+            };documentAbs$.plugins.$crtmm$=function(){return{mod:$CCMM$,$t:{t:HTMLCollection},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns collection of all the plugin elements on the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','plugins']};};
+            documentAbs$.preferredStyleSheetSet=function preferredStyleSheetSet(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                var preferred$532=(typeof document==='undefined'||document===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: document")),'607:23-607:30','document.ceylon'):document).preferredStyleSheetSet;
-                $prop$getPreferred$532={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','preferredStyleSheetSet','$at','preferred']};}};
-                $prop$getPreferred$532.get=function(){return preferred$532};
-                if((tmpvar$533=preferred$532,tmpvar$534=null,(tmpvar$533.equals&&!tmpvar$533.equals(tmpvar$534))||tmpvar$533!==tmpvar$534)){
-                    return $$$cocjl339.JSString(preferred$532);
+                var $es=(typeof document==='undefined'||document===null?m$1.throwexc(m$1.Exception("Undefined or null reference: document"),'607:23-607:30','document.ceylon'):document).preferredStyleSheetSet;
+                if(($et=$es,$eu=null,($et.equals&&!$et.equals($eu))||$et!==$eu)){
+                    return m$9f.JSString($es);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$documentAbs.preferredStyleSheetSet.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:$$$cocjl339.JSString}]},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the prefurred name of the StyleSheet set on the document",64)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','preferredStyleSheetSet']};};
-            $$documentAbs.readyState=function readyState(){
-                var $$documentAbs=this;
+            };documentAbs$.preferredStyleSheetSet.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:m$9f.JSString}]},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns the prefurred name of the StyleSheet set on the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','preferredStyleSheetSet']};};
+            documentAbs$.readyState=function readyState(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                var readyState$535=$$documentAbs.$native.readyState;
-                $prop$getReadyState$535={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','readyState','$at','readyState']};}};
-                $prop$getReadyState$535.get=function(){return readyState$535};
-                if((tmpvar$536=readyState$535,tmpvar$537=$$$cl1.String("loading",7),(tmpvar$536.equals&&tmpvar$536.equals(tmpvar$537))||tmpvar$536===tmpvar$537)){
+                var $ev=documentAbs$.$_native.readyState;
+                if(($ew=$ev,$ex="loading",($ew.equals&&$ew.equals($ex))||$ew===$ex)){
                     return getLoading();
                 }else {
-                    if((tmpvar$538=readyState$535,tmpvar$539=$$$cl1.String("interactive",11),(tmpvar$538.equals&&tmpvar$538.equals(tmpvar$539))||tmpvar$538===tmpvar$539)){
+                    if(($ey=$ev,$ez="interactive",($ey.equals&&$ey.equals($ez))||$ey===$ez)){
                         return getInteractive();
                     }else {
                         return getComplete();
                     }
                 }/*End dynamic block*/
-            };$$documentAbs.readyState.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:DocumentReadyState},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the current ready state of the document",47)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','readyState']};};
-            $$documentAbs.referrer=function referrer(){
-                var $$documentAbs=this;
+            };documentAbs$.readyState.$crtmm$=function(){return{mod:$CCMM$,$t:{t:DocumentReadyState},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns the current ready state of the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','readyState']};};
+            documentAbs$.referrer=function referrer(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$documentAbs.$native.referrer);
+                return m$9f.JSString(documentAbs$.$_native.referrer);
                 /*End dynamic block*/
-            };$$documentAbs.referrer.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns uri of the page which linked to this document",53)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','referrer']};};
-            $$documentAbs.scripts=function scripts(){
-                var $$documentAbs=this;
+            };documentAbs$.referrer.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns uri of the page which linked to this document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','referrer']};};
+            documentAbs$.scripts=function scripts(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return HTMLCollection($$documentAbs.$native.scripts);
+                return HTMLCollection(documentAbs$.$_native.scripts);
                 /*End dynamic block*/
-            };$$documentAbs.scripts.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:HTMLCollection},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns a collection of all the script elements in the document",63)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','scripts']};};
-            $$documentAbs.selectedStyleSheetSet=function selectedStyleSheetSet(){
-                var $$documentAbs=this;
+            };documentAbs$.scripts.$crtmm$=function(){return{mod:$CCMM$,$t:{t:HTMLCollection},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns a collection of all the script elements in the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','scripts']};};
+            documentAbs$.selectedStyleSheetSet=function selectedStyleSheetSet(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$documentAbs.$native.selectedStyleSheetSet);
+                return m$9f.JSString(documentAbs$.$_native.selectedStyleSheetSet);
                 /*End dynamic block*/
-            };$$documentAbs.selectedStyleSheetSet.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the name of the StyleSheet set that is currently in use on the document",79)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','selectedStyleSheetSet']};};
-            $$documentAbs.setSelectedStyleSheetSet=function setSelectedStyleSheetSet(sheet$540){
-                var $$documentAbs=this;
-                
-                var case$541=sheet$540;
-                if ($$$cl1.isOfType(sheet$540,{t:$$$cl1.String})) {
+            };documentAbs$.selectedStyleSheetSet.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns the name of the StyleSheet set that is currently in use on the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','selectedStyleSheetSet']};};
+            documentAbs$.setSelectedStyleSheetSet=function setSelectedStyleSheetSet($f0){
+                var documentAbs$=this;
+                var $f1=$f0;
+                if(m$1.is$($f0,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    $$documentAbs.$native.selectedStyleSheetSet=case$541.valueOf();
+                    documentAbs$.$_native.selectedStyleSheetSet=$f1.valueOf();
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(sheet$540,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($f0,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    $$documentAbs.$native.selectedStyleSheetSet=case$541.$native;
+                    documentAbs$.$_native.selectedStyleSheetSet=$f1.$_native;
                     /*End dynamic block*/
                 }
-            };$$documentAbs.setSelectedStyleSheetSet.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'sheet',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns a linked to or embeded in the document by its name",58)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','setSelectedStyleSheetSet']};};
-            $$documentAbs.styleSheets=function styleSheets(){
-                var $$documentAbs=this;
+            };documentAbs$.setSelectedStyleSheetSet.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'sheet',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns a linked to or embeded in the document by its name"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','setSelectedStyleSheetSet']};};
+            documentAbs$.styleSheets=function styleSheets(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return StyleSheetList$stylesheets($$documentAbs.$native.styleSheets);
+                return StyleSheetList$stylesheets(documentAbs$.$_native.styleSheets);
                 /*End dynamic block*/
-            };$$documentAbs.styleSheets.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:StyleSheetList$stylesheets},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns collection of StyleSheets linked to or embeded in the document",70)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','styleSheets']};};
-            $$documentAbs.styleSheetSets=function styleSheetSets(){
-                var $$documentAbs=this;
+            };documentAbs$.styleSheets.$crtmm$=function(){return{mod:$CCMM$,$t:{t:StyleSheetList$stylesheets},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns collection of StyleSheets linked to or embeded in the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','styleSheets']};};
+            documentAbs$.styleSheetSets=function styleSheetSets(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSArray($$documentAbs.$native.styleSheetSets);
+                return m$9f.JSArray(documentAbs$.$_native.styleSheetSets);
                 /*End dynamic block*/
-            };$$documentAbs.styleSheetSets.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSArray},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns Array of Strings naming the avaiable StyleSheets",56)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','styleSheetSets']};};
-            $$documentAbs.title=function title(){
-                var $$documentAbs=this;
+            };documentAbs$.styleSheetSets.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSArray},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns Array of Strings naming the avaiable StyleSheets"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','styleSheetSets']};};
+            documentAbs$.title=function title(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$documentAbs.$native.title);
+                return m$9f.JSString(documentAbs$.$_native.title);
                 /*End dynamic block*/
-            };$$documentAbs.title.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the documents title",27)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','title']};};
-            $$documentAbs.open=function open(){
-                var $$documentAbs=this;
+            };documentAbs$.title.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns the documents title"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','title']};};
+            documentAbs$.open=function open(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                $$documentAbs.$native.open();
+                documentAbs$.$_native.open();
                 /*End dynamic block*/
-            };$$documentAbs.open.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("opens a document for writing",28)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','open']};};
-            $$documentAbs.close=function close(){
-                var $$documentAbs=this;
+            };documentAbs$.open.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("opens a document for writing"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','open']};};
+            documentAbs$.close=function close(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                $$documentAbs.$native.close();
+                documentAbs$.$_native.close();
                 /*End dynamic block*/
-            };$$documentAbs.close.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("finishes writing to a document opened with Document.open()",58)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','close']};};
-            $$documentAbs.elementFromPoint=function elementFromPoint(x$542,y$543){
-                var $$documentAbs=this;
-                
-                var case$544=x$542;
-                if ($$$cl1.isOfType(x$542,{t:$$$cl1.Integer})) {
-                    
-                    var case$545=y$543;
-                    if ($$$cl1.isOfType(y$543,{t:$$$cl1.Integer})) {
+            };documentAbs$.close.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("finishes writing to a document opened with Document.open()"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','close']};};
+            documentAbs$.elementFromPoint=function elementFromPoint($f2,$f3){
+                var documentAbs$=this;
+                var $f4=$f2;
+                if(m$1.is$($f2,{t:m$1.Integer})) {
+                    var $f5=$f3;
+                    if(m$1.is$($f3,{t:m$1.Integer})) {
                         /*Begin dynamic block*/
-                        return Element($$documentAbs.$native.elementFromPoint(case$544,case$545));
+                        return Element(documentAbs$.$_native.elementFromPoint($f4,$f5));
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(y$543,{t:$$$cocjl339.JSNumber})) {
+                    }else if(m$1.is$($f3,{t:m$9f.JSNumber})) {
                         /*Begin dynamic block*/
-                        return Element($$documentAbs.$native.elementFromPoint(case$544,case$545.$native));
+                        return Element(documentAbs$.$_native.elementFromPoint($f4,$f5.$_native));
                         /*End dynamic block*/
                     }
-                }else if ($$$cl1.isOfType(x$542,{t:$$$cocjl339.JSNumber})) {
-                    
-                    var case$546=y$543;
-                    if ($$$cl1.isOfType(y$543,{t:$$$cl1.Integer})) {
+                }else if(m$1.is$($f2,{t:m$9f.JSNumber})) {
+                    var $f6=$f3;
+                    if(m$1.is$($f3,{t:m$1.Integer})) {
                         /*Begin dynamic block*/
-                        return Element($$documentAbs.$native.elementFromPoint(case$544.$native,case$546));
+                        return Element(documentAbs$.$_native.elementFromPoint($f4.$_native,$f6));
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(y$543,{t:$$$cocjl339.JSNumber})) {
+                    }else if(m$1.is$($f3,{t:m$9f.JSNumber})) {
                         /*Begin dynamic block*/
-                        return Element($$documentAbs.$native.elementFromPoint(case$544.$native,case$546.$native));
+                        return Element(documentAbs$.$_native.elementFromPoint($f4.$_native,$f6.$_native));
                         /*End dynamic block*/
                     }
                 }
-            };$$documentAbs.elementFromPoint.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Element},$ps:[{$nm:'x',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.Integer},{t:$$$cocjl339.JSNumber}]},$an:function(){return[];}},{$nm:'y',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.Integer},{t:$$$cocjl339.JSNumber}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns element at the given point coordinates",46)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','elementFromPoint']};};
-            $$documentAbs.getElementsByName=function getElementsByName(name$547){
-                var $$documentAbs=this;
-                
-                var case$548=name$547;
-                if ($$$cl1.isOfType(name$547,{t:$$$cl1.String})) {
+            };documentAbs$.elementFromPoint.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Element},$ps:[{$nm:'x',$mt:'prm',$t:{t:'u',l:[{t:m$1.Integer},{t:m$9f.JSNumber}]},$an:function(){return[];}},{$nm:'y',$mt:'prm',$t:{t:'u',l:[{t:m$1.Integer},{t:m$9f.JSNumber}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns element at the given point coordinates"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','elementFromPoint']};};
+            documentAbs$.getElementsByName=function getElementsByName($f7){
+                var documentAbs$=this;
+                var $f8=$f7;
+                if(m$1.is$($f7,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    return HTMLCollection($$documentAbs.$native.getElementsByName(case$548.valueOf()));
+                    return HTMLCollection(documentAbs$.$_native.getElementsByName($f8.valueOf()));
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(name$547,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($f7,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    return HTMLCollection($$documentAbs.$native.getElementsByName(case$548.$native));
+                    return HTMLCollection(documentAbs$.$_native.getElementsByName($f8.$_native));
                     /*End dynamic block*/
                 }
-            };$$documentAbs.getElementsByName.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:HTMLCollection},$ps:[{$nm:'name',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns a list of elements in the document with the given name",62)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','getElementsByName']};};
-            $$documentAbs.hasFocus=function hasFocus(){
-                var $$documentAbs=this;
+            };documentAbs$.getElementsByName.$crtmm$=function(){return{mod:$CCMM$,$t:{t:HTMLCollection},$ps:[{$nm:'name',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns a list of elements in the document with the given name"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','getElementsByName']};};
+            documentAbs$.hasFocus=function hasFocus(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                if($$documentAbs.$native.hasFocus()){
+                if(documentAbs$.$_native.hasFocus()){
                     return true;
                 }else {
                     return false;
                 }/*End dynamic block*/
-            };$$documentAbs.hasFocus.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Boolean},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns whether the document or any element in the document currently has focus",79)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','hasFocus']};};
-            $$documentAbs.querySelector=function querySelector(selectors$549){
-                var $$documentAbs=this;
-                
-                var case$550=selectors$549;
-                if ($$$cl1.isOfType(selectors$549,{t:$$$cl1.String})) {
+            };documentAbs$.hasFocus.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.$_Boolean},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns whether the document or any element in the document currently has focus"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','hasFocus']};};
+            documentAbs$.querySelector=function querySelector($f9){
+                var documentAbs$=this;
+                var $fa=$f9;
+                if(m$1.is$($f9,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    return Element($$documentAbs.$native.querySelector(case$550.valueOf()));
+                    return Element(documentAbs$.$_native.querySelector($fa.valueOf()));
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(selectors$549,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($f9,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    return Element($$documentAbs.$native.querySelector(case$550.$native));
-                    /*End dynamic block*/
-                }
-            };$$documentAbs.querySelector.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Element},$ps:[{$nm:'selectors',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the first element which matches the selectors",53)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','querySelector']};};
-            $$documentAbs.querySelectorAll=function querySelectorAll(selectors$551){
-                var $$documentAbs=this;
-                
-                var case$552=selectors$551;
-                if ($$$cl1.isOfType(selectors$551,{t:$$$cl1.String})) {
-                    /*Begin dynamic block*/
-                    return NodeList($$documentAbs.$native.querySelectorAll(case$552.valueOf()));
-                    /*End dynamic block*/
-                }else if ($$$cl1.isOfType(selectors$551,{t:$$$cocjl339.JSString})) {
-                    /*Begin dynamic block*/
-                    return NodeList($$documentAbs.$native.querySelectorAll(case$552.$native));
+                    return Element(documentAbs$.$_native.querySelector($fa.$_native));
                     /*End dynamic block*/
                 }
-            };$$documentAbs.querySelectorAll.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:NodeList},$ps:[{$nm:'selectors',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns a list of all elements within the document",50)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','querySelectorAll']};};
-            $$documentAbs.releaseCapture=function releaseCapture(){
-                var $$documentAbs=this;
+            };documentAbs$.querySelector.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Element},$ps:[{$nm:'selectors',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns the first element which matches the selectors"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','querySelector']};};
+            documentAbs$.querySelectorAll=function querySelectorAll($fb){
+                var documentAbs$=this;
+                var $fc=$fb;
+                if(m$1.is$($fb,{t:m$1.String})) {
+                    /*Begin dynamic block*/
+                    return NodeList(documentAbs$.$_native.querySelectorAll($fc.valueOf()));
+                    /*End dynamic block*/
+                }else if(m$1.is$($fb,{t:m$9f.JSString})) {
+                    /*Begin dynamic block*/
+                    return NodeList(documentAbs$.$_native.querySelectorAll($fc.$_native));
+                    /*End dynamic block*/
+                }
+            };documentAbs$.querySelectorAll.$crtmm$=function(){return{mod:$CCMM$,$t:{t:NodeList},$ps:[{$nm:'selectors',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("returns a list of all elements within the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','querySelectorAll']};};
+            documentAbs$.releaseCapture=function releaseCapture(){
+                var documentAbs$=this;
                 /*Begin dynamic block*/
-                $$documentAbs.$native.releaseCapture();
+                documentAbs$.$_native.releaseCapture();
                 /*End dynamic block*/
-            };$$documentAbs.releaseCapture.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("release current mouse capture",29)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','releaseCapture']};};
-            $$documentAbs.write=function write(line$553){
-                var $$documentAbs=this;
-                
-                var case$554=line$553;
-                if ($$$cl1.isOfType(line$553,{t:$$$cl1.String})) {
+            };documentAbs$.releaseCapture.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[],$cont:DocumentAbs,$an:function(){return[m$1.doc("release current mouse capture"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','releaseCapture']};};
+            documentAbs$.write=function write($fd){
+                var documentAbs$=this;
+                var $fe=$fd;
+                if(m$1.is$($fd,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    $$documentAbs.$native.write(case$554.valueOf());
+                    documentAbs$.$_native.write($fe.valueOf());
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(line$553,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($fd,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    $$documentAbs.$native.write(case$554.$native);
-                    /*End dynamic block*/
-                }
-            };$$documentAbs.write.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'line',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("write the string to the document",32)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','write']};};
-            $$documentAbs.writeln=function writeln(line$555){
-                var $$documentAbs=this;
-                
-                var case$556=line$555;
-                if ($$$cl1.isOfType(line$555,{t:$$$cl1.String})) {
-                    /*Begin dynamic block*/
-                    $$documentAbs.$native.writeln(case$556.valueOf());
-                    /*End dynamic block*/
-                }else if ($$$cl1.isOfType(line$555,{t:$$$cocjl339.JSString})) {
-                    /*Begin dynamic block*/
-                    $$documentAbs.$native.writeln(case$556.$native);
+                    documentAbs$.$_native.write($fe.$_native);
                     /*End dynamic block*/
                 }
-            };$$documentAbs.writeln.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'line',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("write the string to the document as a line",42)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','writeln']};};
+            };documentAbs$.write.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'line',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("write the string to the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','write']};};
+            documentAbs$.writeln=function writeln($ff){
+                var documentAbs$=this;
+                var $fg=$ff;
+                if(m$1.is$($ff,{t:m$1.String})) {
+                    /*Begin dynamic block*/
+                    documentAbs$.$_native.writeln($fg.valueOf());
+                    /*End dynamic block*/
+                }else if(m$1.is$($ff,{t:m$9f.JSString})) {
+                    /*Begin dynamic block*/
+                    documentAbs$.$_native.writeln($fg.$_native);
+                    /*End dynamic block*/
+                }
+            };documentAbs$.writeln.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'line',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DocumentAbs,$an:function(){return[m$1.doc("write the string to the document as a line"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentAbs','$m','writeln']};};
         })(DocumentAbs.$$.prototype);
     }
     return DocumentAbs;
 }
-exports.$init$DocumentAbs=$init$DocumentAbs;
+ex$.$init$DocumentAbs=$init$DocumentAbs;
 $init$DocumentAbs();
-function Document(n$557, $$document){
+function Document($fh,document$){
     $init$Document();
-    if ($$document===undefined)$$document=new Document.$$;
-    $$document.n$557_=n$557;
-    DocumentAbs($$document);
-    $$document.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:Document,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','Document','$at','native']};}};
+    if(document$===undefined)document$=new Document.$$;
+    document$.$fh_=$fh;
+    DocumentAbs(document$);
+    document$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:Document,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','Document','$at','native']};}};
     /*Begin dynamic block*/
-    $$document.$native=$$document.n$557;/*End dynamic block*/
-    return $$document;
+    document$.$_native=document$.$fh;/*End dynamic block*/
+    return document$;
 }
-Document.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:DocumentAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("a DOM Document",14)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','Document']};};
-exports.Document=Document;
+Document.$crtmm$=function(){return{mod:$CCMM$,'super':{t:DocumentAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("a DOM Document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','Document']};};
+ex$.Document=Document;
 function $init$Document(){
-    if (Document.$$===undefined){
-        $$$cl1.initTypeProto(Document,'com.openswimsoftware.ceylon.js.dom::Document',$init$DocumentAbs());
-        (function($$document){
-            $$$cl1.defineAttr($$document,'n$557',function(){return this.n$557_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:Document,d:['com.openswimsoftware.ceylon.js.dom','Document','$at','n']};});
+    if(Document.$$===undefined){
+        m$1.initTypeProto(Document,'com.openswimsoftware.ceylon.js.dom::Document',$init$DocumentAbs());
+        (function(document$){
+            m$1.atr$(document$,'$fh',function(){return this.$fh_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:Document,d:['com.openswimsoftware.ceylon.js.dom','Document','$at','n$xxawbv']};});
         })(Document.$$.prototype);
     }
     return Document;
 }
-exports.$init$Document=$init$Document;
+ex$.$init$Document=$init$Document;
 $init$Document();
-function DocumentTypeAbs($$documentTypeAbs){
+function DocumentTypeAbs(documentTypeAbs$){
     $init$DocumentTypeAbs();
-    if ($$documentTypeAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    NodeAbs($$documentTypeAbs);
-    return $$documentTypeAbs;
+    if(documentTypeAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    NodeAbs(documentTypeAbs$);
+    return documentTypeAbs$;
 }
-DocumentTypeAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentTypeAbs']};};
-exports.DocumentTypeAbs=DocumentTypeAbs;
+DocumentTypeAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentTypeAbs']};};
+ex$.DocumentTypeAbs=DocumentTypeAbs;
 function $init$DocumentTypeAbs(){
-    if (DocumentTypeAbs.$$===undefined){
-        $$$cl1.initTypeProto(DocumentTypeAbs,'com.openswimsoftware.ceylon.js.dom::DocumentTypeAbs',$init$NodeAbs());
-        (function($$documentTypeAbs){
-            $$documentTypeAbs.name=function name(){
-                var $$documentTypeAbs=this;
+    if(DocumentTypeAbs.$$===undefined){
+        m$1.initTypeProto(DocumentTypeAbs,'com.openswimsoftware.ceylon.js.dom::DocumentTypeAbs',$init$NodeAbs());
+        (function(documentTypeAbs$){
+            documentTypeAbs$.name=function name(){
+                var documentTypeAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$documentTypeAbs.$native.name);
+                return m$9f.JSString(documentTypeAbs$.$_native.name);
                 /*End dynamic block*/
-            };$$documentTypeAbs.name.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:DocumentTypeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the document type name",30)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentTypeAbs','$m','name']};};
-            $$documentTypeAbs.publicId=function publicId(){
-                var $$documentTypeAbs=this;
+            };documentTypeAbs$.name.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:DocumentTypeAbs,$an:function(){return[m$1.doc("returns the document type name"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentTypeAbs','$m','name']};};
+            documentTypeAbs$.publicId=function publicId(){
+                var documentTypeAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$documentTypeAbs.$native.publicId);
+                return m$9f.JSString(documentTypeAbs$.$_native.publicId);
                 /*End dynamic block*/
-            };$$documentTypeAbs.publicId.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:DocumentTypeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the document types public id string",43)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentTypeAbs','$m','publicId']};};
-            $$documentTypeAbs.systemId=function systemId(){
-                var $$documentTypeAbs=this;
+            };documentTypeAbs$.publicId.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:DocumentTypeAbs,$an:function(){return[m$1.doc("returns the document types public id string"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentTypeAbs','$m','publicId']};};
+            documentTypeAbs$.systemId=function systemId(){
+                var documentTypeAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$documentTypeAbs.$native.systemId);
+                return m$9f.JSString(documentTypeAbs$.$_native.systemId);
                 /*End dynamic block*/
-            };$$documentTypeAbs.systemId.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:DocumentTypeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the document types system id string",43)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentTypeAbs','$m','systemId']};};
+            };documentTypeAbs$.systemId.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:DocumentTypeAbs,$an:function(){return[m$1.doc("returns the document types system id string"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentTypeAbs','$m','systemId']};};
         })(DocumentTypeAbs.$$.prototype);
     }
     return DocumentTypeAbs;
 }
-exports.$init$DocumentTypeAbs=$init$DocumentTypeAbs;
+ex$.$init$DocumentTypeAbs=$init$DocumentTypeAbs;
 $init$DocumentTypeAbs();
-function DocumentType(n$558, $$documentType){
+function DocumentType($fi,documentType$){
     $init$DocumentType();
-    if ($$documentType===undefined)$$documentType=new DocumentType.$$;
-    $$documentType.n$558_=n$558;
-    DocumentTypeAbs($$documentType);
-    $$documentType.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:DocumentType,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentType','$at','native']};}};
+    if(documentType$===undefined)documentType$=new DocumentType.$$;
+    documentType$.$fi_=$fi;
+    DocumentTypeAbs(documentType$);
+    documentType$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:DocumentType,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentType','$at','native']};}};
     /*Begin dynamic block*/
-    $$documentType.$native=$$documentType.n$558;/*End dynamic block*/
-    return $$documentType;
+    documentType$.$_native=documentType$.$fi;/*End dynamic block*/
+    return documentType$;
 }
-DocumentType.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:DocumentTypeAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("a DocumentType",14)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentType']};};
-exports.DocumentType=DocumentType;
+DocumentType.$crtmm$=function(){return{mod:$CCMM$,'super':{t:DocumentTypeAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("a DocumentType"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentType']};};
+ex$.DocumentType=DocumentType;
 function $init$DocumentType(){
-    if (DocumentType.$$===undefined){
-        $$$cl1.initTypeProto(DocumentType,'com.openswimsoftware.ceylon.js.dom::DocumentType',$init$DocumentTypeAbs());
-        (function($$documentType){
-            $$$cl1.defineAttr($$documentType,'n$558',function(){return this.n$558_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:DocumentType,d:['com.openswimsoftware.ceylon.js.dom','DocumentType','$at','n']};});
+    if(DocumentType.$$===undefined){
+        m$1.initTypeProto(DocumentType,'com.openswimsoftware.ceylon.js.dom::DocumentType',$init$DocumentTypeAbs());
+        (function(documentType$){
+            m$1.atr$(documentType$,'$fi',function(){return this.$fi_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:DocumentType,d:['com.openswimsoftware.ceylon.js.dom','DocumentType','$at','n$ct6wtn']};});
         })(DocumentType.$$.prototype);
     }
     return DocumentType;
 }
-exports.$init$DocumentType=$init$DocumentType;
+ex$.$init$DocumentType=$init$DocumentType;
 $init$DocumentType();
-function DOMImplementationAbs($$dOMImplementationAbs){
+function DOMImplementationAbs(dOMImplementationAbs$){
     $init$DOMImplementationAbs();
-    if ($$dOMImplementationAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$$cocjl339.JSObjectAbs($$dOMImplementationAbs);
-    return $$dOMImplementationAbs;
+    if(dOMImplementationAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    m$9f.JSObjectAbs(dOMImplementationAbs$);
+    return dOMImplementationAbs$;
 }
-DOMImplementationAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cocjl339.JSObjectAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','DOMImplementationAbs']};};
-exports.DOMImplementationAbs=DOMImplementationAbs;
+DOMImplementationAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$9f.JSObjectAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','DOMImplementationAbs']};};
+ex$.DOMImplementationAbs=DOMImplementationAbs;
 function $init$DOMImplementationAbs(){
-    if (DOMImplementationAbs.$$===undefined){
-        $$$cl1.initTypeProto(DOMImplementationAbs,'com.openswimsoftware.ceylon.js.dom::DOMImplementationAbs',$$$cocjl339.JSObjectAbs);
-        (function($$dOMImplementationAbs){
-            $$dOMImplementationAbs.createDocument$defs$qualifiedName=function(namespace$559,qualifiedName$560,doctype$561){var $$dOMImplementationAbs=this;
-            return $$$cl1.String("",0);};
-            $$dOMImplementationAbs.createDocument$defs$doctype=function(namespace$559,qualifiedName$560,doctype$561){var $$dOMImplementationAbs=this;
-            return null;};
-            $$dOMImplementationAbs.createDocument=function createDocument(namespace$559,qualifiedName$560,doctype$561){
-                var $$dOMImplementationAbs=this;
-                if(qualifiedName$560===undefined){qualifiedName$560=$$dOMImplementationAbs.createDocument$defs$qualifiedName(namespace$559,qualifiedName$560,doctype$561);}
-                if(doctype$561===undefined){doctype$561=$$dOMImplementationAbs.createDocument$defs$doctype(namespace$559,qualifiedName$560,doctype$561);}
-                
-                var case$562=namespace$559;
-                if ($$$cl1.isOfType(namespace$559,{t:$$$cl1.String})) {
-                    
-                    var case$563=qualifiedName$560;
-                    if ($$$cl1.isOfType(qualifiedName$560,{t:$$$cl1.String})) {
+    if(DOMImplementationAbs.$$===undefined){
+        m$1.initTypeProto(DOMImplementationAbs,'com.openswimsoftware.ceylon.js.dom::DOMImplementationAbs',m$9f.JSObjectAbs);
+        (function(dOMImplementationAbs$){
+            dOMImplementationAbs$.createDocument$defs$qualifiedName=function($fj,$fk,$fl){return "";};
+            dOMImplementationAbs$.createDocument$defs$doctype=function($fj,$fk,$fl){return null;};
+            dOMImplementationAbs$.createDocument=function createDocument($fj,$fk,$fl){
+                var dOMImplementationAbs$=this;
+                if($fk===undefined){$fk=dOMImplementationAbs$.createDocument$defs$qualifiedName($fj,$fk,$fl);}
+                if($fl===undefined){$fl=dOMImplementationAbs$.createDocument$defs$doctype($fj,$fk,$fl);}
+                var $fm=$fj;
+                if(m$1.is$($fj,{t:m$1.String})) {
+                    var $fn=$fk;
+                    if(m$1.is$($fk,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        return Document($$dOMImplementationAbs.$native.createDocument(case$562.valueOf(),case$563.valueOf(),(typeof dt==='undefined'||dt===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: dt")),'12:69-12:70','domimplementation.ceylon'):dt).native));
+                        return Document(dOMImplementationAbs$.$_native.createDocument($fm.valueOf(),$fn.valueOf(),(typeof dt==='undefined'||dt===null?m$1.throwexc(m$1.Exception("Undefined or null reference: dt"),'12:69-12:70','domimplementation.ceylon'):dt).native));
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(qualifiedName$560,{t:$$$cocjl339.JSString})) {
+                    }else if(m$1.is$($fk,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        return Document($$dOMImplementationAbs.$native.createDocument(case$562.valueOf(),case$563.$native,(typeof dt==='undefined'||dt===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: dt")),'17:76-17:77','domimplementation.ceylon'):dt).native));
+                        return Document(dOMImplementationAbs$.$_native.createDocument($fm.valueOf(),$fn.$_native,(typeof dt==='undefined'||dt===null?m$1.throwexc(m$1.Exception("Undefined or null reference: dt"),'17:76-17:77','domimplementation.ceylon'):dt).native));
                         /*End dynamic block*/
                     }
-                }else if ($$$cl1.isOfType(namespace$559,{t:$$$cocjl339.JSString})) {
-                    
-                    var case$564=qualifiedName$560;
-                    if ($$$cl1.isOfType(qualifiedName$560,{t:$$$cl1.String})) {
+                }else if(m$1.is$($fj,{t:m$9f.JSString})) {
+                    var $fo=$fk;
+                    if(m$1.is$($fk,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        return Document($$dOMImplementationAbs.$native.createDocument(case$562.$native,case$564.valueOf(),(typeof dt==='undefined'||dt===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: dt")),'25:76-25:77','domimplementation.ceylon'):dt).native));
+                        return Document(dOMImplementationAbs$.$_native.createDocument($fm.$_native,$fo.valueOf(),(typeof dt==='undefined'||dt===null?m$1.throwexc(m$1.Exception("Undefined or null reference: dt"),'25:76-25:77','domimplementation.ceylon'):dt).native));
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(qualifiedName$560,{t:$$$cocjl339.JSString})) {
+                    }else if(m$1.is$($fk,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        return Document($$dOMImplementationAbs.$native.createDocument(case$562.$native,case$564.$native,(typeof dt==='undefined'||dt===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: dt")),'30:83-30:84','domimplementation.ceylon'):dt).native));
+                        return Document(dOMImplementationAbs$.$_native.createDocument($fm.$_native,$fo.$_native,(typeof dt==='undefined'||dt===null?m$1.throwexc(m$1.Exception("Undefined or null reference: dt"),'30:83-30:84','domimplementation.ceylon'):dt).native));
                         /*End dynamic block*/
                     }
-                }else if ($$$cl1.isOfType(namespace$559,{t:$$$cl1.Null})) {
-                    
-                    var case$565=qualifiedName$560;
-                    if ($$$cl1.isOfType(qualifiedName$560,{t:$$$cl1.String})) {
+                }else if(m$1.is$($fj,{t:m$1.Null})) {
+                    var $fp=$fk;
+                    if(m$1.is$($fk,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        return Document($$dOMImplementationAbs.$native.createDocument(null,case$565.valueOf(),(typeof dt==='undefined'||dt===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: dt")),'38:64-38:65','domimplementation.ceylon'):dt).native));
+                        return Document(dOMImplementationAbs$.$_native.createDocument(null,$fp.valueOf(),(typeof dt==='undefined'||dt===null?m$1.throwexc(m$1.Exception("Undefined or null reference: dt"),'38:64-38:65','domimplementation.ceylon'):dt).native));
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(qualifiedName$560,{t:$$$cocjl339.JSString})) {
+                    }else if(m$1.is$($fk,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        return Document($$dOMImplementationAbs.$native.createDocument(null,case$565.$native,(typeof dt==='undefined'||dt===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: dt")),'43:71-43:72','domimplementation.ceylon'):dt).native));
+                        return Document(dOMImplementationAbs$.$_native.createDocument(null,$fp.$_native,(typeof dt==='undefined'||dt===null?m$1.throwexc(m$1.Exception("Undefined or null reference: dt"),'43:71-43:72','domimplementation.ceylon'):dt).native));
                         /*End dynamic block*/
                     }
                 }
-            };$$dOMImplementationAbs.createDocument.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Document},$ps:[{$nm:'namespace',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:'u', l:[{t:$$$cl1.Null},{t:$$$cocjl339.JSString}]}]},$an:function(){return[];}},{$nm:'qualifiedName',$mt:'prm',$def:1,$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}},{$nm:'doctype',$mt:'prm',$def:1,$t:{t:'u', l:[{t:$$$cl1.Null},{t:DocumentType}]},$an:function(){return[];}}],$cont:DOMImplementationAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns a new Document",22)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DOMImplementationAbs','$m','createDocument']};};
-            $$dOMImplementationAbs.createDocumentType=function createDocumentType(qualifiedName$566,publicId$567,systemId$568){
-                var $$dOMImplementationAbs=this;
-                
-                var case$569=qualifiedName$566;
-                if ($$$cl1.isOfType(qualifiedName$566,{t:$$$cl1.String})) {
-                    
-                    var case$570=publicId$567;
-                    if ($$$cl1.isOfType(publicId$567,{t:$$$cl1.String})) {
-                        
-                        var case$571=systemId$568;
-                        if ($$$cl1.isOfType(systemId$568,{t:$$$cl1.String})) {
+            };dOMImplementationAbs$.createDocument.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Document},$ps:[{$nm:'namespace',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:'u',l:[{t:m$1.Null},{t:m$9f.JSString}]}]},$an:function(){return[];}},{$nm:'qualifiedName',$mt:'prm',$def:1,$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}},{$nm:'doctype',$mt:'prm',$def:1,$t:{t:'u',l:[{t:m$1.Null},{t:DocumentType}]},$an:function(){return[];}}],$cont:DOMImplementationAbs,$an:function(){return[m$1.doc("returns a new Document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DOMImplementationAbs','$m','createDocument']};};
+            dOMImplementationAbs$.createDocumentType=function createDocumentType($fq,$fr,$fs){
+                var dOMImplementationAbs$=this;
+                var $ft=$fq;
+                if(m$1.is$($fq,{t:m$1.String})) {
+                    var $fu=$fr;
+                    if(m$1.is$($fr,{t:m$1.String})) {
+                        var $fv=$fs;
+                        if(m$1.is$($fs,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            return DocumentType($$dOMImplementationAbs.$native.createDocumentType(case$569.valueOf(),case$570.valueOf(),case$571.valueOf()));
+                            return DocumentType(dOMImplementationAbs$.$_native.createDocumentType($ft.valueOf(),$fu.valueOf(),$fv.valueOf()));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(systemId$568,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($fs,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            return DocumentType($$dOMImplementationAbs.$native.createDocumentType(case$569.valueOf(),case$570.valueOf(),case$571.$native));
+                            return DocumentType(dOMImplementationAbs$.$_native.createDocumentType($ft.valueOf(),$fu.valueOf(),$fv.$_native));
                             /*End dynamic block*/
                         }
-                    }else if ($$$cl1.isOfType(publicId$567,{t:$$$cocjl339.JSString})) {
-                        
-                        var case$572=systemId$568;
-                        if ($$$cl1.isOfType(systemId$568,{t:$$$cl1.String})) {
+                    }else if(m$1.is$($fr,{t:m$9f.JSString})) {
+                        var $fw=$fs;
+                        if(m$1.is$($fs,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            return DocumentType($$dOMImplementationAbs.$native.createDocumentType(case$569.valueOf(),case$570.$native,case$572.valueOf()));
+                            return DocumentType(dOMImplementationAbs$.$_native.createDocumentType($ft.valueOf(),$fu.$_native,$fw.valueOf()));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(systemId$568,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($fs,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            return DocumentType($$dOMImplementationAbs.$native.createDocumentType(case$569.valueOf(),case$570.$native,case$572.$native));
+                            return DocumentType(dOMImplementationAbs$.$_native.createDocumentType($ft.valueOf(),$fu.$_native,$fw.$_native));
                             /*End dynamic block*/
                         }
                     }
-                }else if ($$$cl1.isOfType(qualifiedName$566,{t:$$$cocjl339.JSString})) {
-                    
-                    var case$573=publicId$567;
-                    if ($$$cl1.isOfType(publicId$567,{t:$$$cl1.String})) {
-                        
-                        var case$574=systemId$568;
-                        if ($$$cl1.isOfType(systemId$568,{t:$$$cl1.String})) {
+                }else if(m$1.is$($fq,{t:m$9f.JSString})) {
+                    var $fx=$fr;
+                    if(m$1.is$($fr,{t:m$1.String})) {
+                        var $fy=$fs;
+                        if(m$1.is$($fs,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            return DocumentType($$dOMImplementationAbs.$native.createDocumentType(case$569.$native,case$573.valueOf(),case$574.valueOf()));
+                            return DocumentType(dOMImplementationAbs$.$_native.createDocumentType($ft.$_native,$fx.valueOf(),$fy.valueOf()));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(systemId$568,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($fs,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            return DocumentType($$dOMImplementationAbs.$native.createDocumentType(case$569.$native,case$573.valueOf(),case$574.$native));
+                            return DocumentType(dOMImplementationAbs$.$_native.createDocumentType($ft.$_native,$fx.valueOf(),$fy.$_native));
                             /*End dynamic block*/
                         }
-                    }else if ($$$cl1.isOfType(publicId$567,{t:$$$cocjl339.JSString})) {
-                        
-                        var case$575=systemId$568;
-                        if ($$$cl1.isOfType(systemId$568,{t:$$$cl1.String})) {
+                    }else if(m$1.is$($fr,{t:m$9f.JSString})) {
+                        var $fz=$fs;
+                        if(m$1.is$($fs,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            return DocumentType($$dOMImplementationAbs.$native.createDocumentType(case$569.$native,case$573.$native,case$575.valueOf()));
+                            return DocumentType(dOMImplementationAbs$.$_native.createDocumentType($ft.$_native,$fx.$_native,$fz.valueOf()));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(systemId$568,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($fs,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            return DocumentType($$dOMImplementationAbs.$native.createDocumentType(case$569.$native,case$573.$native,case$575.$native));
+                            return DocumentType(dOMImplementationAbs$.$_native.createDocumentType($ft.$_native,$fx.$_native,$fz.$_native));
                             /*End dynamic block*/
                         }
                     }
                 }
-            };$$dOMImplementationAbs.createDocumentType.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:DocumentType},$ps:[{$nm:'qualifiedName',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}},{$nm:'publicId',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}},{$nm:'systemId',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DOMImplementationAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns a new DocumentType",26)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DOMImplementationAbs','$m','createDocumentType']};};
-            $$dOMImplementationAbs.hasFeature$defs$version=function(feature$576,version$577){var $$dOMImplementationAbs=this;
-            return $$$cl1.String("",0);};
-            $$dOMImplementationAbs.hasFeature=function hasFeature(feature$576,version$577){
-                var $$dOMImplementationAbs=this;
-                if(version$577===undefined){version$577=$$dOMImplementationAbs.hasFeature$defs$version(feature$576,version$577);}
-                var has$578;
-                
-                var case$579=feature$576;
-                if ($$$cl1.isOfType(feature$576,{t:$$$cl1.String})) {
-                    
-                    var case$580=version$577;
-                    if ($$$cl1.isOfType(version$577,{t:$$$cl1.String})) {
+            };dOMImplementationAbs$.createDocumentType.$crtmm$=function(){return{mod:$CCMM$,$t:{t:DocumentType},$ps:[{$nm:'qualifiedName',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}},{$nm:'publicId',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}},{$nm:'systemId',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DOMImplementationAbs,$an:function(){return[m$1.doc("returns a new DocumentType"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DOMImplementationAbs','$m','createDocumentType']};};
+            dOMImplementationAbs$.hasFeature$defs$version=function($g0,$g1){return "";};
+            dOMImplementationAbs$.hasFeature=function hasFeature($g0,$g1){
+                var dOMImplementationAbs$=this;
+                if($g1===undefined){$g1=dOMImplementationAbs$.hasFeature$defs$version($g0,$g1);}
+                var $g2;
+                var $g3=$g0;
+                if(m$1.is$($g0,{t:m$1.String})) {
+                    var $g4=$g1;
+                    if(m$1.is$($g1,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        has$578=$$dOMImplementationAbs.$native.hasFeature(case$579.valueOf(),case$580.valueOf());/*End dynamic block*/
-                    }else if ($$$cl1.isOfType(version$577,{t:$$$cocjl339.JSString})) {
+                        $g2=dOMImplementationAbs$.$_native.hasFeature($g3.valueOf(),$g4.valueOf());/*End dynamic block*/
+                    }else if(m$1.is$($g1,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        has$578=$$dOMImplementationAbs.$native.hasFeature(case$579.valueOf(),case$580.$native);/*End dynamic block*/
+                        $g2=dOMImplementationAbs$.$_native.hasFeature($g3.valueOf(),$g4.$_native);/*End dynamic block*/
                     }
-                }else if ($$$cl1.isOfType(feature$576,{t:$$$cocjl339.JSString})) {
-                    
-                    var case$581=version$577;
-                    if ($$$cl1.isOfType(version$577,{t:$$$cl1.String})) {
+                }else if(m$1.is$($g0,{t:m$9f.JSString})) {
+                    var $g5=$g1;
+                    if(m$1.is$($g1,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        has$578=$$dOMImplementationAbs.$native.hasFeature(case$579.$native,case$581.valueOf());/*End dynamic block*/
-                    }else if ($$$cl1.isOfType(version$577,{t:$$$cocjl339.JSString})) {
+                        $g2=dOMImplementationAbs$.$_native.hasFeature($g3.$_native,$g5.valueOf());/*End dynamic block*/
+                    }else if(m$1.is$($g1,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        has$578=$$dOMImplementationAbs.$native.hasFeature(case$579.$native,case$581.$native);/*End dynamic block*/
+                        $g2=dOMImplementationAbs$.$_native.hasFeature($g3.$_native,$g5.$_native);/*End dynamic block*/
                     }
                 }
                 /*Begin dynamic block*/
-                if(has$578){
+                if($g2){
                     return true;
                 }else {
                     return false;
                 }/*End dynamic block*/
-            };$$dOMImplementationAbs.hasFeature.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Boolean},$ps:[{$nm:'feature',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}},{$nm:'version',$mt:'prm',$def:1,$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:DOMImplementationAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns if the DOM has the given feature at the specified or greater version",76)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DOMImplementationAbs','$m','hasFeature']};};
+            };dOMImplementationAbs$.hasFeature.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.$_Boolean},$ps:[{$nm:'feature',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}},{$nm:'version',$mt:'prm',$def:1,$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:DOMImplementationAbs,$an:function(){return[m$1.doc("returns if the DOM has the given feature at the specified or greater version"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DOMImplementationAbs','$m','hasFeature']};};
         })(DOMImplementationAbs.$$.prototype);
     }
     return DOMImplementationAbs;
 }
-exports.$init$DOMImplementationAbs=$init$DOMImplementationAbs;
+ex$.$init$DOMImplementationAbs=$init$DOMImplementationAbs;
 $init$DOMImplementationAbs();
-function DOMImplementation(n$582, $$dOMImplementation){
+function DOMImplementation($g6,dOMImplementation$){
     $init$DOMImplementation();
-    if ($$dOMImplementation===undefined)$$dOMImplementation=new DOMImplementation.$$;
-    $$dOMImplementation.n$582_=n$582;
-    DOMImplementationAbs($$dOMImplementation);
-    $$dOMImplementation.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:DOMImplementation,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','DOMImplementation','$at','native']};}};
+    if(dOMImplementation$===undefined)dOMImplementation$=new DOMImplementation.$$;
+    dOMImplementation$.$g6_=$g6;
+    DOMImplementationAbs(dOMImplementation$);
+    dOMImplementation$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:DOMImplementation,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','DOMImplementation','$at','native']};}};
     /*Begin dynamic block*/
-    $$dOMImplementation.$native=$$dOMImplementation.n$582;/*End dynamic block*/
-    return $$dOMImplementation;
+    dOMImplementation$.$_native=dOMImplementation$.$g6;/*End dynamic block*/
+    return dOMImplementation$;
 }
-DOMImplementation.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:DOMImplementationAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("a DOMImplementation",19)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DOMImplementation']};};
-exports.DOMImplementation=DOMImplementation;
+DOMImplementation.$crtmm$=function(){return{mod:$CCMM$,'super':{t:DOMImplementationAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("a DOMImplementation"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DOMImplementation']};};
+ex$.DOMImplementation=DOMImplementation;
 function $init$DOMImplementation(){
-    if (DOMImplementation.$$===undefined){
-        $$$cl1.initTypeProto(DOMImplementation,'com.openswimsoftware.ceylon.js.dom::DOMImplementation',$init$DOMImplementationAbs());
-        (function($$dOMImplementation){
-            $$$cl1.defineAttr($$dOMImplementation,'n$582',function(){return this.n$582_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:DOMImplementation,d:['com.openswimsoftware.ceylon.js.dom','DOMImplementation','$at','n']};});
+    if(DOMImplementation.$$===undefined){
+        m$1.initTypeProto(DOMImplementation,'com.openswimsoftware.ceylon.js.dom::DOMImplementation',$init$DOMImplementationAbs());
+        (function(dOMImplementation$){
+            m$1.atr$(dOMImplementation$,'$g6',function(){return this.$g6_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:DOMImplementation,d:['com.openswimsoftware.ceylon.js.dom','DOMImplementation','$at','n$5tcvl8']};});
         })(DOMImplementation.$$.prototype);
     }
     return DOMImplementation;
 }
-exports.$init$DOMImplementation=$init$DOMImplementation;
+ex$.$init$DOMImplementation=$init$DOMImplementation;
 $init$DOMImplementation();
-function ElementAbs($$elementAbs){
+function ElementAbs(elementAbs$){
     $init$ElementAbs();
-    if ($$elementAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    NodeAbs($$elementAbs);
-    return $$elementAbs;
+    if(elementAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    NodeAbs(elementAbs$);
+    return elementAbs$;
 }
-ElementAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs']};};
-exports.ElementAbs=ElementAbs;
+ElementAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs']};};
+ex$.ElementAbs=ElementAbs;
 function $init$ElementAbs(){
-    if (ElementAbs.$$===undefined){
-        $$$cl1.initTypeProto(ElementAbs,'com.openswimsoftware.ceylon.js.dom::ElementAbs',$init$NodeAbs());
-        (function($$elementAbs){
-            $$elementAbs.getAttribute=function getAttribute(attributeName$583){
-                var $$elementAbs=this;
-                var attr$584;
-                
-                var case$585=attributeName$583;
-                if ($$$cl1.isOfType(attributeName$583,{t:$$$cl1.String})) {
+    if(ElementAbs.$$===undefined){
+        m$1.initTypeProto(ElementAbs,'com.openswimsoftware.ceylon.js.dom::ElementAbs',$init$NodeAbs());
+        (function(elementAbs$){
+            elementAbs$.getAttribute=function getAttribute($g7){
+                var elementAbs$=this;
+                var $g8;
+                var $g9=$g7;
+                if(m$1.is$($g7,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    attr$584=$$elementAbs.$native.getAttribute(case$585.valueOf());/*End dynamic block*/
-                }else if ($$$cl1.isOfType(attributeName$583,{t:$$$cocjl339.JSString})) {
+                    $g8=elementAbs$.$_native.getAttribute($g9.valueOf());/*End dynamic block*/
+                }else if(m$1.is$($g7,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    attr$584=$$elementAbs.$native.getAttribute(case$585.$native);/*End dynamic block*/
+                    $g8=elementAbs$.$_native.getAttribute($g9.$_native);/*End dynamic block*/
                 }
                 /*Begin dynamic block*/
-                if(((tmpvar$586=attr$584,tmpvar$587=null,(tmpvar$586.equals&&!tmpvar$586.equals(tmpvar$587))||tmpvar$586!==tmpvar$587)||(tmpvar$588=attr$584,tmpvar$589=$$$cl1.String("",0),(tmpvar$588.equals&&!tmpvar$588.equals(tmpvar$589))||tmpvar$588!==tmpvar$589))){
-                    return $$$cocjl339.JSString(attr$584);
+                if((($ga=$g8,$gb=null,($ga.equals&&!$ga.equals($gb))||$ga!==$gb)||($gc=$g8,$gd="",($gc.equals&&!$gc.equals($gd))||$gc!==$gd))){
+                    return m$9f.JSString($g8);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$elementAbs.getAttribute.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:$$$cocjl339.JSString}]},$ps:[{$nm:'attributeName',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:ElementAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("get the value of the attribute on this element",46)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','getAttribute']};};
-            $$elementAbs.getAttributeNS=function getAttributeNS(namespace$590,attributeName$591){
-                var $$elementAbs=this;
-                var attr$592;
-                
-                var case$593=namespace$590;
-                if ($$$cl1.isOfType(namespace$590,{t:$$$cl1.String})) {
-                    
-                    var case$594=attributeName$591;
-                    if ($$$cl1.isOfType(attributeName$591,{t:$$$cl1.String})) {
+            };elementAbs$.getAttribute.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:m$9f.JSString}]},$ps:[{$nm:'attributeName',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:ElementAbs,$an:function(){return[m$1.doc("get the value of the attribute on this element"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','getAttribute']};};
+            elementAbs$.getAttributeNS=function getAttributeNS($ge,$gf){
+                var elementAbs$=this;
+                var $gg;
+                var $gh=$ge;
+                if(m$1.is$($ge,{t:m$1.String})) {
+                    var $gi=$gf;
+                    if(m$1.is$($gf,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        attr$592=$$elementAbs.$native.getAttributeNS(case$593.valueOf(),case$594.valueOf());/*End dynamic block*/
-                    }else if ($$$cl1.isOfType(attributeName$591,{t:$$$cocjl339.JSString})) {
+                        $gg=elementAbs$.$_native.getAttributeNS($gh.valueOf(),$gi.valueOf());/*End dynamic block*/
+                    }else if(m$1.is$($gf,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        attr$592=$$elementAbs.$native.getAttributeNS(case$593.valueOf(),case$594.$native);/*End dynamic block*/
+                        $gg=elementAbs$.$_native.getAttributeNS($gh.valueOf(),$gi.$_native);/*End dynamic block*/
                     }
-                }else if ($$$cl1.isOfType(namespace$590,{t:$$$cocjl339.JSString})) {
-                    
-                    var case$595=attributeName$591;
-                    if ($$$cl1.isOfType(attributeName$591,{t:$$$cl1.String})) {
+                }else if(m$1.is$($ge,{t:m$9f.JSString})) {
+                    var $gj=$gf;
+                    if(m$1.is$($gf,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        attr$592=$$elementAbs.$native.getAttributeNS(case$593.$native,case$595.valueOf());/*End dynamic block*/
-                    }else if ($$$cl1.isOfType(attributeName$591,{t:$$$cocjl339.JSString})) {
+                        $gg=elementAbs$.$_native.getAttributeNS($gh.$_native,$gj.valueOf());/*End dynamic block*/
+                    }else if(m$1.is$($gf,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        attr$592=$$elementAbs.$native.getAttributeNS(case$593.$native,case$595.$native);/*End dynamic block*/
+                        $gg=elementAbs$.$_native.getAttributeNS($gh.$_native,$gj.$_native);/*End dynamic block*/
                     }
                 }
                 /*Begin dynamic block*/
-                if(((tmpvar$596=attr$592,tmpvar$597=null,(tmpvar$596.equals&&!tmpvar$596.equals(tmpvar$597))||tmpvar$596!==tmpvar$597)||(tmpvar$598=attr$592,tmpvar$599=$$$cl1.String("",0),(tmpvar$598.equals&&!tmpvar$598.equals(tmpvar$599))||tmpvar$598!==tmpvar$599))){
-                    return $$$cocjl339.JSString(attr$592);
+                if((($gk=$gg,$gl=null,($gk.equals&&!$gk.equals($gl))||$gk!==$gl)||($gm=$gg,$gn="",($gm.equals&&!$gm.equals($gn))||$gm!==$gn))){
+                    return m$9f.JSString($gg);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$elementAbs.getAttributeNS.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:$$$cocjl339.JSString}]},$ps:[{$nm:'namespace',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}},{$nm:'attributeName',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:ElementAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("get the value of the attribute on this element within the given namespace",73)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','getAttributeNS']};};
-            $$elementAbs.getElementsByTagName$defs$tagName=function(tagName$600){var $$elementAbs=this;
-            return $$$cl1.String("*",1);};
-            $$elementAbs.getElementsByTagName=function getElementsByTagName(tagName$600){
-                var $$elementAbs=this;
-                if(tagName$600===undefined){tagName$600=$$elementAbs.getElementsByTagName$defs$tagName(tagName$600);}
-                
-                var case$601=tagName$600;
-                if ($$$cl1.isOfType(tagName$600,{t:$$$cl1.String})) {
+            };elementAbs$.getAttributeNS.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:m$9f.JSString}]},$ps:[{$nm:'namespace',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}},{$nm:'attributeName',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:ElementAbs,$an:function(){return[m$1.doc("get the value of the attribute on this element within the given namespace"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','getAttributeNS']};};
+            elementAbs$.getElementsByTagName$defs$tagName=function($go){return "*";};
+            elementAbs$.getElementsByTagName=function getElementsByTagName($go){
+                var elementAbs$=this;
+                if($go===undefined){$go=elementAbs$.getElementsByTagName$defs$tagName($go);}
+                var $gp=$go;
+                if(m$1.is$($go,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    return HTMLCollection($$elementAbs.$native.getElementsByTagName(case$601.valueOf()));
+                    return HTMLCollection(elementAbs$.$_native.getElementsByTagName($gp.valueOf()));
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(tagName$600,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($go,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    return HTMLCollection($$elementAbs.$native.getElementsByTagName(case$601.$native));
+                    return HTMLCollection(elementAbs$.$_native.getElementsByTagName($gp.$_native));
                     /*End dynamic block*/
                 }
-            };$$elementAbs.getElementsByTagName.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:HTMLCollection},$ps:[{$nm:'tagName',$mt:'prm',$def:1,$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:ElementAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("get elements on this element by the tagname",43)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','getElementsByTagName']};};
-            $$elementAbs.getElementsByTagNameNS$defs$tagName=function(namespace$602,tagName$603){var $$elementAbs=this;
-            return $$$cl1.String("*",1);};
-            $$elementAbs.getElementsByTagNameNS=function getElementsByTagNameNS(namespace$602,tagName$603){
-                var $$elementAbs=this;
-                if(tagName$603===undefined){tagName$603=$$elementAbs.getElementsByTagNameNS$defs$tagName(namespace$602,tagName$603);}
-                
-                var case$604=namespace$602;
-                if ($$$cl1.isOfType(namespace$602,{t:$$$cl1.String})) {
-                    
-                    var case$605=tagName$603;
-                    if ($$$cl1.isOfType(tagName$603,{t:$$$cl1.String})) {
+            };elementAbs$.getElementsByTagName.$crtmm$=function(){return{mod:$CCMM$,$t:{t:HTMLCollection},$ps:[{$nm:'tagName',$mt:'prm',$def:1,$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:ElementAbs,$an:function(){return[m$1.doc("get elements on this element by the tagname"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','getElementsByTagName']};};
+            elementAbs$.getElementsByTagNameNS$defs$tagName=function($gq,$gr){return "*";};
+            elementAbs$.getElementsByTagNameNS=function getElementsByTagNameNS($gq,$gr){
+                var elementAbs$=this;
+                if($gr===undefined){$gr=elementAbs$.getElementsByTagNameNS$defs$tagName($gq,$gr);}
+                var $gs=$gq;
+                if(m$1.is$($gq,{t:m$1.String})) {
+                    var $gt=$gr;
+                    if(m$1.is$($gr,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        return HTMLCollection($$elementAbs.$native.getElementsByTagNameNS(case$604.valueOf(),case$605.valueOf()));
+                        return HTMLCollection(elementAbs$.$_native.getElementsByTagNameNS($gs.valueOf(),$gt.valueOf()));
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(tagName$603,{t:$$$cocjl339.JSString})) {
+                    }else if(m$1.is$($gr,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        return HTMLCollection($$elementAbs.$native.getElementsByTagNameNS(case$604.valueOf(),case$605.$native));
+                        return HTMLCollection(elementAbs$.$_native.getElementsByTagNameNS($gs.valueOf(),$gt.$_native));
                         /*End dynamic block*/
                     }
-                }else if ($$$cl1.isOfType(namespace$602,{t:$$$cocjl339.JSString})) {
-                    
-                    var case$606=tagName$603;
-                    if ($$$cl1.isOfType(tagName$603,{t:$$$cl1.String})) {
+                }else if(m$1.is$($gq,{t:m$9f.JSString})) {
+                    var $gu=$gr;
+                    if(m$1.is$($gr,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        return HTMLCollection($$elementAbs.$native.getElementsByTagNameNS(case$604.$native,case$606.valueOf()));
+                        return HTMLCollection(elementAbs$.$_native.getElementsByTagNameNS($gs.$_native,$gu.valueOf()));
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(tagName$603,{t:$$$cocjl339.JSString})) {
+                    }else if(m$1.is$($gr,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        return HTMLCollection($$elementAbs.$native.getElementsByTagNameNS(case$604.$native,case$606.$native));
+                        return HTMLCollection(elementAbs$.$_native.getElementsByTagNameNS($gs.$_native,$gu.$_native));
                         /*End dynamic block*/
                     }
                 }
-            };$$elementAbs.getElementsByTagNameNS.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:HTMLCollection},$ps:[{$nm:'namespace',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}},{$nm:'tagName',$mt:'prm',$def:1,$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:ElementAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("get elements on this element by the tagname within the given namespace",70)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','getElementsByTagNameNS']};};
-            $$elementAbs.hasAttribute=function hasAttribute(attName$607){
-                var $$elementAbs=this;
-                var has$608;
-                
-                var case$609=attName$607;
-                if ($$$cl1.isOfType(attName$607,{t:$$$cl1.String})) {
+            };elementAbs$.getElementsByTagNameNS.$crtmm$=function(){return{mod:$CCMM$,$t:{t:HTMLCollection},$ps:[{$nm:'namespace',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}},{$nm:'tagName',$mt:'prm',$def:1,$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:ElementAbs,$an:function(){return[m$1.doc("get elements on this element by the tagname within the given namespace"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','getElementsByTagNameNS']};};
+            elementAbs$.hasAttribute=function hasAttribute($gv){
+                var elementAbs$=this;
+                var $gw;
+                var $gx=$gv;
+                if(m$1.is$($gv,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    has$608=$$elementAbs.$native.hasAttribute(case$609.valueOf());/*End dynamic block*/
-                }else if ($$$cl1.isOfType(attName$607,{t:$$$cocjl339.JSString})) {
+                    $gw=elementAbs$.$_native.hasAttribute($gx.valueOf());/*End dynamic block*/
+                }else if(m$1.is$($gv,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    has$608=$$elementAbs.$native.hasAttribute(case$609.$native);/*End dynamic block*/
+                    $gw=elementAbs$.$_native.hasAttribute($gx.$_native);/*End dynamic block*/
                 }
                 /*Begin dynamic block*/
-                if(has$608){
+                if($gw){
                     return true;
                 }else {
                     return false;
                 }/*End dynamic block*/
-            };$$elementAbs.hasAttribute.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Boolean},$ps:[{$nm:'attName',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:ElementAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns if attribute exists the element",39)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','hasAttribute']};};
-            $$elementAbs.hasAttributeNS=function hasAttributeNS(namespace$610,attName$611){
-                var $$elementAbs=this;
-                var has$612;
-                
-                var case$613=namespace$610;
-                if ($$$cl1.isOfType(namespace$610,{t:$$$cl1.String})) {
-                    
-                    var case$614=attName$611;
-                    if ($$$cl1.isOfType(attName$611,{t:$$$cl1.String})) {
+            };elementAbs$.hasAttribute.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.$_Boolean},$ps:[{$nm:'attName',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:ElementAbs,$an:function(){return[m$1.doc("returns if attribute exists the element"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','hasAttribute']};};
+            elementAbs$.hasAttributeNS=function hasAttributeNS($gy,$gz){
+                var elementAbs$=this;
+                var $h0;
+                var $h1=$gy;
+                if(m$1.is$($gy,{t:m$1.String})) {
+                    var $h2=$gz;
+                    if(m$1.is$($gz,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        has$612=$$elementAbs.$native.hasAttributeNS(case$613.valueOf(),case$614.valueOf());/*End dynamic block*/
-                    }else if ($$$cl1.isOfType(attName$611,{t:$$$cocjl339.JSString})) {
+                        $h0=elementAbs$.$_native.hasAttributeNS($h1.valueOf(),$h2.valueOf());/*End dynamic block*/
+                    }else if(m$1.is$($gz,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        has$612=$$elementAbs.$native.hasAttributeNS(case$613.valueOf(),case$614.$native);/*End dynamic block*/
+                        $h0=elementAbs$.$_native.hasAttributeNS($h1.valueOf(),$h2.$_native);/*End dynamic block*/
                     }
-                }else if ($$$cl1.isOfType(namespace$610,{t:$$$cocjl339.JSString})) {
-                    
-                    var case$615=attName$611;
-                    if ($$$cl1.isOfType(attName$611,{t:$$$cl1.String})) {
+                }else if(m$1.is$($gy,{t:m$9f.JSString})) {
+                    var $h3=$gz;
+                    if(m$1.is$($gz,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        has$612=$$elementAbs.$native.hasAttributeNS(case$613.$native,case$615.valueOf());/*End dynamic block*/
-                    }else if ($$$cl1.isOfType(attName$611,{t:$$$cocjl339.JSString})) {
+                        $h0=elementAbs$.$_native.hasAttributeNS($h1.$_native,$h3.valueOf());/*End dynamic block*/
+                    }else if(m$1.is$($gz,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        has$612=$$elementAbs.$native.hasAttributeNS(case$613.$native,case$615.$native);/*End dynamic block*/
+                        $h0=elementAbs$.$_native.hasAttributeNS($h1.$_native,$h3.$_native);/*End dynamic block*/
                     }
                 }
                 /*Begin dynamic block*/
-                if(has$612){
+                if($h0){
                     return true;
                 }else {
                     return false;
                 }/*End dynamic block*/
-            };$$elementAbs.hasAttributeNS.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Boolean},$ps:[{$nm:'namespace',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}},{$nm:'attName',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:ElementAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns if attribute exists the element within the given namespace",66)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','hasAttributeNS']};};
-            $$elementAbs.removeAttribute=function removeAttribute(attrName$616){
-                var $$elementAbs=this;
-                
-                var case$617=attrName$616;
-                if ($$$cl1.isOfType(attrName$616,{t:$$$cl1.String})) {
+            };elementAbs$.hasAttributeNS.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.$_Boolean},$ps:[{$nm:'namespace',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}},{$nm:'attName',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:ElementAbs,$an:function(){return[m$1.doc("returns if attribute exists the element within the given namespace"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','hasAttributeNS']};};
+            elementAbs$.removeAttribute=function removeAttribute($h4){
+                var elementAbs$=this;
+                var $h5=$h4;
+                if(m$1.is$($h4,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    $$elementAbs.$native.removeAttribute(case$617.valueOf());
+                    elementAbs$.$_native.removeAttribute($h5.valueOf());
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(attrName$616,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($h4,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    $$elementAbs.$native.removeAttribute(case$617.$native);
+                    elementAbs$.$_native.removeAttribute($h5.$_native);
                     /*End dynamic block*/
                 }
-            };$$elementAbs.removeAttribute.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'attrName',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:ElementAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("remove an attribute on the element",34)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','removeAttribute']};};
-            $$elementAbs.removeAttributeNS=function removeAttributeNS(namespace$618,attrName$619){
-                var $$elementAbs=this;
-                
-                var case$620=namespace$618;
-                if ($$$cl1.isOfType(namespace$618,{t:$$$cl1.String})) {
-                    
-                    var case$621=attrName$619;
-                    if ($$$cl1.isOfType(attrName$619,{t:$$$cl1.String})) {
+            };elementAbs$.removeAttribute.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'attrName',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:ElementAbs,$an:function(){return[m$1.doc("remove an attribute on the element"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','removeAttribute']};};
+            elementAbs$.removeAttributeNS=function removeAttributeNS($h6,$h7){
+                var elementAbs$=this;
+                var $h8=$h6;
+                if(m$1.is$($h6,{t:m$1.String})) {
+                    var $h9=$h7;
+                    if(m$1.is$($h7,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        $$elementAbs.$native.removeAttribute(case$620.valueOf(),case$621.valueOf());
+                        elementAbs$.$_native.removeAttribute($h8.valueOf(),$h9.valueOf());
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(attrName$619,{t:$$$cocjl339.JSString})) {
+                    }else if(m$1.is$($h7,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        $$elementAbs.$native.removeAttribute(case$620.valueOf(),case$621.$native);
+                        elementAbs$.$_native.removeAttribute($h8.valueOf(),$h9.$_native);
                         /*End dynamic block*/
                     }
-                }else if ($$$cl1.isOfType(namespace$618,{t:$$$cocjl339.JSString})) {
-                    
-                    var case$622=attrName$619;
-                    if ($$$cl1.isOfType(attrName$619,{t:$$$cl1.String})) {
+                }else if(m$1.is$($h6,{t:m$9f.JSString})) {
+                    var $ha=$h7;
+                    if(m$1.is$($h7,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        $$elementAbs.$native.removeAttribute(case$620.$native,case$622.valueOf());
+                        elementAbs$.$_native.removeAttribute($h8.$_native,$ha.valueOf());
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(attrName$619,{t:$$$cocjl339.JSString})) {
+                    }else if(m$1.is$($h7,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        $$elementAbs.$native.removeAttribute(case$620.$native,case$622.$native);
+                        elementAbs$.$_native.removeAttribute($h8.$_native,$ha.$_native);
                         /*End dynamic block*/
                     }
                 }
-            };$$elementAbs.removeAttributeNS.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'namespace',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}},{$nm:'attrName',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:ElementAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("remove an attribute on the element within the given namespace",61)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','removeAttributeNS']};};
-            $$elementAbs.setAttribute=function setAttribute(name$623,val$624){
-                var $$elementAbs=this;
-                
-                var case$625=name$623;
-                if ($$$cl1.isOfType(name$623,{t:$$$cl1.String})) {
-                    
-                    var case$626=val$624;
-                    if ($$$cl1.isOfType(val$624,{t:$$$cl1.String})) {
+            };elementAbs$.removeAttributeNS.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'namespace',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}},{$nm:'attrName',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:ElementAbs,$an:function(){return[m$1.doc("remove an attribute on the element within the given namespace"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','removeAttributeNS']};};
+            elementAbs$.setAttribute=function setAttribute($hb,$hc){
+                var elementAbs$=this;
+                var $hd=$hb;
+                if(m$1.is$($hb,{t:m$1.String})) {
+                    var $he=$hc;
+                    if(m$1.is$($hc,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        $$elementAbs.$native.setAttribute(case$625.valueOf(),case$626.valueOf());
+                        elementAbs$.$_native.setAttribute($hd.valueOf(),$he.valueOf());
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(val$624,{t:$$$cocjl339.JSString})) {
+                    }else if(m$1.is$($hc,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        $$elementAbs.$native.setAttribute(case$625.valueOf(),case$626.$native);
+                        elementAbs$.$_native.setAttribute($hd.valueOf(),$he.$_native);
                         /*End dynamic block*/
                     }
-                }else if ($$$cl1.isOfType(name$623,{t:$$$cocjl339.JSString})) {
-                    
-                    var case$627=val$624;
-                    if ($$$cl1.isOfType(val$624,{t:$$$cl1.String})) {
+                }else if(m$1.is$($hb,{t:m$9f.JSString})) {
+                    var $hf=$hc;
+                    if(m$1.is$($hc,{t:m$1.String})) {
                         /*Begin dynamic block*/
-                        $$elementAbs.$native.setAttribute(case$625.$native,case$627.valueOf());
+                        elementAbs$.$_native.setAttribute($hd.$_native,$hf.valueOf());
                         /*End dynamic block*/
-                    }else if ($$$cl1.isOfType(val$624,{t:$$$cocjl339.JSString})) {
+                    }else if(m$1.is$($hc,{t:m$9f.JSString})) {
                         /*Begin dynamic block*/
-                        $$elementAbs.$native.setAttribute(case$625.$native,case$627.$native);
+                        elementAbs$.$_native.setAttribute($hd.$_native,$hf.$_native);
                         /*End dynamic block*/
                     }
                 }
-            };$$elementAbs.setAttribute.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'name',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}},{$nm:'val',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:ElementAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("set an attribute on the element",31)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','setAttribute']};};
-            $$elementAbs.setAttributeNS=function setAttributeNS(namespace$628,name$629,val$630){
-                var $$elementAbs=this;
-                
-                var case$631=namespace$628;
-                if ($$$cl1.isOfType(namespace$628,{t:$$$cl1.String})) {
-                    
-                    var case$632=name$629;
-                    if ($$$cl1.isOfType(name$629,{t:$$$cl1.String})) {
-                        
-                        var case$633=val$630;
-                        if ($$$cl1.isOfType(val$630,{t:$$$cl1.String})) {
+            };elementAbs$.setAttribute.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'name',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}},{$nm:'val',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:ElementAbs,$an:function(){return[m$1.doc("set an attribute on the element"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','setAttribute']};};
+            elementAbs$.setAttributeNS=function setAttributeNS($hg,$hh,$hi){
+                var elementAbs$=this;
+                var $hj=$hg;
+                if(m$1.is$($hg,{t:m$1.String})) {
+                    var $hk=$hh;
+                    if(m$1.is$($hh,{t:m$1.String})) {
+                        var $hl=$hi;
+                        if(m$1.is$($hi,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            $$elementAbs.$native.setAttributeNS(case$631.valueOf(),case$632.valueOf(),case$633.valueOf());
+                            elementAbs$.$_native.setAttributeNS($hj.valueOf(),$hk.valueOf(),$hl.valueOf());
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(val$630,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($hi,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            $$elementAbs.$native.setAttributeNS(case$631.valueOf(),case$632.valueOf(),case$633.$native);
+                            elementAbs$.$_native.setAttributeNS($hj.valueOf(),$hk.valueOf(),$hl.$_native);
                             /*End dynamic block*/
                         }
-                    }else if ($$$cl1.isOfType(name$629,{t:$$$cocjl339.JSString})) {
-                        
-                        var case$634=val$630;
-                        if ($$$cl1.isOfType(val$630,{t:$$$cl1.String})) {
+                    }else if(m$1.is$($hh,{t:m$9f.JSString})) {
+                        var $hm=$hi;
+                        if(m$1.is$($hi,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            $$elementAbs.$native.setAttributeNS(case$631.valueOf(),case$632.$native,case$634.valueOf());
+                            elementAbs$.$_native.setAttributeNS($hj.valueOf(),$hk.$_native,$hm.valueOf());
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(val$630,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($hi,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            $$elementAbs.$native.setAttributeNS(case$631.valueOf(),case$632.$native,case$634.$native);
+                            elementAbs$.$_native.setAttributeNS($hj.valueOf(),$hk.$_native,$hm.$_native);
                             /*End dynamic block*/
                         }
                     }
-                }else if ($$$cl1.isOfType(namespace$628,{t:$$$cocjl339.JSString})) {
-                    
-                    var case$635=name$629;
-                    if ($$$cl1.isOfType(name$629,{t:$$$cl1.String})) {
-                        
-                        var case$636=val$630;
-                        if ($$$cl1.isOfType(val$630,{t:$$$cl1.String})) {
+                }else if(m$1.is$($hg,{t:m$9f.JSString})) {
+                    var $hn=$hh;
+                    if(m$1.is$($hh,{t:m$1.String})) {
+                        var $ho=$hi;
+                        if(m$1.is$($hi,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            $$elementAbs.$native.setAttributeNS(case$631.$native,case$635.valueOf(),case$636.valueOf());
+                            elementAbs$.$_native.setAttributeNS($hj.$_native,$hn.valueOf(),$ho.valueOf());
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(val$630,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($hi,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            $$elementAbs.$native.setAttributeNS(case$631.$native,case$635.valueOf(),case$636.$native);
+                            elementAbs$.$_native.setAttributeNS($hj.$_native,$hn.valueOf(),$ho.$_native);
                             /*End dynamic block*/
                         }
-                    }else if ($$$cl1.isOfType(name$629,{t:$$$cocjl339.JSString})) {
-                        
-                        var case$637=val$630;
-                        if ($$$cl1.isOfType(val$630,{t:$$$cl1.String})) {
+                    }else if(m$1.is$($hh,{t:m$9f.JSString})) {
+                        var $hp=$hi;
+                        if(m$1.is$($hi,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            $$elementAbs.$native.setAttributeNS(case$631.$native,case$635.$native,case$637.valueOf());
+                            elementAbs$.$_native.setAttributeNS($hj.$_native,$hn.$_native,$hp.valueOf());
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(val$630,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($hi,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            $$elementAbs.$native.setAttributeNS(case$631.$native,case$635.$native,case$637.$native);
+                            elementAbs$.$_native.setAttributeNS($hj.$_native,$hn.$_native,$hp.$_native);
                             /*End dynamic block*/
                         }
                     }
                 }
-            };$$elementAbs.setAttributeNS.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'namespace',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}},{$nm:'name',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}},{$nm:'val',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:ElementAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("set an attribute on the element within the given namespace",58)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','setAttributeNS']};};
-            $$elementAbs.tagName=function tagName(){
-                var $$elementAbs=this;
+            };elementAbs$.setAttributeNS.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'namespace',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}},{$nm:'name',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}},{$nm:'val',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:ElementAbs,$an:function(){return[m$1.doc("set an attribute on the element within the given namespace"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','setAttributeNS']};};
+            elementAbs$.tagName=function tagName(){
+                var elementAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$elementAbs.$native.tagName);
+                return m$9f.JSString(elementAbs$.$_native.tagName);
                 /*End dynamic block*/
-            };$$elementAbs.tagName.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:ElementAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the elements tag name",29)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','tagName']};};
+            };elementAbs$.tagName.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:ElementAbs,$an:function(){return[m$1.doc("returns the elements tag name"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ElementAbs','$m','tagName']};};
         })(ElementAbs.$$.prototype);
     }
     return ElementAbs;
 }
-exports.$init$ElementAbs=$init$ElementAbs;
+ex$.$init$ElementAbs=$init$ElementAbs;
 $init$ElementAbs();
-function Element(n$638, $$element){
+function Element($hq,element$){
     $init$Element();
-    if ($$element===undefined)$$element=new Element.$$;
-    $$element.n$638_=n$638;
-    ElementAbs($$element);
-    $$element.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:Element,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','Element','$at','native']};}};
+    if(element$===undefined)element$=new Element.$$;
+    element$.$hq_=$hq;
+    ElementAbs(element$);
+    element$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:Element,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','Element','$at','native']};}};
     /*Begin dynamic block*/
-    $$element.$native=$$element.n$638;/*End dynamic block*/
-    return $$element;
+    element$.$_native=element$.$hq;/*End dynamic block*/
+    return element$;
 }
-Element.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:ElementAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("a DOM Element",13)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','Element']};};
-exports.Element=Element;
+Element.$crtmm$=function(){return{mod:$CCMM$,'super':{t:ElementAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("a DOM Element"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','Element']};};
+ex$.Element=Element;
 function $init$Element(){
-    if (Element.$$===undefined){
-        $$$cl1.initTypeProto(Element,'com.openswimsoftware.ceylon.js.dom::Element',$init$ElementAbs());
-        (function($$element){
-            $$$cl1.defineAttr($$element,'n$638',function(){return this.n$638_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:Element,d:['com.openswimsoftware.ceylon.js.dom','Element','$at','n']};});
+    if(Element.$$===undefined){
+        m$1.initTypeProto(Element,'com.openswimsoftware.ceylon.js.dom::Element',$init$ElementAbs());
+        (function(element$){
+            m$1.atr$(element$,'$hq',function(){return this.$hq_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:Element,d:['com.openswimsoftware.ceylon.js.dom','Element','$at','n$hfpsvg']};});
         })(Element.$$.prototype);
     }
     return Element;
 }
-exports.$init$Element=$init$Element;
+ex$.$init$Element=$init$Element;
 $init$Element();
-var $$$cocjj639=require('com/openswimsoftware/ceylon/js/json/1.0.0/com.openswimsoftware.ceylon.js.json-1.0.0');
-$$$cl1.$addmod$($$$cocjj639,'com.openswimsoftware.ceylon.js.json/1.0.0');
-function EventPhase(num, $$eventPhase){
+var m$hr=require('com/openswimsoftware/ceylon/js/json/1.0.0/com.openswimsoftware.ceylon.js.json-1.0.0');
+m$1.$addmod$(m$hr,'com.openswimsoftware.ceylon.js.json/1.0.0');
+function EventPhase(num,eventPhase$){
     $init$EventPhase();
-    if ($$eventPhase===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$eventPhase.num_=num;
-    return $$eventPhase;
+    if(eventPhase$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    eventPhase$.num_=num;
+    return eventPhase$;
 }
-EventPhase.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cl1.Basic},$ps:[{$nm:'num',$mt:'prm',$t:{t:$$$cl1.Integer},$an:function(){return[$$$cl1.shared()];}}],of:[{t:none$640},{t:capturePhase$641},{t:atTarget$642},{t:bubblingPhase$643}],$an:function(){return[$$$cl1.doc($$$cl1.String("current Event Phase",19)),$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','EventPhase']};};
-exports.EventPhase=EventPhase;
+EventPhase.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$1.Basic},$ps:[{$nm:'num',$mt:'prm',$t:{t:m$1.Integer},$an:function(){return[m$1.shared()];}}],of:[$prop$get$hs,$prop$get$ht,$prop$get$hu,$prop$get$hv],$an:function(){return[m$1.doc("current Event Phase"),m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','EventPhase']};};
+ex$.EventPhase=EventPhase;
 function $init$EventPhase(){
-    if (EventPhase.$$===undefined){
-        $$$cl1.initTypeProto(EventPhase,'com.openswimsoftware.ceylon.js.dom::EventPhase',$$$cl1.Basic);
-        (function($$eventPhase){
-            $$$cl1.defineAttr($$eventPhase,'num',function(){return this.num_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Integer},$cont:EventPhase,$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventPhase','$at','num']};});
+    if(EventPhase.$$===undefined){
+        m$1.initTypeProto(EventPhase,'com.openswimsoftware.ceylon.js.dom::EventPhase',m$1.Basic);
+        (function(eventPhase$){
+            m$1.atr$(eventPhase$,'num',function(){return this.num_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Integer},$cont:EventPhase,$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventPhase','$at','num']};});
         })(EventPhase.$$.prototype);
     }
     return EventPhase;
 }
-exports.$init$EventPhase=$init$EventPhase;
+ex$.$init$EventPhase=$init$EventPhase;
 $init$EventPhase();
-function none$640(){
-    var $$none=new none$640.$$;
-    EventPhase((0),$$none);
-    return $$none;
-};none$640.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:EventPhase},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','none']};};
-function $init$none$640(){
-    if (none$640.$$===undefined){
-        $$$cl1.initTypeProto(none$640,'com.openswimsoftware.ceylon.js.dom::none',$init$EventPhase());
+function $hs(){
+    var none$=new $hs.$$;
+    EventPhase(0,none$);
+    return none$;
+};$hs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:EventPhase},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','none']};};
+function $init$$hs(){
+    if($hs.$$===undefined){
+        m$1.initTypeProto($hs,'com.openswimsoftware.ceylon.js.dom::none',$init$EventPhase());
     }
-    return none$640;
+    return $hs;
 }
-exports.$init$none$640=$init$none$640;
-$init$none$640();
-var none$644;
+ex$.$init$$hs=$init$$hs;
+$init$$hs();
+var $hw;
 function getNone(){
-    if (none$644===undefined){none$644=$init$none$640()();none$644.$$metamodel$$=getNone.$$metamodel$$;}
-    return none$644;
+    if($hw===undefined){$hw=$init$$hs()();$hw.$crtmm$=getNone.$crtmm$;}
+    return $hw;
 }
-exports.getNone=getNone;
-getNone.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:none$640},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','none']};};
-$prop$getNone={get:getNone,$$metamodel$$:getNone.$$metamodel$$};
-exports.$prop$getNone=$prop$getNone;
-function capturePhase$641(){
-    var $$capturePhase=new capturePhase$641.$$;
-    EventPhase((1),$$capturePhase);
-    return $$capturePhase;
-};capturePhase$641.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:EventPhase},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','capturePhase']};};
-function $init$capturePhase$641(){
-    if (capturePhase$641.$$===undefined){
-        $$$cl1.initTypeProto(capturePhase$641,'com.openswimsoftware.ceylon.js.dom::capturePhase',$init$EventPhase());
+ex$.getNone=getNone;
+getNone.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$hs},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','none']};};
+$prop$getNone={get:getNone,$crtmm$:getNone.$crtmm$};
+get$hs=getNone;$prop$get$hs=getNone;
+ex$.$prop$getNone=$prop$getNone;
+function $ht(){
+    var capturePhase$=new $ht.$$;
+    EventPhase(1,capturePhase$);
+    return capturePhase$;
+};$ht.$crtmm$=function(){return{mod:$CCMM$,'super':{t:EventPhase},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','capturePhase']};};
+function $init$$ht(){
+    if($ht.$$===undefined){
+        m$1.initTypeProto($ht,'com.openswimsoftware.ceylon.js.dom::capturePhase',$init$EventPhase());
     }
-    return capturePhase$641;
+    return $ht;
 }
-exports.$init$capturePhase$641=$init$capturePhase$641;
-$init$capturePhase$641();
-var capturePhase$645;
+ex$.$init$$ht=$init$$ht;
+$init$$ht();
+var $hx;
 function getCapturePhase(){
-    if (capturePhase$645===undefined){capturePhase$645=$init$capturePhase$641()();capturePhase$645.$$metamodel$$=getCapturePhase.$$metamodel$$;}
-    return capturePhase$645;
+    if($hx===undefined){$hx=$init$$ht()();$hx.$crtmm$=getCapturePhase.$crtmm$;}
+    return $hx;
 }
-exports.getCapturePhase=getCapturePhase;
-getCapturePhase.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:capturePhase$641},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','capturePhase']};};
-$prop$getCapturePhase={get:getCapturePhase,$$metamodel$$:getCapturePhase.$$metamodel$$};
-exports.$prop$getCapturePhase=$prop$getCapturePhase;
-function atTarget$642(){
-    var $$atTarget=new atTarget$642.$$;
-    EventPhase((2),$$atTarget);
-    return $$atTarget;
-};atTarget$642.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:EventPhase},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','atTarget']};};
-function $init$atTarget$642(){
-    if (atTarget$642.$$===undefined){
-        $$$cl1.initTypeProto(atTarget$642,'com.openswimsoftware.ceylon.js.dom::atTarget',$init$EventPhase());
+ex$.getCapturePhase=getCapturePhase;
+getCapturePhase.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$ht},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','capturePhase']};};
+$prop$getCapturePhase={get:getCapturePhase,$crtmm$:getCapturePhase.$crtmm$};
+get$ht=getCapturePhase;$prop$get$ht=getCapturePhase;
+ex$.$prop$getCapturePhase=$prop$getCapturePhase;
+function $hu(){
+    var atTarget$=new $hu.$$;
+    EventPhase(2,atTarget$);
+    return atTarget$;
+};$hu.$crtmm$=function(){return{mod:$CCMM$,'super':{t:EventPhase},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','atTarget']};};
+function $init$$hu(){
+    if($hu.$$===undefined){
+        m$1.initTypeProto($hu,'com.openswimsoftware.ceylon.js.dom::atTarget',$init$EventPhase());
     }
-    return atTarget$642;
+    return $hu;
 }
-exports.$init$atTarget$642=$init$atTarget$642;
-$init$atTarget$642();
-var atTarget$646;
+ex$.$init$$hu=$init$$hu;
+$init$$hu();
+var $hy;
 function getAtTarget(){
-    if (atTarget$646===undefined){atTarget$646=$init$atTarget$642()();atTarget$646.$$metamodel$$=getAtTarget.$$metamodel$$;}
-    return atTarget$646;
+    if($hy===undefined){$hy=$init$$hu()();$hy.$crtmm$=getAtTarget.$crtmm$;}
+    return $hy;
 }
-exports.getAtTarget=getAtTarget;
-getAtTarget.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:atTarget$642},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','atTarget']};};
-$prop$getAtTarget={get:getAtTarget,$$metamodel$$:getAtTarget.$$metamodel$$};
-exports.$prop$getAtTarget=$prop$getAtTarget;
-function bubblingPhase$643(){
-    var $$bubblingPhase=new bubblingPhase$643.$$;
-    EventPhase((3),$$bubblingPhase);
-    return $$bubblingPhase;
-};bubblingPhase$643.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:EventPhase},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','bubblingPhase']};};
-function $init$bubblingPhase$643(){
-    if (bubblingPhase$643.$$===undefined){
-        $$$cl1.initTypeProto(bubblingPhase$643,'com.openswimsoftware.ceylon.js.dom::bubblingPhase',$init$EventPhase());
+ex$.getAtTarget=getAtTarget;
+getAtTarget.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$hu},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','atTarget']};};
+$prop$getAtTarget={get:getAtTarget,$crtmm$:getAtTarget.$crtmm$};
+get$hu=getAtTarget;$prop$get$hu=getAtTarget;
+ex$.$prop$getAtTarget=$prop$getAtTarget;
+function $hv(){
+    var bubblingPhase$=new $hv.$$;
+    EventPhase(3,bubblingPhase$);
+    return bubblingPhase$;
+};$hv.$crtmm$=function(){return{mod:$CCMM$,'super':{t:EventPhase},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','bubblingPhase']};};
+function $init$$hv(){
+    if($hv.$$===undefined){
+        m$1.initTypeProto($hv,'com.openswimsoftware.ceylon.js.dom::bubblingPhase',$init$EventPhase());
     }
-    return bubblingPhase$643;
+    return $hv;
 }
-exports.$init$bubblingPhase$643=$init$bubblingPhase$643;
-$init$bubblingPhase$643();
-var bubblingPhase$647;
+ex$.$init$$hv=$init$$hv;
+$init$$hv();
+var $hz;
 function getBubblingPhase(){
-    if (bubblingPhase$647===undefined){bubblingPhase$647=$init$bubblingPhase$643()();bubblingPhase$647.$$metamodel$$=getBubblingPhase.$$metamodel$$;}
-    return bubblingPhase$647;
+    if($hz===undefined){$hz=$init$$hv()();$hz.$crtmm$=getBubblingPhase.$crtmm$;}
+    return $hz;
 }
-exports.getBubblingPhase=getBubblingPhase;
-getBubblingPhase.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:bubblingPhase$643},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','bubblingPhase']};};
-$prop$getBubblingPhase={get:getBubblingPhase,$$metamodel$$:getBubblingPhase.$$metamodel$$};
-exports.$prop$getBubblingPhase=$prop$getBubblingPhase;
-function EventInit(bubbles, cancelable, $$eventInit){
+ex$.getBubblingPhase=getBubblingPhase;
+getBubblingPhase.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$hv},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','bubblingPhase']};};
+$prop$getBubblingPhase={get:getBubblingPhase,$crtmm$:getBubblingPhase.$crtmm$};
+get$hv=getBubblingPhase;$prop$get$hv=getBubblingPhase;
+ex$.$prop$getBubblingPhase=$prop$getBubblingPhase;
+function EventInit(bubbles,cancelable,eventInit$){
     $init$EventInit();
-    if ($$eventInit===undefined)$$eventInit=new EventInit.$$;
-    $$eventInit.bubbles_=bubbles;
-    $$eventInit.cancelable_=cancelable;
-    return $$eventInit;
+    if(eventInit$===undefined)eventInit$=new EventInit.$$;
+    eventInit$.bubbles_=bubbles;
+    eventInit$.cancelable_=cancelable;
+    return eventInit$;
 }
-EventInit.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cl1.Basic},$ps:[{$nm:'bubbles',$mt:'prm',$t:{t:$$$cl1.Boolean},$an:function(){return[$$$cl1.shared()];}},{$nm:'cancelable',$mt:'prm',$t:{t:$$$cl1.Boolean},$an:function(){return[$$$cl1.shared()];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("Event creation options",22)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventInit']};};
-exports.EventInit=EventInit;
+EventInit.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$1.Basic},$ps:[{$nm:'bubbles',$mt:'prm',$t:{t:m$1.$_Boolean},$an:function(){return[m$1.shared()];}},{$nm:'cancelable',$mt:'prm',$t:{t:m$1.$_Boolean},$an:function(){return[m$1.shared()];}}],$an:function(){return[m$1.doc("Event creation options"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventInit']};};
+ex$.EventInit=EventInit;
 function $init$EventInit(){
-    if (EventInit.$$===undefined){
-        $$$cl1.initTypeProto(EventInit,'com.openswimsoftware.ceylon.js.dom::EventInit',$$$cl1.Basic);
-        (function($$eventInit){
-            $$eventInit.toJson=function toJson(){
-                var $$eventInit=this;
-                var json$648=(values$649=[$$$cl1.Entry($$$cl1.String("bubbles",7),$$eventInit.bubbles,{Key:{t:$$$cl1.String},Item:{t:$$$cl1.Boolean}}),$$$cl1.Entry($$$cl1.String("cancelable",10),$$eventInit.cancelable,{Key:{t:$$$cl1.String},Item:{t:$$$cl1.Boolean}})].reifyCeylonType({Absent:{t:$$$cl1.Null},Element:{t:$$$cl1.Entry,a:{Key:{t:$$$cl1.String},Item:{t:$$$cl1.Boolean}}}}),$$$cocjj639.JSON(values$649));
-                var values$649;
-                return json$648.toJson();
-            };$$eventInit.toJson.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjj639.JSJSON},$ps:[],$cont:EventInit,$an:function(){return[$$$cl1.doc($$$cl1.String("convert to native JSON",22)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventInit','$m','toJson']};};
-            $$$cl1.defineAttr($$eventInit,'bubbles',function(){return this.bubbles_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Boolean},$cont:EventInit,$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventInit','$at','bubbles']};});
-            $$$cl1.defineAttr($$eventInit,'cancelable',function(){return this.cancelable_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Boolean},$cont:EventInit,$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventInit','$at','cancelable']};});
+    if(EventInit.$$===undefined){
+        m$1.initTypeProto(EventInit,'com.openswimsoftware.ceylon.js.dom::EventInit',m$1.Basic);
+        (function(eventInit$){
+            eventInit$.toJson=function toJson(){
+                var eventInit$=this;
+                var $i0=($i1=[m$1.Entry("bubbles",eventInit$.bubbles,{Item$Entry:{t:m$1.$_Boolean},Key$Entry:{t:m$1.String}}),m$1.Entry("cancelable",eventInit$.cancelable,{Item$Entry:{t:m$1.$_Boolean},Key$Entry:{t:m$1.String}})].reifyCeylonType({t:m$1.Entry,a:{Item$Entry:{t:m$1.$_Boolean},Key$Entry:{t:m$1.String}}}),m$hr.JSON($i1));
+                var $i1;
+                return $i0.toJson();
+            };eventInit$.toJson.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hr.JSJSON},$ps:[],$cont:EventInit,$an:function(){return[m$1.doc("convert to native JSON"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventInit','$m','toJson']};};
+            m$1.atr$(eventInit$,'bubbles',function(){return this.bubbles_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.$_Boolean},$cont:EventInit,$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventInit','$at','bubbles']};});
+            m$1.atr$(eventInit$,'cancelable',function(){return this.cancelable_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.$_Boolean},$cont:EventInit,$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventInit','$at','cancelable']};});
         })(EventInit.$$.prototype);
     }
     return EventInit;
 }
-exports.$init$EventInit=$init$EventInit;
+ex$.$init$EventInit=$init$EventInit;
 $init$EventInit();
-function createEvent(type$650,options$651){
-    
-    var case$652=type$650;
-    if ($$$cl1.isOfType(type$650,{t:$$$cl1.String})) {
+function createEvent($i2,$i3){
+    var $i4=$i2;
+    if(m$1.is$($i2,{t:m$1.String})) {
         /*Begin dynamic block*/
-        return Event((typeof Event==='undefined'||Event===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Event")),'30:16-30:20','event.ceylon'):Event)(case$652.valueOf(),options$651.toJson()));
+        return Event((typeof Event==='undefined'||Event===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Event"),'30:16-30:20','event.ceylon'):Event)($i4.valueOf(),$i3.toJson()));
         /*End dynamic block*/
-    }else if ($$$cl1.isOfType(type$650,{t:$$$cocjl339.JSString})) {
+    }else if(m$1.is$($i2,{t:m$9f.JSString})) {
         /*Begin dynamic block*/
-        return Event((typeof Event==='undefined'||Event===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Event")),'35:16-35:20','event.ceylon'):Event)(case$652.$native,options$651.toJson()));
+        return Event((typeof Event==='undefined'||Event===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Event"),'35:16-35:20','event.ceylon'):Event)($i4.$_native,$i3.toJson()));
         /*End dynamic block*/
     }
 }
-exports.createEvent=createEvent;
-createEvent.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Event},$ps:[{$nm:'type',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}},{$nm:'options',$mt:'prm',$t:{t:EventInit},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("create a new Event",18)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','createEvent']};};
-function EventAbs($$eventAbs){
+ex$.createEvent=createEvent;
+createEvent.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Event},$ps:[{$nm:'type',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}},{$nm:'options',$mt:'prm',$t:{t:EventInit},$an:function(){return[];}}],$an:function(){return[m$1.doc("create a new Event"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','createEvent']};};
+function EventAbs(eventAbs$){
     $init$EventAbs();
-    if ($$eventAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$$cocjl339.JSObjectAbs($$eventAbs);
-    return $$eventAbs;
+    if(eventAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    m$9f.JSObjectAbs(eventAbs$);
+    return eventAbs$;
 }
-EventAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cocjl339.JSObjectAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs']};};
-exports.EventAbs=EventAbs;
+EventAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$9f.JSObjectAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs']};};
+ex$.EventAbs=EventAbs;
 function $init$EventAbs(){
-    if (EventAbs.$$===undefined){
-        $$$cl1.initTypeProto(EventAbs,'com.openswimsoftware.ceylon.js.dom::EventAbs',$$$cocjl339.JSObjectAbs);
-        (function($$eventAbs){
-            $$eventAbs.type=function type(){
-                var $$eventAbs=this;
+    if(EventAbs.$$===undefined){
+        m$1.initTypeProto(EventAbs,'com.openswimsoftware.ceylon.js.dom::EventAbs',m$9f.JSObjectAbs);
+        (function(eventAbs$){
+            eventAbs$.type=function type(){
+                var eventAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$eventAbs.$native.type);
+                return m$9f.JSString(eventAbs$.$_native.type);
                 /*End dynamic block*/
-            };$$eventAbs.type.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:EventAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the Event type",22)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','type']};};
-            $$eventAbs.target=function target(){
-                var $$eventAbs=this;
-                var target$653;
+            };eventAbs$.type.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:EventAbs,$an:function(){return[m$1.doc("returns the Event type"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','type']};};
+            eventAbs$.target=function target(){
+                var eventAbs$=this;
+                var $i5;
                 /*Begin dynamic block*/
-                target$653=$$eventAbs.$native.target;if((tmpvar$654=target$653,tmpvar$655=null,(tmpvar$654.equals&&!tmpvar$654.equals(tmpvar$655))||tmpvar$654!==tmpvar$655)){
-                    return EventTarget(target$653);
+                $i5=eventAbs$.$_native.target;if(($i6=$i5,$i7=null,($i6.equals&&!$i6.equals($i7))||$i6!==$i7)){
+                    return EventTarget($i5);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$eventAbs.target.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:EventTarget}]},$ps:[],$cont:EventAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the event target",24)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','target']};};
-            $$eventAbs.currentTarget=function currentTarget(){
-                var $$eventAbs=this;
-                var target$656;
+            };eventAbs$.target.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:EventTarget}]},$ps:[],$cont:EventAbs,$an:function(){return[m$1.doc("returns the event target"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','target']};};
+            eventAbs$.currentTarget=function currentTarget(){
+                var eventAbs$=this;
+                var $i8;
                 /*Begin dynamic block*/
-                target$656=$$eventAbs.$native.currentTarget;if((tmpvar$657=target$656,tmpvar$658=null,(tmpvar$657.equals&&!tmpvar$657.equals(tmpvar$658))||tmpvar$657!==tmpvar$658)){
-                    return EventTarget(target$656);
+                $i8=eventAbs$.$_native.currentTarget;if(($i9=$i8,$ia=null,($i9.equals&&!$i9.equals($ia))||$i9!==$ia)){
+                    return EventTarget($i8);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$eventAbs.currentTarget.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:EventTarget}]},$ps:[],$cont:EventAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the current event target",32)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','currentTarget']};};
-            $$eventAbs.eventPhase=function eventPhase(){
-                var $$eventAbs=this;
+            };eventAbs$.currentTarget.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:EventTarget}]},$ps:[],$cont:EventAbs,$an:function(){return[m$1.doc("returns the current event target"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','currentTarget']};};
+            eventAbs$.eventPhase=function eventPhase(){
+                var eventAbs$=this;
                 /*Begin dynamic block*/
-                var eventPhase$659=$$eventAbs.$native.eventPhase;
-                $prop$getEventPhase$659={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','eventPhase','$at','eventPhase']};}};
-                $prop$getEventPhase$659.get=function(){return eventPhase$659};
-                if((tmpvar$660=eventPhase$659,tmpvar$661=(typeof Event==='undefined'||Event===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Event")),'80:30-80:34','event.ceylon'):Event).NONE,(tmpvar$660.equals&&tmpvar$660.equals(tmpvar$661))||tmpvar$660===tmpvar$661)){
+                var $ib=eventAbs$.$_native.eventPhase;
+                if(($ic=$ib,$id=(typeof Event==='undefined'||Event===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Event"),'80:30-80:34','event.ceylon'):Event).NONE,($ic.equals&&$ic.equals($id))||$ic===$id)){
                     return getNone();
                 }else {
-                    if((tmpvar$662=eventPhase$659,tmpvar$663=(typeof Event==='undefined'||Event===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Event")),'82:37-82:41','event.ceylon'):Event).CAPTURING_PHASE,(tmpvar$662.equals&&tmpvar$662.equals(tmpvar$663))||tmpvar$662===tmpvar$663)){
+                    if(($ie=$ib,$if=(typeof Event==='undefined'||Event===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Event"),'82:37-82:41','event.ceylon'):Event).CAPTURING_PHASE,($ie.equals&&$ie.equals($if))||$ie===$if)){
                         return getCapturePhase();
                     }else {
-                        if((tmpvar$664=eventPhase$659,tmpvar$665=(typeof Event==='undefined'||Event===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Event")),'84:37-84:41','event.ceylon'):Event).AT_TARGET,(tmpvar$664.equals&&tmpvar$664.equals(tmpvar$665))||tmpvar$664===tmpvar$665)){
+                        if(($ig=$ib,$ih=(typeof Event==='undefined'||Event===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Event"),'84:37-84:41','event.ceylon'):Event).AT_TARGET,($ig.equals&&$ig.equals($ih))||$ig===$ih)){
                             return getAtTarget();
                         }else {
                             return getBubblingPhase();
                         }
                     }
                 }/*End dynamic block*/
-            };$$eventAbs.eventPhase.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:EventPhase},$ps:[],$cont:EventAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns current event phase",27)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','eventPhase']};};
-            $$eventAbs.stopPropagation=function stopPropagation(){
-                var $$eventAbs=this;
+            };eventAbs$.eventPhase.$crtmm$=function(){return{mod:$CCMM$,$t:{t:EventPhase},$ps:[],$cont:EventAbs,$an:function(){return[m$1.doc("returns current event phase"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','eventPhase']};};
+            eventAbs$.stopPropagation=function stopPropagation(){
+                var eventAbs$=this;
                 /*Begin dynamic block*/
-                $$eventAbs.$native.stopPropagation();
+                eventAbs$.$_native.stopPropagation();
                 /*End dynamic block*/
-            };$$eventAbs.stopPropagation.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[],$cont:EventAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("stops event propagation through further DOM elements",52)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','stopPropagation']};};
-            $$eventAbs.stopImmediatePropagation=function stopImmediatePropagation(){
-                var $$eventAbs=this;
+            };eventAbs$.stopPropagation.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[],$cont:EventAbs,$an:function(){return[m$1.doc("stops event propagation through further DOM elements"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','stopPropagation']};};
+            eventAbs$.stopImmediatePropagation=function stopImmediatePropagation(){
+                var eventAbs$=this;
                 /*Begin dynamic block*/
-                $$eventAbs.$native.stopImmediatePropagation();
+                eventAbs$.$_native.stopImmediatePropagation();
                 /*End dynamic block*/
-            };$$eventAbs.stopImmediatePropagation.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[],$cont:EventAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the event propagation immidately",40)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','stopImmediatePropagation']};};
-            $$eventAbs.bubbles=function bubbles(){
-                var $$eventAbs=this;
+            };eventAbs$.stopImmediatePropagation.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[],$cont:EventAbs,$an:function(){return[m$1.doc("returns the event propagation immidately"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','stopImmediatePropagation']};};
+            eventAbs$.bubbles=function bubbles(){
+                var eventAbs$=this;
                 /*Begin dynamic block*/
-                if($$eventAbs.$native.bubbles){
+                if(eventAbs$.$_native.bubbles){
                     return true;
                 }else {
                     return false;
                 }/*End dynamic block*/
-            };$$eventAbs.bubbles.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Boolean},$ps:[],$cont:EventAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("does the event bubble through the dom or not",44)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','bubbles']};};
-            $$eventAbs.cancelable=function cancelable(){
-                var $$eventAbs=this;
+            };eventAbs$.bubbles.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.$_Boolean},$ps:[],$cont:EventAbs,$an:function(){return[m$1.doc("does the event bubble through the dom or not"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','bubbles']};};
+            eventAbs$.cancelable=function cancelable(){
+                var eventAbs$=this;
                 /*Begin dynamic block*/
-                if($$eventAbs.$native.cancelable){
+                if(eventAbs$.$_native.cancelable){
                     return true;
                 }else {
                     return false;
                 }/*End dynamic block*/
-            };$$eventAbs.cancelable.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Boolean},$ps:[],$cont:EventAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("is the event cancelable or not",30)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','cancelable']};};
-            $$eventAbs.preventDefault=function preventDefault(){
-                var $$eventAbs=this;
+            };eventAbs$.cancelable.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.$_Boolean},$ps:[],$cont:EventAbs,$an:function(){return[m$1.doc("is the event cancelable or not"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','cancelable']};};
+            eventAbs$.preventDefault=function preventDefault(){
+                var eventAbs$=this;
                 /*Begin dynamic block*/
-                $$eventAbs.$native.preventDefault();
+                eventAbs$.$_native.preventDefault();
                 /*End dynamic block*/
-            };$$eventAbs.preventDefault.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[],$cont:EventAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("cancels the event if it is cancelable",37)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','preventDefault']};};
-            $$eventAbs.defaultPrevented=function defaultPrevented(){
-                var $$eventAbs=this;
+            };eventAbs$.preventDefault.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[],$cont:EventAbs,$an:function(){return[m$1.doc("cancels the event if it is cancelable"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','preventDefault']};};
+            eventAbs$.defaultPrevented=function defaultPrevented(){
+                var eventAbs$=this;
                 /*Begin dynamic block*/
-                if($$eventAbs.$native.defaultPrevented){
+                if(eventAbs$.$_native.defaultPrevented){
                     return true;
                 }else {
                     return false;
                 }/*End dynamic block*/
-            };$$eventAbs.defaultPrevented.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Boolean},$ps:[],$cont:EventAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("has the default been prevented",30)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','defaultPrevented']};};
-            $$eventAbs.isTrusted=function isTrusted(){
-                var $$eventAbs=this;
+            };eventAbs$.defaultPrevented.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.$_Boolean},$ps:[],$cont:EventAbs,$an:function(){return[m$1.doc("has the default been prevented"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','defaultPrevented']};};
+            eventAbs$.isTrusted=function isTrusted(){
+                var eventAbs$=this;
                 /*Begin dynamic block*/
-                if($$eventAbs.$native.isTrusted){
+                if(eventAbs$.$_native.isTrusted){
                     return true;
                 }else {
                     return false;
                 }/*End dynamic block*/
-            };$$eventAbs.isTrusted.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Boolean},$ps:[],$cont:EventAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("was the event created by the browser or a script",48)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','isTrusted']};};
-            $$eventAbs.timeStamp=function timeStamp(){
-                var $$eventAbs=this;
+            };eventAbs$.isTrusted.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.$_Boolean},$ps:[],$cont:EventAbs,$an:function(){return[m$1.doc("was the event created by the browser or a script"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','isTrusted']};};
+            eventAbs$.timeStamp=function timeStamp(){
+                var eventAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSDate($$eventAbs.$native.timeStamp);
+                return m$9f.JSDate(eventAbs$.$_native.timeStamp);
                 /*End dynamic block*/
-            };$$eventAbs.timeStamp.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSDate},$ps:[],$cont:EventAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the time the event was created",38)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','timeStamp']};};
+            };eventAbs$.timeStamp.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSDate},$ps:[],$cont:EventAbs,$an:function(){return[m$1.doc("returns the time the event was created"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventAbs','$m','timeStamp']};};
         })(EventAbs.$$.prototype);
     }
     return EventAbs;
 }
-exports.$init$EventAbs=$init$EventAbs;
+ex$.$init$EventAbs=$init$EventAbs;
 $init$EventAbs();
-function Event(n$666, $$event){
+function Event($ii,event$){
     $init$Event();
-    if ($$event===undefined)$$event=new Event.$$;
-    $$event.n$666_=n$666;
-    EventAbs($$event);
-    $$event.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:Event,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','Event','$at','native']};}};
+    if(event$===undefined)event$=new Event.$$;
+    event$.$ii_=$ii;
+    EventAbs(event$);
+    event$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:Event,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','Event','$at','native']};}};
     /*Begin dynamic block*/
-    $$event.$native=$$event.n$666;/*End dynamic block*/
-    return $$event;
+    event$.$_native=event$.$ii;/*End dynamic block*/
+    return event$;
 }
-Event.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:EventAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("a DOM Event",11)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','Event']};};
-exports.Event=Event;
+Event.$crtmm$=function(){return{mod:$CCMM$,'super':{t:EventAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("a DOM Event"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','Event']};};
+ex$.Event=Event;
 function $init$Event(){
-    if (Event.$$===undefined){
-        $$$cl1.initTypeProto(Event,'com.openswimsoftware.ceylon.js.dom::Event',$init$EventAbs());
-        (function($$event){
-            $$$cl1.defineAttr($$event,'n$666',function(){return this.n$666_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:Event,d:['com.openswimsoftware.ceylon.js.dom','Event','$at','n']};});
+    if(Event.$$===undefined){
+        m$1.initTypeProto(Event,'com.openswimsoftware.ceylon.js.dom::Event',$init$EventAbs());
+        (function(event$){
+            m$1.atr$(event$,'$ii',function(){return this.$ii_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:Event,d:['com.openswimsoftware.ceylon.js.dom','Event','$at','n$2vytsu']};});
         })(Event.$$.prototype);
     }
     return Event;
 }
-exports.$init$Event=$init$Event;
+ex$.$init$Event=$init$Event;
 $init$Event();
-function EventTargetAbs($$eventTargetAbs){
+function EventTargetAbs(eventTargetAbs$){
     $init$EventTargetAbs();
-    if ($$eventTargetAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$$cocjl339.JSObjectAbs($$eventTargetAbs);
-    return $$eventTargetAbs;
+    if(eventTargetAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    m$9f.JSObjectAbs(eventTargetAbs$);
+    return eventTargetAbs$;
 }
-EventTargetAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cocjl339.JSObjectAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','EventTargetAbs']};};
-exports.EventTargetAbs=EventTargetAbs;
+EventTargetAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$9f.JSObjectAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','EventTargetAbs']};};
+ex$.EventTargetAbs=EventTargetAbs;
 function $init$EventTargetAbs(){
-    if (EventTargetAbs.$$===undefined){
-        $$$cl1.initTypeProto(EventTargetAbs,'com.openswimsoftware.ceylon.js.dom::EventTargetAbs',$$$cocjl339.JSObjectAbs);
-        (function($$eventTargetAbs){
-            $$eventTargetAbs.addEventListener$defs$capture=function(type$667,callback$668,capture$669){var $$eventTargetAbs=this;
-            return false;};
-            $$eventTargetAbs.addEventListener=function addEventListener(type$667,callback$668,capture$669){
-                var $$eventTargetAbs=this;
-                if(capture$669===undefined){capture$669=$$eventTargetAbs.addEventListener$defs$capture(type$667,callback$668,capture$669);}
-                
-                var case$670=type$667;
-                if ($$$cl1.isOfType(type$667,{t:$$$cl1.String})) {
+    if(EventTargetAbs.$$===undefined){
+        m$1.initTypeProto(EventTargetAbs,'com.openswimsoftware.ceylon.js.dom::EventTargetAbs',m$9f.JSObjectAbs);
+        (function(eventTargetAbs$){
+            eventTargetAbs$.addEventListener$defs$capture=function($ij,$ik,$il){return false;};
+            eventTargetAbs$.addEventListener=function addEventListener($ij,$ik,$il){
+                var eventTargetAbs$=this;
+                if($il===undefined){$il=eventTargetAbs$.addEventListener$defs$capture($ij,$ik,$il);}
+                var $im=$ij;
+                if(m$1.is$($ij,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    $$eventTargetAbs.$native.addEventListener(case$670.valueOf(),$$$cl1.$JsCallable(callback$668,[{$nm:'event',$mt:'prm',$t:{t:Event},$an:function(){return[];}}],{Arguments:{t:'T', l:[{t:Event}]},Return:{t:$$$cl1.Anything}}),capture$669);
+                    eventTargetAbs$.$_native.addEventListener($im.valueOf(),$ik,$il);
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(type$667,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($ij,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    $$eventTargetAbs.$native.addEventListener(case$670.$native,$$$cl1.$JsCallable(callback$668,[{$nm:'event',$mt:'prm',$t:{t:Event},$an:function(){return[];}}],{Arguments:{t:'T', l:[{t:Event}]},Return:{t:$$$cl1.Anything}}),capture$669);
+                    eventTargetAbs$.$_native.addEventListener($im.$_native,$ik,$il);
                     /*End dynamic block*/
                 }
-            };$$eventTargetAbs.addEventListener.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'type',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}},{$nm:'callback',$mt:'prm',$pt:'f',$t:{t:$$$cl1.Anything},$an:function(){return[];}},{$nm:'capture',$mt:'prm',$def:1,$t:{t:$$$cl1.Boolean},$an:function(){return[];}}],$cont:EventTargetAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("add an event listener to the target",35)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventTargetAbs','$m','addEventListener']};};
-            $$eventTargetAbs.removeEventListener$defs$capture=function(type$671,callback$672,capture$673){var $$eventTargetAbs=this;
-            return false;};
-            $$eventTargetAbs.removeEventListener=function removeEventListener(type$671,callback$672,capture$673){
-                var $$eventTargetAbs=this;
-                if(capture$673===undefined){capture$673=$$eventTargetAbs.removeEventListener$defs$capture(type$671,callback$672,capture$673);}
-                
-                var case$674=type$671;
-                if ($$$cl1.isOfType(type$671,{t:$$$cl1.String})) {
+            };eventTargetAbs$.addEventListener.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'type',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}},{$nm:'callback',$mt:'prm',$pt:'f',$t:{t:m$1.Anything},$an:function(){return[];}},{$nm:'capture',$mt:'prm',$def:1,$t:{t:m$1.$_Boolean},$an:function(){return[];}}],$cont:EventTargetAbs,$an:function(){return[m$1.doc("add an event listener to the target"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventTargetAbs','$m','addEventListener']};};
+            eventTargetAbs$.removeEventListener$defs$capture=function($in,$io,$ip){return false;};
+            eventTargetAbs$.removeEventListener=function removeEventListener($in,$io,$ip){
+                var eventTargetAbs$=this;
+                if($ip===undefined){$ip=eventTargetAbs$.removeEventListener$defs$capture($in,$io,$ip);}
+                var $iq=$in;
+                if(m$1.is$($in,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    $$eventTargetAbs.$native.removeEventListener(case$674.valueOf(),$$$cl1.$JsCallable(callback$672,[{$nm:'event',$mt:'prm',$t:{t:Event},$an:function(){return[];}}],{Arguments:{t:'T', l:[{t:Event}]},Return:{t:$$$cl1.Anything}}),capture$673);
+                    eventTargetAbs$.$_native.removeEventListener($iq.valueOf(),$io,$ip);
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(type$671,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($in,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    $$eventTargetAbs.$native.removeEventListener(case$674.$native,$$$cl1.$JsCallable(callback$672,[{$nm:'event',$mt:'prm',$t:{t:Event},$an:function(){return[];}}],{Arguments:{t:'T', l:[{t:Event}]},Return:{t:$$$cl1.Anything}}),capture$673);
+                    eventTargetAbs$.$_native.removeEventListener($iq.$_native,$io,$ip);
                     /*End dynamic block*/
                 }
-            };$$eventTargetAbs.removeEventListener.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'type',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}},{$nm:'callback',$mt:'prm',$pt:'f',$t:{t:$$$cl1.Anything},$an:function(){return[];}},{$nm:'capture',$mt:'prm',$def:1,$t:{t:$$$cl1.Boolean},$an:function(){return[];}}],$cont:EventTargetAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("remove an event listener from the target",40)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventTargetAbs','$m','removeEventListener']};};
-            $$eventTargetAbs.dispatchEvent=function dispatchEvent(event$675){
-                var $$eventTargetAbs=this;
+            };eventTargetAbs$.removeEventListener.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'type',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}},{$nm:'callback',$mt:'prm',$pt:'f',$t:{t:m$1.Anything},$an:function(){return[];}},{$nm:'capture',$mt:'prm',$def:1,$t:{t:m$1.$_Boolean},$an:function(){return[];}}],$cont:EventTargetAbs,$an:function(){return[m$1.doc("remove an event listener from the target"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventTargetAbs','$m','removeEventListener']};};
+            eventTargetAbs$.dispatchEvent=function dispatchEvent($ir){
+                var eventTargetAbs$=this;
                 /*Begin dynamic block*/
-                if($$eventTargetAbs.$native.dispatchEvent(event$675)){
+                if(eventTargetAbs$.$_native.dispatchEvent($ir)){
                     return true;
                 }else {
                     return false;
                 }/*End dynamic block*/
-            };$$eventTargetAbs.dispatchEvent.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Boolean},$ps:[{$nm:'event',$mt:'prm',$t:{t:Event},$an:function(){return[];}}],$cont:EventTargetAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("dispatch an event at the target",31)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventTargetAbs','$m','dispatchEvent']};};
+            };eventTargetAbs$.dispatchEvent.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.$_Boolean},$ps:[{$nm:'event',$mt:'prm',$t:{t:Event},$an:function(){return[];}}],$cont:EventTargetAbs,$an:function(){return[m$1.doc("dispatch an event at the target"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventTargetAbs','$m','dispatchEvent']};};
         })(EventTargetAbs.$$.prototype);
     }
     return EventTargetAbs;
 }
-exports.$init$EventTargetAbs=$init$EventTargetAbs;
+ex$.$init$EventTargetAbs=$init$EventTargetAbs;
 $init$EventTargetAbs();
-function EventTarget(n$676, $$eventTarget){
+function EventTarget($is,eventTarget$){
     $init$EventTarget();
-    if ($$eventTarget===undefined)$$eventTarget=new EventTarget.$$;
-    $$eventTarget.n$676_=n$676;
-    EventTargetAbs($$eventTarget);
-    $$eventTarget.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:EventTarget,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','EventTarget','$at','native']};}};
+    if(eventTarget$===undefined)eventTarget$=new EventTarget.$$;
+    eventTarget$.$is_=$is;
+    EventTargetAbs(eventTarget$);
+    eventTarget$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:EventTarget,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','EventTarget','$at','native']};}};
     /*Begin dynamic block*/
-    $$eventTarget.$native=$$eventTarget.n$676;/*End dynamic block*/
-    return $$eventTarget;
+    eventTarget$.$_native=eventTarget$.$is;/*End dynamic block*/
+    return eventTarget$;
 }
-EventTarget.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:EventTargetAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("a DOM EventTarget",17)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventTarget']};};
-exports.EventTarget=EventTarget;
+EventTarget.$crtmm$=function(){return{mod:$CCMM$,'super':{t:EventTargetAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("a DOM EventTarget"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EventTarget']};};
+ex$.EventTarget=EventTarget;
 function $init$EventTarget(){
-    if (EventTarget.$$===undefined){
-        $$$cl1.initTypeProto(EventTarget,'com.openswimsoftware.ceylon.js.dom::EventTarget',$init$EventTargetAbs());
-        (function($$eventTarget){
-            $$$cl1.defineAttr($$eventTarget,'n$676',function(){return this.n$676_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:EventTarget,d:['com.openswimsoftware.ceylon.js.dom','EventTarget','$at','n']};});
+    if(EventTarget.$$===undefined){
+        m$1.initTypeProto(EventTarget,'com.openswimsoftware.ceylon.js.dom::EventTarget',$init$EventTargetAbs());
+        (function(eventTarget$){
+            m$1.atr$(eventTarget$,'$is',function(){return this.$is_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:EventTarget,d:['com.openswimsoftware.ceylon.js.dom','EventTarget','$at','n$u466ed']};});
         })(EventTarget.$$.prototype);
     }
     return EventTarget;
 }
-exports.$init$EventTarget=$init$EventTarget;
+ex$.$init$EventTarget=$init$EventTarget;
 $init$EventTarget();
-function HTMLCollectionAbs($$hTMLCollectionAbs){
+function HTMLCollectionAbs(hTMLCollectionAbs$){
     $init$HTMLCollectionAbs();
-    if ($$hTMLCollectionAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$$cocjl339.JSObjectAbs($$hTMLCollectionAbs);
-    return $$hTMLCollectionAbs;
+    if(hTMLCollectionAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    m$9f.JSObjectAbs(hTMLCollectionAbs$);
+    return hTMLCollectionAbs$;
 }
-HTMLCollectionAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cocjl339.JSObjectAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','HTMLCollectionAbs']};};
-exports.HTMLCollectionAbs=HTMLCollectionAbs;
+HTMLCollectionAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$9f.JSObjectAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','HTMLCollectionAbs']};};
+ex$.HTMLCollectionAbs=HTMLCollectionAbs;
 function $init$HTMLCollectionAbs(){
-    if (HTMLCollectionAbs.$$===undefined){
-        $$$cl1.initTypeProto(HTMLCollectionAbs,'com.openswimsoftware.ceylon.js.dom::HTMLCollectionAbs',$$$cocjl339.JSObjectAbs);
-        (function($$hTMLCollectionAbs){
-            $$hTMLCollectionAbs.length=function length(){
-                var $$hTMLCollectionAbs=this;
+    if(HTMLCollectionAbs.$$===undefined){
+        m$1.initTypeProto(HTMLCollectionAbs,'com.openswimsoftware.ceylon.js.dom::HTMLCollectionAbs',m$9f.JSObjectAbs);
+        (function(hTMLCollectionAbs$){
+            hTMLCollectionAbs$.length=function length(){
+                var hTMLCollectionAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSNumber($$hTMLCollectionAbs.$native.length);
+                return m$9f.JSNumber(hTMLCollectionAbs$.$_native.length);
                 /*End dynamic block*/
-            };$$hTMLCollectionAbs.length.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSNumber},$ps:[],$cont:HTMLCollectionAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the length of the collection",36)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','HTMLCollectionAbs','$m','length']};};
-            $$hTMLCollectionAbs.item=function item(index$677){
-                var $$hTMLCollectionAbs=this;
-                var item$678;
-                
-                var case$679=index$677;
-                if ($$$cl1.isOfType(index$677,{t:$$$cl1.Integer})) {
+            };hTMLCollectionAbs$.length.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSNumber},$ps:[],$cont:HTMLCollectionAbs,$an:function(){return[m$1.doc("returns the length of the collection"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','HTMLCollectionAbs','$m','length']};};
+            hTMLCollectionAbs$.item=function item($it){
+                var hTMLCollectionAbs$=this;
+                var $iu;
+                var $iv=$it;
+                if(m$1.is$($it,{t:m$1.Integer})) {
                     /*Begin dynamic block*/
-                    item$678=$$hTMLCollectionAbs.$native.item(case$679);/*End dynamic block*/
-                }else if ($$$cl1.isOfType(index$677,{t:$$$cocjl339.JSNumber})) {
+                    $iu=hTMLCollectionAbs$.$_native.item($iv);/*End dynamic block*/
+                }else if(m$1.is$($it,{t:m$9f.JSNumber})) {
                     /*Begin dynamic block*/
-                    item$678=$$hTMLCollectionAbs.$native.item(case$679.$native);/*End dynamic block*/
+                    $iu=hTMLCollectionAbs$.$_native.item($iv.$_native);/*End dynamic block*/
                 }
                 /*Begin dynamic block*/
-                if((tmpvar$680=item$678,tmpvar$681=null,(tmpvar$680.equals&&!tmpvar$680.equals(tmpvar$681))||tmpvar$680!==tmpvar$681)){
-                    return Element(item$678);
+                if(($iw=$iu,$ix=null,($iw.equals&&!$iw.equals($ix))||$iw!==$ix)){
+                    return Element($iu);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$hTMLCollectionAbs.item.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:Element}]},$ps:[{$nm:'index',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.Integer},{t:$$$cocjl339.JSNumber}]},$an:function(){return[];}}],$cont:HTMLCollectionAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("return the node at the given index",34)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','HTMLCollectionAbs','$m','item']};};
-            $$hTMLCollectionAbs.namedItem=function namedItem(name$682){
-                var $$hTMLCollectionAbs=this;
-                var namedItem$683;
-                
-                var case$684=name$682;
-                if ($$$cl1.isOfType(name$682,{t:$$$cl1.String})) {
+            };hTMLCollectionAbs$.item.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:Element}]},$ps:[{$nm:'index',$mt:'prm',$t:{t:'u',l:[{t:m$1.Integer},{t:m$9f.JSNumber}]},$an:function(){return[];}}],$cont:HTMLCollectionAbs,$an:function(){return[m$1.doc("return the node at the given index"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','HTMLCollectionAbs','$m','item']};};
+            hTMLCollectionAbs$.namedItem=function namedItem($iy){
+                var hTMLCollectionAbs$=this;
+                var $iz;
+                var $j0=$iy;
+                if(m$1.is$($iy,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    namedItem$683=$$hTMLCollectionAbs.$native.namedItem(case$684.valueOf());/*End dynamic block*/
-                }else if ($$$cl1.isOfType(name$682,{t:$$$cocjl339.JSString})) {
+                    $iz=hTMLCollectionAbs$.$_native.namedItem($j0.valueOf());/*End dynamic block*/
+                }else if(m$1.is$($iy,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    namedItem$683=$$hTMLCollectionAbs.$native.namedItem(case$684.$native);/*End dynamic block*/
+                    $iz=hTMLCollectionAbs$.$_native.namedItem($j0.$_native);/*End dynamic block*/
                 }
                 /*Begin dynamic block*/
-                if((tmpvar$685=namedItem$683,tmpvar$686=null,(tmpvar$685.equals&&tmpvar$685.equals(tmpvar$686))||tmpvar$685===tmpvar$686)){
-                    return $$$cocjl339.JSObject(namedItem$683);
+                if(($j1=$iz,$j2=null,($j1.equals&&$j1.equals($j2))||$j1===$j2)){
+                    return m$9f.JSObject($iz);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$hTMLCollectionAbs.namedItem.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:$$$cocjl339.JSObject}]},$ps:[{$nm:'name',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:HTMLCollectionAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("return the node whose id or name matches the passed name",56)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','HTMLCollectionAbs','$m','namedItem']};};
+            };hTMLCollectionAbs$.namedItem.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:m$9f.JSObject}]},$ps:[{$nm:'name',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:HTMLCollectionAbs,$an:function(){return[m$1.doc("return the node whose id or name matches the passed name"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','HTMLCollectionAbs','$m','namedItem']};};
         })(HTMLCollectionAbs.$$.prototype);
     }
     return HTMLCollectionAbs;
 }
-exports.$init$HTMLCollectionAbs=$init$HTMLCollectionAbs;
+ex$.$init$HTMLCollectionAbs=$init$HTMLCollectionAbs;
 $init$HTMLCollectionAbs();
-function HTMLCollection(n$687, $$hTMLCollection){
+function HTMLCollection($j3,hTMLCollection$){
     $init$HTMLCollection();
-    if ($$hTMLCollection===undefined)$$hTMLCollection=new HTMLCollection.$$;
-    $$hTMLCollection.n$687_=n$687;
-    HTMLCollectionAbs($$hTMLCollection);
-    $$hTMLCollection.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:HTMLCollection,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','HTMLCollection','$at','native']};}};
+    if(hTMLCollection$===undefined)hTMLCollection$=new HTMLCollection.$$;
+    hTMLCollection$.$j3_=$j3;
+    HTMLCollectionAbs(hTMLCollection$);
+    hTMLCollection$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:HTMLCollection,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','HTMLCollection','$at','native']};}};
     /*Begin dynamic block*/
-    $$hTMLCollection.$native=$$hTMLCollection.n$687;/*End dynamic block*/
-    return $$hTMLCollection;
+    hTMLCollection$.$_native=hTMLCollection$.$j3;/*End dynamic block*/
+    return hTMLCollection$;
 }
-HTMLCollection.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:HTMLCollectionAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("a DOM HTMLCollection",20)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','HTMLCollection']};};
-exports.HTMLCollection=HTMLCollection;
+HTMLCollection.$crtmm$=function(){return{mod:$CCMM$,'super':{t:HTMLCollectionAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("a DOM HTMLCollection"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','HTMLCollection']};};
+ex$.HTMLCollection=HTMLCollection;
 function $init$HTMLCollection(){
-    if (HTMLCollection.$$===undefined){
-        $$$cl1.initTypeProto(HTMLCollection,'com.openswimsoftware.ceylon.js.dom::HTMLCollection',$init$HTMLCollectionAbs());
-        (function($$hTMLCollection){
-            $$$cl1.defineAttr($$hTMLCollection,'n$687',function(){return this.n$687_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:HTMLCollection,d:['com.openswimsoftware.ceylon.js.dom','HTMLCollection','$at','n']};});
+    if(HTMLCollection.$$===undefined){
+        m$1.initTypeProto(HTMLCollection,'com.openswimsoftware.ceylon.js.dom::HTMLCollection',$init$HTMLCollectionAbs());
+        (function(hTMLCollection$){
+            m$1.atr$(hTMLCollection$,'$j3',function(){return this.$j3_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:HTMLCollection,d:['com.openswimsoftware.ceylon.js.dom','HTMLCollection','$at','n$qxfu5z']};});
         })(HTMLCollection.$$.prototype);
     }
     return HTMLCollection;
 }
-exports.$init$HTMLCollection=$init$HTMLCollection;
+ex$.$init$HTMLCollection=$init$HTMLCollection;
 $init$HTMLCollection();
 function getWindow(){
     /*Begin dynamic block*/
-    return $$$cocjh429.Window((typeof window==='undefined'||window===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: window")),'6:16-6:21','main.ceylon'):window));
+    return m$bx.Window((typeof window==='undefined'||window===null?m$1.throwexc(m$1.Exception("Undefined or null reference: window"),'6:16-6:21','main.ceylon'):window));
     /*End dynamic block*/
 }
-exports.getWindow=getWindow;
-getWindow.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjh429.Window},$ps:[],$an:function(){return[$$$cl1.doc($$$cl1.String("returns the current browser window",34)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','getWindow']};};
-exports.$mod$ans$=function(){return[$$$cl1.doc($$$cl1.String("based on the DOM 4 working draft and Mozilla WebAPIs",52))];};
-exports.$mod$imps=function(){return{
-'com.openswimsoftware.ceylon.js.language/1.8.0':function(){return[$$$cl1.shared()];},
-'com.openswimsoftware.ceylon.js.html/5.0.0':function(){return[$$$cl1.shared()];},
-'com.openswimsoftware.ceylon.js.json/1.0.0':function(){return[$$$cl1.shared()];}
+ex$.getWindow=getWindow;
+getWindow.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$bx.Window},$ps:[],$an:function(){return[m$1.doc("returns the current browser window"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','getWindow']};};
+ex$.$mod$ans$=function(){return[m$1.doc("based on the DOM 4 working draft and Mozilla WebAPIs")];};
+ex$.$mod$imps=function(){return{
+'com.openswimsoftware.ceylon.js.language/1.8.0':function(){return[m$1.shared()];},
+'com.openswimsoftware.ceylon.js.html/5.0.0':function(){return[m$1.shared()];},
+'com.openswimsoftware.ceylon.js.json/1.0.0':function(){return[m$1.shared()];}
 };};
-function NodeType(name$688, $$nodeType){
+function NodeType($j4,nodeType$){
     $init$NodeType();
-    if ($$nodeType===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$nodeType.name$688_=name$688;
-    return $$nodeType;
+    if(nodeType$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    nodeType$.$j4_=$j4;
+    return nodeType$;
 }
-NodeType.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cl1.Basic},$ps:[{$nm:'name',$mt:'prm',$t:{t:$$$cl1.String},$an:function(){return[];}}],of:[{t:attributeNode$689},{t:cdataSectionNode$690},{t:commentNode$691},{t:documentFragmentNode$692},{t:documentNode$693},{t:documentTypeNode$694},{t:elementNode$695},{t:entityNode$696},{t:entityReferenceNode$697},{t:notationNode$698},{t:processingInstructionNode$699},{t:textNode$700}],$an:function(){return[$$$cl1.doc($$$cl1.String("specific NodeType",17)),$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','NodeType']};};
-exports.NodeType=NodeType;
+NodeType.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$1.Basic},$ps:[{$nm:'name',$mt:'prm',$t:{t:m$1.String},$an:function(){return[];}}],of:[$prop$get$j5,$prop$get$j6,$prop$get$j7,$prop$get$j8,$prop$get$j9,$prop$get$ja,$prop$get$jb,$prop$get$jc,$prop$get$jd,$prop$get$je,$prop$get$jf,$prop$get$jg],$an:function(){return[m$1.doc("specific NodeType"),m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','NodeType']};};
+ex$.NodeType=NodeType;
 function $init$NodeType(){
-    if (NodeType.$$===undefined){
-        $$$cl1.initTypeProto(NodeType,'com.openswimsoftware.ceylon.js.dom::NodeType',$$$cl1.Basic);
-        (function($$nodeType){
-            $$$cl1.defineAttr($$nodeType,'name$688',function(){return this.name$688_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.String},$cont:NodeType,d:['com.openswimsoftware.ceylon.js.dom','NodeType','$at','name']};});
+    if(NodeType.$$===undefined){
+        m$1.initTypeProto(NodeType,'com.openswimsoftware.ceylon.js.dom::NodeType',m$1.Basic);
+        (function(nodeType$){
+            m$1.atr$(nodeType$,'$j4',function(){return this.$j4_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.String},$cont:NodeType,d:['com.openswimsoftware.ceylon.js.dom','NodeType','$at','name$3p2n2h']};});
         })(NodeType.$$.prototype);
     }
     return NodeType;
 }
-exports.$init$NodeType=$init$NodeType;
+ex$.$init$NodeType=$init$NodeType;
 $init$NodeType();
-function attributeNode$689(){
-    var $$attributeNode=new attributeNode$689.$$;
-    NodeType($$$cl1.String("attributeNode",13),$$attributeNode);
-    return $$attributeNode;
-};attributeNode$689.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeType},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','attributeNode']};};
-function $init$attributeNode$689(){
-    if (attributeNode$689.$$===undefined){
-        $$$cl1.initTypeProto(attributeNode$689,'com.openswimsoftware.ceylon.js.dom::attributeNode',$init$NodeType());
+function $j5(){
+    var attributeNode$=new $j5.$$;
+    NodeType("attributeNode",attributeNode$);
+    return attributeNode$;
+};$j5.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeType},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','attributeNode']};};
+function $init$$j5(){
+    if($j5.$$===undefined){
+        m$1.initTypeProto($j5,'com.openswimsoftware.ceylon.js.dom::attributeNode',$init$NodeType());
     }
-    return attributeNode$689;
+    return $j5;
 }
-exports.$init$attributeNode$689=$init$attributeNode$689;
-$init$attributeNode$689();
-var attributeNode$701;
+ex$.$init$$j5=$init$$j5;
+$init$$j5();
+var $jh;
 function getAttributeNode(){
-    if (attributeNode$701===undefined){attributeNode$701=$init$attributeNode$689()();attributeNode$701.$$metamodel$$=getAttributeNode.$$metamodel$$;}
-    return attributeNode$701;
+    if($jh===undefined){$jh=$init$$j5()();$jh.$crtmm$=getAttributeNode.$crtmm$;}
+    return $jh;
 }
-exports.getAttributeNode=getAttributeNode;
-getAttributeNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:attributeNode$689},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','attributeNode']};};
-$prop$getAttributeNode={get:getAttributeNode,$$metamodel$$:getAttributeNode.$$metamodel$$};
-exports.$prop$getAttributeNode=$prop$getAttributeNode;
-function cdataSectionNode$690(){
-    var $$cdataSectionNode=new cdataSectionNode$690.$$;
-    NodeType($$$cl1.String("cdataSectionNode",16),$$cdataSectionNode);
-    return $$cdataSectionNode;
-};cdataSectionNode$690.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeType},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','cdataSectionNode']};};
-function $init$cdataSectionNode$690(){
-    if (cdataSectionNode$690.$$===undefined){
-        $$$cl1.initTypeProto(cdataSectionNode$690,'com.openswimsoftware.ceylon.js.dom::cdataSectionNode',$init$NodeType());
+ex$.getAttributeNode=getAttributeNode;
+getAttributeNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$j5},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','attributeNode']};};
+$prop$getAttributeNode={get:getAttributeNode,$crtmm$:getAttributeNode.$crtmm$};
+get$j5=getAttributeNode;$prop$get$j5=getAttributeNode;
+ex$.$prop$getAttributeNode=$prop$getAttributeNode;
+function $j6(){
+    var cdataSectionNode$=new $j6.$$;
+    NodeType("cdataSectionNode",cdataSectionNode$);
+    return cdataSectionNode$;
+};$j6.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeType},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','cdataSectionNode']};};
+function $init$$j6(){
+    if($j6.$$===undefined){
+        m$1.initTypeProto($j6,'com.openswimsoftware.ceylon.js.dom::cdataSectionNode',$init$NodeType());
     }
-    return cdataSectionNode$690;
+    return $j6;
 }
-exports.$init$cdataSectionNode$690=$init$cdataSectionNode$690;
-$init$cdataSectionNode$690();
-var cdataSectionNode$702;
+ex$.$init$$j6=$init$$j6;
+$init$$j6();
+var $ji;
 function getCdataSectionNode(){
-    if (cdataSectionNode$702===undefined){cdataSectionNode$702=$init$cdataSectionNode$690()();cdataSectionNode$702.$$metamodel$$=getCdataSectionNode.$$metamodel$$;}
-    return cdataSectionNode$702;
+    if($ji===undefined){$ji=$init$$j6()();$ji.$crtmm$=getCdataSectionNode.$crtmm$;}
+    return $ji;
 }
-exports.getCdataSectionNode=getCdataSectionNode;
-getCdataSectionNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:cdataSectionNode$690},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','cdataSectionNode']};};
-$prop$getCdataSectionNode={get:getCdataSectionNode,$$metamodel$$:getCdataSectionNode.$$metamodel$$};
-exports.$prop$getCdataSectionNode=$prop$getCdataSectionNode;
-function commentNode$691(){
-    var $$commentNode=new commentNode$691.$$;
-    NodeType($$$cl1.String("commentNode",11),$$commentNode);
-    return $$commentNode;
-};commentNode$691.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeType},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','commentNode']};};
-function $init$commentNode$691(){
-    if (commentNode$691.$$===undefined){
-        $$$cl1.initTypeProto(commentNode$691,'com.openswimsoftware.ceylon.js.dom::commentNode',$init$NodeType());
+ex$.getCdataSectionNode=getCdataSectionNode;
+getCdataSectionNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$j6},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','cdataSectionNode']};};
+$prop$getCdataSectionNode={get:getCdataSectionNode,$crtmm$:getCdataSectionNode.$crtmm$};
+get$j6=getCdataSectionNode;$prop$get$j6=getCdataSectionNode;
+ex$.$prop$getCdataSectionNode=$prop$getCdataSectionNode;
+function $j7(){
+    var commentNode$=new $j7.$$;
+    NodeType("commentNode",commentNode$);
+    return commentNode$;
+};$j7.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeType},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','commentNode']};};
+function $init$$j7(){
+    if($j7.$$===undefined){
+        m$1.initTypeProto($j7,'com.openswimsoftware.ceylon.js.dom::commentNode',$init$NodeType());
     }
-    return commentNode$691;
+    return $j7;
 }
-exports.$init$commentNode$691=$init$commentNode$691;
-$init$commentNode$691();
-var commentNode$703;
+ex$.$init$$j7=$init$$j7;
+$init$$j7();
+var $jj;
 function getCommentNode(){
-    if (commentNode$703===undefined){commentNode$703=$init$commentNode$691()();commentNode$703.$$metamodel$$=getCommentNode.$$metamodel$$;}
-    return commentNode$703;
+    if($jj===undefined){$jj=$init$$j7()();$jj.$crtmm$=getCommentNode.$crtmm$;}
+    return $jj;
 }
-exports.getCommentNode=getCommentNode;
-getCommentNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:commentNode$691},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','commentNode']};};
-$prop$getCommentNode={get:getCommentNode,$$metamodel$$:getCommentNode.$$metamodel$$};
-exports.$prop$getCommentNode=$prop$getCommentNode;
-function documentFragmentNode$692(){
-    var $$documentFragmentNode=new documentFragmentNode$692.$$;
-    NodeType($$$cl1.String("documentFragmentNode",20),$$documentFragmentNode);
-    return $$documentFragmentNode;
-};documentFragmentNode$692.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeType},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentFragmentNode']};};
-function $init$documentFragmentNode$692(){
-    if (documentFragmentNode$692.$$===undefined){
-        $$$cl1.initTypeProto(documentFragmentNode$692,'com.openswimsoftware.ceylon.js.dom::documentFragmentNode',$init$NodeType());
+ex$.getCommentNode=getCommentNode;
+getCommentNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$j7},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','commentNode']};};
+$prop$getCommentNode={get:getCommentNode,$crtmm$:getCommentNode.$crtmm$};
+get$j7=getCommentNode;$prop$get$j7=getCommentNode;
+ex$.$prop$getCommentNode=$prop$getCommentNode;
+function $j8(){
+    var documentFragmentNode$=new $j8.$$;
+    NodeType("documentFragmentNode",documentFragmentNode$);
+    return documentFragmentNode$;
+};$j8.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeType},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentFragmentNode']};};
+function $init$$j8(){
+    if($j8.$$===undefined){
+        m$1.initTypeProto($j8,'com.openswimsoftware.ceylon.js.dom::documentFragmentNode',$init$NodeType());
     }
-    return documentFragmentNode$692;
+    return $j8;
 }
-exports.$init$documentFragmentNode$692=$init$documentFragmentNode$692;
-$init$documentFragmentNode$692();
-var documentFragmentNode$704;
+ex$.$init$$j8=$init$$j8;
+$init$$j8();
+var $jk;
 function getDocumentFragmentNode(){
-    if (documentFragmentNode$704===undefined){documentFragmentNode$704=$init$documentFragmentNode$692()();documentFragmentNode$704.$$metamodel$$=getDocumentFragmentNode.$$metamodel$$;}
-    return documentFragmentNode$704;
+    if($jk===undefined){$jk=$init$$j8()();$jk.$crtmm$=getDocumentFragmentNode.$crtmm$;}
+    return $jk;
 }
-exports.getDocumentFragmentNode=getDocumentFragmentNode;
-getDocumentFragmentNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:documentFragmentNode$692},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentFragmentNode']};};
-$prop$getDocumentFragmentNode={get:getDocumentFragmentNode,$$metamodel$$:getDocumentFragmentNode.$$metamodel$$};
-exports.$prop$getDocumentFragmentNode=$prop$getDocumentFragmentNode;
-function documentNode$693(){
-    var $$documentNode=new documentNode$693.$$;
-    NodeType($$$cl1.String("documentNode",12),$$documentNode);
-    return $$documentNode;
-};documentNode$693.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeType},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentNode']};};
-function $init$documentNode$693(){
-    if (documentNode$693.$$===undefined){
-        $$$cl1.initTypeProto(documentNode$693,'com.openswimsoftware.ceylon.js.dom::documentNode',$init$NodeType());
+ex$.getDocumentFragmentNode=getDocumentFragmentNode;
+getDocumentFragmentNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$j8},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentFragmentNode']};};
+$prop$getDocumentFragmentNode={get:getDocumentFragmentNode,$crtmm$:getDocumentFragmentNode.$crtmm$};
+get$j8=getDocumentFragmentNode;$prop$get$j8=getDocumentFragmentNode;
+ex$.$prop$getDocumentFragmentNode=$prop$getDocumentFragmentNode;
+function $j9(){
+    var documentNode$=new $j9.$$;
+    NodeType("documentNode",documentNode$);
+    return documentNode$;
+};$j9.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeType},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentNode']};};
+function $init$$j9(){
+    if($j9.$$===undefined){
+        m$1.initTypeProto($j9,'com.openswimsoftware.ceylon.js.dom::documentNode',$init$NodeType());
     }
-    return documentNode$693;
+    return $j9;
 }
-exports.$init$documentNode$693=$init$documentNode$693;
-$init$documentNode$693();
-var documentNode$705;
+ex$.$init$$j9=$init$$j9;
+$init$$j9();
+var $jl;
 function getDocumentNode(){
-    if (documentNode$705===undefined){documentNode$705=$init$documentNode$693()();documentNode$705.$$metamodel$$=getDocumentNode.$$metamodel$$;}
-    return documentNode$705;
+    if($jl===undefined){$jl=$init$$j9()();$jl.$crtmm$=getDocumentNode.$crtmm$;}
+    return $jl;
 }
-exports.getDocumentNode=getDocumentNode;
-getDocumentNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:documentNode$693},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentNode']};};
-$prop$getDocumentNode={get:getDocumentNode,$$metamodel$$:getDocumentNode.$$metamodel$$};
-exports.$prop$getDocumentNode=$prop$getDocumentNode;
-function documentTypeNode$694(){
-    var $$documentTypeNode=new documentTypeNode$694.$$;
-    NodeType($$$cl1.String("documentTypeNode",16),$$documentTypeNode);
-    return $$documentTypeNode;
-};documentTypeNode$694.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeType},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentTypeNode']};};
-function $init$documentTypeNode$694(){
-    if (documentTypeNode$694.$$===undefined){
-        $$$cl1.initTypeProto(documentTypeNode$694,'com.openswimsoftware.ceylon.js.dom::documentTypeNode',$init$NodeType());
+ex$.getDocumentNode=getDocumentNode;
+getDocumentNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$j9},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentNode']};};
+$prop$getDocumentNode={get:getDocumentNode,$crtmm$:getDocumentNode.$crtmm$};
+get$j9=getDocumentNode;$prop$get$j9=getDocumentNode;
+ex$.$prop$getDocumentNode=$prop$getDocumentNode;
+function $ja(){
+    var documentTypeNode$=new $ja.$$;
+    NodeType("documentTypeNode",documentTypeNode$);
+    return documentTypeNode$;
+};$ja.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeType},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentTypeNode']};};
+function $init$$ja(){
+    if($ja.$$===undefined){
+        m$1.initTypeProto($ja,'com.openswimsoftware.ceylon.js.dom::documentTypeNode',$init$NodeType());
     }
-    return documentTypeNode$694;
+    return $ja;
 }
-exports.$init$documentTypeNode$694=$init$documentTypeNode$694;
-$init$documentTypeNode$694();
-var documentTypeNode$706;
+ex$.$init$$ja=$init$$ja;
+$init$$ja();
+var $jm;
 function getDocumentTypeNode(){
-    if (documentTypeNode$706===undefined){documentTypeNode$706=$init$documentTypeNode$694()();documentTypeNode$706.$$metamodel$$=getDocumentTypeNode.$$metamodel$$;}
-    return documentTypeNode$706;
+    if($jm===undefined){$jm=$init$$ja()();$jm.$crtmm$=getDocumentTypeNode.$crtmm$;}
+    return $jm;
 }
-exports.getDocumentTypeNode=getDocumentTypeNode;
-getDocumentTypeNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:documentTypeNode$694},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentTypeNode']};};
-$prop$getDocumentTypeNode={get:getDocumentTypeNode,$$metamodel$$:getDocumentTypeNode.$$metamodel$$};
-exports.$prop$getDocumentTypeNode=$prop$getDocumentTypeNode;
-function elementNode$695(){
-    var $$elementNode=new elementNode$695.$$;
-    NodeType($$$cl1.String("elementNode",11),$$elementNode);
-    return $$elementNode;
-};elementNode$695.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeType},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','elementNode']};};
-function $init$elementNode$695(){
-    if (elementNode$695.$$===undefined){
-        $$$cl1.initTypeProto(elementNode$695,'com.openswimsoftware.ceylon.js.dom::elementNode',$init$NodeType());
+ex$.getDocumentTypeNode=getDocumentTypeNode;
+getDocumentTypeNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$ja},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','documentTypeNode']};};
+$prop$getDocumentTypeNode={get:getDocumentTypeNode,$crtmm$:getDocumentTypeNode.$crtmm$};
+get$ja=getDocumentTypeNode;$prop$get$ja=getDocumentTypeNode;
+ex$.$prop$getDocumentTypeNode=$prop$getDocumentTypeNode;
+function $jb(){
+    var elementNode$=new $jb.$$;
+    NodeType("elementNode",elementNode$);
+    return elementNode$;
+};$jb.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeType},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','elementNode']};};
+function $init$$jb(){
+    if($jb.$$===undefined){
+        m$1.initTypeProto($jb,'com.openswimsoftware.ceylon.js.dom::elementNode',$init$NodeType());
     }
-    return elementNode$695;
+    return $jb;
 }
-exports.$init$elementNode$695=$init$elementNode$695;
-$init$elementNode$695();
-var elementNode$707;
+ex$.$init$$jb=$init$$jb;
+$init$$jb();
+var $jn;
 function getElementNode(){
-    if (elementNode$707===undefined){elementNode$707=$init$elementNode$695()();elementNode$707.$$metamodel$$=getElementNode.$$metamodel$$;}
-    return elementNode$707;
+    if($jn===undefined){$jn=$init$$jb()();$jn.$crtmm$=getElementNode.$crtmm$;}
+    return $jn;
 }
-exports.getElementNode=getElementNode;
-getElementNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:elementNode$695},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','elementNode']};};
-$prop$getElementNode={get:getElementNode,$$metamodel$$:getElementNode.$$metamodel$$};
-exports.$prop$getElementNode=$prop$getElementNode;
-function entityNode$696(){
-    var $$entityNode=new entityNode$696.$$;
-    NodeType($$$cl1.String("entityNode",10),$$entityNode);
-    return $$entityNode;
-};entityNode$696.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeType},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','entityNode']};};
-function $init$entityNode$696(){
-    if (entityNode$696.$$===undefined){
-        $$$cl1.initTypeProto(entityNode$696,'com.openswimsoftware.ceylon.js.dom::entityNode',$init$NodeType());
+ex$.getElementNode=getElementNode;
+getElementNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$jb},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','elementNode']};};
+$prop$getElementNode={get:getElementNode,$crtmm$:getElementNode.$crtmm$};
+get$jb=getElementNode;$prop$get$jb=getElementNode;
+ex$.$prop$getElementNode=$prop$getElementNode;
+function $jc(){
+    var entityNode$=new $jc.$$;
+    NodeType("entityNode",entityNode$);
+    return entityNode$;
+};$jc.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeType},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','entityNode']};};
+function $init$$jc(){
+    if($jc.$$===undefined){
+        m$1.initTypeProto($jc,'com.openswimsoftware.ceylon.js.dom::entityNode',$init$NodeType());
     }
-    return entityNode$696;
+    return $jc;
 }
-exports.$init$entityNode$696=$init$entityNode$696;
-$init$entityNode$696();
-var entityNode$708;
+ex$.$init$$jc=$init$$jc;
+$init$$jc();
+var $jo;
 function getEntityNode(){
-    if (entityNode$708===undefined){entityNode$708=$init$entityNode$696()();entityNode$708.$$metamodel$$=getEntityNode.$$metamodel$$;}
-    return entityNode$708;
+    if($jo===undefined){$jo=$init$$jc()();$jo.$crtmm$=getEntityNode.$crtmm$;}
+    return $jo;
 }
-exports.getEntityNode=getEntityNode;
-getEntityNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:entityNode$696},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','entityNode']};};
-$prop$getEntityNode={get:getEntityNode,$$metamodel$$:getEntityNode.$$metamodel$$};
-exports.$prop$getEntityNode=$prop$getEntityNode;
-function entityReferenceNode$697(){
-    var $$entityReferenceNode=new entityReferenceNode$697.$$;
-    NodeType($$$cl1.String("entityReferenceNode",19),$$entityReferenceNode);
-    return $$entityReferenceNode;
-};entityReferenceNode$697.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeType},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','entityReferenceNode']};};
-function $init$entityReferenceNode$697(){
-    if (entityReferenceNode$697.$$===undefined){
-        $$$cl1.initTypeProto(entityReferenceNode$697,'com.openswimsoftware.ceylon.js.dom::entityReferenceNode',$init$NodeType());
+ex$.getEntityNode=getEntityNode;
+getEntityNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$jc},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','entityNode']};};
+$prop$getEntityNode={get:getEntityNode,$crtmm$:getEntityNode.$crtmm$};
+get$jc=getEntityNode;$prop$get$jc=getEntityNode;
+ex$.$prop$getEntityNode=$prop$getEntityNode;
+function $jd(){
+    var entityReferenceNode$=new $jd.$$;
+    NodeType("entityReferenceNode",entityReferenceNode$);
+    return entityReferenceNode$;
+};$jd.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeType},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','entityReferenceNode']};};
+function $init$$jd(){
+    if($jd.$$===undefined){
+        m$1.initTypeProto($jd,'com.openswimsoftware.ceylon.js.dom::entityReferenceNode',$init$NodeType());
     }
-    return entityReferenceNode$697;
+    return $jd;
 }
-exports.$init$entityReferenceNode$697=$init$entityReferenceNode$697;
-$init$entityReferenceNode$697();
-var entityReferenceNode$709;
+ex$.$init$$jd=$init$$jd;
+$init$$jd();
+var $jp;
 function getEntityReferenceNode(){
-    if (entityReferenceNode$709===undefined){entityReferenceNode$709=$init$entityReferenceNode$697()();entityReferenceNode$709.$$metamodel$$=getEntityReferenceNode.$$metamodel$$;}
-    return entityReferenceNode$709;
+    if($jp===undefined){$jp=$init$$jd()();$jp.$crtmm$=getEntityReferenceNode.$crtmm$;}
+    return $jp;
 }
-exports.getEntityReferenceNode=getEntityReferenceNode;
-getEntityReferenceNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:entityReferenceNode$697},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','entityReferenceNode']};};
-$prop$getEntityReferenceNode={get:getEntityReferenceNode,$$metamodel$$:getEntityReferenceNode.$$metamodel$$};
-exports.$prop$getEntityReferenceNode=$prop$getEntityReferenceNode;
-function notationNode$698(){
-    var $$notationNode=new notationNode$698.$$;
-    NodeType($$$cl1.String("notationNode",12),$$notationNode);
-    return $$notationNode;
-};notationNode$698.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeType},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','notationNode']};};
-function $init$notationNode$698(){
-    if (notationNode$698.$$===undefined){
-        $$$cl1.initTypeProto(notationNode$698,'com.openswimsoftware.ceylon.js.dom::notationNode',$init$NodeType());
+ex$.getEntityReferenceNode=getEntityReferenceNode;
+getEntityReferenceNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$jd},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','entityReferenceNode']};};
+$prop$getEntityReferenceNode={get:getEntityReferenceNode,$crtmm$:getEntityReferenceNode.$crtmm$};
+get$jd=getEntityReferenceNode;$prop$get$jd=getEntityReferenceNode;
+ex$.$prop$getEntityReferenceNode=$prop$getEntityReferenceNode;
+function $je(){
+    var notationNode$=new $je.$$;
+    NodeType("notationNode",notationNode$);
+    return notationNode$;
+};$je.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeType},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','notationNode']};};
+function $init$$je(){
+    if($je.$$===undefined){
+        m$1.initTypeProto($je,'com.openswimsoftware.ceylon.js.dom::notationNode',$init$NodeType());
     }
-    return notationNode$698;
+    return $je;
 }
-exports.$init$notationNode$698=$init$notationNode$698;
-$init$notationNode$698();
-var notationNode$710;
+ex$.$init$$je=$init$$je;
+$init$$je();
+var $jq;
 function getNotationNode(){
-    if (notationNode$710===undefined){notationNode$710=$init$notationNode$698()();notationNode$710.$$metamodel$$=getNotationNode.$$metamodel$$;}
-    return notationNode$710;
+    if($jq===undefined){$jq=$init$$je()();$jq.$crtmm$=getNotationNode.$crtmm$;}
+    return $jq;
 }
-exports.getNotationNode=getNotationNode;
-getNotationNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:notationNode$698},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','notationNode']};};
-$prop$getNotationNode={get:getNotationNode,$$metamodel$$:getNotationNode.$$metamodel$$};
-exports.$prop$getNotationNode=$prop$getNotationNode;
-function processingInstructionNode$699(){
-    var $$processingInstructionNode=new processingInstructionNode$699.$$;
-    NodeType($$$cl1.String("processingInstructionNode",25),$$processingInstructionNode);
-    return $$processingInstructionNode;
-};processingInstructionNode$699.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeType},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','processingInstructionNode']};};
-function $init$processingInstructionNode$699(){
-    if (processingInstructionNode$699.$$===undefined){
-        $$$cl1.initTypeProto(processingInstructionNode$699,'com.openswimsoftware.ceylon.js.dom::processingInstructionNode',$init$NodeType());
+ex$.getNotationNode=getNotationNode;
+getNotationNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$je},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','notationNode']};};
+$prop$getNotationNode={get:getNotationNode,$crtmm$:getNotationNode.$crtmm$};
+get$je=getNotationNode;$prop$get$je=getNotationNode;
+ex$.$prop$getNotationNode=$prop$getNotationNode;
+function $jf(){
+    var processingInstructionNode$=new $jf.$$;
+    NodeType("processingInstructionNode",processingInstructionNode$);
+    return processingInstructionNode$;
+};$jf.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeType},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','processingInstructionNode']};};
+function $init$$jf(){
+    if($jf.$$===undefined){
+        m$1.initTypeProto($jf,'com.openswimsoftware.ceylon.js.dom::processingInstructionNode',$init$NodeType());
     }
-    return processingInstructionNode$699;
+    return $jf;
 }
-exports.$init$processingInstructionNode$699=$init$processingInstructionNode$699;
-$init$processingInstructionNode$699();
-var processingInstructionNode$711;
+ex$.$init$$jf=$init$$jf;
+$init$$jf();
+var $jr;
 function getProcessingInstructionNode(){
-    if (processingInstructionNode$711===undefined){processingInstructionNode$711=$init$processingInstructionNode$699()();processingInstructionNode$711.$$metamodel$$=getProcessingInstructionNode.$$metamodel$$;}
-    return processingInstructionNode$711;
+    if($jr===undefined){$jr=$init$$jf()();$jr.$crtmm$=getProcessingInstructionNode.$crtmm$;}
+    return $jr;
 }
-exports.getProcessingInstructionNode=getProcessingInstructionNode;
-getProcessingInstructionNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:processingInstructionNode$699},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','processingInstructionNode']};};
-$prop$getProcessingInstructionNode={get:getProcessingInstructionNode,$$metamodel$$:getProcessingInstructionNode.$$metamodel$$};
-exports.$prop$getProcessingInstructionNode=$prop$getProcessingInstructionNode;
-function textNode$700(){
-    var $$textNode=new textNode$700.$$;
-    NodeType($$$cl1.String("textNode",8),$$textNode);
-    return $$textNode;
-};textNode$700.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeType},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','textNode']};};
-function $init$textNode$700(){
-    if (textNode$700.$$===undefined){
-        $$$cl1.initTypeProto(textNode$700,'com.openswimsoftware.ceylon.js.dom::textNode',$init$NodeType());
+ex$.getProcessingInstructionNode=getProcessingInstructionNode;
+getProcessingInstructionNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$jf},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','processingInstructionNode']};};
+$prop$getProcessingInstructionNode={get:getProcessingInstructionNode,$crtmm$:getProcessingInstructionNode.$crtmm$};
+get$jf=getProcessingInstructionNode;$prop$get$jf=getProcessingInstructionNode;
+ex$.$prop$getProcessingInstructionNode=$prop$getProcessingInstructionNode;
+function $jg(){
+    var textNode$=new $jg.$$;
+    NodeType("textNode",textNode$);
+    return textNode$;
+};$jg.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeType},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','textNode']};};
+function $init$$jg(){
+    if($jg.$$===undefined){
+        m$1.initTypeProto($jg,'com.openswimsoftware.ceylon.js.dom::textNode',$init$NodeType());
     }
-    return textNode$700;
+    return $jg;
 }
-exports.$init$textNode$700=$init$textNode$700;
-$init$textNode$700();
-var textNode$712;
+ex$.$init$$jg=$init$$jg;
+$init$$jg();
+var $js;
 function getTextNode(){
-    if (textNode$712===undefined){textNode$712=$init$textNode$700()();textNode$712.$$metamodel$$=getTextNode.$$metamodel$$;}
-    return textNode$712;
+    if($js===undefined){$js=$init$$jg()();$js.$crtmm$=getTextNode.$crtmm$;}
+    return $js;
 }
-exports.getTextNode=getTextNode;
-getTextNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:textNode$700},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','textNode']};};
-$prop$getTextNode={get:getTextNode,$$metamodel$$:getTextNode.$$metamodel$$};
-exports.$prop$getTextNode=$prop$getTextNode;
-function DocumentFragmentAbs($$documentFragmentAbs){
+ex$.getTextNode=getTextNode;
+getTextNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$jg},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','textNode']};};
+$prop$getTextNode={get:getTextNode,$crtmm$:getTextNode.$crtmm$};
+get$jg=getTextNode;$prop$get$jg=getTextNode;
+ex$.$prop$getTextNode=$prop$getTextNode;
+function DocumentFragmentAbs(documentFragmentAbs$){
     $init$DocumentFragmentAbs();
-    if ($$documentFragmentAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    NodeAbs($$documentFragmentAbs);
-    return $$documentFragmentAbs;
+    if(documentFragmentAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    NodeAbs(documentFragmentAbs$);
+    return documentFragmentAbs$;
 }
-DocumentFragmentAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentFragmentAbs']};};
-exports.DocumentFragmentAbs=DocumentFragmentAbs;
+DocumentFragmentAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentFragmentAbs']};};
+ex$.DocumentFragmentAbs=DocumentFragmentAbs;
 function $init$DocumentFragmentAbs(){
-    if (DocumentFragmentAbs.$$===undefined){
-        $$$cl1.initTypeProto(DocumentFragmentAbs,'com.openswimsoftware.ceylon.js.dom::DocumentFragmentAbs',$init$NodeAbs());
+    if(DocumentFragmentAbs.$$===undefined){
+        m$1.initTypeProto(DocumentFragmentAbs,'com.openswimsoftware.ceylon.js.dom::DocumentFragmentAbs',$init$NodeAbs());
     }
     return DocumentFragmentAbs;
 }
-exports.$init$DocumentFragmentAbs=$init$DocumentFragmentAbs;
+ex$.$init$DocumentFragmentAbs=$init$DocumentFragmentAbs;
 $init$DocumentFragmentAbs();
-function DocumentFragment(n$713, $$documentFragment){
+function DocumentFragment($jt,documentFragment$){
     $init$DocumentFragment();
-    if ($$documentFragment===undefined)$$documentFragment=new DocumentFragment.$$;
-    $$documentFragment.n$713_=n$713;
-    DocumentFragmentAbs($$documentFragment);
-    $$documentFragment.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:DocumentFragment,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentFragment','$at','native']};}};
+    if(documentFragment$===undefined)documentFragment$=new DocumentFragment.$$;
+    documentFragment$.$jt_=$jt;
+    DocumentFragmentAbs(documentFragment$);
+    documentFragment$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:DocumentFragment,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentFragment','$at','native']};}};
     /*Begin dynamic block*/
-    $$documentFragment.$native=$$documentFragment.n$713;/*End dynamic block*/
-    return $$documentFragment;
+    documentFragment$.$_native=documentFragment$.$jt;/*End dynamic block*/
+    return documentFragment$;
 }
-DocumentFragment.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:DocumentFragmentAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("a DOM DocumentFragment",22)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentFragment']};};
-exports.DocumentFragment=DocumentFragment;
+DocumentFragment.$crtmm$=function(){return{mod:$CCMM$,'super':{t:DocumentFragmentAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("a DOM DocumentFragment"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','DocumentFragment']};};
+ex$.DocumentFragment=DocumentFragment;
 function $init$DocumentFragment(){
-    if (DocumentFragment.$$===undefined){
-        $$$cl1.initTypeProto(DocumentFragment,'com.openswimsoftware.ceylon.js.dom::DocumentFragment',$init$DocumentFragmentAbs());
-        (function($$documentFragment){
-            $$$cl1.defineAttr($$documentFragment,'n$713',function(){return this.n$713_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:DocumentFragment,d:['com.openswimsoftware.ceylon.js.dom','DocumentFragment','$at','n']};});
+    if(DocumentFragment.$$===undefined){
+        m$1.initTypeProto(DocumentFragment,'com.openswimsoftware.ceylon.js.dom::DocumentFragment',$init$DocumentFragmentAbs());
+        (function(documentFragment$){
+            m$1.atr$(documentFragment$,'$jt',function(){return this.$jt_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:DocumentFragment,d:['com.openswimsoftware.ceylon.js.dom','DocumentFragment','$at','n$wld4o5']};});
         })(DocumentFragment.$$.prototype);
     }
     return DocumentFragment;
 }
-exports.$init$DocumentFragment=$init$DocumentFragment;
+ex$.$init$DocumentFragment=$init$DocumentFragment;
 $init$DocumentFragment();
-function EntityReferenceAbs($$entityReferenceAbs){
+function EntityReferenceAbs(entityReferenceAbs$){
     $init$EntityReferenceAbs();
-    if ($$entityReferenceAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    NodeAbs($$entityReferenceAbs);
-    return $$entityReferenceAbs;
+    if(entityReferenceAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    NodeAbs(entityReferenceAbs$);
+    return entityReferenceAbs$;
 }
-EntityReferenceAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','EntityReferenceAbs']};};
-exports.EntityReferenceAbs=EntityReferenceAbs;
+EntityReferenceAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','EntityReferenceAbs']};};
+ex$.EntityReferenceAbs=EntityReferenceAbs;
 function $init$EntityReferenceAbs(){
-    if (EntityReferenceAbs.$$===undefined){
-        $$$cl1.initTypeProto(EntityReferenceAbs,'com.openswimsoftware.ceylon.js.dom::EntityReferenceAbs',$init$NodeAbs());
+    if(EntityReferenceAbs.$$===undefined){
+        m$1.initTypeProto(EntityReferenceAbs,'com.openswimsoftware.ceylon.js.dom::EntityReferenceAbs',$init$NodeAbs());
     }
     return EntityReferenceAbs;
 }
-exports.$init$EntityReferenceAbs=$init$EntityReferenceAbs;
+ex$.$init$EntityReferenceAbs=$init$EntityReferenceAbs;
 $init$EntityReferenceAbs();
-function EntityReference(n$714, $$entityReference){
+function EntityReference($ju,entityReference$){
     $init$EntityReference();
-    if ($$entityReference===undefined)$$entityReference=new EntityReference.$$;
-    $$entityReference.n$714_=n$714;
-    EntityReferenceAbs($$entityReference);
+    if(entityReference$===undefined)entityReference$=new EntityReference.$$;
+    entityReference$.$ju_=$ju;
+    EntityReferenceAbs(entityReference$);
+    entityReference$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:EntityReference,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','EntityReference','$at','native']};}};
     /*Begin dynamic block*/
-    $$entityReference.$native=$$entityReference.n$714;/*End dynamic block*/
-    return $$entityReference;
+    entityReference$.$_native=entityReference$.$ju;/*End dynamic block*/
+    return entityReference$;
 }
-EntityReference.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:EntityReferenceAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("a DOM EntityReference",21)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EntityReference']};};
-exports.EntityReference=EntityReference;
+EntityReference.$crtmm$=function(){return{mod:$CCMM$,'super':{t:EntityReferenceAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("a DOM EntityReference"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','EntityReference']};};
+ex$.EntityReference=EntityReference;
 function $init$EntityReference(){
-    if (EntityReference.$$===undefined){
-        $$$cl1.initTypeProto(EntityReference,'com.openswimsoftware.ceylon.js.dom::EntityReference',$init$EntityReferenceAbs());
-        (function($$entityReference){
-            $$$cl1.defineAttr($$entityReference,'n$714',function(){return this.n$714_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:EntityReference,d:['com.openswimsoftware.ceylon.js.dom','EntityReference','$at','n']};});
+    if(EntityReference.$$===undefined){
+        m$1.initTypeProto(EntityReference,'com.openswimsoftware.ceylon.js.dom::EntityReference',$init$EntityReferenceAbs());
+        (function(entityReference$){
+            m$1.atr$(entityReference$,'$ju',function(){return this.$ju_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:EntityReference,d:['com.openswimsoftware.ceylon.js.dom','EntityReference','$at','n$sed50g']};});
         })(EntityReference.$$.prototype);
     }
     return EntityReference;
 }
-exports.$init$EntityReference=$init$EntityReference;
+ex$.$init$EntityReference=$init$EntityReference;
 $init$EntityReference();
-function NodeAbs($$nodeAbs){
+function NodeAbs(nodeAbs$){
     $init$NodeAbs();
-    if ($$nodeAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$$cocjl339.JSObjectAbs($$nodeAbs);
-    return $$nodeAbs;
+    if(nodeAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    m$9f.JSObjectAbs(nodeAbs$);
+    return nodeAbs$;
 }
-NodeAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cocjl339.JSObjectAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs']};};
-exports.NodeAbs=NodeAbs;
+NodeAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$9f.JSObjectAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs']};};
+ex$.NodeAbs=NodeAbs;
 function $init$NodeAbs(){
-    if (NodeAbs.$$===undefined){
-        $$$cl1.initTypeProto(NodeAbs,'com.openswimsoftware.ceylon.js.dom::NodeAbs',$$$cocjl339.JSObjectAbs);
-        (function($$nodeAbs){
-            $$nodeAbs.appendChild=function appendChild(node$715){
-                var $$nodeAbs=this;
+    if(NodeAbs.$$===undefined){
+        m$1.initTypeProto(NodeAbs,'com.openswimsoftware.ceylon.js.dom::NodeAbs',m$9f.JSObjectAbs);
+        (function(nodeAbs$){
+            nodeAbs$.appendChild=function appendChild($jv){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                return Node(node$715.$native.appendChild(node$715));
+                return Node($jv.$_native.appendChild($jv));
                 /*End dynamic block*/
-            };$$nodeAbs.appendChild.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Node},$ps:[{$nm:'node',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("append the node to the nodes children",37)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','appendChild']};};
-            $$nodeAbs.baseURI=function baseURI(){
-                var $$nodeAbs=this;
+            };nodeAbs$.appendChild.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Node},$ps:[{$nm:'node',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[m$1.doc("append the node to the nodes children"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','appendChild']};};
+            nodeAbs$.baseURI=function baseURI(){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$nodeAbs.$native.baseURL);
+                return m$9f.JSString(nodeAbs$.$_native.baseURL);
                 /*End dynamic block*/
-            };$$nodeAbs.baseURI.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the nodes baseURI",25)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','baseURI']};};
-            $$nodeAbs.childNodes=function childNodes(){
-                var $$nodeAbs=this;
+            };nodeAbs$.baseURI.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:NodeAbs,$an:function(){return[m$1.doc("returns the nodes baseURI"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','baseURI']};};
+            nodeAbs$.childNodes=function childNodes(){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                return NodeList($$nodeAbs.$native.childNodes);
+                return NodeList(nodeAbs$.$_native.childNodes);
                 /*End dynamic block*/
-            };$$nodeAbs.childNodes.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:NodeList},$ps:[],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns a list of child nodes",29)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','childNodes']};};
-            $$nodeAbs.cloneNode$defs$bool=function(bool$716){var $$nodeAbs=this;
-            return true;};
-            $$nodeAbs.cloneNode=function cloneNode(bool$716){
-                var $$nodeAbs=this;
-                if(bool$716===undefined){bool$716=$$nodeAbs.cloneNode$defs$bool(bool$716);}
+            };nodeAbs$.childNodes.$crtmm$=function(){return{mod:$CCMM$,$t:{t:NodeList},$ps:[],$cont:NodeAbs,$an:function(){return[m$1.doc("returns a list of child nodes"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','childNodes']};};
+            nodeAbs$.cloneNode$defs$bool=function($jw){return true;};
+            nodeAbs$.cloneNode=function cloneNode($jw){
+                var nodeAbs$=this;
+                if($jw===undefined){$jw=nodeAbs$.cloneNode$defs$bool($jw);}
                 /*Begin dynamic block*/
-                return Node((typeof node==='undefined'||node===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: node")),'67:15-67:18','node.ceylon'):node).native.cloneNode(bool$716));
+                return Node((typeof node==='undefined'||node===null?m$1.throwexc(m$1.Exception("Undefined or null reference: node"),'67:15-67:18','node.ceylon'):node).native.cloneNode($jw));
                 /*End dynamic block*/
-            };$$nodeAbs.cloneNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Node},$ps:[{$nm:'bool',$mt:'prm',$def:1,$t:{t:$$$cl1.Boolean},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("clones the current node pass true for deep copy",47)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','cloneNode']};};
-            $$nodeAbs.compareDocumentPosition=function compareDocumentPosition(node$717){
-                var $$nodeAbs=this;
+            };nodeAbs$.cloneNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Node},$ps:[{$nm:'bool',$mt:'prm',$def:1,$t:{t:m$1.$_Boolean},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[m$1.doc("clones the current node pass true for deep copy"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','cloneNode']};};
+            nodeAbs$.compareDocumentPosition=function compareDocumentPosition($jx){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                var pos$718=node$717.$native.compareDocumentPosition(node$717);
-                $prop$getPos$718={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','compareDocumentPosition','$at','pos']};}};
-                $prop$getPos$718.get=function(){return pos$718};
-                if((tmpvar$719=pos$718,tmpvar$720=(typeof Node==='undefined'||Node===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Node")),'75:23-75:26','node.ceylon'):Node).DOCUMENT_POSITION_CONTAINED_BY,(tmpvar$719.equals&&tmpvar$719.equals(tmpvar$720))||tmpvar$719===tmpvar$720)){
+                var $jy=$jx.$_native.compareDocumentPosition($jx);
+                if(($jz=$jy,$k0=(typeof Node==='undefined'||Node===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Node"),'75:23-75:26','node.ceylon'):Node).DOCUMENT_POSITION_CONTAINED_BY,($jz.equals&&$jz.equals($k0))||$jz===$k0)){
                     return getDocumentPositionContainedBy();
                 }else {
-                    if((tmpvar$721=pos$718,tmpvar$722=(typeof Node==='undefined'||Node===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Node")),'77:30-77:33','node.ceylon'):Node).DOCUMENT_POSITION_CONTAINS,(tmpvar$721.equals&&tmpvar$721.equals(tmpvar$722))||tmpvar$721===tmpvar$722)){
+                    if(($k1=$jy,$k2=(typeof Node==='undefined'||Node===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Node"),'77:30-77:33','node.ceylon'):Node).DOCUMENT_POSITION_CONTAINS,($k1.equals&&$k1.equals($k2))||$k1===$k2)){
                         return getDocumentPositionContains();
                     }else {
-                        if((tmpvar$723=pos$718,tmpvar$724=(typeof Node==='undefined'||Node===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Node")),'79:27-79:30','node.ceylon'):Node).DOCUMENT_POSITION_DISCONNECTED,(tmpvar$723.equals&&tmpvar$723.equals(tmpvar$724))||tmpvar$723===tmpvar$724)){
+                        if(($k3=$jy,$k4=(typeof Node==='undefined'||Node===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Node"),'79:27-79:30','node.ceylon'):Node).DOCUMENT_POSITION_DISCONNECTED,($k3.equals&&$k3.equals($k4))||$k3===$k4)){
                             return getDocumentPositionDisconnected();
                         }else {
-                            if((tmpvar$725=pos$718,tmpvar$726=(typeof Node==='undefined'||Node===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Node")),'81:27-81:30','node.ceylon'):Node).DOCUMENT_POSITION_FOLLOWING,(tmpvar$725.equals&&tmpvar$725.equals(tmpvar$726))||tmpvar$725===tmpvar$726)){
+                            if(($k5=$jy,$k6=(typeof Node==='undefined'||Node===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Node"),'81:27-81:30','node.ceylon'):Node).DOCUMENT_POSITION_FOLLOWING,($k5.equals&&$k5.equals($k6))||$k5===$k6)){
                                 return getDocumentPositionFollowing();
                             }else {
-                                if((tmpvar$727=pos$718,tmpvar$728=(typeof Node==='undefined'||Node===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Node")),'83:27-83:30','node.ceylon'):Node).DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC,(tmpvar$727.equals&&tmpvar$727.equals(tmpvar$728))||tmpvar$727===tmpvar$728)){
+                                if(($k7=$jy,$k8=(typeof Node==='undefined'||Node===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Node"),'83:27-83:30','node.ceylon'):Node).DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC,($k7.equals&&$k7.equals($k8))||$k7===$k8)){
                                     return getDocumentPositionImplementationSpecific();
                                 }else {
                                     return getDocumentPositionPreceding();
@@ -2979,142 +2885,136 @@ function $init$NodeAbs(){
                         }
                     }
                 }/*End dynamic block*/
-            };$$nodeAbs.compareDocumentPosition.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:DocumentPosition},$ps:[{$nm:'node',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("return the node document position compared to the passed node",61)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','compareDocumentPosition']};};
-            $$nodeAbs.firstChild=function firstChild(){
-                var $$nodeAbs=this;
+            };nodeAbs$.compareDocumentPosition.$crtmm$=function(){return{mod:$CCMM$,$t:{t:DocumentPosition},$ps:[{$nm:'node',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[m$1.doc("return the node document position compared to the passed node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','compareDocumentPosition']};};
+            nodeAbs$.firstChild=function firstChild(){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                return Node($$nodeAbs.$native.firstChild);
+                return Node(nodeAbs$.$_native.firstChild);
                 /*End dynamic block*/
-            };$$nodeAbs.firstChild.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Node},$ps:[],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the nodes first child node",34)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','firstChild']};};
-            $$nodeAbs.hasChildNodes=function hasChildNodes(){
-                var $$nodeAbs=this;
+            };nodeAbs$.firstChild.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Node},$ps:[],$cont:NodeAbs,$an:function(){return[m$1.doc("returns the nodes first child node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','firstChild']};};
+            nodeAbs$.hasChildNodes=function hasChildNodes(){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                if($$nodeAbs.$native.hasAttributes()){
+                if(nodeAbs$.$_native.hasAttributes()){
                     return true;
                 }else {
                     return false;
                 }/*End dynamic block*/
-            };$$nodeAbs.hasChildNodes.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Boolean},$ps:[],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("if the node has children",24)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','hasChildNodes']};};
-            $$nodeAbs.insertBefore=function insertBefore(newElement$729,referenceElement$730){
-                var $$nodeAbs=this;
+            };nodeAbs$.hasChildNodes.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.$_Boolean},$ps:[],$cont:NodeAbs,$an:function(){return[m$1.doc("if the node has children"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','hasChildNodes']};};
+            nodeAbs$.insertBefore=function insertBefore($k9,$ka){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                var ref$731;
-                if((ref$731=referenceElement$730)!==null){
-                    return Node($$nodeAbs.$native.insertBefore(newElement$729.$native,ref$731.$native));
+                var $kb;
+                if(($kb=$ka)!==null&&$kb!==undefined){
+                    return Node(nodeAbs$.$_native.insertBefore($k9.$_native,$kb.$_native));
                 }else {
-                    return Node($$nodeAbs.$native.insertBefore(newElement$729.$native));
+                    return Node(nodeAbs$.$_native.insertBefore($k9.$_native));
                 }/*End dynamic block*/
-            };$$nodeAbs.insertBefore.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Node},$ps:[{$nm:'newElement',$mt:'prm',$t:{t:Node},$an:function(){return[];}},{$nm:'referenceElement',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.Null},{t:Node}]},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("insert the passed node to children before the reference node",60)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','insertBefore']};};
-            $$nodeAbs.isDefaultNamespace=function isDefaultNamespace(namespaceURI$732){
-                var $$nodeAbs=this;
-                var isDefault$733;
-                
-                var case$734=namespaceURI$732;
-                if ($$$cl1.isOfType(namespaceURI$732,{t:$$$cl1.String})) {
+            };nodeAbs$.insertBefore.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Node},$ps:[{$nm:'newElement',$mt:'prm',$t:{t:Node},$an:function(){return[];}},{$nm:'referenceElement',$mt:'prm',$t:{t:'u',l:[{t:m$1.Null},{t:Node}]},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[m$1.doc("insert the passed node to children before the reference node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','insertBefore']};};
+            nodeAbs$.isDefaultNamespace=function isDefaultNamespace($kc){
+                var nodeAbs$=this;
+                var $kd;
+                var $ke=$kc;
+                if(m$1.is$($kc,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    isDefault$733=$$nodeAbs.$native.isDefaultNamespace(case$734.valueOf());/*End dynamic block*/
-                }else if ($$$cl1.isOfType(namespaceURI$732,{t:$$$cocjl339.JSString})) {
+                    $kd=nodeAbs$.$_native.isDefaultNamespace($ke.valueOf());/*End dynamic block*/
+                }else if(m$1.is$($kc,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    isDefault$733=$$nodeAbs.$native.isDefaultNamespace(case$734.$native);/*End dynamic block*/
+                    $kd=nodeAbs$.$_native.isDefaultNamespace($ke.$_native);/*End dynamic block*/
                 }
                 /*Begin dynamic block*/
-                if(isDefault$733){
+                if($kd){
                     return true;
                 }else {
                     return false;
                 }/*End dynamic block*/
-            };$$nodeAbs.isDefaultNamespace.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Boolean},$ps:[{$nm:'namespaceURI',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("is the passed namespace the default one",39)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','isDefaultNamespace']};};
-            $$nodeAbs.isEqualNode=function isEqualNode(node$735){
-                var $$nodeAbs=this;
+            };nodeAbs$.isDefaultNamespace.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.$_Boolean},$ps:[{$nm:'namespaceURI',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[m$1.doc("is the passed namespace the default one"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','isDefaultNamespace']};};
+            nodeAbs$.isEqualNode=function isEqualNode($kf){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                if($$nodeAbs.$native.isEqualNode(node$735)){
+                if(nodeAbs$.$_native.isEqualNode($kf)){
                     return true;
                 }else {
                     return false;
                 }/*End dynamic block*/
-            };$$nodeAbs.isEqualNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Boolean},$ps:[{$nm:'node',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("is the passed node equal to this one",36)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','isEqualNode']};};
-            $$nodeAbs.lastChild=function lastChild(){
-                var $$nodeAbs=this;
+            };nodeAbs$.isEqualNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.$_Boolean},$ps:[{$nm:'node',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[m$1.doc("is the passed node equal to this one"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','isEqualNode']};};
+            nodeAbs$.lastChild=function lastChild(){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                var lastChild$736=$$nodeAbs.$native.lastChild;
-                $prop$getLastChild$736={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','lastChild','$at','lastChild']};}};
-                $prop$getLastChild$736.get=function(){return lastChild$736};
-                if((tmpvar$737=lastChild$736,tmpvar$738=null,(tmpvar$737.equals&&!tmpvar$737.equals(tmpvar$738))||tmpvar$737!==tmpvar$738)){
-                    return Node(lastChild$736);
+                var $kg=nodeAbs$.$_native.lastChild;
+                if(($kh=$kg,$ki=null,($kh.equals&&!$kh.equals($ki))||$kh!==$ki)){
+                    return Node($kg);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$nodeAbs.lastChild.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:Node}]},$ps:[],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the last child node of this node",40)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','lastChild']};};
-            $$nodeAbs.lookupPrefix=function lookupPrefix(namespaceURI$739){
-                var $$nodeAbs=this;
-                var prefix$740;
+            };nodeAbs$.lastChild.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:Node}]},$ps:[],$cont:NodeAbs,$an:function(){return[m$1.doc("returns the last child node of this node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','lastChild']};};
+            nodeAbs$.lookupPrefix=function lookupPrefix($kj){
+                var nodeAbs$=this;
+                var $kk;
                 /*Begin dynamic block*/
-                
-                var case$741=namespaceURI$739;
-                if ($$$cl1.isOfType(namespaceURI$739,{t:$$$cl1.String})) {
-                    prefix$740=$$nodeAbs.$native.lookupPrefix(case$741.valueOf());
-                }else if ($$$cl1.isOfType(namespaceURI$739,{t:$$$cocjl339.JSString})) {
-                    prefix$740=$$nodeAbs.$native.lookupPrefix(case$741.$native);
-                }else if ($$$cl1.isOfType(namespaceURI$739,{t:$$$cl1.Null})) {
-                    prefix$740=$$nodeAbs.$native.lookupPrefix();
-                }if((tmpvar$742=prefix$740,tmpvar$743=null,(tmpvar$742.equals&&!tmpvar$742.equals(tmpvar$743))||tmpvar$742!==tmpvar$743)){
-                    return $$$cocjl339.JSString(prefix$740);
+                var $kl=$kj;
+                if(m$1.is$($kj,{t:m$1.String})) {
+                    $kk=nodeAbs$.$_native.lookupPrefix($kl.valueOf());
+                }else if(m$1.is$($kj,{t:m$9f.JSString})) {
+                    $kk=nodeAbs$.$_native.lookupPrefix($kl.$_native);
+                }else if(m$1.is$($kj,{t:m$1.Null})) {
+                    $kk=nodeAbs$.$_native.lookupPrefix();
+                }if(($km=$kk,$kn=null,($km.equals&&!$km.equals($kn))||$km!==$kn)){
+                    return m$9f.JSString($kk);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$nodeAbs.lookupPrefix.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:$$$cocjl339.JSString}]},$ps:[{$nm:'namespaceURI',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:'u', l:[{t:$$$cl1.Null},{t:$$$cocjl339.JSString}]}]},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the prefix for the given namespaceURI",45)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','lookupPrefix']};};
-            $$nodeAbs.nextSibling=function nextSibling(){
-                var $$nodeAbs=this;
+            };nodeAbs$.lookupPrefix.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:m$9f.JSString}]},$ps:[{$nm:'namespaceURI',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:'u',l:[{t:m$1.Null},{t:m$9f.JSString}]}]},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[m$1.doc("returns the prefix for the given namespaceURI"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','lookupPrefix']};};
+            nodeAbs$.nextSibling=function nextSibling(){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                var nextSibling$744=$$nodeAbs.$native.nextSibling();
-                $prop$getNextSibling$744={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','nextSibling','$at','nextSibling']};}};
-                $prop$getNextSibling$744.get=function(){return nextSibling$744};
-                if((tmpvar$745=nextSibling$744,tmpvar$746=null,(tmpvar$745.equals&&!tmpvar$745.equals(tmpvar$746))||tmpvar$745!==tmpvar$746)){
-                    return Node(nextSibling$744);
+                var $ko=nodeAbs$.$_native.nextSibling();
+                if(($kp=$ko,$kq=null,($kp.equals&&!$kp.equals($kq))||$kp!==$kq)){
+                    return Node($ko);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$nodeAbs.nextSibling.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:Node}]},$ps:[],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the node immediately after this node in the parents child nodes or null if none",87)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','nextSibling']};};
-            $$nodeAbs.nodeName=function nodeName(){
-                var $$nodeAbs=this;
+            };nodeAbs$.nextSibling.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:Node}]},$ps:[],$cont:NodeAbs,$an:function(){return[m$1.doc("returns the node immediately after this node in the parents child nodes or null if none"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','nextSibling']};};
+            nodeAbs$.nodeName=function nodeName(){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$nodeAbs.$native.nodeName);
+                return m$9f.JSString(nodeAbs$.$_native.nodeName);
                 /*End dynamic block*/
-            };$$nodeAbs.nodeName.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the nodes name",22)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','nodeName']};};
-            $$nodeAbs.nodeType=function nodeType(){
-                var $$nodeAbs=this;
+            };nodeAbs$.nodeName.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:NodeAbs,$an:function(){return[m$1.doc("returns the nodes name"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','nodeName']};};
+            nodeAbs$.nodeType=function nodeType(){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                if((tmpvar$747=$$nodeAbs.$native.nodeType,tmpvar$748=(typeof Node==='undefined'||Node===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Node")),'212:26-212:29','node.ceylon'):Node).ELEMENT_NODE,(tmpvar$747.equals&&tmpvar$747.equals(tmpvar$748))||tmpvar$747===tmpvar$748)){
+                if(($kr=nodeAbs$.$_native.nodeType,$ks=(typeof Node==='undefined'||Node===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Node"),'212:26-212:29','node.ceylon'):Node).ELEMENT_NODE,($kr.equals&&$kr.equals($ks))||$kr===$ks)){
                     return getElementNode();
                 }else {
-                    if((tmpvar$749=$$nodeAbs.$native.nodeType,tmpvar$750=(typeof Node==='undefined'||Node===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Node")),'214:33-214:36','node.ceylon'):Node).ATTRIBUTE_NODE,(tmpvar$749.equals&&tmpvar$749.equals(tmpvar$750))||tmpvar$749===tmpvar$750)){
+                    if(($kt=nodeAbs$.$_native.nodeType,$ku=(typeof Node==='undefined'||Node===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Node"),'214:33-214:36','node.ceylon'):Node).ATTRIBUTE_NODE,($kt.equals&&$kt.equals($ku))||$kt===$ku)){
                         return getAttributeNode();
                     }else {
-                        if((tmpvar$751=$$nodeAbs.$native.nodeType,tmpvar$752=(typeof Node==='undefined'||Node===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Node")),'216:33-216:36','node.ceylon'):Node).TEXT_NODE,(tmpvar$751.equals&&tmpvar$751.equals(tmpvar$752))||tmpvar$751===tmpvar$752)){
+                        if(($kv=nodeAbs$.$_native.nodeType,$kw=(typeof Node==='undefined'||Node===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Node"),'216:33-216:36','node.ceylon'):Node).TEXT_NODE,($kv.equals&&$kv.equals($kw))||$kv===$kw)){
                             return getTextNode();
                         }else {
-                            if((tmpvar$753=$$nodeAbs.$native.nodeType,tmpvar$754=(typeof Node==='undefined'||Node===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Node")),'218:33-218:36','node.ceylon'):Node).CDATA_SECTION_NODE,(tmpvar$753.equals&&tmpvar$753.equals(tmpvar$754))||tmpvar$753===tmpvar$754)){
+                            if(($kx=nodeAbs$.$_native.nodeType,$ky=(typeof Node==='undefined'||Node===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Node"),'218:33-218:36','node.ceylon'):Node).CDATA_SECTION_NODE,($kx.equals&&$kx.equals($ky))||$kx===$ky)){
                                 return getCdataSectionNode();
                             }else {
-                                if((tmpvar$755=$$nodeAbs.$native.nodeType,tmpvar$756=(typeof Node==='undefined'||Node===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Node")),'220:33-220:36','node.ceylon'):Node).ENTITY_REFERENCE_NODE,(tmpvar$755.equals&&tmpvar$755.equals(tmpvar$756))||tmpvar$755===tmpvar$756)){
+                                if(($kz=nodeAbs$.$_native.nodeType,$l0=(typeof Node==='undefined'||Node===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Node"),'220:33-220:36','node.ceylon'):Node).ENTITY_REFERENCE_NODE,($kz.equals&&$kz.equals($l0))||$kz===$l0)){
                                     return getEntityReferenceNode();
                                 }else {
-                                    if((tmpvar$757=$$nodeAbs.$native.nodeType,tmpvar$758=(typeof Node==='undefined'||Node===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Node")),'222:33-222:36','node.ceylon'):Node).ENTITY_NODE,(tmpvar$757.equals&&tmpvar$757.equals(tmpvar$758))||tmpvar$757===tmpvar$758)){
+                                    if(($l1=nodeAbs$.$_native.nodeType,$l2=(typeof Node==='undefined'||Node===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Node"),'222:33-222:36','node.ceylon'):Node).ENTITY_NODE,($l1.equals&&$l1.equals($l2))||$l1===$l2)){
                                         return getEntityNode();
                                     }else {
-                                        if((tmpvar$759=$$nodeAbs.$native.nodeType,tmpvar$760=(typeof Node==='undefined'||Node===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Node")),'224:33-224:36','node.ceylon'):Node).PROCESSING_INSTRUCTION_NODE,(tmpvar$759.equals&&tmpvar$759.equals(tmpvar$760))||tmpvar$759===tmpvar$760)){
+                                        if(($l3=nodeAbs$.$_native.nodeType,$l4=(typeof Node==='undefined'||Node===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Node"),'224:33-224:36','node.ceylon'):Node).PROCESSING_INSTRUCTION_NODE,($l3.equals&&$l3.equals($l4))||$l3===$l4)){
                                             return getProcessingInstructionNode();
                                         }else {
-                                            if((tmpvar$761=$$nodeAbs.$native.nodeType,tmpvar$762=(typeof Node==='undefined'||Node===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Node")),'226:33-226:36','node.ceylon'):Node).COMMENT_NODE,(tmpvar$761.equals&&tmpvar$761.equals(tmpvar$762))||tmpvar$761===tmpvar$762)){
+                                            if(($l5=nodeAbs$.$_native.nodeType,$l6=(typeof Node==='undefined'||Node===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Node"),'226:33-226:36','node.ceylon'):Node).COMMENT_NODE,($l5.equals&&$l5.equals($l6))||$l5===$l6)){
                                                 return getCommentNode();
                                             }else {
-                                                if((tmpvar$763=$$nodeAbs.$native.nodeType,tmpvar$764=(typeof Node==='undefined'||Node===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Node")),'228:33-228:36','node.ceylon'):Node).DOCUMENT_NODE,(tmpvar$763.equals&&tmpvar$763.equals(tmpvar$764))||tmpvar$763===tmpvar$764)){
+                                                if(($l7=nodeAbs$.$_native.nodeType,$l8=(typeof Node==='undefined'||Node===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Node"),'228:33-228:36','node.ceylon'):Node).DOCUMENT_NODE,($l7.equals&&$l7.equals($l8))||$l7===$l8)){
                                                     return getDocumentNode();
                                                 }else {
-                                                    if((tmpvar$765=$$nodeAbs.$native.nodeType,tmpvar$766=(typeof Node==='undefined'||Node===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Node")),'230:33-230:36','node.ceylon'):Node).DOCUMENT_TYPE_NODE,(tmpvar$765.equals&&tmpvar$765.equals(tmpvar$766))||tmpvar$765===tmpvar$766)){
+                                                    if(($l9=nodeAbs$.$_native.nodeType,$la=(typeof Node==='undefined'||Node===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Node"),'230:33-230:36','node.ceylon'):Node).DOCUMENT_TYPE_NODE,($l9.equals&&$l9.equals($la))||$l9===$la)){
                                                         return getDocumentTypeNode();
                                                     }else {
-                                                        if((tmpvar$767=$$nodeAbs.$native.nodeType,tmpvar$768=(typeof Node==='undefined'||Node===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Node")),'232:33-232:36','node.ceylon'):Node).DOCUMENT_FRAGMENT_NODE,(tmpvar$767.equals&&tmpvar$767.equals(tmpvar$768))||tmpvar$767===tmpvar$768)){
+                                                        if(($lb=nodeAbs$.$_native.nodeType,$lc=(typeof Node==='undefined'||Node===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Node"),'232:33-232:36','node.ceylon'):Node).DOCUMENT_FRAGMENT_NODE,($lb.equals&&$lb.equals($lc))||$lb===$lc)){
                                                             return getDocumentFragmentNode();
                                                         }else {
                                                             return getNotationNode();
@@ -3129,1325 +3029,1286 @@ function $init$NodeAbs(){
                         }
                     }
                 }/*End dynamic block*/
-            };$$nodeAbs.nodeType.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:NodeType},$ps:[],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the nodes type",22)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','nodeType']};};
-            $$nodeAbs.getNodeValue=function getNodeValue(){
-                var $$nodeAbs=this;
+            };nodeAbs$.nodeType.$crtmm$=function(){return{mod:$CCMM$,$t:{t:NodeType},$ps:[],$cont:NodeAbs,$an:function(){return[m$1.doc("returns the nodes type"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','nodeType']};};
+            nodeAbs$.getNodeValue=function getNodeValue(){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                var val$769=$$nodeAbs.$native.nodeValue;
-                $prop$getVal$769={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','getNodeValue','$at','val']};}};
-                $prop$getVal$769.get=function(){return val$769};
-                if((tmpvar$770=val$769,tmpvar$771=null,(tmpvar$770.equals&&!tmpvar$770.equals(tmpvar$771))||tmpvar$770!==tmpvar$771)){
-                    return $$$cocjl339.JSString(val$769);
+                var $ld=nodeAbs$.$_native.nodeValue;
+                if(($le=$ld,$lf=null,($le.equals&&!$le.equals($lf))||$le!==$lf)){
+                    return m$9f.JSString($ld);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$nodeAbs.getNodeValue.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:$$$cocjl339.JSString}]},$ps:[],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the value of the current node",37)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','getNodeValue']};};
-            $$nodeAbs.setNodeValue=function setNodeValue(val$772){
-                var $$nodeAbs=this;
-                
-                var case$773=val$772;
-                if ($$$cl1.isOfType(val$772,{t:$$$cl1.String})) {
+            };nodeAbs$.getNodeValue.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:m$9f.JSString}]},$ps:[],$cont:NodeAbs,$an:function(){return[m$1.doc("returns the value of the current node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','getNodeValue']};};
+            nodeAbs$.setNodeValue=function setNodeValue($lg){
+                var nodeAbs$=this;
+                var $lh=$lg;
+                if(m$1.is$($lg,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    $$nodeAbs.$native.nodeValue=case$773.valueOf();
+                    nodeAbs$.$_native.nodeValue=$lh.valueOf();
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(val$772,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($lg,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    $$nodeAbs.$native.nodeValue=case$773.$native;
+                    nodeAbs$.$_native.nodeValue=$lh.$_native;
                     /*End dynamic block*/
                 }
-            };$$nodeAbs.setNodeValue.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'val',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("set the value of the current node",33)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','setNodeValue']};};
-            $$nodeAbs.normalize=function normalize(){
-                var $$nodeAbs=this;
+            };nodeAbs$.setNodeValue.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'val',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[m$1.doc("set the value of the current node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','setNodeValue']};};
+            nodeAbs$.normalize=function normalize(){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                $$nodeAbs.$native.normalize();
+                nodeAbs$.$_native.normalize();
                 /*End dynamic block*/
-            };$$nodeAbs.normalize.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("clean up all the text nodes under this on",41)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','normalize']};};
-            $$$cl1.defineAttr($$nodeAbs,'ownerDocument',function(){
-                var $$nodeAbs=this;
+            };nodeAbs$.normalize.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[],$cont:NodeAbs,$an:function(){return[m$1.doc("clean up all the text nodes under this on"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','normalize']};};
+            m$1.atr$(nodeAbs$,'ownerDocument',function(){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                return Document($$nodeAbs.$native.ownerDocument);
+                return Document(nodeAbs$.$_native.ownerDocument);
                 /*End dynamic block*/
-            },undefined,function(){return{mod:$$METAMODEL$$,$t:{t:Document},$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns nodes owning document",29)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$at','ownerDocument']};});$$nodeAbs.parentNode=function parentNode(){
-                var $$nodeAbs=this;
+            },undefined,function(){return{mod:$CCMM$,$t:{t:Document},$cont:NodeAbs,$an:function(){return[m$1.doc("returns nodes owning document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$at','ownerDocument']};});nodeAbs$.parentNode=function parentNode(){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                var parent$774=$$nodeAbs.parentNode();
-                $prop$getParent$774={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','parentNode','$at','parent']};}};
-                $prop$getParent$774.get=function(){return parent$774};
-                if((tmpvar$775=parent$774,tmpvar$776=null,(tmpvar$775.equals&&!tmpvar$775.equals(tmpvar$776))||tmpvar$775!==tmpvar$776)){
-                    return Node(parent$774);
+                var $li=nodeAbs$.parentNode();
+                if(($lj=$li,$lk=null,($lj.equals&&!$lj.equals($lk))||$lj!==$lk)){
+                    return Node($li);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$nodeAbs.parentNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:Node}]},$ps:[],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the parent node if any",30)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','parentNode']};};
-            $$nodeAbs.prefix=function prefix(){
-                var $$nodeAbs=this;
+            };nodeAbs$.parentNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:Node}]},$ps:[],$cont:NodeAbs,$an:function(){return[m$1.doc("returns the parent node if any"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','parentNode']};};
+            nodeAbs$.prefix=function prefix(){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                var prefix$777=$$nodeAbs.$native.prefix;
-                $prop$getPrefix$777={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','prefix','$at','prefix']};}};
-                $prop$getPrefix$777.get=function(){return prefix$777};
-                if((tmpvar$778=prefix$777,tmpvar$779=null,(tmpvar$778.equals&&!tmpvar$778.equals(tmpvar$779))||tmpvar$778!==tmpvar$779)){
-                    return $$$cocjl339.JSString(prefix$777);
+                var $ll=nodeAbs$.$_native.prefix;
+                if(($lm=$ll,$ln=null,($lm.equals&&!$lm.equals($ln))||$lm!==$ln)){
+                    return m$9f.JSString($ll);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$nodeAbs.prefix.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:$$$cocjl339.JSString}]},$ps:[],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("string of the nodes namespace prefix",36)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','prefix']};};
-            $$nodeAbs.previousSibling=function previousSibling(){
-                var $$nodeAbs=this;
+            };nodeAbs$.prefix.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:m$9f.JSString}]},$ps:[],$cont:NodeAbs,$an:function(){return[m$1.doc("string of the nodes namespace prefix"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','prefix']};};
+            nodeAbs$.previousSibling=function previousSibling(){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                var previousSibling$780=$$nodeAbs.$native.previousSibling();
-                $prop$getPreviousSibling$780={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','previousSibling','$at','previousSibling']};}};
-                $prop$getPreviousSibling$780.get=function(){return previousSibling$780};
-                if((tmpvar$781=previousSibling$780,tmpvar$782=null,(tmpvar$781.equals&&!tmpvar$781.equals(tmpvar$782))||tmpvar$781!==tmpvar$782)){
-                    return Node(previousSibling$780);
+                var $lo=nodeAbs$.$_native.previousSibling();
+                if(($lp=$lo,$lq=null,($lp.equals&&!$lp.equals($lq))||$lp!==$lq)){
+                    return Node($lo);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$nodeAbs.previousSibling.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:Node}]},$ps:[],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the node immediately proceding this node in the parents child nodes or null if none",91)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','previousSibling']};};
-            $$nodeAbs.removeChild=function removeChild(node$783){
-                var $$nodeAbs=this;
+            };nodeAbs$.previousSibling.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:Node}]},$ps:[],$cont:NodeAbs,$an:function(){return[m$1.doc("returns the node immediately proceding this node in the parents child nodes or null if none"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','previousSibling']};};
+            nodeAbs$.removeChild=function removeChild($lr){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                return Node($$nodeAbs.$native.removeChild(node$783.$native));
+                return Node(nodeAbs$.$_native.removeChild($lr.$_native));
                 /*End dynamic block*/
-            };$$nodeAbs.removeChild.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Node},$ps:[{$nm:'node',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("removes the child node and returns the removed node",51)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','removeChild']};};
-            $$nodeAbs.replaceChild=function replaceChild(newChild$784,oldChild$785){
-                var $$nodeAbs=this;
+            };nodeAbs$.removeChild.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Node},$ps:[{$nm:'node',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[m$1.doc("removes the child node and returns the removed node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','removeChild']};};
+            nodeAbs$.replaceChild=function replaceChild($ls,$lt){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                return Node($$nodeAbs.$native.replaceChild(newChild$784.$native,oldChild$785.$native));
+                return Node(nodeAbs$.$_native.replaceChild($ls.$_native,$lt.$_native));
                 /*End dynamic block*/
-            };$$nodeAbs.replaceChild.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Node},$ps:[{$nm:'newChild',$mt:'prm',$t:{t:Node},$an:function(){return[];}},{$nm:'oldChild',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("replaces the old node with the new one and returns the old node",63)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','replaceChild']};};
-            $$nodeAbs.getTextContent=function getTextContent(){
-                var $$nodeAbs=this;
+            };nodeAbs$.replaceChild.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Node},$ps:[{$nm:'newChild',$mt:'prm',$t:{t:Node},$an:function(){return[];}},{$nm:'oldChild',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[m$1.doc("replaces the old node with the new one and returns the old node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','replaceChild']};};
+            nodeAbs$.getTextContent=function getTextContent(){
+                var nodeAbs$=this;
                 /*Begin dynamic block*/
-                var content$786=$$nodeAbs.$native.textContent();
-                $prop$getContent$786={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','getTextContent','$at','content']};}};
-                $prop$getContent$786.get=function(){return content$786};
-                if((tmpvar$787=content$786,tmpvar$788=null,(tmpvar$787.equals&&!tmpvar$787.equals(tmpvar$788))||tmpvar$787!==tmpvar$788)){
-                    return $$$cocjl339.JSString(content$786);
+                var $lu=nodeAbs$.$_native.textContent();
+                if(($lv=$lu,$lw=null,($lv.equals&&!$lv.equals($lw))||$lv!==$lw)){
+                    return m$9f.JSString($lu);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$nodeAbs.getTextContent.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:$$$cocjl339.JSString}]},$ps:[],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the text content of the node and its descendents",56)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','getTextContent']};};
-            $$nodeAbs.setTextContent=function setTextContent(content$789){
-                var $$nodeAbs=this;
-                
-                var case$790=content$789;
-                if ($$$cl1.isOfType(content$789,{t:$$$cl1.String})) {
+            };nodeAbs$.getTextContent.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:m$9f.JSString}]},$ps:[],$cont:NodeAbs,$an:function(){return[m$1.doc("returns the text content of the node and its descendents"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','getTextContent']};};
+            nodeAbs$.setTextContent=function setTextContent($lx){
+                var nodeAbs$=this;
+                var $ly=$lx;
+                if(m$1.is$($lx,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    $$nodeAbs.$native.textContent=case$790.valueOf();
+                    nodeAbs$.$_native.textContent=$ly.valueOf();
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(content$789,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($lx,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    $$nodeAbs.$native.textContent=case$790.$native;
+                    nodeAbs$.$_native.textContent=$ly.$_native;
                     /*End dynamic block*/
                 }
-            };$$nodeAbs.setTextContent.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'content',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("set the text content of the node and its descendents",52)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','setTextContent']};};
+            };nodeAbs$.setTextContent.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'content',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:NodeAbs,$an:function(){return[m$1.doc("set the text content of the node and its descendents"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeAbs','$m','setTextContent']};};
         })(NodeAbs.$$.prototype);
     }
     return NodeAbs;
 }
-exports.$init$NodeAbs=$init$NodeAbs;
+ex$.$init$NodeAbs=$init$NodeAbs;
 $init$NodeAbs();
-function Node(n$791, $$node){
+function Node($lz,node$){
     $init$Node();
-    if ($$node===undefined)$$node=new Node.$$;
-    $$node.n$791_=n$791;
-    NodeAbs($$node);
+    if(node$===undefined)node$=new Node.$$;
+    node$.$lz_=$lz;
+    NodeAbs(node$);
+    node$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:Node,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','Node','$at','native']};}};
     /*Begin dynamic block*/
-    $$node.$native=$$node.n$791;/*End dynamic block*/
-    return $$node;
+    node$.$_native=node$.$lz;/*End dynamic block*/
+    return node$;
 }
-Node.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("a DOM Node",10)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','Node']};};
-exports.Node=Node;
+Node.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("a DOM Node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','Node']};};
+ex$.Node=Node;
 function $init$Node(){
-    if (Node.$$===undefined){
-        $$$cl1.initTypeProto(Node,'com.openswimsoftware.ceylon.js.dom::Node',$init$NodeAbs());
-        (function($$node){
-            $$$cl1.defineAttr($$node,'n$791',function(){return this.n$791_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:Node,d:['com.openswimsoftware.ceylon.js.dom','Node','$at','n']};});
+    if(Node.$$===undefined){
+        m$1.initTypeProto(Node,'com.openswimsoftware.ceylon.js.dom::Node',$init$NodeAbs());
+        (function(node$){
+            m$1.atr$(node$,'$lz',function(){return this.$lz_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:Node,d:['com.openswimsoftware.ceylon.js.dom','Node','$at','n$75hoja']};});
         })(Node.$$.prototype);
     }
     return Node;
 }
-exports.$init$Node=$init$Node;
+ex$.$init$Node=$init$Node;
 $init$Node();
-function NodeFilterResult(name$792, $$nodeFilterResult){
+function NodeFilterResult($m0,nodeFilterResult$){
     $init$NodeFilterResult();
-    if ($$nodeFilterResult===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$nodeFilterResult.name$792_=name$792;
-    return $$nodeFilterResult;
+    if(nodeFilterResult$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    nodeFilterResult$.$m0_=$m0;
+    return nodeFilterResult$;
 }
-NodeFilterResult.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cl1.Basic},$ps:[{$nm:'name',$mt:'prm',$t:{t:$$$cl1.String},$an:function(){return[];}}],of:[{t:filterAccept$793},{t:filterReject$794},{t:filterSkip$795}],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','NodeFilterResult']};};
-exports.NodeFilterResult=NodeFilterResult;
+NodeFilterResult.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$1.Basic},$ps:[{$nm:'name',$mt:'prm',$t:{t:m$1.String},$an:function(){return[];}}],of:[$prop$get$m1,$prop$get$m2,$prop$get$m3],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','NodeFilterResult']};};
+ex$.NodeFilterResult=NodeFilterResult;
 function $init$NodeFilterResult(){
-    if (NodeFilterResult.$$===undefined){
-        $$$cl1.initTypeProto(NodeFilterResult,'com.openswimsoftware.ceylon.js.dom::NodeFilterResult',$$$cl1.Basic);
-        (function($$nodeFilterResult){
-            $$$cl1.defineAttr($$nodeFilterResult,'name$792',function(){return this.name$792_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.String},$cont:NodeFilterResult,d:['com.openswimsoftware.ceylon.js.dom','NodeFilterResult','$at','name']};});
+    if(NodeFilterResult.$$===undefined){
+        m$1.initTypeProto(NodeFilterResult,'com.openswimsoftware.ceylon.js.dom::NodeFilterResult',m$1.Basic);
+        (function(nodeFilterResult$){
+            m$1.atr$(nodeFilterResult$,'$m0',function(){return this.$m0_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.String},$cont:NodeFilterResult,d:['com.openswimsoftware.ceylon.js.dom','NodeFilterResult','$at','name$utqdb0']};});
         })(NodeFilterResult.$$.prototype);
     }
     return NodeFilterResult;
 }
-exports.$init$NodeFilterResult=$init$NodeFilterResult;
+ex$.$init$NodeFilterResult=$init$NodeFilterResult;
 $init$NodeFilterResult();
-function filterAccept$793(){
-    var $$filterAccept=new filterAccept$793.$$;
-    NodeFilterResult($$$cl1.String("filterAccept",12),$$filterAccept);
-    return $$filterAccept;
-};filterAccept$793.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeFilterResult},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','filterAccept']};};
-function $init$filterAccept$793(){
-    if (filterAccept$793.$$===undefined){
-        $$$cl1.initTypeProto(filterAccept$793,'com.openswimsoftware.ceylon.js.dom::filterAccept',$init$NodeFilterResult());
+function $m1(){
+    var filterAccept$=new $m1.$$;
+    NodeFilterResult("filterAccept",filterAccept$);
+    return filterAccept$;
+};$m1.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeFilterResult},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','filterAccept']};};
+function $init$$m1(){
+    if($m1.$$===undefined){
+        m$1.initTypeProto($m1,'com.openswimsoftware.ceylon.js.dom::filterAccept',$init$NodeFilterResult());
     }
-    return filterAccept$793;
+    return $m1;
 }
-exports.$init$filterAccept$793=$init$filterAccept$793;
-$init$filterAccept$793();
-var filterAccept$796;
+ex$.$init$$m1=$init$$m1;
+$init$$m1();
+var $m4;
 function getFilterAccept(){
-    if (filterAccept$796===undefined){filterAccept$796=$init$filterAccept$793()();filterAccept$796.$$metamodel$$=getFilterAccept.$$metamodel$$;}
-    return filterAccept$796;
+    if($m4===undefined){$m4=$init$$m1()();$m4.$crtmm$=getFilterAccept.$crtmm$;}
+    return $m4;
 }
-exports.getFilterAccept=getFilterAccept;
-getFilterAccept.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:filterAccept$793},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','filterAccept']};};
-$prop$getFilterAccept={get:getFilterAccept,$$metamodel$$:getFilterAccept.$$metamodel$$};
-exports.$prop$getFilterAccept=$prop$getFilterAccept;
-function filterReject$794(){
-    var $$filterReject=new filterReject$794.$$;
-    NodeFilterResult($$$cl1.String("filterReject",12),$$filterReject);
-    return $$filterReject;
-};filterReject$794.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeFilterResult},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','filterReject']};};
-function $init$filterReject$794(){
-    if (filterReject$794.$$===undefined){
-        $$$cl1.initTypeProto(filterReject$794,'com.openswimsoftware.ceylon.js.dom::filterReject',$init$NodeFilterResult());
+ex$.getFilterAccept=getFilterAccept;
+getFilterAccept.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$m1},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','filterAccept']};};
+$prop$getFilterAccept={get:getFilterAccept,$crtmm$:getFilterAccept.$crtmm$};
+get$m1=getFilterAccept;$prop$get$m1=getFilterAccept;
+ex$.$prop$getFilterAccept=$prop$getFilterAccept;
+function $m2(){
+    var filterReject$=new $m2.$$;
+    NodeFilterResult("filterReject",filterReject$);
+    return filterReject$;
+};$m2.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeFilterResult},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','filterReject']};};
+function $init$$m2(){
+    if($m2.$$===undefined){
+        m$1.initTypeProto($m2,'com.openswimsoftware.ceylon.js.dom::filterReject',$init$NodeFilterResult());
     }
-    return filterReject$794;
+    return $m2;
 }
-exports.$init$filterReject$794=$init$filterReject$794;
-$init$filterReject$794();
-var filterReject$797;
+ex$.$init$$m2=$init$$m2;
+$init$$m2();
+var $m5;
 function getFilterReject(){
-    if (filterReject$797===undefined){filterReject$797=$init$filterReject$794()();filterReject$797.$$metamodel$$=getFilterReject.$$metamodel$$;}
-    return filterReject$797;
+    if($m5===undefined){$m5=$init$$m2()();$m5.$crtmm$=getFilterReject.$crtmm$;}
+    return $m5;
 }
-exports.getFilterReject=getFilterReject;
-getFilterReject.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:filterReject$794},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','filterReject']};};
-$prop$getFilterReject={get:getFilterReject,$$metamodel$$:getFilterReject.$$metamodel$$};
-exports.$prop$getFilterReject=$prop$getFilterReject;
-function filterSkip$795(){
-    var $$filterSkip=new filterSkip$795.$$;
-    NodeFilterResult($$$cl1.String("filterSkip",10),$$filterSkip);
-    return $$filterSkip;
-};filterSkip$795.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeFilterResult},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','filterSkip']};};
-function $init$filterSkip$795(){
-    if (filterSkip$795.$$===undefined){
-        $$$cl1.initTypeProto(filterSkip$795,'com.openswimsoftware.ceylon.js.dom::filterSkip',$init$NodeFilterResult());
+ex$.getFilterReject=getFilterReject;
+getFilterReject.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$m2},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','filterReject']};};
+$prop$getFilterReject={get:getFilterReject,$crtmm$:getFilterReject.$crtmm$};
+get$m2=getFilterReject;$prop$get$m2=getFilterReject;
+ex$.$prop$getFilterReject=$prop$getFilterReject;
+function $m3(){
+    var filterSkip$=new $m3.$$;
+    NodeFilterResult("filterSkip",filterSkip$);
+    return filterSkip$;
+};$m3.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeFilterResult},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','filterSkip']};};
+function $init$$m3(){
+    if($m3.$$===undefined){
+        m$1.initTypeProto($m3,'com.openswimsoftware.ceylon.js.dom::filterSkip',$init$NodeFilterResult());
     }
-    return filterSkip$795;
+    return $m3;
 }
-exports.$init$filterSkip$795=$init$filterSkip$795;
-$init$filterSkip$795();
-var filterSkip$798;
+ex$.$init$$m3=$init$$m3;
+$init$$m3();
+var $m6;
 function getFilterSkip(){
-    if (filterSkip$798===undefined){filterSkip$798=$init$filterSkip$795()();filterSkip$798.$$metamodel$$=getFilterSkip.$$metamodel$$;}
-    return filterSkip$798;
+    if($m6===undefined){$m6=$init$$m3()();$m6.$crtmm$=getFilterSkip.$crtmm$;}
+    return $m6;
 }
-exports.getFilterSkip=getFilterSkip;
-getFilterSkip.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:filterSkip$795},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','filterSkip']};};
-$prop$getFilterSkip={get:getFilterSkip,$$metamodel$$:getFilterSkip.$$metamodel$$};
-exports.$prop$getFilterSkip=$prop$getFilterSkip;
-function NodeFilter(acceptNode$799, $$nodeFilter){
+ex$.getFilterSkip=getFilterSkip;
+getFilterSkip.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$m3},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','filterSkip']};};
+$prop$getFilterSkip={get:getFilterSkip,$crtmm$:getFilterSkip.$crtmm$};
+get$m3=getFilterSkip;$prop$get$m3=getFilterSkip;
+ex$.$prop$getFilterSkip=$prop$getFilterSkip;
+function NodeFilter($m7,nodeFilter$){
     $init$NodeFilter();
-    if ($$nodeFilter===undefined)$$nodeFilter=new NodeFilter.$$;
-    $$nodeFilter.acceptNode$799_=acceptNode$799;
-    $$nodeFilter.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:NodeFilter,$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeFilter','$at','native']};}};
+    if(nodeFilter$===undefined)nodeFilter$=new NodeFilter.$$;
+    nodeFilter$.$m7_=$m7;
+    nodeFilter$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:NodeFilter,$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeFilter','$at','native']};}};
     /*Begin dynamic block*/
-    $$nodeFilter.$native=(typeof Object==='undefined'||Object===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Object")),'11:11-11:16','nodefilter.ceylon'):Object)();$$nodeFilter.$native.acceptNode=$$$cl1.$JsCallable($$nodeFilter.acceptNode$799/*TODO: callable targs 6*/);
+    nodeFilter$.$_native=(typeof Object==='undefined'||Object===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Object"),'11:11-11:16','nodefilter.ceylon'):Object)();nodeFilter$.$_native.acceptNode=m$1.$JsCallable(m$1.JsCallable(/*ESTEMERO*/nodeFilter$,nodeFilter$.$m7)/*TODO: callable targs 6*/);
     /*End dynamic block*/
-    return $$nodeFilter;
+    return nodeFilter$;
 }
-NodeFilter.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cl1.Basic},$ps:[{$nm:'acceptNode',$mt:'prm',$pt:'f',$t:{t:NodeFilterResult},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("Node Filter",11)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeFilter']};};
-exports.NodeFilter=NodeFilter;
+NodeFilter.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$1.Basic},$ps:[{$nm:'acceptNode',$mt:'prm',$pt:'f',$t:{t:NodeFilterResult},$an:function(){return[];}}],$an:function(){return[m$1.doc("Node Filter"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeFilter']};};
+ex$.NodeFilter=NodeFilter;
 function $init$NodeFilter(){
-    if (NodeFilter.$$===undefined){
-        $$$cl1.initTypeProto(NodeFilter,'com.openswimsoftware.ceylon.js.dom::NodeFilter',$$$cl1.Basic);
-        (function($$nodeFilter){
-            $$$cl1.defineAttr($$nodeFilter,'acceptNode$799',function(){return this.acceptNode$799_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:NodeFilterResult},$ps:[{$nm:'n',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:NodeFilter,d:['com.openswimsoftware.ceylon.js.dom','NodeFilter','$m','acceptNode']};});
+    if(NodeFilter.$$===undefined){
+        m$1.initTypeProto(NodeFilter,'com.openswimsoftware.ceylon.js.dom::NodeFilter',m$1.Basic);
+        (function(nodeFilter$){
+            m$1.atr$(nodeFilter$,'$m7',function(){return this.$m7_;},undefined,function(){return{mod:$CCMM$,$t:{t:NodeFilterResult},$ps:[{$nm:'n',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:NodeFilter,d:['com.openswimsoftware.ceylon.js.dom','NodeFilter','$m','acceptNode$x5puf6']};});
         })(NodeFilter.$$.prototype);
     }
     return NodeFilter;
 }
-exports.$init$NodeFilter=$init$NodeFilter;
+ex$.$init$NodeFilter=$init$NodeFilter;
 $init$NodeFilter();
-function NodeIteratorAbs($$nodeIteratorAbs){
+function NodeIteratorAbs(nodeIteratorAbs$){
     $init$NodeIteratorAbs();
-    if ($$nodeIteratorAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$$cocjl339.JSObjectAbs($$nodeIteratorAbs);
-    return $$nodeIteratorAbs;
+    if(nodeIteratorAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    m$9f.JSObjectAbs(nodeIteratorAbs$);
+    return nodeIteratorAbs$;
 }
-NodeIteratorAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cocjl339.JSObjectAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','NodeIteratorAbs']};};
-exports.NodeIteratorAbs=NodeIteratorAbs;
+NodeIteratorAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$9f.JSObjectAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','NodeIteratorAbs']};};
+ex$.NodeIteratorAbs=NodeIteratorAbs;
 function $init$NodeIteratorAbs(){
-    if (NodeIteratorAbs.$$===undefined){
-        $$$cl1.initTypeProto(NodeIteratorAbs,'com.openswimsoftware.ceylon.js.dom::NodeIteratorAbs',$$$cocjl339.JSObjectAbs);
-        (function($$nodeIteratorAbs){
-            $$nodeIteratorAbs.root=function root(){
-                var $$nodeIteratorAbs=this;
+    if(NodeIteratorAbs.$$===undefined){
+        m$1.initTypeProto(NodeIteratorAbs,'com.openswimsoftware.ceylon.js.dom::NodeIteratorAbs',m$9f.JSObjectAbs);
+        (function(nodeIteratorAbs$){
+            nodeIteratorAbs$.root=function root(){
+                var nodeIteratorAbs$=this;
                 /*Begin dynamic block*/
-                return Node($$nodeIteratorAbs.$native.root);
+                return Node(nodeIteratorAbs$.$_native.root);
                 /*End dynamic block*/
-            };$$nodeIteratorAbs.root.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Node},$ps:[],$cont:NodeIteratorAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the iterators root node",31)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeIteratorAbs','$m','root']};};
-            $$nodeIteratorAbs.whatToShow=function whatToShow(){
-                var $$nodeIteratorAbs=this;
+            };nodeIteratorAbs$.root.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Node},$ps:[],$cont:NodeIteratorAbs,$an:function(){return[m$1.doc("returns the iterators root node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeIteratorAbs','$m','root']};};
+            nodeIteratorAbs$.whatToShow=function whatToShow(){
+                var nodeIteratorAbs$=this;
                 /*Begin dynamic block*/
-                return (tmpvar$800=$$nodeIteratorAbs.$native.whatToShow,$$$cl1.isOfType(tmpvar$800,{t:$$$cl1.Anything})?tmpvar$800:$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("dynamic objects cannot be used here")),'16:19-16:35','nodeiterator.ceylon'));
+                return ($m8=nodeIteratorAbs$.$_native.whatToShow,m$1.is$($m8,{t:m$1.Anything})?$m8:m$1.throwexc(m$1.Exception("dynamic objects cannot be used here"),'16:19-16:35','nodeiterator.ceylon'));
                 /*End dynamic block*/
-            };$$nodeIteratorAbs.whatToShow.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[],$cont:NodeIteratorAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("return long representing what types of nodes the iterator shows",63)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeIteratorAbs','$m','whatToShow']};};
-            $$nodeIteratorAbs.filter=function filter(){
-                var $$nodeIteratorAbs=this;
+            };nodeIteratorAbs$.whatToShow.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[],$cont:NodeIteratorAbs,$an:function(){return[m$1.doc("return long representing what types of nodes the iterator shows"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeIteratorAbs','$m','whatToShow']};};
+            nodeIteratorAbs$.filter=function filter(){
+                var nodeIteratorAbs$=this;
                 /*Begin dynamic block*/
-                var filter$801=$$nodeIteratorAbs.$native.filter;
-                $prop$getFilter$801={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','NodeIteratorAbs','$m','filter','$at','filter']};}};
-                $prop$getFilter$801.get=function(){return filter$801};
-                if((tmpvar$802=filter$801,tmpvar$803=null,(tmpvar$802.equals&&!tmpvar$802.equals(tmpvar$803))||tmpvar$802!==tmpvar$803)){
-                    return NodeFilter((tmpvar$804=filter$801,$$$cl1.isOfType(tmpvar$804,{t:NodeFilterResult})?tmpvar$804:$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("dynamic objects cannot be used here")),'25:34-25:39','nodeiterator.ceylon')));
+                var $m9=nodeIteratorAbs$.$_native.filter;
+                if(($ma=$m9,$mb=null,($ma.equals&&!$ma.equals($mb))||$ma!==$mb)){
+                    return NodeFilter(($mc=$m9,m$1.is$($mc,{t:NodeFilterResult})?$mc:m$1.throwexc(m$1.Exception("dynamic objects cannot be used here"),'25:34-25:39','nodeiterator.ceylon')));
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$nodeIteratorAbs.filter.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:NodeFilter}]},$ps:[],$cont:NodeIteratorAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("return the iterator filter if any",33)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeIteratorAbs','$m','filter']};};
-            $$nodeIteratorAbs.nextNode=function nextNode(){
-                var $$nodeIteratorAbs=this;
+            };nodeIteratorAbs$.filter.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:NodeFilter}]},$ps:[],$cont:NodeIteratorAbs,$an:function(){return[m$1.doc("return the iterator filter if any"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeIteratorAbs','$m','filter']};};
+            nodeIteratorAbs$.nextNode=function nextNode(){
+                var nodeIteratorAbs$=this;
                 /*Begin dynamic block*/
-                var next$805=$$nodeIteratorAbs.$native.nextNode();
-                $prop$getNext$805={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','NodeIteratorAbs','$m','nextNode','$at','next']};}};
-                $prop$getNext$805.get=function(){return next$805};
-                if((tmpvar$806=next$805,tmpvar$807=null,(tmpvar$806.equals&&!tmpvar$806.equals(tmpvar$807))||tmpvar$806!==tmpvar$807)){
-                    return Node(next$805);
+                var $md=nodeIteratorAbs$.$_native.nextNode();
+                if(($me=$md,$mf=null,($me.equals&&!$me.equals($mf))||$me!==$mf)){
+                    return Node($md);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$nodeIteratorAbs.nextNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:Node}]},$ps:[],$cont:NodeIteratorAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("return the next node",20)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeIteratorAbs','$m','nextNode']};};
-            $$nodeIteratorAbs.previousNode=function previousNode(){
-                var $$nodeIteratorAbs=this;
+            };nodeIteratorAbs$.nextNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:Node}]},$ps:[],$cont:NodeIteratorAbs,$an:function(){return[m$1.doc("return the next node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeIteratorAbs','$m','nextNode']};};
+            nodeIteratorAbs$.previousNode=function previousNode(){
+                var nodeIteratorAbs$=this;
                 /*Begin dynamic block*/
-                var previous$808=$$nodeIteratorAbs.$native.previousNode();
-                $prop$getPrevious$808={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','NodeIteratorAbs','$m','previousNode','$at','previous']};}};
-                $prop$getPrevious$808.get=function(){return previous$808};
-                if((tmpvar$809=previous$808,tmpvar$810=null,(tmpvar$809.equals&&!tmpvar$809.equals(tmpvar$810))||tmpvar$809!==tmpvar$810)){
-                    return Node(previous$808);
+                var $mg=nodeIteratorAbs$.$_native.previousNode();
+                if(($mh=$mg,$mi=null,($mh.equals&&!$mh.equals($mi))||$mh!==$mi)){
+                    return Node($mg);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$nodeIteratorAbs.previousNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:Node}]},$ps:[],$cont:NodeIteratorAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("return the previous node",24)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeIteratorAbs','$m','previousNode']};};
+            };nodeIteratorAbs$.previousNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:Node}]},$ps:[],$cont:NodeIteratorAbs,$an:function(){return[m$1.doc("return the previous node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeIteratorAbs','$m','previousNode']};};
         })(NodeIteratorAbs.$$.prototype);
     }
     return NodeIteratorAbs;
 }
-exports.$init$NodeIteratorAbs=$init$NodeIteratorAbs;
+ex$.$init$NodeIteratorAbs=$init$NodeIteratorAbs;
 $init$NodeIteratorAbs();
-function NodeIterator(n$811, $$nodeIterator){
+function NodeIterator($mj,nodeIterator$){
     $init$NodeIterator();
-    if ($$nodeIterator===undefined)$$nodeIterator=new NodeIterator.$$;
-    $$nodeIterator.n$811_=n$811;
-    NodeIteratorAbs($$nodeIterator);
-    $$nodeIterator.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:NodeIterator,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','NodeIterator','$at','native']};}};
+    if(nodeIterator$===undefined)nodeIterator$=new NodeIterator.$$;
+    nodeIterator$.$mj_=$mj;
+    NodeIteratorAbs(nodeIterator$);
+    nodeIterator$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:NodeIterator,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','NodeIterator','$at','native']};}};
     /*Begin dynamic block*/
-    $$nodeIterator.$native=$$nodeIterator.n$811;/*End dynamic block*/
-    return $$nodeIterator;
+    nodeIterator$.$_native=nodeIterator$.$mj;/*End dynamic block*/
+    return nodeIterator$;
 }
-NodeIterator.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeIteratorAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("a DOM NodeIterator",18)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeIterator']};};
-exports.NodeIterator=NodeIterator;
+NodeIterator.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeIteratorAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("a DOM NodeIterator"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeIterator']};};
+ex$.NodeIterator=NodeIterator;
 function $init$NodeIterator(){
-    if (NodeIterator.$$===undefined){
-        $$$cl1.initTypeProto(NodeIterator,'com.openswimsoftware.ceylon.js.dom::NodeIterator',$init$NodeIteratorAbs());
-        (function($$nodeIterator){
-            $$$cl1.defineAttr($$nodeIterator,'n$811',function(){return this.n$811_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:NodeIterator,d:['com.openswimsoftware.ceylon.js.dom','NodeIterator','$at','n']};});
+    if(NodeIterator.$$===undefined){
+        m$1.initTypeProto(NodeIterator,'com.openswimsoftware.ceylon.js.dom::NodeIterator',$init$NodeIteratorAbs());
+        (function(nodeIterator$){
+            m$1.atr$(nodeIterator$,'$mj',function(){return this.$mj_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:NodeIterator,d:['com.openswimsoftware.ceylon.js.dom','NodeIterator','$at','n$jxak94']};});
         })(NodeIterator.$$.prototype);
     }
     return NodeIterator;
 }
-exports.$init$NodeIterator=$init$NodeIterator;
+ex$.$init$NodeIterator=$init$NodeIterator;
 $init$NodeIterator();
-function NodeListAbs($$nodeListAbs){
+function NodeListAbs(nodeListAbs$){
     $init$NodeListAbs();
-    if ($$nodeListAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$$cocjl339.JSObjectAbs($$nodeListAbs);
-    return $$nodeListAbs;
+    if(nodeListAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    m$9f.JSObjectAbs(nodeListAbs$);
+    return nodeListAbs$;
 }
-NodeListAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cocjl339.JSObjectAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','NodeListAbs']};};
-exports.NodeListAbs=NodeListAbs;
+NodeListAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$9f.JSObjectAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','NodeListAbs']};};
+ex$.NodeListAbs=NodeListAbs;
 function $init$NodeListAbs(){
-    if (NodeListAbs.$$===undefined){
-        $$$cl1.initTypeProto(NodeListAbs,'com.openswimsoftware.ceylon.js.dom::NodeListAbs',$$$cocjl339.JSObjectAbs);
-        (function($$nodeListAbs){
-            $$nodeListAbs.item=function item(index$812){
-                var $$nodeListAbs=this;
-                var item$813;
-                
-                var case$814=index$812;
-                if ($$$cl1.isOfType(index$812,{t:$$$cl1.Integer})) {
+    if(NodeListAbs.$$===undefined){
+        m$1.initTypeProto(NodeListAbs,'com.openswimsoftware.ceylon.js.dom::NodeListAbs',m$9f.JSObjectAbs);
+        (function(nodeListAbs$){
+            nodeListAbs$.item=function item($mk){
+                var nodeListAbs$=this;
+                var $ml;
+                var $mm=$mk;
+                if(m$1.is$($mk,{t:m$1.Integer})) {
                     /*Begin dynamic block*/
-                    item$813=$$nodeListAbs.$native.item(case$814);/*End dynamic block*/
-                }else if ($$$cl1.isOfType(index$812,{t:$$$cocjl339.JSNumber})) {
+                    $ml=nodeListAbs$.$_native.item($mm);/*End dynamic block*/
+                }else if(m$1.is$($mk,{t:m$9f.JSNumber})) {
                     /*Begin dynamic block*/
-                    item$813=$$nodeListAbs.$native.item(case$814.$native);/*End dynamic block*/
+                    $ml=nodeListAbs$.$_native.item($mm.$_native);/*End dynamic block*/
                 }
                 /*Begin dynamic block*/
-                if((tmpvar$815=item$813,tmpvar$816=null,(tmpvar$815.equals&&!tmpvar$815.equals(tmpvar$816))||tmpvar$815!==tmpvar$816)){
-                    return Node(item$813);
+                if(($mn=$ml,$mo=null,($mn.equals&&!$mn.equals($mo))||$mn!==$mo)){
+                    return Node($ml);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$nodeListAbs.item.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:Node}]},$ps:[{$nm:'index',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.Integer},{t:$$$cocjl339.JSNumber}]},$an:function(){return[];}}],$cont:NodeListAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns he node at the given index",34)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeListAbs','$m','item']};};
-            $$nodeListAbs.length=function length(){
-                var $$nodeListAbs=this;
+            };nodeListAbs$.item.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:Node}]},$ps:[{$nm:'index',$mt:'prm',$t:{t:'u',l:[{t:m$1.Integer},{t:m$9f.JSNumber}]},$an:function(){return[];}}],$cont:NodeListAbs,$an:function(){return[m$1.doc("returns he node at the given index"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeListAbs','$m','item']};};
+            nodeListAbs$.length=function length(){
+                var nodeListAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSNumber($$nodeListAbs.$native.length);
+                return m$9f.JSNumber(nodeListAbs$.$_native.length);
                 /*End dynamic block*/
-            };$$nodeListAbs.length.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSNumber},$ps:[],$cont:NodeListAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the length of the node collection",41)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeListAbs','$m','length']};};
+            };nodeListAbs$.length.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSNumber},$ps:[],$cont:NodeListAbs,$an:function(){return[m$1.doc("returns the length of the node collection"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeListAbs','$m','length']};};
         })(NodeListAbs.$$.prototype);
     }
     return NodeListAbs;
 }
-exports.$init$NodeListAbs=$init$NodeListAbs;
+ex$.$init$NodeListAbs=$init$NodeListAbs;
 $init$NodeListAbs();
-function NodeList(n$817, $$nodeList){
+function NodeList($mp,nodeList$){
     $init$NodeList();
-    if ($$nodeList===undefined)$$nodeList=new NodeList.$$;
-    $$nodeList.n$817_=n$817;
-    NodeListAbs($$nodeList);
-    $$nodeList.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:NodeList,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','NodeList','$at','native']};}};
+    if(nodeList$===undefined)nodeList$=new NodeList.$$;
+    nodeList$.$mp_=$mp;
+    NodeListAbs(nodeList$);
+    nodeList$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:NodeList,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','NodeList','$at','native']};}};
     /*Begin dynamic block*/
-    $$nodeList.$native=$$nodeList.n$817;/*End dynamic block*/
-    return $$nodeList;
+    nodeList$.$_native=nodeList$.$mp;/*End dynamic block*/
+    return nodeList$;
 }
-NodeList.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeListAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("collection of DOM nodes",23)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeList']};};
-exports.NodeList=NodeList;
+NodeList.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeListAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("collection of DOM nodes"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','NodeList']};};
+ex$.NodeList=NodeList;
 function $init$NodeList(){
-    if (NodeList.$$===undefined){
-        $$$cl1.initTypeProto(NodeList,'com.openswimsoftware.ceylon.js.dom::NodeList',$init$NodeListAbs());
-        (function($$nodeList){
-            $$$cl1.defineAttr($$nodeList,'n$817',function(){return this.n$817_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:NodeList,d:['com.openswimsoftware.ceylon.js.dom','NodeList','$at','n']};});
+    if(NodeList.$$===undefined){
+        m$1.initTypeProto(NodeList,'com.openswimsoftware.ceylon.js.dom::NodeList',$init$NodeListAbs());
+        (function(nodeList$){
+            m$1.atr$(nodeList$,'$mp',function(){return this.$mp_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:NodeList,d:['com.openswimsoftware.ceylon.js.dom','NodeList','$at','n$9hmxc8']};});
         })(NodeList.$$.prototype);
     }
     return NodeList;
 }
-exports.$init$NodeList=$init$NodeList;
+ex$.$init$NodeList=$init$NodeList;
 $init$NodeList();
-exports.$pkg$ans$com$openswimsoftware$ceylon$js$dom=function(){return[$$$cl1.shared()];};
-function ProcessingInstructionAbs($$processingInstructionAbs){
+ex$.$pkg$ans$com$openswimsoftware$ceylon$js$dom=function(){return[m$1.shared()];};
+function ProcessingInstructionAbs(processingInstructionAbs$){
     $init$ProcessingInstructionAbs();
-    if ($$processingInstructionAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    NodeAbs($$processingInstructionAbs);
-    return $$processingInstructionAbs;
+    if(processingInstructionAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    NodeAbs(processingInstructionAbs$);
+    return processingInstructionAbs$;
 }
-ProcessingInstructionAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:NodeAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','ProcessingInstructionAbs']};};
-exports.ProcessingInstructionAbs=ProcessingInstructionAbs;
+ProcessingInstructionAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:NodeAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','ProcessingInstructionAbs']};};
+ex$.ProcessingInstructionAbs=ProcessingInstructionAbs;
 function $init$ProcessingInstructionAbs(){
-    if (ProcessingInstructionAbs.$$===undefined){
-        $$$cl1.initTypeProto(ProcessingInstructionAbs,'com.openswimsoftware.ceylon.js.dom::ProcessingInstructionAbs',$init$NodeAbs());
-        (function($$processingInstructionAbs){
-            $$processingInstructionAbs.getData=function getData(){
-                var $$processingInstructionAbs=this;
+    if(ProcessingInstructionAbs.$$===undefined){
+        m$1.initTypeProto(ProcessingInstructionAbs,'com.openswimsoftware.ceylon.js.dom::ProcessingInstructionAbs',$init$NodeAbs());
+        (function(processingInstructionAbs$){
+            processingInstructionAbs$.getData=function getData(){
+                var processingInstructionAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$processingInstructionAbs.$native.data);
+                return m$9f.JSString(processingInstructionAbs$.$_native.data);
                 /*End dynamic block*/
-            };$$processingInstructionAbs.getData.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:ProcessingInstructionAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("get the processing instruction data",35)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ProcessingInstructionAbs','$m','getData']};};
-            $$processingInstructionAbs.setData=function setData(data$818){
-                var $$processingInstructionAbs=this;
-                
-                var case$819=data$818;
-                if ($$$cl1.isOfType(data$818,{t:$$$cl1.String})) {
+            };processingInstructionAbs$.getData.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:ProcessingInstructionAbs,$an:function(){return[m$1.doc("get the processing instruction data"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ProcessingInstructionAbs','$m','getData']};};
+            processingInstructionAbs$.setData=function setData($mq){
+                var processingInstructionAbs$=this;
+                var $mr=$mq;
+                if(m$1.is$($mq,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    $$processingInstructionAbs.$native.data=case$819.valueOf();
+                    processingInstructionAbs$.$_native.data=$mr.valueOf();
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(data$818,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($mq,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    $$processingInstructionAbs.$native.data=case$819.$native;
+                    processingInstructionAbs$.$_native.data=$mr.$_native;
                     /*End dynamic block*/
                 }
-            };$$processingInstructionAbs.setData.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'data',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:ProcessingInstructionAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("set the processing instruction data",35)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ProcessingInstructionAbs','$m','setData']};};
-            $$processingInstructionAbs.target=function target(){
-                var $$processingInstructionAbs=this;
+            };processingInstructionAbs$.setData.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'data',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:ProcessingInstructionAbs,$an:function(){return[m$1.doc("set the processing instruction data"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ProcessingInstructionAbs','$m','setData']};};
+            processingInstructionAbs$.target=function target(){
+                var processingInstructionAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$processingInstructionAbs.$native.target);
+                return m$9f.JSString(processingInstructionAbs$.$_native.target);
                 /*End dynamic block*/
-            };$$processingInstructionAbs.target.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:ProcessingInstructionAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("the processing instruction target",33)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ProcessingInstructionAbs','$m','target']};};
+            };processingInstructionAbs$.target.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:ProcessingInstructionAbs,$an:function(){return[m$1.doc("the processing instruction target"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ProcessingInstructionAbs','$m','target']};};
         })(ProcessingInstructionAbs.$$.prototype);
     }
     return ProcessingInstructionAbs;
 }
-exports.$init$ProcessingInstructionAbs=$init$ProcessingInstructionAbs;
+ex$.$init$ProcessingInstructionAbs=$init$ProcessingInstructionAbs;
 $init$ProcessingInstructionAbs();
-function ProcessingInstruction(n$820, $$processingInstruction){
+function ProcessingInstruction($ms,processingInstruction$){
     $init$ProcessingInstruction();
-    if ($$processingInstruction===undefined)$$processingInstruction=new ProcessingInstruction.$$;
-    $$processingInstruction.n$820_=n$820;
-    ProcessingInstructionAbs($$processingInstruction);
-    $$processingInstruction.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:ProcessingInstruction,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','ProcessingInstruction','$at','native']};}};
+    if(processingInstruction$===undefined)processingInstruction$=new ProcessingInstruction.$$;
+    processingInstruction$.$ms_=$ms;
+    ProcessingInstructionAbs(processingInstruction$);
+    processingInstruction$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:ProcessingInstruction,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','ProcessingInstruction','$at','native']};}};
     /*Begin dynamic block*/
-    $$processingInstruction.$native=$$processingInstruction.n$820;/*End dynamic block*/
-    return $$processingInstruction;
+    processingInstruction$.$_native=processingInstruction$.$ms;/*End dynamic block*/
+    return processingInstruction$;
 }
-ProcessingInstruction.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:ProcessingInstructionAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("Processing Instruction",22)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ProcessingInstruction']};};
-exports.ProcessingInstruction=ProcessingInstruction;
+ProcessingInstruction.$crtmm$=function(){return{mod:$CCMM$,'super':{t:ProcessingInstructionAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("Processing Instruction"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','ProcessingInstruction']};};
+ex$.ProcessingInstruction=ProcessingInstruction;
 function $init$ProcessingInstruction(){
-    if (ProcessingInstruction.$$===undefined){
-        $$$cl1.initTypeProto(ProcessingInstruction,'com.openswimsoftware.ceylon.js.dom::ProcessingInstruction',$init$ProcessingInstructionAbs());
-        (function($$processingInstruction){
-            $$$cl1.defineAttr($$processingInstruction,'n$820',function(){return this.n$820_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:ProcessingInstruction,d:['com.openswimsoftware.ceylon.js.dom','ProcessingInstruction','$at','n']};});
+    if(ProcessingInstruction.$$===undefined){
+        m$1.initTypeProto(ProcessingInstruction,'com.openswimsoftware.ceylon.js.dom::ProcessingInstruction',$init$ProcessingInstructionAbs());
+        (function(processingInstruction$){
+            m$1.atr$(processingInstruction$,'$ms',function(){return this.$ms_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:ProcessingInstruction,d:['com.openswimsoftware.ceylon.js.dom','ProcessingInstruction','$at','n$q9rf4b']};});
         })(ProcessingInstruction.$$.prototype);
     }
     return ProcessingInstruction;
 }
-exports.$init$ProcessingInstruction=$init$ProcessingInstruction;
+ex$.$init$ProcessingInstruction=$init$ProcessingInstruction;
 $init$ProcessingInstruction();
-function RangeCompareHow(name$821, $$rangeCompareHow){
+function RangeCompareHow($mt,rangeCompareHow$){
     $init$RangeCompareHow();
-    if ($$rangeCompareHow===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$rangeCompareHow.name$821_=name$821;
-    return $$rangeCompareHow;
+    if(rangeCompareHow$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    rangeCompareHow$.$mt_=$mt;
+    return rangeCompareHow$;
 }
-RangeCompareHow.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cl1.Basic},$ps:[{$nm:'name',$mt:'prm',$t:{t:$$$cl1.String},$an:function(){return[];}}],of:[{t:endToEnd$822},{t:endToStart$823},{t:startToEnd$824},{t:startToStart$825}],$an:function(){return[$$$cl1.doc($$$cl1.String("how to comare ranges",20)),$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','RangeCompareHow']};};
-exports.RangeCompareHow=RangeCompareHow;
+RangeCompareHow.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$1.Basic},$ps:[{$nm:'name',$mt:'prm',$t:{t:m$1.String},$an:function(){return[];}}],of:[$prop$get$mu,$prop$get$mv,$prop$get$mw,$prop$get$mx],$an:function(){return[m$1.doc("how to comare ranges"),m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','RangeCompareHow']};};
+ex$.RangeCompareHow=RangeCompareHow;
 function $init$RangeCompareHow(){
-    if (RangeCompareHow.$$===undefined){
-        $$$cl1.initTypeProto(RangeCompareHow,'com.openswimsoftware.ceylon.js.dom::RangeCompareHow',$$$cl1.Basic);
-        (function($$rangeCompareHow){
-            $$$cl1.defineAttr($$rangeCompareHow,'name$821',function(){return this.name$821_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.String},$cont:RangeCompareHow,d:['com.openswimsoftware.ceylon.js.dom','RangeCompareHow','$at','name']};});
+    if(RangeCompareHow.$$===undefined){
+        m$1.initTypeProto(RangeCompareHow,'com.openswimsoftware.ceylon.js.dom::RangeCompareHow',m$1.Basic);
+        (function(rangeCompareHow$){
+            m$1.atr$(rangeCompareHow$,'$mt',function(){return this.$mt_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.String},$cont:RangeCompareHow,d:['com.openswimsoftware.ceylon.js.dom','RangeCompareHow','$at','name$96w8b']};});
         })(RangeCompareHow.$$.prototype);
     }
     return RangeCompareHow;
 }
-exports.$init$RangeCompareHow=$init$RangeCompareHow;
+ex$.$init$RangeCompareHow=$init$RangeCompareHow;
 $init$RangeCompareHow();
-function endToEnd$822(){
-    var $$endToEnd=new endToEnd$822.$$;
-    RangeCompareHow($$$cl1.String("endToEnd",8),$$endToEnd);
-    return $$endToEnd;
-};endToEnd$822.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:RangeCompareHow},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','endToEnd']};};
-function $init$endToEnd$822(){
-    if (endToEnd$822.$$===undefined){
-        $$$cl1.initTypeProto(endToEnd$822,'com.openswimsoftware.ceylon.js.dom::endToEnd',$init$RangeCompareHow());
+function $mu(){
+    var endToEnd$=new $mu.$$;
+    RangeCompareHow("endToEnd",endToEnd$);
+    return endToEnd$;
+};$mu.$crtmm$=function(){return{mod:$CCMM$,'super':{t:RangeCompareHow},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','endToEnd']};};
+function $init$$mu(){
+    if($mu.$$===undefined){
+        m$1.initTypeProto($mu,'com.openswimsoftware.ceylon.js.dom::endToEnd',$init$RangeCompareHow());
     }
-    return endToEnd$822;
+    return $mu;
 }
-exports.$init$endToEnd$822=$init$endToEnd$822;
-$init$endToEnd$822();
-var endToEnd$826;
+ex$.$init$$mu=$init$$mu;
+$init$$mu();
+var $my;
 function getEndToEnd(){
-    if (endToEnd$826===undefined){endToEnd$826=$init$endToEnd$822()();endToEnd$826.$$metamodel$$=getEndToEnd.$$metamodel$$;}
-    return endToEnd$826;
+    if($my===undefined){$my=$init$$mu()();$my.$crtmm$=getEndToEnd.$crtmm$;}
+    return $my;
 }
-exports.getEndToEnd=getEndToEnd;
-getEndToEnd.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:endToEnd$822},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','endToEnd']};};
-$prop$getEndToEnd={get:getEndToEnd,$$metamodel$$:getEndToEnd.$$metamodel$$};
-exports.$prop$getEndToEnd=$prop$getEndToEnd;
-function endToStart$823(){
-    var $$endToStart=new endToStart$823.$$;
-    RangeCompareHow($$$cl1.String("endToStart",10),$$endToStart);
-    return $$endToStart;
-};endToStart$823.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:RangeCompareHow},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','endToStart']};};
-function $init$endToStart$823(){
-    if (endToStart$823.$$===undefined){
-        $$$cl1.initTypeProto(endToStart$823,'com.openswimsoftware.ceylon.js.dom::endToStart',$init$RangeCompareHow());
+ex$.getEndToEnd=getEndToEnd;
+getEndToEnd.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$mu},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','endToEnd']};};
+$prop$getEndToEnd={get:getEndToEnd,$crtmm$:getEndToEnd.$crtmm$};
+get$mu=getEndToEnd;$prop$get$mu=getEndToEnd;
+ex$.$prop$getEndToEnd=$prop$getEndToEnd;
+function $mv(){
+    var endToStart$=new $mv.$$;
+    RangeCompareHow("endToStart",endToStart$);
+    return endToStart$;
+};$mv.$crtmm$=function(){return{mod:$CCMM$,'super':{t:RangeCompareHow},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','endToStart']};};
+function $init$$mv(){
+    if($mv.$$===undefined){
+        m$1.initTypeProto($mv,'com.openswimsoftware.ceylon.js.dom::endToStart',$init$RangeCompareHow());
     }
-    return endToStart$823;
+    return $mv;
 }
-exports.$init$endToStart$823=$init$endToStart$823;
-$init$endToStart$823();
-var endToStart$827;
+ex$.$init$$mv=$init$$mv;
+$init$$mv();
+var $mz;
 function getEndToStart(){
-    if (endToStart$827===undefined){endToStart$827=$init$endToStart$823()();endToStart$827.$$metamodel$$=getEndToStart.$$metamodel$$;}
-    return endToStart$827;
+    if($mz===undefined){$mz=$init$$mv()();$mz.$crtmm$=getEndToStart.$crtmm$;}
+    return $mz;
 }
-exports.getEndToStart=getEndToStart;
-getEndToStart.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:endToStart$823},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','endToStart']};};
-$prop$getEndToStart={get:getEndToStart,$$metamodel$$:getEndToStart.$$metamodel$$};
-exports.$prop$getEndToStart=$prop$getEndToStart;
-function startToEnd$824(){
-    var $$startToEnd=new startToEnd$824.$$;
-    RangeCompareHow($$$cl1.String("startToEnd",10),$$startToEnd);
-    return $$startToEnd;
-};startToEnd$824.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:RangeCompareHow},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','startToEnd']};};
-function $init$startToEnd$824(){
-    if (startToEnd$824.$$===undefined){
-        $$$cl1.initTypeProto(startToEnd$824,'com.openswimsoftware.ceylon.js.dom::startToEnd',$init$RangeCompareHow());
+ex$.getEndToStart=getEndToStart;
+getEndToStart.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$mv},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','endToStart']};};
+$prop$getEndToStart={get:getEndToStart,$crtmm$:getEndToStart.$crtmm$};
+get$mv=getEndToStart;$prop$get$mv=getEndToStart;
+ex$.$prop$getEndToStart=$prop$getEndToStart;
+function $mw(){
+    var startToEnd$=new $mw.$$;
+    RangeCompareHow("startToEnd",startToEnd$);
+    return startToEnd$;
+};$mw.$crtmm$=function(){return{mod:$CCMM$,'super':{t:RangeCompareHow},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','startToEnd']};};
+function $init$$mw(){
+    if($mw.$$===undefined){
+        m$1.initTypeProto($mw,'com.openswimsoftware.ceylon.js.dom::startToEnd',$init$RangeCompareHow());
     }
-    return startToEnd$824;
+    return $mw;
 }
-exports.$init$startToEnd$824=$init$startToEnd$824;
-$init$startToEnd$824();
-var startToEnd$828;
+ex$.$init$$mw=$init$$mw;
+$init$$mw();
+var $n0;
 function getStartToEnd(){
-    if (startToEnd$828===undefined){startToEnd$828=$init$startToEnd$824()();startToEnd$828.$$metamodel$$=getStartToEnd.$$metamodel$$;}
-    return startToEnd$828;
+    if($n0===undefined){$n0=$init$$mw()();$n0.$crtmm$=getStartToEnd.$crtmm$;}
+    return $n0;
 }
-exports.getStartToEnd=getStartToEnd;
-getStartToEnd.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:startToEnd$824},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','startToEnd']};};
-$prop$getStartToEnd={get:getStartToEnd,$$metamodel$$:getStartToEnd.$$metamodel$$};
-exports.$prop$getStartToEnd=$prop$getStartToEnd;
-function startToStart$825(){
-    var $$startToStart=new startToStart$825.$$;
-    RangeCompareHow($$$cl1.String("startToStart",12),$$startToStart);
-    return $$startToStart;
-};startToStart$825.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:RangeCompareHow},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','startToStart']};};
-function $init$startToStart$825(){
-    if (startToStart$825.$$===undefined){
-        $$$cl1.initTypeProto(startToStart$825,'com.openswimsoftware.ceylon.js.dom::startToStart',$init$RangeCompareHow());
+ex$.getStartToEnd=getStartToEnd;
+getStartToEnd.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$mw},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','startToEnd']};};
+$prop$getStartToEnd={get:getStartToEnd,$crtmm$:getStartToEnd.$crtmm$};
+get$mw=getStartToEnd;$prop$get$mw=getStartToEnd;
+ex$.$prop$getStartToEnd=$prop$getStartToEnd;
+function $mx(){
+    var startToStart$=new $mx.$$;
+    RangeCompareHow("startToStart",startToStart$);
+    return startToStart$;
+};$mx.$crtmm$=function(){return{mod:$CCMM$,'super':{t:RangeCompareHow},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','startToStart']};};
+function $init$$mx(){
+    if($mx.$$===undefined){
+        m$1.initTypeProto($mx,'com.openswimsoftware.ceylon.js.dom::startToStart',$init$RangeCompareHow());
     }
-    return startToStart$825;
+    return $mx;
 }
-exports.$init$startToStart$825=$init$startToStart$825;
-$init$startToStart$825();
-var startToStart$829;
+ex$.$init$$mx=$init$$mx;
+$init$$mx();
+var $n1;
 function getStartToStart(){
-    if (startToStart$829===undefined){startToStart$829=$init$startToStart$825()();startToStart$829.$$metamodel$$=getStartToStart.$$metamodel$$;}
-    return startToStart$829;
+    if($n1===undefined){$n1=$init$$mx()();$n1.$crtmm$=getStartToStart.$crtmm$;}
+    return $n1;
 }
-exports.getStartToStart=getStartToStart;
-getStartToStart.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:startToStart$825},$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','startToStart']};};
-$prop$getStartToStart={get:getStartToStart,$$metamodel$$:getStartToStart.$$metamodel$$};
-exports.$prop$getStartToStart=$prop$getStartToStart;
-function RangeAbs($$rangeAbs){
+ex$.getStartToStart=getStartToStart;
+getStartToStart.$crtmm$=function(){return{mod:$CCMM$,$t:{t:$mx},$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','startToStart']};};
+$prop$getStartToStart={get:getStartToStart,$crtmm$:getStartToStart.$crtmm$};
+get$mx=getStartToStart;$prop$get$mx=getStartToStart;
+ex$.$prop$getStartToStart=$prop$getStartToStart;
+function RangeAbs(rangeAbs$){
     $init$RangeAbs();
-    if ($$rangeAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$$cocjl339.JSObjectAbs($$rangeAbs);
-    return $$rangeAbs;
+    if(rangeAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    m$9f.JSObjectAbs(rangeAbs$);
+    return rangeAbs$;
 }
-RangeAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cocjl339.JSObjectAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs']};};
-exports.RangeAbs=RangeAbs;
+RangeAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$9f.JSObjectAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs']};};
+ex$.RangeAbs=RangeAbs;
 function $init$RangeAbs(){
-    if (RangeAbs.$$===undefined){
-        $$$cl1.initTypeProto(RangeAbs,'com.openswimsoftware.ceylon.js.dom::RangeAbs',$$$cocjl339.JSObjectAbs);
-        (function($$rangeAbs){
-            $$rangeAbs.startContainer=function startContainer(){
-                var $$rangeAbs=this;
+    if(RangeAbs.$$===undefined){
+        m$1.initTypeProto(RangeAbs,'com.openswimsoftware.ceylon.js.dom::RangeAbs',m$9f.JSObjectAbs);
+        (function(rangeAbs$){
+            rangeAbs$.startContainer=function startContainer(){
+                var rangeAbs$=this;
                 /*Begin dynamic block*/
-                return Node($$rangeAbs.$native.startContainer);
+                return Node(rangeAbs$.$_native.startContainer);
                 /*End dynamic block*/
-            };$$rangeAbs.startContainer.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Node},$ps:[],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the node where the container range begins",49)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','startContainer']};};
-            $$rangeAbs.endContainer=function endContainer(){
-                var $$rangeAbs=this;
+            };rangeAbs$.startContainer.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Node},$ps:[],$cont:RangeAbs,$an:function(){return[m$1.doc("returns the node where the container range begins"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','startContainer']};};
+            rangeAbs$.endContainer=function endContainer(){
+                var rangeAbs$=this;
                 /*Begin dynamic block*/
-                return Node($$rangeAbs.$native.endContainer);
+                return Node(rangeAbs$.$_native.endContainer);
                 /*End dynamic block*/
-            };$$rangeAbs.endContainer.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Node},$ps:[],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the node where the container range ends",47)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','endContainer']};};
-            $$rangeAbs.startOffset=function startOffset(){
-                var $$rangeAbs=this;
+            };rangeAbs$.endContainer.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Node},$ps:[],$cont:RangeAbs,$an:function(){return[m$1.doc("returns the node where the container range ends"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','endContainer']};};
+            rangeAbs$.startOffset=function startOffset(){
+                var rangeAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSNumber($$rangeAbs.$native.startOffset);
+                return m$9f.JSNumber(rangeAbs$.$_native.startOffset);
                 /*End dynamic block*/
-            };$$rangeAbs.startOffset.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSNumber},$ps:[],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns a number where the container range begins",49)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','startOffset']};};
-            $$rangeAbs.endOffset=function endOffset(){
-                var $$rangeAbs=this;
+            };rangeAbs$.startOffset.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSNumber},$ps:[],$cont:RangeAbs,$an:function(){return[m$1.doc("returns a number where the container range begins"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','startOffset']};};
+            rangeAbs$.endOffset=function endOffset(){
+                var rangeAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSNumber($$rangeAbs.$native.endOffset);
+                return m$9f.JSNumber(rangeAbs$.$_native.endOffset);
                 /*End dynamic block*/
-            };$$rangeAbs.endOffset.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSNumber},$ps:[],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns a number where the container range ends",47)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','endOffset']};};
-            $$rangeAbs.collapsed=function collapsed(){
-                var $$rangeAbs=this;
+            };rangeAbs$.endOffset.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSNumber},$ps:[],$cont:RangeAbs,$an:function(){return[m$1.doc("returns a number where the container range ends"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','endOffset']};};
+            rangeAbs$.collapsed=function collapsed(){
+                var rangeAbs$=this;
                 /*Begin dynamic block*/
-                if($$rangeAbs.$native.collapsed()){
+                if(rangeAbs$.$_native.collapsed()){
                     return true;
                 }else {
                     return false;
                 }/*End dynamic block*/
-            };$$rangeAbs.collapsed.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Boolean},$ps:[],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("is the start and end nodes the same node",40)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','collapsed']};};
-            $$rangeAbs.commonAncestorContainer=function commonAncestorContainer(){
-                var $$rangeAbs=this;
+            };rangeAbs$.collapsed.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.$_Boolean},$ps:[],$cont:RangeAbs,$an:function(){return[m$1.doc("is the start and end nodes the same node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','collapsed']};};
+            rangeAbs$.commonAncestorContainer=function commonAncestorContainer(){
+                var rangeAbs$=this;
                 /*Begin dynamic block*/
-                return Node($$rangeAbs.$native.commonAncestorContainer);
+                return Node(rangeAbs$.$_native.commonAncestorContainer);
                 /*End dynamic block*/
-            };$$rangeAbs.commonAncestorContainer.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Node},$ps:[],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the deepest Node that contains the startContainer and endContainer nodes",80)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','commonAncestorContainer']};};
-            $$rangeAbs.setStart=function setStart(startNode$830,startOffset$831){
-                var $$rangeAbs=this;
-                
-                var case$832=startOffset$831;
-                if ($$$cl1.isOfType(startOffset$831,{t:$$$cl1.Integer})) {
+            };rangeAbs$.commonAncestorContainer.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Node},$ps:[],$cont:RangeAbs,$an:function(){return[m$1.doc("returns the deepest Node that contains the startContainer and endContainer nodes"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','commonAncestorContainer']};};
+            rangeAbs$.setStart=function setStart($n2,$n3){
+                var rangeAbs$=this;
+                var $n4=$n3;
+                if(m$1.is$($n3,{t:m$1.Integer})) {
                     /*Begin dynamic block*/
-                    $$rangeAbs.$native.setStart(startNode$830,case$832);
+                    rangeAbs$.$_native.setStart($n2,$n4);
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(startOffset$831,{t:$$$cocjl339.JSNumber})) {
+                }else if(m$1.is$($n3,{t:m$9f.JSNumber})) {
                     /*Begin dynamic block*/
-                    $$rangeAbs.$native.setStart(startNode$830,case$832.$native);
-                    /*End dynamic block*/
-                }
-            };$$rangeAbs.setStart.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'startNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}},{$nm:'startOffset',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.Integer},{t:$$$cocjl339.JSNumber}]},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("set the start position of the range",35)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','setStart']};};
-            $$rangeAbs.setEnd=function setEnd(endNode$833,endOffset$834){
-                var $$rangeAbs=this;
-                
-                var case$835=endOffset$834;
-                if ($$$cl1.isOfType(endOffset$834,{t:$$$cl1.Integer})) {
-                    /*Begin dynamic block*/
-                    $$rangeAbs.$native.setEnd(endNode$833,case$835);
-                    /*End dynamic block*/
-                }else if ($$$cl1.isOfType(endOffset$834,{t:$$$cocjl339.JSNumber})) {
-                    /*Begin dynamic block*/
-                    $$rangeAbs.$native.setEnd(endNode$833,case$835.$native);
+                    rangeAbs$.$_native.setStart($n2,$n4.$_native);
                     /*End dynamic block*/
                 }
-            };$$rangeAbs.setEnd.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'endNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}},{$nm:'endOffset',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.Integer},{t:$$$cocjl339.JSNumber}]},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("set the end position of the range",33)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','setEnd']};};
-            $$rangeAbs.setStartBefore=function setStartBefore(refNode$836){
-                var $$rangeAbs=this;
+            };rangeAbs$.setStart.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'startNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}},{$nm:'startOffset',$mt:'prm',$t:{t:'u',l:[{t:m$1.Integer},{t:m$9f.JSNumber}]},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[m$1.doc("set the start position of the range"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','setStart']};};
+            rangeAbs$.setEnd=function setEnd($n5,$n6){
+                var rangeAbs$=this;
+                var $n7=$n6;
+                if(m$1.is$($n6,{t:m$1.Integer})) {
+                    /*Begin dynamic block*/
+                    rangeAbs$.$_native.setEnd($n5,$n7);
+                    /*End dynamic block*/
+                }else if(m$1.is$($n6,{t:m$9f.JSNumber})) {
+                    /*Begin dynamic block*/
+                    rangeAbs$.$_native.setEnd($n5,$n7.$_native);
+                    /*End dynamic block*/
+                }
+            };rangeAbs$.setEnd.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'endNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}},{$nm:'endOffset',$mt:'prm',$t:{t:'u',l:[{t:m$1.Integer},{t:m$9f.JSNumber}]},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[m$1.doc("set the end position of the range"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','setEnd']};};
+            rangeAbs$.setStartBefore=function setStartBefore($n8){
+                var rangeAbs$=this;
                 /*Begin dynamic block*/
-                $$rangeAbs.$native.setStartBefore(refNode$836);
+                rangeAbs$.$_native.setStartBefore($n8);
                 /*End dynamic block*/
-            };$$rangeAbs.setStartBefore.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'refNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("set the start position of the range relative to the given node",62)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','setStartBefore']};};
-            $$rangeAbs.setStartAfter=function setStartAfter(refNode$837){
-                var $$rangeAbs=this;
+            };rangeAbs$.setStartBefore.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'refNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[m$1.doc("set the start position of the range relative to the given node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','setStartBefore']};};
+            rangeAbs$.setStartAfter=function setStartAfter($n9){
+                var rangeAbs$=this;
                 /*Begin dynamic block*/
-                $$rangeAbs.$native.setStartAfter(refNode$837);
+                rangeAbs$.$_native.setStartAfter($n9);
                 /*End dynamic block*/
-            };$$rangeAbs.setStartAfter.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'refNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("set the start position of the range relative to the given node",62)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','setStartAfter']};};
-            $$rangeAbs.setEndBefore=function setEndBefore(refNode$838){
-                var $$rangeAbs=this;
+            };rangeAbs$.setStartAfter.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'refNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[m$1.doc("set the start position of the range relative to the given node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','setStartAfter']};};
+            rangeAbs$.setEndBefore=function setEndBefore($na){
+                var rangeAbs$=this;
                 /*Begin dynamic block*/
-                $$rangeAbs.$native.setEndBefore(refNode$838);
+                rangeAbs$.$_native.setEndBefore($na);
                 /*End dynamic block*/
-            };$$rangeAbs.setEndBefore.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'refNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("set the end position of the range relative to the given node",60)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','setEndBefore']};};
-            $$rangeAbs.setEndAfter=function setEndAfter(refNode$839){
-                var $$rangeAbs=this;
+            };rangeAbs$.setEndBefore.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'refNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[m$1.doc("set the end position of the range relative to the given node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','setEndBefore']};};
+            rangeAbs$.setEndAfter=function setEndAfter($nb){
+                var rangeAbs$=this;
                 /*Begin dynamic block*/
-                $$rangeAbs.$native.setEndAfter(refNode$839);
+                rangeAbs$.$_native.setEndAfter($nb);
                 /*End dynamic block*/
-            };$$rangeAbs.setEndAfter.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'refNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("set the end position of the range relative to the given node",60)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','setEndAfter']};};
-            $$rangeAbs.collapse$defs$toStart=function(toStart$840){var $$rangeAbs=this;
-            return null;};
-            $$rangeAbs.collapse=function collapse(toStart$840){
-                var $$rangeAbs=this;
-                if(toStart$840===undefined){toStart$840=$$rangeAbs.collapse$defs$toStart(toStart$840);}
+            };rangeAbs$.setEndAfter.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'refNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[m$1.doc("set the end position of the range relative to the given node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','setEndAfter']};};
+            rangeAbs$.collapse$defs$toStart=function($nc){return null;};
+            rangeAbs$.collapse=function collapse($nc){
+                var rangeAbs$=this;
+                if($nc===undefined){$nc=rangeAbs$.collapse$defs$toStart($nc);}
                 /*Begin dynamic block*/
-                var s$841;
-                if((s$841=toStart$840)!==null){
-                    $$rangeAbs.$native.collapse(s$841);
+                var $nd;
+                if(($nd=$nc)!==null&&$nd!==undefined){
+                    rangeAbs$.$_native.collapse($nd);
                 }else {
-                    $$rangeAbs.$native.collapse();
+                    rangeAbs$.$_native.collapse();
                 }/*End dynamic block*/
-            };$$rangeAbs.collapse.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'toStart',$mt:'prm',$def:1,$t:{t:'u', l:[{t:$$$cl1.Null},{t:$$$cl1.Boolean}]},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("collapses the range to one of its boundery points",49)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','collapse']};};
-            $$rangeAbs.selectNode=function selectNode(refNode$842){
-                var $$rangeAbs=this;
+            };rangeAbs$.collapse.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'toStart',$mt:'prm',$def:1,$t:{t:'u',l:[{t:m$1.Null},{t:m$1.$_Boolean}]},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[m$1.doc("collapses the range to one of its boundery points"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','collapse']};};
+            rangeAbs$.selectNode=function selectNode($ne){
+                var rangeAbs$=this;
                 /*Begin dynamic block*/
-                $$rangeAbs.$native.selectNode(refNode$842);
+                rangeAbs$.$_native.selectNode($ne);
                 /*End dynamic block*/
-            };$$rangeAbs.selectNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'refNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("set the range to contain node and its contents",46)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','selectNode']};};
-            $$rangeAbs.selectNodeContents=function selectNodeContents(refNode$843){
-                var $$rangeAbs=this;
+            };rangeAbs$.selectNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'refNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[m$1.doc("set the range to contain node and its contents"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','selectNode']};};
+            rangeAbs$.selectNodeContents=function selectNodeContents($nf){
+                var rangeAbs$=this;
                 /*Begin dynamic block*/
-                $$rangeAbs.$native.selectNodeContents(refNode$843);
+                rangeAbs$.$_native.selectNodeContents($nf);
                 /*End dynamic block*/
-            };$$rangeAbs.selectNodeContents.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'refNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("set the range to contain the contents of the given node",55)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','selectNodeContents']};};
-            $$rangeAbs.compareBoundaryPoints=function compareBoundaryPoints(how$844,sourceRange$845){
-                var $$rangeAbs=this;
+            };rangeAbs$.selectNodeContents.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'refNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[m$1.doc("set the range to contain the contents of the given node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','selectNodeContents']};};
+            rangeAbs$.compareBoundaryPoints=function compareBoundaryPoints($ng,$nh){
+                var rangeAbs$=this;
                 /*Begin dynamic block*/
-                
-                var case$846=how$844;
-                if (case$846===getEndToEnd()) {
-                    return $$$cocjl339.JSNumber($$rangeAbs.$native.compareBoundaryPoints((typeof Range==='undefined'||Range===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Range")),'147:61-147:65','range.ceylon'):Range).START_TO_START,sourceRange$845));
-                }else if (case$846===getEndToStart()) {
-                    return $$$cocjl339.JSNumber($$rangeAbs.$native.compareBoundaryPoints((typeof Range==='undefined'||Range===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Range")),'150:61-150:65','range.ceylon'):Range).START_TO_END,sourceRange$845));
-                }else if (case$846===getStartToEnd()) {
-                    return $$$cocjl339.JSNumber($$rangeAbs.$native.compareBoundaryPoints((typeof Range==='undefined'||Range===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Range")),'153:61-153:65','range.ceylon'):Range).END_TO_END,sourceRange$845));
-                }else if (case$846===getStartToStart()) {
-                    return $$$cocjl339.JSNumber($$rangeAbs.$native.compareBoundaryPoints((typeof Range==='undefined'||Range===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Range")),'156:61-156:65','range.ceylon'):Range).END_TO_START,sourceRange$845));
+                var $ni=$ng;
+                if($ni===getEndToEnd()) {
+                    return m$9f.JSNumber(rangeAbs$.$_native.compareBoundaryPoints((typeof Range==='undefined'||Range===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Range"),'147:61-147:65','range.ceylon'):Range).START_TO_START,$nh));
+                }else if($ni===getEndToStart()) {
+                    return m$9f.JSNumber(rangeAbs$.$_native.compareBoundaryPoints((typeof Range==='undefined'||Range===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Range"),'150:61-150:65','range.ceylon'):Range).START_TO_END,$nh));
+                }else if($ni===getStartToEnd()) {
+                    return m$9f.JSNumber(rangeAbs$.$_native.compareBoundaryPoints((typeof Range==='undefined'||Range===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Range"),'153:61-153:65','range.ceylon'):Range).END_TO_END,$nh));
+                }else if($ni===getStartToStart()) {
+                    return m$9f.JSNumber(rangeAbs$.$_native.compareBoundaryPoints((typeof Range==='undefined'||Range===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Range"),'156:61-156:65','range.ceylon'):Range).END_TO_START,$nh));
                 }/*End dynamic block*/
-            };$$rangeAbs.compareBoundaryPoints.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSNumber},$ps:[{$nm:'how',$mt:'prm',$t:{t:RangeCompareHow},$an:function(){return[];}},{$nm:'sourceRange',$mt:'prm',$t:{t:Range},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("compare the boundery points of one range with another",53)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','compareBoundaryPoints']};};
-            $$rangeAbs.deleteContents=function deleteContents(){
-                var $$rangeAbs=this;
+            };rangeAbs$.compareBoundaryPoints.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSNumber},$ps:[{$nm:'how',$mt:'prm',$t:{t:RangeCompareHow},$an:function(){return[];}},{$nm:'sourceRange',$mt:'prm',$t:{t:Range},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[m$1.doc("compare the boundery points of one range with another"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','compareBoundaryPoints']};};
+            rangeAbs$.deleteContents=function deleteContents(){
+                var rangeAbs$=this;
                 /*Begin dynamic block*/
-                $$rangeAbs.$native.deleteContents();
+                rangeAbs$.$_native.deleteContents();
                 /*End dynamic block*/
-            };$$rangeAbs.deleteContents.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("remove the contents of range from the document",46)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','deleteContents']};};
-            $$rangeAbs.extractContents=function extractContents(){
-                var $$rangeAbs=this;
+            };rangeAbs$.deleteContents.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[],$cont:RangeAbs,$an:function(){return[m$1.doc("remove the contents of range from the document"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','deleteContents']};};
+            rangeAbs$.extractContents=function extractContents(){
+                var rangeAbs$=this;
                 /*Begin dynamic block*/
-                return DocumentFragment($$rangeAbs.$native.extractContents());
+                return DocumentFragment(rangeAbs$.$_native.extractContents());
                 /*End dynamic block*/
-            };$$rangeAbs.extractContents.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:DocumentFragment},$ps:[],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("move the contents of the range from their document to a new document fragment",77)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','extractContents']};};
-            $$rangeAbs.cloneContents=function cloneContents(){
-                var $$rangeAbs=this;
+            };rangeAbs$.extractContents.$crtmm$=function(){return{mod:$CCMM$,$t:{t:DocumentFragment},$ps:[],$cont:RangeAbs,$an:function(){return[m$1.doc("move the contents of the range from their document to a new document fragment"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','extractContents']};};
+            rangeAbs$.cloneContents=function cloneContents(){
+                var rangeAbs$=this;
                 /*Begin dynamic block*/
-                return DocumentFragment($$rangeAbs.$native.cloneContents());
+                return DocumentFragment(rangeAbs$.$_native.cloneContents());
                 /*End dynamic block*/
-            };$$rangeAbs.cloneContents.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:DocumentFragment},$ps:[],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("creates a new document copying the nodes inside of the range",60)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','cloneContents']};};
-            $$rangeAbs.insertNode=function insertNode(newNode$847){
-                var $$rangeAbs=this;
+            };rangeAbs$.cloneContents.$crtmm$=function(){return{mod:$CCMM$,$t:{t:DocumentFragment},$ps:[],$cont:RangeAbs,$an:function(){return[m$1.doc("creates a new document copying the nodes inside of the range"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','cloneContents']};};
+            rangeAbs$.insertNode=function insertNode($nj){
+                var rangeAbs$=this;
                 /*Begin dynamic block*/
-                $$rangeAbs.$native.insertNode(newNode$847);
+                rangeAbs$.$_native.insertNode($nj);
                 /*End dynamic block*/
-            };$$rangeAbs.insertNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'newNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("insert a node at the start of the range",39)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','insertNode']};};
-            $$rangeAbs.surroundContents=function surroundContents(newNode$848){
-                var $$rangeAbs=this;
+            };rangeAbs$.insertNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'newNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[m$1.doc("insert a node at the start of the range"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','insertNode']};};
+            rangeAbs$.surroundContents=function surroundContents($nk){
+                var rangeAbs$=this;
                 /*Begin dynamic block*/
-                $$rangeAbs.$native.surroundContents(newNode$848);
+                rangeAbs$.$_native.surroundContents($nk);
                 /*End dynamic block*/
-            };$$rangeAbs.surroundContents.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'newNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("move the contents of the range into the new node",48)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','surroundContents']};};
-            $$rangeAbs.cloneRange=function cloneRange(){
-                var $$rangeAbs=this;
+            };rangeAbs$.surroundContents.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'newNode',$mt:'prm',$t:{t:Node},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[m$1.doc("move the contents of the range into the new node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','surroundContents']};};
+            rangeAbs$.cloneRange=function cloneRange(){
+                var rangeAbs$=this;
                 /*Begin dynamic block*/
-                return Range($$rangeAbs.$native.cloneRange());
+                return Range(rangeAbs$.$_native.cloneRange());
                 /*End dynamic block*/
-            };$$rangeAbs.cloneRange.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Range},$ps:[],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("clone the range",15)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','cloneRange']};};
-            $$rangeAbs.detach=function detach(){
-                var $$rangeAbs=this;
+            };rangeAbs$.cloneRange.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Range},$ps:[],$cont:RangeAbs,$an:function(){return[m$1.doc("clone the range"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','cloneRange']};};
+            rangeAbs$.detach=function detach(){
+                var rangeAbs$=this;
                 /*Begin dynamic block*/
-                $$rangeAbs.$native.detach();
+                rangeAbs$.$_native.detach();
                 /*End dynamic block*/
-            };$$rangeAbs.detach.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("detach a range from use to free resources",41)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','detach']};};
-            $$rangeAbs.isPointInRange=function isPointInRange(node$849,offset$850){
-                var $$rangeAbs=this;
-                var inRange$851;
-                
-                var case$852=offset$850;
-                if ($$$cl1.isOfType(offset$850,{t:$$$cl1.Integer})) {
+            };rangeAbs$.detach.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[],$cont:RangeAbs,$an:function(){return[m$1.doc("detach a range from use to free resources"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','detach']};};
+            rangeAbs$.isPointInRange=function isPointInRange($nl,$nm){
+                var rangeAbs$=this;
+                var $nn;
+                var $no=$nm;
+                if(m$1.is$($nm,{t:m$1.Integer})) {
                     /*Begin dynamic block*/
-                    inRange$851=$$rangeAbs.$native.isPointInRange(node$849,case$852);/*End dynamic block*/
-                }else if ($$$cl1.isOfType(offset$850,{t:$$$cocjl339.JSNumber})) {
+                    $nn=rangeAbs$.$_native.isPointInRange($nl,$no);/*End dynamic block*/
+                }else if(m$1.is$($nm,{t:m$9f.JSNumber})) {
                     /*Begin dynamic block*/
-                    inRange$851=$$rangeAbs.$native.isPointInRange(node$849,case$852.$native);/*End dynamic block*/
+                    $nn=rangeAbs$.$_native.isPointInRange($nl,$no.$_native);/*End dynamic block*/
                 }
                 /*Begin dynamic block*/
-                if(inRange$851){
+                if($nn){
                     return true;
                 }else {
                     return false;
                 }/*End dynamic block*/
-            };$$rangeAbs.isPointInRange.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Boolean},$ps:[{$nm:'node',$mt:'prm',$t:{t:Node},$an:function(){return[];}},{$nm:'offset',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.Integer},{t:$$$cocjl339.JSNumber}]},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("is the the current point in the range",37)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','isPointInRange']};};
+            };rangeAbs$.isPointInRange.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.$_Boolean},$ps:[{$nm:'node',$mt:'prm',$t:{t:Node},$an:function(){return[];}},{$nm:'offset',$mt:'prm',$t:{t:'u',l:[{t:m$1.Integer},{t:m$9f.JSNumber}]},$an:function(){return[];}}],$cont:RangeAbs,$an:function(){return[m$1.doc("is the the current point in the range"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','RangeAbs','$m','isPointInRange']};};
         })(RangeAbs.$$.prototype);
     }
     return RangeAbs;
 }
-exports.$init$RangeAbs=$init$RangeAbs;
+ex$.$init$RangeAbs=$init$RangeAbs;
 $init$RangeAbs();
-function Range(n$853, $$range){
+function Range($np,range$){
     $init$Range();
-    if ($$range===undefined)$$range=new Range.$$;
-    $$range.n$853_=n$853;
-    RangeAbs($$range);
-    $$range.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:Range,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','Range','$at','native']};}};
+    if(range$===undefined)range$=new Range.$$;
+    range$.$np_=$np;
+    RangeAbs(range$);
+    range$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:Range,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','Range','$at','native']};}};
     /*Begin dynamic block*/
-    $$range.$native=$$range.n$853;/*End dynamic block*/
-    return $$range;
+    range$.$_native=range$.$np;/*End dynamic block*/
+    return range$;
 }
-Range.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:RangeAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("DOM range",9)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','Range']};};
-exports.Range=Range;
+Range.$crtmm$=function(){return{mod:$CCMM$,'super':{t:RangeAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("DOM range"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','Range']};};
+ex$.Range=Range;
 function $init$Range(){
-    if (Range.$$===undefined){
-        $$$cl1.initTypeProto(Range,'com.openswimsoftware.ceylon.js.dom::Range',$init$RangeAbs());
-        (function($$range){
-            $$$cl1.defineAttr($$range,'n$853',function(){return this.n$853_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:Range,d:['com.openswimsoftware.ceylon.js.dom','Range','$at','n']};});
+    if(Range.$$===undefined){
+        m$1.initTypeProto(Range,'com.openswimsoftware.ceylon.js.dom::Range',$init$RangeAbs());
+        (function(range$){
+            m$1.atr$(range$,'$np',function(){return this.$np_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:Range,d:['com.openswimsoftware.ceylon.js.dom','Range','$at','n$fqs61p']};});
         })(Range.$$.prototype);
     }
     return Range;
 }
-exports.$init$Range=$init$Range;
+ex$.$init$Range=$init$Range;
 $init$Range();
-function MediaListAbs$stylesheets($$mediaListAbs){
+function MediaListAbs$stylesheets(mediaListAbs$){
     $init$MediaListAbs$stylesheets();
-    if ($$mediaListAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$$cocjl339.JSObjectAbs($$mediaListAbs);
-    return $$mediaListAbs;
+    if(mediaListAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    m$9f.JSObjectAbs(mediaListAbs$);
+    return mediaListAbs$;
 }
-MediaListAbs$stylesheets.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cocjl339.JSObjectAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','MediaListAbs']};};
-exports.MediaListAbs$stylesheets=MediaListAbs$stylesheets;
+MediaListAbs$stylesheets.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$9f.JSObjectAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','MediaListAbs']};};
+ex$.MediaListAbs$stylesheets=MediaListAbs$stylesheets;
 function $init$MediaListAbs$stylesheets(){
-    if (MediaListAbs$stylesheets.$$===undefined){
-        $$$cl1.initTypeProto(MediaListAbs$stylesheets,'com.openswimsoftware.ceylon.js.dom.stylesheets::MediaListAbs',$$$cocjl339.JSObjectAbs);
-        (function($$mediaListAbs){
-            $$mediaListAbs.getMediaText=function getMediaText(){
-                var $$mediaListAbs=this;
+    if(MediaListAbs$stylesheets.$$===undefined){
+        m$1.initTypeProto(MediaListAbs$stylesheets,'com.openswimsoftware.ceylon.js.dom.stylesheets::MediaListAbs',m$9f.JSObjectAbs);
+        (function(mediaListAbs$){
+            mediaListAbs$.getMediaText=function getMediaText(){
+                var mediaListAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$mediaListAbs.$native.mediaText);
+                return m$9f.JSString(mediaListAbs$.$_native.mediaText);
                 /*End dynamic block*/
-            };$$mediaListAbs.getMediaText.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:MediaListAbs$stylesheets,$an:function(){return[$$$cl1.doc($$$cl1.String("serializes Media Queries",24)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','MediaListAbs','$m','getMediaText']};};
-            $$mediaListAbs.setMediaText=function setMediaText(text$854){
-                var $$mediaListAbs=this;
-                
-                var case$855=text$854;
-                if ($$$cl1.isOfType(text$854,{t:$$$cl1.String})) {
+            };mediaListAbs$.getMediaText.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:MediaListAbs$stylesheets,$an:function(){return[m$1.doc("serializes Media Queries"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','MediaListAbs','$m','getMediaText']};};
+            mediaListAbs$.setMediaText=function setMediaText($nq){
+                var mediaListAbs$=this;
+                var $nr=$nq;
+                if(m$1.is$($nq,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    $$mediaListAbs.$native.mediaText=case$855.valueOf();
+                    mediaListAbs$.$_native.mediaText=$nr.valueOf();
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(text$854,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($nq,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    $$mediaListAbs.$native.mediaText=case$855.$native;
+                    mediaListAbs$.$_native.mediaText=$nr.$_native;
                     /*End dynamic block*/
                 }
-            };$$mediaListAbs.setMediaText.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'text',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:MediaListAbs$stylesheets,$an:function(){return[$$$cl1.doc($$$cl1.String("sets the media list to a string of Media Queries",48)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','MediaListAbs','$m','setMediaText']};};
-            $$mediaListAbs.length=function length(){
-                var $$mediaListAbs=this;
+            };mediaListAbs$.setMediaText.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'text',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:MediaListAbs$stylesheets,$an:function(){return[m$1.doc("sets the media list to a string of Media Queries"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','MediaListAbs','$m','setMediaText']};};
+            mediaListAbs$.length=function length(){
+                var mediaListAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSNumber($$mediaListAbs.$native.length);
+                return m$9f.JSNumber(mediaListAbs$.$_native.length);
                 /*End dynamic block*/
-            };$$mediaListAbs.length.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSNumber},$ps:[],$cont:MediaListAbs$stylesheets,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the number of Media Queries in the Collection",53)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','MediaListAbs','$m','length']};};
-            $$mediaListAbs.item=function item(index$856){
-                var $$mediaListAbs=this;
-                
-                var case$857=index$856;
-                if ($$$cl1.isOfType(index$856,{t:$$$cl1.Integer})) {
+            };mediaListAbs$.length.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSNumber},$ps:[],$cont:MediaListAbs$stylesheets,$an:function(){return[m$1.doc("returns the number of Media Queries in the Collection"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','MediaListAbs','$m','length']};};
+            mediaListAbs$.item=function item($ns){
+                var mediaListAbs$=this;
+                var $nt=$ns;
+                if(m$1.is$($ns,{t:m$1.Integer})) {
                     /*Begin dynamic block*/
-                    return $$$cocjl339.JSString($$mediaListAbs.$native.item(case$857));
+                    return m$9f.JSString(mediaListAbs$.$_native.item($nt));
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(index$856,{t:$$$cocjl339.JSNumber})) {
+                }else if(m$1.is$($ns,{t:m$9f.JSNumber})) {
                     /*Begin dynamic block*/
-                    return $$$cocjl339.JSString($$mediaListAbs.$native.item(case$857.$native));
-                    /*End dynamic block*/
-                }
-            };$$mediaListAbs.item.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[{$nm:'index',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.Integer},{t:$$$cocjl339.JSNumber}]},$an:function(){return[];}}],$cont:MediaListAbs$stylesheets,$an:function(){return[$$$cl1.doc($$$cl1.String("returns Media Query at the specified index",42)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','MediaListAbs','$m','item']};};
-            $$mediaListAbs.deleteMedium=function deleteMedium(oldMedium$858){
-                var $$mediaListAbs=this;
-                
-                var case$859=oldMedium$858;
-                if ($$$cl1.isOfType(oldMedium$858,{t:$$$cl1.String})) {
-                    /*Begin dynamic block*/
-                    $$mediaListAbs.$native.deleteMedium(case$859.valueOf());
-                    /*End dynamic block*/
-                }else if ($$$cl1.isOfType(oldMedium$858,{t:$$$cocjl339.JSString})) {
-                    /*Begin dynamic block*/
-                    $$mediaListAbs.$native.deleteMedium(case$859.$native);
+                    return m$9f.JSString(mediaListAbs$.$_native.item($nt.$_native));
                     /*End dynamic block*/
                 }
-            };$$mediaListAbs.deleteMedium.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'oldMedium',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:MediaListAbs$stylesheets,$an:function(){return[$$$cl1.doc($$$cl1.String("removes any media querys which match the passed query string",60)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','MediaListAbs','$m','deleteMedium']};};
-            $$mediaListAbs.appendMedium=function appendMedium(newMedium$860){
-                var $$mediaListAbs=this;
-                
-                var case$861=newMedium$860;
-                if ($$$cl1.isOfType(newMedium$860,{t:$$$cl1.String})) {
+            };mediaListAbs$.item.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[{$nm:'index',$mt:'prm',$t:{t:'u',l:[{t:m$1.Integer},{t:m$9f.JSNumber}]},$an:function(){return[];}}],$cont:MediaListAbs$stylesheets,$an:function(){return[m$1.doc("returns Media Query at the specified index"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','MediaListAbs','$m','item']};};
+            mediaListAbs$.deleteMedium=function deleteMedium($nu){
+                var mediaListAbs$=this;
+                var $nv=$nu;
+                if(m$1.is$($nu,{t:m$1.String})) {
                     /*Begin dynamic block*/
-                    $$mediaListAbs.$native.appendMedium(case$861.valueOf());
+                    mediaListAbs$.$_native.deleteMedium($nv.valueOf());
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(newMedium$860,{t:$$$cocjl339.JSString})) {
+                }else if(m$1.is$($nu,{t:m$9f.JSString})) {
                     /*Begin dynamic block*/
-                    $$mediaListAbs.$native.appendMedium(case$861.$native);
+                    mediaListAbs$.$_native.deleteMedium($nv.$_native);
                     /*End dynamic block*/
                 }
-            };$$mediaListAbs.appendMedium.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[{$nm:'newMedium',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[];}}],$cont:MediaListAbs$stylesheets,$an:function(){return[$$$cl1.doc($$$cl1.String("appends the passed Media Query to the collection",48)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','MediaListAbs','$m','appendMedium']};};
+            };mediaListAbs$.deleteMedium.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'oldMedium',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:MediaListAbs$stylesheets,$an:function(){return[m$1.doc("removes any media querys which match the passed query string"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','MediaListAbs','$m','deleteMedium']};};
+            mediaListAbs$.appendMedium=function appendMedium($nw){
+                var mediaListAbs$=this;
+                var $nx=$nw;
+                if(m$1.is$($nw,{t:m$1.String})) {
+                    /*Begin dynamic block*/
+                    mediaListAbs$.$_native.appendMedium($nx.valueOf());
+                    /*End dynamic block*/
+                }else if(m$1.is$($nw,{t:m$9f.JSString})) {
+                    /*Begin dynamic block*/
+                    mediaListAbs$.$_native.appendMedium($nx.$_native);
+                    /*End dynamic block*/
+                }
+            };mediaListAbs$.appendMedium.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[{$nm:'newMedium',$mt:'prm',$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[];}}],$cont:MediaListAbs$stylesheets,$an:function(){return[m$1.doc("appends the passed Media Query to the collection"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','MediaListAbs','$m','appendMedium']};};
         })(MediaListAbs$stylesheets.$$.prototype);
     }
     return MediaListAbs$stylesheets;
 }
-exports.$init$MediaListAbs$stylesheets=$init$MediaListAbs$stylesheets;
+ex$.$init$MediaListAbs$stylesheets=$init$MediaListAbs$stylesheets;
 $init$MediaListAbs$stylesheets();
-function MediaList$stylesheets(n$862, $$mediaList){
+function MediaList$stylesheets($ny,mediaList$){
     $init$MediaList$stylesheets();
-    if ($$mediaList===undefined)$$mediaList=new MediaList$stylesheets.$$;
-    $$mediaList.n$862_=n$862;
-    MediaListAbs$stylesheets($$mediaList);
-    $$mediaList.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:MediaList$stylesheets,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','MediaList','$at','native']};}};
+    if(mediaList$===undefined)mediaList$=new MediaList$stylesheets.$$;
+    mediaList$.$ny_=$ny;
+    MediaListAbs$stylesheets(mediaList$);
+    mediaList$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:MediaList$stylesheets,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','MediaList','$at','native']};}};
     /*Begin dynamic block*/
-    $$mediaList.$native=$$mediaList.n$862;/*End dynamic block*/
-    return $$mediaList;
+    mediaList$.$_native=mediaList$.$ny;/*End dynamic block*/
+    return mediaList$;
 }
-MediaList$stylesheets.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:MediaListAbs$stylesheets},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("Collection of Media Queries",27)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','MediaList']};};
-exports.MediaList$stylesheets=MediaList$stylesheets;
+MediaList$stylesheets.$crtmm$=function(){return{mod:$CCMM$,'super':{t:MediaListAbs$stylesheets},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("Collection of Media Queries"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','MediaList']};};
+ex$.MediaList$stylesheets=MediaList$stylesheets;
 function $init$MediaList$stylesheets(){
-    if (MediaList$stylesheets.$$===undefined){
-        $$$cl1.initTypeProto(MediaList$stylesheets,'com.openswimsoftware.ceylon.js.dom.stylesheets::MediaList',$init$MediaListAbs$stylesheets());
-        (function($$mediaList){
-            $$$cl1.defineAttr($$mediaList,'n$862',function(){return this.n$862_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:MediaList$stylesheets,d:['com.openswimsoftware.ceylon.js.dom.stylesheets','MediaList','$at','n']};});
+    if(MediaList$stylesheets.$$===undefined){
+        m$1.initTypeProto(MediaList$stylesheets,'com.openswimsoftware.ceylon.js.dom.stylesheets::MediaList',$init$MediaListAbs$stylesheets());
+        (function(mediaList$){
+            m$1.atr$(mediaList$,'$ny',function(){return this.$ny_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:MediaList$stylesheets,d:['com.openswimsoftware.ceylon.js.dom.stylesheets','MediaList','$at','n$6r3bd3']};});
         })(MediaList$stylesheets.$$.prototype);
     }
     return MediaList$stylesheets;
 }
-exports.$init$MediaList$stylesheets=$init$MediaList$stylesheets;
+ex$.$init$MediaList$stylesheets=$init$MediaList$stylesheets;
 $init$MediaList$stylesheets();
-exports.$pkg$ans$com$openswimsoftware$ceylon$js$dom$stylesheets=function(){return[$$$cl1.shared()];};
-function StyleSheetAbs$stylesheets($$styleSheetAbs){
+ex$.$pkg$ans$com$openswimsoftware$ceylon$js$dom$stylesheets=function(){return[m$1.shared()];};
+function StyleSheetAbs$stylesheets(styleSheetAbs$){
     $init$StyleSheetAbs$stylesheets();
-    if ($$styleSheetAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$$cocjl339.JSObjectAbs($$styleSheetAbs);
-    return $$styleSheetAbs;
+    if(styleSheetAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    m$9f.JSObjectAbs(styleSheetAbs$);
+    return styleSheetAbs$;
 }
-StyleSheetAbs$stylesheets.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cocjl339.JSObjectAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetAbs']};};
-exports.StyleSheetAbs$stylesheets=StyleSheetAbs$stylesheets;
+StyleSheetAbs$stylesheets.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$9f.JSObjectAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetAbs']};};
+ex$.StyleSheetAbs$stylesheets=StyleSheetAbs$stylesheets;
 function $init$StyleSheetAbs$stylesheets(){
-    if (StyleSheetAbs$stylesheets.$$===undefined){
-        $$$cl1.initTypeProto(StyleSheetAbs$stylesheets,'com.openswimsoftware.ceylon.js.dom.stylesheets::StyleSheetAbs',$$$cocjl339.JSObjectAbs);
-        (function($$styleSheetAbs){
-            $$styleSheetAbs.type=function type(){
-                var $$styleSheetAbs=this;
+    if(StyleSheetAbs$stylesheets.$$===undefined){
+        m$1.initTypeProto(StyleSheetAbs$stylesheets,'com.openswimsoftware.ceylon.js.dom.stylesheets::StyleSheetAbs',m$9f.JSObjectAbs);
+        (function(styleSheetAbs$){
+            styleSheetAbs$.type=function type(){
+                var styleSheetAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$styleSheetAbs.$native.type);
+                return m$9f.JSString(styleSheetAbs$.$_native.type);
                 /*End dynamic block*/
-            };$$styleSheetAbs.type.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:StyleSheetAbs$stylesheets,$an:function(){return[$$$cl1.doc($$$cl1.String("returns StyleSheets mime type string",36)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetAbs','$m','type']};};
-            $$styleSheetAbs.disabled=function disabled(){
-                var $$styleSheetAbs=this;
+            };styleSheetAbs$.type.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:StyleSheetAbs$stylesheets,$an:function(){return[m$1.doc("returns StyleSheets mime type string"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetAbs','$m','type']};};
+            styleSheetAbs$.disabled=function disabled(){
+                var styleSheetAbs$=this;
                 /*Begin dynamic block*/
-                if($$styleSheetAbs.$native.disabled){
+                if(styleSheetAbs$.$_native.disabled){
                     return true;
                 }else {
                     return false;
                 }/*End dynamic block*/
-            };$$styleSheetAbs.disabled.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Boolean},$ps:[],$cont:StyleSheetAbs$stylesheets,$an:function(){return[$$$cl1.doc($$$cl1.String("returns if the StyleSheet is disabled or not",44)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetAbs','$m','disabled']};};
-            $$styleSheetAbs.ownerNode=function ownerNode(){
-                var $$styleSheetAbs=this;
+            };styleSheetAbs$.disabled.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.$_Boolean},$ps:[],$cont:StyleSheetAbs$stylesheets,$an:function(){return[m$1.doc("returns if the StyleSheet is disabled or not"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetAbs','$m','disabled']};};
+            styleSheetAbs$.ownerNode=function ownerNode(){
+                var styleSheetAbs$=this;
                 /*Begin dynamic block*/
-                return Node($$styleSheetAbs.$native.ownerNode);
+                return Node(styleSheetAbs$.$_native.ownerNode);
                 /*End dynamic block*/
-            };$$styleSheetAbs.ownerNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Node},$ps:[],$cont:StyleSheetAbs$stylesheets,$an:function(){return[$$$cl1.doc($$$cl1.String("returns StyleSheets owning node",31)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetAbs','$m','ownerNode']};};
-            $$styleSheetAbs.parentStyleSheet=function parentStyleSheet(){
-                var $$styleSheetAbs=this;
+            };styleSheetAbs$.ownerNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Node},$ps:[],$cont:StyleSheetAbs$stylesheets,$an:function(){return[m$1.doc("returns StyleSheets owning node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetAbs','$m','ownerNode']};};
+            styleSheetAbs$.parentStyleSheet=function parentStyleSheet(){
+                var styleSheetAbs$=this;
                 /*Begin dynamic block*/
-                return StyleSheet$stylesheets($$styleSheetAbs.$native.parentStyleSheet);
+                return StyleSheet$stylesheets(styleSheetAbs$.$_native.parentStyleSheet);
                 /*End dynamic block*/
-            };$$styleSheetAbs.parentStyleSheet.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:StyleSheet$stylesheets},$ps:[],$cont:StyleSheetAbs$stylesheets,$an:function(){return[$$$cl1.doc($$$cl1.String("returns StyleSheets parent",26)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetAbs','$m','parentStyleSheet']};};
-            $$styleSheetAbs.href=function href(){
-                var $$styleSheetAbs=this;
+            };styleSheetAbs$.parentStyleSheet.$crtmm$=function(){return{mod:$CCMM$,$t:{t:StyleSheet$stylesheets},$ps:[],$cont:StyleSheetAbs$stylesheets,$an:function(){return[m$1.doc("returns StyleSheets parent"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetAbs','$m','parentStyleSheet']};};
+            styleSheetAbs$.href=function href(){
+                var styleSheetAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$styleSheetAbs.$native.href);
+                return m$9f.JSString(styleSheetAbs$.$_native.href);
                 /*End dynamic block*/
-            };$$styleSheetAbs.href.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:StyleSheetAbs$stylesheets,$an:function(){return[$$$cl1.doc($$$cl1.String("returns StyleSheet location",27)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetAbs','$m','href']};};
-            $$styleSheetAbs.title=function title(){
-                var $$styleSheetAbs=this;
+            };styleSheetAbs$.href.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:StyleSheetAbs$stylesheets,$an:function(){return[m$1.doc("returns StyleSheet location"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetAbs','$m','href']};};
+            styleSheetAbs$.title=function title(){
+                var styleSheetAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$styleSheetAbs.$native.title);
+                return m$9f.JSString(styleSheetAbs$.$_native.title);
                 /*End dynamic block*/
-            };$$styleSheetAbs.title.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:StyleSheetAbs$stylesheets,$an:function(){return[$$$cl1.doc($$$cl1.String("returns StyleSheet title",24)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetAbs','$m','title']};};
-            $$styleSheetAbs.media=function media(){
-                var $$styleSheetAbs=this;
+            };styleSheetAbs$.title.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:StyleSheetAbs$stylesheets,$an:function(){return[m$1.doc("returns StyleSheet title"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetAbs','$m','title']};};
+            styleSheetAbs$.media=function media(){
+                var styleSheetAbs$=this;
                 /*Begin dynamic block*/
-                return MediaList$stylesheets($$styleSheetAbs.$native.media);
+                return MediaList$stylesheets(styleSheetAbs$.$_native.media);
                 /*End dynamic block*/
-            };$$styleSheetAbs.media.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:MediaList$stylesheets},$ps:[],$cont:StyleSheetAbs$stylesheets,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the collection of Media Queries associated with the StyleSheet",70)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetAbs','$m','media']};};
+            };styleSheetAbs$.media.$crtmm$=function(){return{mod:$CCMM$,$t:{t:MediaList$stylesheets},$ps:[],$cont:StyleSheetAbs$stylesheets,$an:function(){return[m$1.doc("returns the collection of Media Queries associated with the StyleSheet"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetAbs','$m','media']};};
         })(StyleSheetAbs$stylesheets.$$.prototype);
     }
     return StyleSheetAbs$stylesheets;
 }
-exports.$init$StyleSheetAbs$stylesheets=$init$StyleSheetAbs$stylesheets;
+ex$.$init$StyleSheetAbs$stylesheets=$init$StyleSheetAbs$stylesheets;
 $init$StyleSheetAbs$stylesheets();
-function StyleSheet$stylesheets(n$863, $$styleSheet){
+function StyleSheet$stylesheets($nz,styleSheet$){
     $init$StyleSheet$stylesheets();
-    if ($$styleSheet===undefined)$$styleSheet=new StyleSheet$stylesheets.$$;
-    $$styleSheet.n$863_=n$863;
-    StyleSheetAbs$stylesheets($$styleSheet);
-    $$styleSheet.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:StyleSheet$stylesheets,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheet','$at','native']};}};
+    if(styleSheet$===undefined)styleSheet$=new StyleSheet$stylesheets.$$;
+    styleSheet$.$nz_=$nz;
+    StyleSheetAbs$stylesheets(styleSheet$);
+    styleSheet$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:StyleSheet$stylesheets,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheet','$at','native']};}};
     /*Begin dynamic block*/
-    $$styleSheet.$native=$$styleSheet.n$863;/*End dynamic block*/
-    return $$styleSheet;
+    styleSheet$.$_native=styleSheet$.$nz;/*End dynamic block*/
+    return styleSheet$;
 }
-StyleSheet$stylesheets.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:StyleSheetAbs$stylesheets},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("represents a basic StyleSheet",29)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheet']};};
-exports.StyleSheet$stylesheets=StyleSheet$stylesheets;
+StyleSheet$stylesheets.$crtmm$=function(){return{mod:$CCMM$,'super':{t:StyleSheetAbs$stylesheets},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("represents a basic StyleSheet"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheet']};};
+ex$.StyleSheet$stylesheets=StyleSheet$stylesheets;
 function $init$StyleSheet$stylesheets(){
-    if (StyleSheet$stylesheets.$$===undefined){
-        $$$cl1.initTypeProto(StyleSheet$stylesheets,'com.openswimsoftware.ceylon.js.dom.stylesheets::StyleSheet',$init$StyleSheetAbs$stylesheets());
-        (function($$styleSheet){
-            $$$cl1.defineAttr($$styleSheet,'n$863',function(){return this.n$863_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:StyleSheet$stylesheets,d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheet','$at','n']};});
+    if(StyleSheet$stylesheets.$$===undefined){
+        m$1.initTypeProto(StyleSheet$stylesheets,'com.openswimsoftware.ceylon.js.dom.stylesheets::StyleSheet',$init$StyleSheetAbs$stylesheets());
+        (function(styleSheet$){
+            m$1.atr$(styleSheet$,'$nz',function(){return this.$nz_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:StyleSheet$stylesheets,d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheet','$at','n$k6r7ub']};});
         })(StyleSheet$stylesheets.$$.prototype);
     }
     return StyleSheet$stylesheets;
 }
-exports.$init$StyleSheet$stylesheets=$init$StyleSheet$stylesheets;
+ex$.$init$StyleSheet$stylesheets=$init$StyleSheet$stylesheets;
 $init$StyleSheet$stylesheets();
-function StyleSheetListAbs$stylesheets($$styleSheetListAbs){
+function StyleSheetListAbs$stylesheets(styleSheetListAbs$){
     $init$StyleSheetListAbs$stylesheets();
-    if ($$styleSheetListAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$$cocjl339.JSObjectAbs($$styleSheetListAbs);
-    return $$styleSheetListAbs;
+    if(styleSheetListAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    m$9f.JSObjectAbs(styleSheetListAbs$);
+    return styleSheetListAbs$;
 }
-StyleSheetListAbs$stylesheets.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cocjl339.JSObjectAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetListAbs']};};
-exports.StyleSheetListAbs$stylesheets=StyleSheetListAbs$stylesheets;
+StyleSheetListAbs$stylesheets.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$9f.JSObjectAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetListAbs']};};
+ex$.StyleSheetListAbs$stylesheets=StyleSheetListAbs$stylesheets;
 function $init$StyleSheetListAbs$stylesheets(){
-    if (StyleSheetListAbs$stylesheets.$$===undefined){
-        $$$cl1.initTypeProto(StyleSheetListAbs$stylesheets,'com.openswimsoftware.ceylon.js.dom.stylesheets::StyleSheetListAbs',$$$cocjl339.JSObjectAbs);
-        (function($$styleSheetListAbs){
-            $$styleSheetListAbs.length=function length(){
-                var $$styleSheetListAbs=this;
+    if(StyleSheetListAbs$stylesheets.$$===undefined){
+        m$1.initTypeProto(StyleSheetListAbs$stylesheets,'com.openswimsoftware.ceylon.js.dom.stylesheets::StyleSheetListAbs',m$9f.JSObjectAbs);
+        (function(styleSheetListAbs$){
+            styleSheetListAbs$.length=function length(){
+                var styleSheetListAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSNumber($$styleSheetListAbs.$native.length);
+                return m$9f.JSNumber(styleSheetListAbs$.$_native.length);
                 /*End dynamic block*/
-            };$$styleSheetListAbs.length.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSNumber},$ps:[],$cont:StyleSheetListAbs$stylesheets,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the length of the StyleSheet Collection",47)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetListAbs','$m','length']};};
-            $$styleSheetListAbs.item=function item(index$864){
-                var $$styleSheetListAbs=this;
+            };styleSheetListAbs$.length.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSNumber},$ps:[],$cont:StyleSheetListAbs$stylesheets,$an:function(){return[m$1.doc("returns the length of the StyleSheet Collection"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetListAbs','$m','length']};};
+            styleSheetListAbs$.item=function item($o0){
+                var styleSheetListAbs$=this;
                 /*Begin dynamic block*/
-                var element$865=$$styleSheetListAbs.$native.item(index$864);
-                $prop$getElement$865={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetListAbs','$m','item','$at','element']};}};
-                $prop$getElement$865.get=function(){return element$865};
-                if((tmpvar$866=element$865,tmpvar$867=null,(tmpvar$866.equals&&!tmpvar$866.equals(tmpvar$867))||tmpvar$866!==tmpvar$867)){
-                    return StyleSheet$stylesheets(element$865);
+                var $o1=styleSheetListAbs$.$_native.item($o0);
+                if(($o2=$o1,$o3=null,($o2.equals&&!$o2.equals($o3))||$o2!==$o3)){
+                    return StyleSheet$stylesheets($o1);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$styleSheetListAbs.item.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:StyleSheet$stylesheets}]},$ps:[{$nm:'index',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.Integer},{t:$$$cocjl339.JSNumber}]},$an:function(){return[];}}],$cont:StyleSheetListAbs$stylesheets,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the StyleSheet at the specified index",45)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetListAbs','$m','item']};};
+            };styleSheetListAbs$.item.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:StyleSheet$stylesheets}]},$ps:[{$nm:'index',$mt:'prm',$t:{t:'u',l:[{t:m$1.Integer},{t:m$9f.JSNumber}]},$an:function(){return[];}}],$cont:StyleSheetListAbs$stylesheets,$an:function(){return[m$1.doc("returns the StyleSheet at the specified index"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetListAbs','$m','item']};};
         })(StyleSheetListAbs$stylesheets.$$.prototype);
     }
     return StyleSheetListAbs$stylesheets;
 }
-exports.$init$StyleSheetListAbs$stylesheets=$init$StyleSheetListAbs$stylesheets;
+ex$.$init$StyleSheetListAbs$stylesheets=$init$StyleSheetListAbs$stylesheets;
 $init$StyleSheetListAbs$stylesheets();
-function StyleSheetList$stylesheets(n$868, $$styleSheetList){
+function StyleSheetList$stylesheets($o4,styleSheetList$){
     $init$StyleSheetList$stylesheets();
-    if ($$styleSheetList===undefined)$$styleSheetList=new StyleSheetList$stylesheets.$$;
-    $$styleSheetList.n$868_=n$868;
-    StyleSheetListAbs$stylesheets($$styleSheetList);
-    $$styleSheetList.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:StyleSheetList$stylesheets,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetList','$at','native']};}};
+    if(styleSheetList$===undefined)styleSheetList$=new StyleSheetList$stylesheets.$$;
+    styleSheetList$.$o4_=$o4;
+    StyleSheetListAbs$stylesheets(styleSheetList$);
+    styleSheetList$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:StyleSheetList$stylesheets,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetList','$at','native']};}};
     /*Begin dynamic block*/
-    $$styleSheetList.$native=$$styleSheetList.n$868;/*End dynamic block*/
-    return $$styleSheetList;
+    styleSheetList$.$_native=styleSheetList$.$o4;/*End dynamic block*/
+    return styleSheetList$;
 }
-StyleSheetList$stylesheets.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:StyleSheetListAbs$stylesheets},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("a collection of StyleSheets",27)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetList']};};
-exports.StyleSheetList$stylesheets=StyleSheetList$stylesheets;
+StyleSheetList$stylesheets.$crtmm$=function(){return{mod:$CCMM$,'super':{t:StyleSheetListAbs$stylesheets},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("a collection of StyleSheets"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetList']};};
+ex$.StyleSheetList$stylesheets=StyleSheetList$stylesheets;
 function $init$StyleSheetList$stylesheets(){
-    if (StyleSheetList$stylesheets.$$===undefined){
-        $$$cl1.initTypeProto(StyleSheetList$stylesheets,'com.openswimsoftware.ceylon.js.dom.stylesheets::StyleSheetList',$init$StyleSheetListAbs$stylesheets());
-        (function($$styleSheetList){
-            $$$cl1.defineAttr($$styleSheetList,'n$868',function(){return this.n$868_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:StyleSheetList$stylesheets,d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetList','$at','n']};});
+    if(StyleSheetList$stylesheets.$$===undefined){
+        m$1.initTypeProto(StyleSheetList$stylesheets,'com.openswimsoftware.ceylon.js.dom.stylesheets::StyleSheetList',$init$StyleSheetListAbs$stylesheets());
+        (function(styleSheetList$){
+            m$1.atr$(styleSheetList$,'$o4',function(){return this.$o4_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:StyleSheetList$stylesheets,d:['com.openswimsoftware.ceylon.js.dom.stylesheets','StyleSheetList','$at','n$qzz87z']};});
         })(StyleSheetList$stylesheets.$$.prototype);
     }
     return StyleSheetList$stylesheets;
 }
-exports.$init$StyleSheetList$stylesheets=$init$StyleSheetList$stylesheets;
+ex$.$init$StyleSheetList$stylesheets=$init$StyleSheetList$stylesheets;
 $init$StyleSheetList$stylesheets();
-function CDATASectionAbs($$cDATASectionAbs){
+function CDATASectionAbs(cDATASectionAbs$){
     $init$CDATASectionAbs();
-    if ($$cDATASectionAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    TextAbs($$cDATASectionAbs);
-    return $$cDATASectionAbs;
+    if(cDATASectionAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    TextAbs(cDATASectionAbs$);
+    return cDATASectionAbs$;
 }
-CDATASectionAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:TextAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','CDATASectionAbs']};};
-exports.CDATASectionAbs=CDATASectionAbs;
+CDATASectionAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:TextAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','CDATASectionAbs']};};
+ex$.CDATASectionAbs=CDATASectionAbs;
 function $init$CDATASectionAbs(){
-    if (CDATASectionAbs.$$===undefined){
-        $$$cl1.initTypeProto(CDATASectionAbs,'com.openswimsoftware.ceylon.js.dom::CDATASectionAbs',$init$TextAbs());
+    if(CDATASectionAbs.$$===undefined){
+        m$1.initTypeProto(CDATASectionAbs,'com.openswimsoftware.ceylon.js.dom::CDATASectionAbs',$init$TextAbs());
     }
     return CDATASectionAbs;
 }
-exports.$init$CDATASectionAbs=$init$CDATASectionAbs;
+ex$.$init$CDATASectionAbs=$init$CDATASectionAbs;
 $init$CDATASectionAbs();
-function CDATASection(n$869, $$cDATASection){
+function CDATASection($o5,cDATASection$){
     $init$CDATASection();
-    if ($$cDATASection===undefined)$$cDATASection=new CDATASection.$$;
-    $$cDATASection.n$869_=n$869;
-    CDATASectionAbs($$cDATASection);
-    $$cDATASection.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:CDATASection,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','CDATASection','$at','native']};}};
+    if(cDATASection$===undefined)cDATASection$=new CDATASection.$$;
+    cDATASection$.$o5_=$o5;
+    CDATASectionAbs(cDATASection$);
+    cDATASection$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:CDATASection,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','CDATASection','$at','native']};}};
     /*Begin dynamic block*/
-    $$cDATASection.$native=$$cDATASection.n$869;/*End dynamic block*/
-    return $$cDATASection;
+    cDATASection$.$_native=cDATASection$.$o5;/*End dynamic block*/
+    return cDATASection$;
 }
-CDATASection.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:CDATASectionAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("a DOM CDATASection",18)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','CDATASection']};};
-exports.CDATASection=CDATASection;
+CDATASection.$crtmm$=function(){return{mod:$CCMM$,'super':{t:CDATASectionAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("a DOM CDATASection"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','CDATASection']};};
+ex$.CDATASection=CDATASection;
 function $init$CDATASection(){
-    if (CDATASection.$$===undefined){
-        $$$cl1.initTypeProto(CDATASection,'com.openswimsoftware.ceylon.js.dom::CDATASection',$init$CDATASectionAbs());
-        (function($$cDATASection){
-            $$$cl1.defineAttr($$cDATASection,'n$869',function(){return this.n$869_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:CDATASection,d:['com.openswimsoftware.ceylon.js.dom','CDATASection','$at','n']};});
+    if(CDATASection.$$===undefined){
+        m$1.initTypeProto(CDATASection,'com.openswimsoftware.ceylon.js.dom::CDATASection',$init$CDATASectionAbs());
+        (function(cDATASection$){
+            m$1.atr$(cDATASection$,'$o5',function(){return this.$o5_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:CDATASection,d:['com.openswimsoftware.ceylon.js.dom','CDATASection','$at','n$lbe6r4']};});
         })(CDATASection.$$.prototype);
     }
     return CDATASection;
 }
-exports.$init$CDATASection=$init$CDATASection;
+ex$.$init$CDATASection=$init$CDATASection;
 $init$CDATASection();
-function TextAbs($$textAbs){
+function TextAbs(textAbs$){
     $init$TextAbs();
-    if ($$textAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    CharacterDataAbs($$textAbs);
-    return $$textAbs;
+    if(textAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    CharacterDataAbs(textAbs$);
+    return textAbs$;
 }
-TextAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:CharacterDataAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','TextAbs']};};
-exports.TextAbs=TextAbs;
+TextAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:CharacterDataAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','TextAbs']};};
+ex$.TextAbs=TextAbs;
 function $init$TextAbs(){
-    if (TextAbs.$$===undefined){
-        $$$cl1.initTypeProto(TextAbs,'com.openswimsoftware.ceylon.js.dom::TextAbs',$init$CharacterDataAbs());
-        (function($$textAbs){
-            $$textAbs.splitText=function splitText(offset$870){
-                var $$textAbs=this;
-                
-                var case$871=offset$870;
-                if ($$$cl1.isOfType(offset$870,{t:$$$cl1.Integer})) {
+    if(TextAbs.$$===undefined){
+        m$1.initTypeProto(TextAbs,'com.openswimsoftware.ceylon.js.dom::TextAbs',$init$CharacterDataAbs());
+        (function(textAbs$){
+            textAbs$.splitText=function splitText($o6){
+                var textAbs$=this;
+                var $o7=$o6;
+                if(m$1.is$($o6,{t:m$1.Integer})) {
                     /*Begin dynamic block*/
-                    return Text($$textAbs.$native.splitText(case$871));
+                    return Text(textAbs$.$_native.splitText($o7));
                     /*End dynamic block*/
-                }else if ($$$cl1.isOfType(offset$870,{t:$$$cocjl339.JSNumber})) {
+                }else if(m$1.is$($o6,{t:m$9f.JSNumber})) {
                     /*Begin dynamic block*/
-                    return Text($$textAbs.$native.splitText(case$871.$native));
+                    return Text(textAbs$.$_native.splitText($o7.$_native));
                     /*End dynamic block*/
                 }
-            };$$textAbs.splitText.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Text},$ps:[{$nm:'offset',$mt:'prm',$t:{t:'u', l:[{t:$$$cl1.Integer},{t:$$$cocjl339.JSNumber}]},$an:function(){return[];}}],$cont:TextAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("split the node in two at the offset",35)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TextAbs','$m','splitText']};};
-            $$textAbs.wholeText=function wholeText(){
-                var $$textAbs=this;
+            };textAbs$.splitText.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Text},$ps:[{$nm:'offset',$mt:'prm',$t:{t:'u',l:[{t:m$1.Integer},{t:m$9f.JSNumber}]},$an:function(){return[];}}],$cont:TextAbs,$an:function(){return[m$1.doc("split the node in two at the offset"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TextAbs','$m','splitText']};};
+            textAbs$.wholeText=function wholeText(){
+                var textAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$textAbs.$native.wholeText);
+                return m$9f.JSString(textAbs$.$_native.wholeText);
                 /*End dynamic block*/
-            };$$textAbs.wholeText.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:TextAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("get the Text node as a String",29)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TextAbs','$m','wholeText']};};
+            };textAbs$.wholeText.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:TextAbs,$an:function(){return[m$1.doc("get the Text node as a String"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TextAbs','$m','wholeText']};};
         })(TextAbs.$$.prototype);
     }
     return TextAbs;
 }
-exports.$init$TextAbs=$init$TextAbs;
+ex$.$init$TextAbs=$init$TextAbs;
 $init$TextAbs();
-function Text(n$872, $$text){
+function Text($o8,text$){
     $init$Text();
-    if ($$text===undefined)$$text=new Text.$$;
-    $$text.n$872_=n$872;
-    TextAbs($$text);
+    if(text$===undefined)text$=new Text.$$;
+    text$.$o8_=$o8;
+    TextAbs(text$);
+    text$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:Text,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','Text','$at','native']};}};
     /*Begin dynamic block*/
-    $$text.$native=$$text.n$872;/*End dynamic block*/
-    return $$text;
+    text$.$_native=text$.$o8;/*End dynamic block*/
+    return text$;
 }
-Text.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:TextAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("a DOM Text element",18)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','Text']};};
-exports.Text=Text;
+Text.$crtmm$=function(){return{mod:$CCMM$,'super':{t:TextAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("a DOM Text element"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','Text']};};
+ex$.Text=Text;
 function $init$Text(){
-    if (Text.$$===undefined){
-        $$$cl1.initTypeProto(Text,'com.openswimsoftware.ceylon.js.dom::Text',$init$TextAbs());
-        (function($$text){
-            $$$cl1.defineAttr($$text,'n$872',function(){return this.n$872_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:Text,d:['com.openswimsoftware.ceylon.js.dom','Text','$at','n']};});
+    if(Text.$$===undefined){
+        m$1.initTypeProto(Text,'com.openswimsoftware.ceylon.js.dom::Text',$init$TextAbs());
+        (function(text$){
+            m$1.atr$(text$,'$o8',function(){return this.$o8_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:Text,d:['com.openswimsoftware.ceylon.js.dom','Text','$at','n$olmx83']};});
         })(Text.$$.prototype);
     }
     return Text;
 }
-exports.$init$Text=$init$Text;
+ex$.$init$Text=$init$Text;
 $init$Text();
-function TreeWalkerAbs($$treeWalkerAbs){
+function TreeWalkerAbs(treeWalkerAbs$){
     $init$TreeWalkerAbs();
-    if ($$treeWalkerAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$$cocjl339.JSObjectAbs($$treeWalkerAbs);
-    return $$treeWalkerAbs;
+    if(treeWalkerAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    m$9f.JSObjectAbs(treeWalkerAbs$);
+    return treeWalkerAbs$;
 }
-TreeWalkerAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cocjl339.JSObjectAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs']};};
-exports.TreeWalkerAbs=TreeWalkerAbs;
+TreeWalkerAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$9f.JSObjectAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs']};};
+ex$.TreeWalkerAbs=TreeWalkerAbs;
 function $init$TreeWalkerAbs(){
-    if (TreeWalkerAbs.$$===undefined){
-        $$$cl1.initTypeProto(TreeWalkerAbs,'com.openswimsoftware.ceylon.js.dom::TreeWalkerAbs',$$$cocjl339.JSObjectAbs);
-        (function($$treeWalkerAbs){
-            $$treeWalkerAbs.root=function root(){
-                var $$treeWalkerAbs=this;
+    if(TreeWalkerAbs.$$===undefined){
+        m$1.initTypeProto(TreeWalkerAbs,'com.openswimsoftware.ceylon.js.dom::TreeWalkerAbs',m$9f.JSObjectAbs);
+        (function(treeWalkerAbs$){
+            treeWalkerAbs$.root=function root(){
+                var treeWalkerAbs$=this;
                 /*Begin dynamic block*/
-                return Node($$treeWalkerAbs.$native.root);
+                return Node(treeWalkerAbs$.$_native.root);
                 /*End dynamic block*/
-            };$$treeWalkerAbs.root.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Node},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the node where the tree walker was created",50)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','root']};};
-            $$treeWalkerAbs.whatToShow=function whatToShow(){
-                var $$treeWalkerAbs=this;
+            };treeWalkerAbs$.root.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Node},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[m$1.doc("returns the node where the tree walker was created"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','root']};};
+            treeWalkerAbs$.whatToShow=function whatToShow(){
+                var treeWalkerAbs$=this;
                 /*Begin dynamic block*/
-                return (tmpvar$873=$$treeWalkerAbs.$native.whatToShow,$$$cl1.isOfType(tmpvar$873,{t:$$$cl1.Anything})?tmpvar$873:$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("dynamic objects cannot be used here")),'16:19-16:35','treewalker.ceylon'));
+                return ($o9=treeWalkerAbs$.$_native.whatToShow,m$1.is$($o9,{t:m$1.Anything})?$o9:m$1.throwexc(m$1.Exception("dynamic objects cannot be used here"),'16:19-16:35','treewalker.ceylon'));
                 /*End dynamic block*/
-            };$$treeWalkerAbs.whatToShow.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns what type of nodes are present on the tree",50)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','whatToShow']};};
-            $$treeWalkerAbs.filter=function filter(){
-                var $$treeWalkerAbs=this;
+            };treeWalkerAbs$.whatToShow.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[m$1.doc("returns what type of nodes are present on the tree"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','whatToShow']};};
+            treeWalkerAbs$.filter=function filter(){
+                var treeWalkerAbs$=this;
                 /*Begin dynamic block*/
-                var filter$874=$$treeWalkerAbs.$native.filter;
-                $prop$getFilter$874={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','filter','$at','filter']};}};
-                $prop$getFilter$874.get=function(){return filter$874};
-                if((tmpvar$875=filter$874,tmpvar$876=null,(tmpvar$875.equals&&!tmpvar$875.equals(tmpvar$876))||tmpvar$875!==tmpvar$876)){
-                    return NodeFilter((tmpvar$877=filter$874,$$$cl1.isOfType(tmpvar$877,{t:NodeFilterResult})?tmpvar$877:$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("dynamic objects cannot be used here")),'25:34-25:39','treewalker.ceylon')));
+                var $oa=treeWalkerAbs$.$_native.filter;
+                if(($ob=$oa,$oc=null,($ob.equals&&!$ob.equals($oc))||$ob!==$oc)){
+                    return NodeFilter(($od=$oa,m$1.is$($od,{t:NodeFilterResult})?$od:m$1.throwexc(m$1.Exception("dynamic objects cannot be used here"),'25:34-25:39','treewalker.ceylon')));
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$treeWalkerAbs.filter.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:NodeFilter}]},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the node filter used to select the tree nodes",53)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','filter']};};
-            $$treeWalkerAbs.currentNode=function currentNode(){
-                var $$treeWalkerAbs=this;
+            };treeWalkerAbs$.filter.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:NodeFilter}]},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[m$1.doc("returns the node filter used to select the tree nodes"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','filter']};};
+            treeWalkerAbs$.currentNode=function currentNode(){
+                var treeWalkerAbs$=this;
                 /*Begin dynamic block*/
-                return Node($$treeWalkerAbs.$native.currentNode());
+                return Node(treeWalkerAbs$.$_native.currentNode());
                 /*End dynamic block*/
-            };$$treeWalkerAbs.currentNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Node},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the current document node",33)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','currentNode']};};
-            $$treeWalkerAbs.parentNode=function parentNode(){
-                var $$treeWalkerAbs=this;
+            };treeWalkerAbs$.currentNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Node},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[m$1.doc("returns the current document node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','currentNode']};};
+            treeWalkerAbs$.parentNode=function parentNode(){
+                var treeWalkerAbs$=this;
                 /*Begin dynamic block*/
-                var parent$878=$$treeWalkerAbs.$native.parentNode();
-                $prop$getParent$878={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','parentNode','$at','parent']};}};
-                $prop$getParent$878.get=function(){return parent$878};
-                if((tmpvar$879=parent$878,tmpvar$880=null,(tmpvar$879.equals&&!tmpvar$879.equals(tmpvar$880))||tmpvar$879!==tmpvar$880)){
-                    return Node(parent$878);
+                var $oe=treeWalkerAbs$.$_native.parentNode();
+                if(($of=$oe,$og=null,($of.equals&&!$of.equals($og))||$of!==$og)){
+                    return Node($oe);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$treeWalkerAbs.parentNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:Node}]},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("move the tree to the first node in the document order",53)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','parentNode']};};
-            $$treeWalkerAbs.firstChild=function firstChild(){
-                var $$treeWalkerAbs=this;
+            };treeWalkerAbs$.parentNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:Node}]},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[m$1.doc("move the tree to the first node in the document order"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','parentNode']};};
+            treeWalkerAbs$.firstChild=function firstChild(){
+                var treeWalkerAbs$=this;
                 /*Begin dynamic block*/
-                var first$881=$$treeWalkerAbs.$native.firstChild();
-                $prop$getFirst$881={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','firstChild','$at','first']};}};
-                $prop$getFirst$881.get=function(){return first$881};
-                if((tmpvar$882=first$881,tmpvar$883=null,(tmpvar$882.equals&&!tmpvar$882.equals(tmpvar$883))||tmpvar$882!==tmpvar$883)){
-                    return Node(first$881);
+                var $oh=treeWalkerAbs$.$_native.firstChild();
+                if(($oi=$oh,$oj=null,($oi.equals&&!$oi.equals($oj))||$oi!==$oj)){
+                    return Node($oh);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$treeWalkerAbs.firstChild.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:Node}]},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("move the tree to the first child of the current node",52)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','firstChild']};};
-            $$treeWalkerAbs.lastChild=function lastChild(){
-                var $$treeWalkerAbs=this;
+            };treeWalkerAbs$.firstChild.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:Node}]},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[m$1.doc("move the tree to the first child of the current node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','firstChild']};};
+            treeWalkerAbs$.lastChild=function lastChild(){
+                var treeWalkerAbs$=this;
                 /*Begin dynamic block*/
-                var last$884=$$treeWalkerAbs.$native.lastChild();
-                $prop$getLast$884={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','lastChild','$at','last']};}};
-                $prop$getLast$884.get=function(){return last$884};
-                if((tmpvar$885=last$884,tmpvar$886=null,(tmpvar$885.equals&&!tmpvar$885.equals(tmpvar$886))||tmpvar$885!==tmpvar$886)){
-                    return Node(last$884);
+                var $ok=treeWalkerAbs$.$_native.lastChild();
+                if(($ol=$ok,$om=null,($ol.equals&&!$ol.equals($om))||$ol!==$om)){
+                    return Node($ok);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$treeWalkerAbs.lastChild.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:Node}]},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("move the tree to the last child of the current node",51)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','lastChild']};};
-            $$treeWalkerAbs.previousSibling=function previousSibling(){
-                var $$treeWalkerAbs=this;
+            };treeWalkerAbs$.lastChild.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:Node}]},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[m$1.doc("move the tree to the last child of the current node"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','lastChild']};};
+            treeWalkerAbs$.previousSibling=function previousSibling(){
+                var treeWalkerAbs$=this;
                 /*Begin dynamic block*/
-                var previous$887=$$treeWalkerAbs.$native.previousSibling();
-                $prop$getPrevious$887={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','previousSibling','$at','previous']};}};
-                $prop$getPrevious$887.get=function(){return previous$887};
-                if((tmpvar$888=previous$887,tmpvar$889=null,(tmpvar$888.equals&&!tmpvar$888.equals(tmpvar$889))||tmpvar$888!==tmpvar$889)){
-                    return Node(previous$887);
+                var $on=treeWalkerAbs$.$_native.previousSibling();
+                if(($oo=$on,$op=null,($oo.equals&&!$oo.equals($op))||$oo!==$op)){
+                    return Node($on);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$treeWalkerAbs.previousSibling.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:Node}]},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("move the tree to the current nodes previous sibling",51)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','previousSibling']};};
-            $$treeWalkerAbs.nextSibling=function nextSibling(){
-                var $$treeWalkerAbs=this;
+            };treeWalkerAbs$.previousSibling.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:Node}]},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[m$1.doc("move the tree to the current nodes previous sibling"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','previousSibling']};};
+            treeWalkerAbs$.nextSibling=function nextSibling(){
+                var treeWalkerAbs$=this;
                 /*Begin dynamic block*/
-                var next$890=$$treeWalkerAbs.$native.nextSibling();
-                $prop$getNext$890={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','nextSibling','$at','next']};}};
-                $prop$getNext$890.get=function(){return next$890};
-                if((tmpvar$891=next$890,tmpvar$892=null,(tmpvar$891.equals&&!tmpvar$891.equals(tmpvar$892))||tmpvar$891!==tmpvar$892)){
-                    return Node(next$890);
+                var $oq=treeWalkerAbs$.$_native.nextSibling();
+                if(($or=$oq,$os=null,($or.equals&&!$or.equals($os))||$or!==$os)){
+                    return Node($oq);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$treeWalkerAbs.nextSibling.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:Node}]},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("move the tree to the current nodes next sibling",47)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','nextSibling']};};
-            $$treeWalkerAbs.previousNode=function previousNode(){
-                var $$treeWalkerAbs=this;
+            };treeWalkerAbs$.nextSibling.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:Node}]},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[m$1.doc("move the tree to the current nodes next sibling"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','nextSibling']};};
+            treeWalkerAbs$.previousNode=function previousNode(){
+                var treeWalkerAbs$=this;
                 /*Begin dynamic block*/
-                var previous$893=$$treeWalkerAbs.$native.previousNode();
-                $prop$getPrevious$893={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','previousNode','$at','previous']};}};
-                $prop$getPrevious$893.get=function(){return previous$893};
-                if((tmpvar$894=previous$893,tmpvar$895=null,(tmpvar$894.equals&&!tmpvar$894.equals(tmpvar$895))||tmpvar$894!==tmpvar$895)){
-                    return Node(previous$893);
+                var $ot=treeWalkerAbs$.$_native.previousNode();
+                if(($ou=$ot,$ov=null,($ou.equals&&!$ou.equals($ov))||$ou!==$ov)){
+                    return Node($ot);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$treeWalkerAbs.previousNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:Node}]},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("move the tree to the previous node and returns",46)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','previousNode']};};
-            $$treeWalkerAbs.nextNode=function nextNode(){
-                var $$treeWalkerAbs=this;
+            };treeWalkerAbs$.previousNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:Node}]},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[m$1.doc("move the tree to the previous node and returns"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','previousNode']};};
+            treeWalkerAbs$.nextNode=function nextNode(){
+                var treeWalkerAbs$=this;
                 /*Begin dynamic block*/
-                var next$896=$$treeWalkerAbs.$native.nextNode();
-                $prop$getNext$896={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','nextNode','$at','next']};}};
-                $prop$getNext$896.get=function(){return next$896};
-                if((tmpvar$897=next$896,tmpvar$898=null,(tmpvar$897.equals&&!tmpvar$897.equals(tmpvar$898))||tmpvar$897!==tmpvar$898)){
-                    return Node(next$896);
+                var $ow=treeWalkerAbs$.$_native.nextNode();
+                if(($ox=$ow,$oy=null,($ox.equals&&!$ox.equals($oy))||$ox!==$oy)){
+                    return Node($ow);
                 }else {
                     return null;
                 }/*End dynamic block*/
-            };$$treeWalkerAbs.nextNode.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.Null},{t:Node}]},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("move the tree to the next node and returns",42)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','nextNode']};};
+            };treeWalkerAbs$.nextNode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.Null},{t:Node}]},$ps:[],$cont:TreeWalkerAbs,$an:function(){return[m$1.doc("move the tree to the next node and returns"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalkerAbs','$m','nextNode']};};
         })(TreeWalkerAbs.$$.prototype);
     }
     return TreeWalkerAbs;
 }
-exports.$init$TreeWalkerAbs=$init$TreeWalkerAbs;
+ex$.$init$TreeWalkerAbs=$init$TreeWalkerAbs;
 $init$TreeWalkerAbs();
-function TreeWalker(n$899, $$treeWalker){
+function TreeWalker($oz,treeWalker$){
     $init$TreeWalker();
-    if ($$treeWalker===undefined)$$treeWalker=new TreeWalker.$$;
-    $$treeWalker.n$899_=n$899;
-    TreeWalkerAbs($$treeWalker);
-    $$treeWalker.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:TreeWalker,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalker','$at','native']};}};
+    if(treeWalker$===undefined)treeWalker$=new TreeWalker.$$;
+    treeWalker$.$oz_=$oz;
+    TreeWalkerAbs(treeWalker$);
+    treeWalker$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:TreeWalker,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalker','$at','native']};}};
     /*Begin dynamic block*/
-    $$treeWalker.$native=$$treeWalker.n$899;/*End dynamic block*/
-    return $$treeWalker;
+    treeWalker$.$_native=treeWalker$.$oz;/*End dynamic block*/
+    return treeWalker$;
 }
-TreeWalker.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:TreeWalkerAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("a Document TreeWalker",21)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalker']};};
-exports.TreeWalker=TreeWalker;
+TreeWalker.$crtmm$=function(){return{mod:$CCMM$,'super':{t:TreeWalkerAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("a Document TreeWalker"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.dom','TreeWalker']};};
+ex$.TreeWalker=TreeWalker;
 function $init$TreeWalker(){
-    if (TreeWalker.$$===undefined){
-        $$$cl1.initTypeProto(TreeWalker,'com.openswimsoftware.ceylon.js.dom::TreeWalker',$init$TreeWalkerAbs());
-        (function($$treeWalker){
-            $$$cl1.defineAttr($$treeWalker,'n$899',function(){return this.n$899_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:TreeWalker,d:['com.openswimsoftware.ceylon.js.dom','TreeWalker','$at','n']};});
+    if(TreeWalker.$$===undefined){
+        m$1.initTypeProto(TreeWalker,'com.openswimsoftware.ceylon.js.dom::TreeWalker',$init$TreeWalkerAbs());
+        (function(treeWalker$){
+            m$1.atr$(treeWalker$,'$oz',function(){return this.$oz_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:TreeWalker,d:['com.openswimsoftware.ceylon.js.dom','TreeWalker','$at','n$czj3ec']};});
         })(TreeWalker.$$.prototype);
     }
     return TreeWalker;
 }
-exports.$init$TreeWalker=$init$TreeWalker;
+ex$.$init$TreeWalker=$init$TreeWalker;
 $init$TreeWalker();
 });
 }(typeof define==='function' && define.amd ? define : function (factory) {

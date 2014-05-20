@@ -1,362 +1,345 @@
-(function(define) { define(function(require, exports, module) {
-var $$METAMODEL$$={"$mod-deps":["ceylon.language\/1.0.0","com.openswimsoftware.ceylon.js.language\/1.8.0","com.openswimsoftware.ceylon.js.json\/1.0.0"],"$mod-name":"com.openswimsoftware.ceylon.js.file","$mod-version":"0.12.0","$mod-bin":"6.0","com.openswimsoftware.ceylon.js.file":{"createBlobBlobs":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.file","$nm":"Blob"},"$ps":[[{"$t":{"$md":"ceylon.language","$tp":[{"$mt":"tpm","$pk":"com.openswimsoftware.ceylon.js.file","$nm":"Blob"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"prm","$nm":"parts"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.file","$nm":"BlobPropertyBag"}]},"$mt":"prm","$def":"1","$nm":"properties"}]],"$mt":"mthd","$an":{"shared":[],"doc":["create a blob from an array of blobs"]},"$nm":"createBlobBlobs"},"createBlobJS":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.file","$nm":"Blob"},"$ps":[[{"$t":{"$md":"ceylon.language","$tp":[{"$md":"com.openswimsoftware.ceylon.js.language","$mt":"tpm","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"prm","$nm":"parts"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.file","$nm":"BlobPropertyBag"}]},"$mt":"prm","$def":"1","$nm":"properties"}]],"$mt":"mthd","$an":{"shared":[],"doc":["create a blob from an array of JS Strings"]},"$nm":"createBlobJS"},"$pkg-shared":"1","BlobPropertyBag":{"super":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Basic"},"$ps":[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"prm","$def":"1","$an":{"shared":[]},"$nm":"type"}],"$mt":"cls","$an":{"shared":[],"doc":["blob creation options"]},"$m":{"toJson":{"$t":{"$md":"com.openswimsoftware.ceylon.js.json","$pk":"com.openswimsoftware.ceylon.js.json","$nm":"JSJSON"},"$mt":"mthd","$an":{"shared":[],"doc":["convert the options to a native JSON object"]},"$nm":"toJson"}},"$at":{"type":{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]},"$mt":"attr","$an":{"shared":[]},"$nm":"type"}},"$nm":"BlobPropertyBag"},"Blob":{"super":{"$pk":"com.openswimsoftware.ceylon.js.file","$nm":"BlobAbs"},"$ps":[{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$nm":"n"}],"$mt":"cls","$an":{"shared":[],"doc":["DOM Blob"]},"$at":{"native":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.file","$nm":"unknown"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"native"},"n":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.file","$nm":"unknown"},"$mt":"attr","$nm":"n"}},"$nm":"Blob"},"BlobAbs":{"abstract":"1","super":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSObjectAbs"},"$mt":"cls","$an":{"abstract":[],"shared":[]},"$m":{"slice":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.file","$nm":"Blob"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"}]}]},"$mt":"prm","$def":"1","$nm":"start"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Integer"},{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"}]}]},"$mt":"prm","$def":"1","$nm":"end"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"String"},{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"}]}]},"$mt":"prm","$def":"1","$nm":"contentType"}]],"$mt":"mthd","$an":{"shared":[],"doc":["returns a new blob with data between start and end with the given content type"]},"$nm":"slice"},"type":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSString"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the blobs mime type"]},"$nm":"type"},"close":{"$t":{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Anything"},"$mt":"mthd","$an":{"shared":[],"doc":["neuters the blob from further changes"]},"$nm":"close"},"size":{"$t":{"$md":"com.openswimsoftware.ceylon.js.language","$pk":"com.openswimsoftware.ceylon.js.language","$nm":"JSNumber"},"$mt":"mthd","$an":{"shared":[],"doc":["returns the size of the blob"]},"$nm":"size"}},"$nm":"BlobAbs"},"createBlob":{"$t":{"$pk":"com.openswimsoftware.ceylon.js.file","$nm":"Blob"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$md":"ceylon.language","$tp":[{"$md":"ceylon.language","$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Sequential"}]},"$mt":"prm","$def":"1","$nm":"parts"},{"$t":{"comp":"u","$ts":[{"$md":"ceylon.language","$pk":"ceylon.language","$nm":"Null"},{"$pk":"com.openswimsoftware.ceylon.js.file","$nm":"BlobPropertyBag"}]},"$mt":"prm","$def":"1","$nm":"properties"}]],"$mt":"mthd","$an":{"shared":[],"doc":["create a blob from an array of Strings"]},"$nm":"createBlob"}}};
-exports.$$METAMODEL$$=function(){return $$METAMODEL$$;};
-var $$$cl1=require('ceylon/language/1.0.0/ceylon.language-1.0.0');
-$$$cl1.$addmod$($$$cl1,'ceylon.language/1.0.0');
-var $$$cocjl339=require('com/openswimsoftware/ceylon/js/language/1.8.0/com.openswimsoftware.ceylon.js.language-1.8.0');
-$$$cl1.$addmod$($$$cocjl339,'com.openswimsoftware.ceylon.js.language/1.8.0');
-var $$$cocjj639=require('com/openswimsoftware/ceylon/js/json/1.0.0/com.openswimsoftware.ceylon.js.json-1.0.0');
-$$$cl1.$addmod$($$$cocjj639,'com.openswimsoftware.ceylon.js.json/1.0.0');
-function createBlob(parts$900,properties$901){
-    if(parts$900===undefined){parts$900=null;}
-    if(properties$901===undefined){properties$901=null;}
+(function(define) { define(function(require, ex$, module) {
+var $CCMM$={"$mod-deps":["ceylon.language\/1.1.0",{path:"com.openswimsoftware.ceylon.js.language\/1.8.0",exp:1},{path:"com.openswimsoftware.ceylon.js.json\/1.0.0",exp:1}],"$mod-name":"com.openswimsoftware.ceylon.js.file","$mod-version":"0.12.0","$mod-bin":"7.0","com.openswimsoftware.ceylon.js.file":{createBlobBlobs:{$t:{$pk:".",$nm:"Blob"},$ps:[[{$t:{$md:"ceylon.language",$tp:[{$mt:"tp",$pk:".",$nm:"Blob"}],$pk:"$",$nm:"Sequential"},$mt:"prm",$nm:"parts"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"BlobPropertyBag"}]},$mt:"prm",$def:1,$nm:"properties"}]],$mt:"m",$an:{shared:[],doc:["create a blob from an array of blobs"]},$nm:"createBlobBlobs"},createBlobJS:{$t:{$pk:".",$nm:"Blob"},$ps:[[{$t:{$md:"ceylon.language",$tp:[{$md:"com.openswimsoftware.ceylon.js.language",$mt:"tp",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}],$pk:"$",$nm:"Sequential"},$mt:"prm",$nm:"parts"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"BlobPropertyBag"}]},$mt:"prm",$def:1,$nm:"properties"}]],$mt:"m",$an:{shared:[],doc:["create a blob from an array of JS Strings"]},$nm:"createBlobJS"},"$pkg-shared":1,BlobPropertyBag:{super:{$md:"ceylon.language",$pk:"$",$nm:"Basic"},$ps:[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"prm",$def:1,$an:{shared:[]},$nm:"type"}],$mt:"c",$an:{shared:[],doc:["blob creation options"]},$m:{toJson:{$t:{$md:"com.openswimsoftware.ceylon.js.json",$pk:"com.openswimsoftware.ceylon.js.json",$nm:"JSJSON"},$mt:"m",$an:{shared:[],doc:["convert the options to a native JSON object"]},$nm:"toJson"}},$at:{type:{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]},$mt:"a",$an:{shared:[]},$nm:"type"}},$nm:"BlobPropertyBag"},Blob:{super:{$pk:".",$nm:"BlobAbs"},$ps:[{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"prm",$nm:"n"}],$mt:"c",$an:{shared:[],doc:["DOM Blob"]},$at:{n$jhy2fd:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$nm:"n"},native:{$t:{$pk:".",$nm:"unknown"},$mt:"a",$an:{shared:[],actual:[]},$nm:"native"}},$nm:"Blob"},BlobAbs:{abstract:1,super:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSObjectAbs"},$mt:"c",$an:{abstract:[],shared:[]},$m:{slice:{$t:{$pk:".",$nm:"Blob"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Integer"},{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"}]}]},$mt:"prm",$def:1,$nm:"start"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Integer"},{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"}]}]},$mt:"prm",$def:1,$nm:"end"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"String"},{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"}]}]},$mt:"prm",$def:1,$nm:"contentType"}]],$mt:"m",$an:{shared:[],doc:["returns a new blob with data between start and end with the given content type"]},$nm:"slice"},type:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSString"},$mt:"m",$an:{shared:[],doc:["returns the blobs mime type"]},$nm:"type"},close:{$t:{$md:"ceylon.language",$pk:"$",$nm:"Anything"},$mt:"m",$an:{shared:[],doc:["neuters the blob from further changes"]},$nm:"close"},size:{$t:{$md:"com.openswimsoftware.ceylon.js.language",$pk:"com.openswimsoftware.ceylon.js.language",$nm:"JSNumber"},$mt:"m",$an:{shared:[],doc:["returns the size of the blob"]},$nm:"size"}},$nm:"BlobAbs"},createBlob:{$t:{$pk:".",$nm:"Blob"},$ps:[[{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$md:"ceylon.language",$tp:[{$md:"ceylon.language",$mt:"tp",$pk:"$",$nm:"String"}],$pk:"$",$nm:"Sequential"}]},$mt:"prm",$def:1,$nm:"parts"},{$t:{comp:"u",$ts:[{$md:"ceylon.language",$pk:"$",$nm:"Null"},{$pk:".",$nm:"BlobPropertyBag"}]},$mt:"prm",$def:1,$nm:"properties"}]],$mt:"m",$an:{shared:[],doc:["create a blob from an array of Strings"]},$nm:"createBlob"}}};
+ex$.$CCMM$=function(){return $CCMM$;};
+var m$1=require('ceylon/language/1.1.0/ceylon.language-1.1.0');
+m$1.$addmod$(m$1,'ceylon.language/1.1.0');
+var m$9f=require('com/openswimsoftware/ceylon/js/language/1.8.0/com.openswimsoftware.ceylon.js.language-1.8.0');
+m$1.$addmod$(m$9f,'com.openswimsoftware.ceylon.js.language/1.8.0');
+var m$hr=require('com/openswimsoftware/ceylon/js/json/1.0.0/com.openswimsoftware.ceylon.js.json-1.0.0');
+m$1.$addmod$(m$hr,'com.openswimsoftware.ceylon.js.json/1.0.0');
+function createBlob($p0,$p1){
+    if($p0===undefined){$p0=null;}
+    if($p1===undefined){$p1=null;}
     /*Begin dynamic block*/
-    var props$902;
-    if((props$902=properties$901)!==null){
-        var p$903;
-        if((p$903=parts$900)!==null){
-            return Blob((typeof Blob==='undefined'||Blob===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Blob")),'10:16-10:19','blob.ceylon'):Blob)(p$903,props$902.toJson().$native));
+    var $p2;
+    if(($p2=$p1)!==null&&$p2!==undefined){
+        var $p3;
+        if(($p3=$p0)!==null&&$p3!==undefined){
+            return Blob((typeof Blob==='undefined'||Blob===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Blob"),'10:16-10:19','blob.ceylon'):Blob)($p3,$p2.toJson().$_native));
         }else {
-            return Blob((typeof Blob==='undefined'||Blob===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Blob")),'12:16-12:19','blob.ceylon'):Blob)(null,props$902.toJson().$native));
+            return Blob((typeof Blob==='undefined'||Blob===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Blob"),'12:16-12:19','blob.ceylon'):Blob)(null,$p2.toJson().$_native));
         }
     }else {
-        var p$904;
-        if((p$904=parts$900)!==null){
-            return Blob((typeof Blob==='undefined'||Blob===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Blob")),'16:16-16:19','blob.ceylon'):Blob)(p$904));
+        var $p4;
+        if(($p4=$p0)!==null&&$p4!==undefined){
+            return Blob((typeof Blob==='undefined'||Blob===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Blob"),'16:16-16:19','blob.ceylon'):Blob)($p4));
         }else {
-            return Blob((typeof Blob==='undefined'||Blob===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Blob")),'18:16-18:19','blob.ceylon'):Blob)());
+            return Blob((typeof Blob==='undefined'||Blob===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Blob"),'18:16-18:19','blob.ceylon'):Blob)());
         }
     }/*End dynamic block*/
 }
-exports.createBlob=createBlob;
-createBlob.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Blob},$ps:[{$nm:'parts',$mt:'prm',$def:1,$t:{t:'u', l:[{t:$$$cl1.Null},{t:$$$cl1.Sequential,a:{Element:{t:$$$cl1.String}}}]},$an:function(){return[];}},{$nm:'properties',$mt:'prm',$def:1,$t:{t:'u', l:[{t:$$$cl1.Null},{t:BlobPropertyBag}]},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("create a blob from an array of Strings",38)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.file','createBlob']};};
-function createBlobJS(parts$905,properties$906){
-    if(properties$906===undefined){properties$906=null;}
+ex$.createBlob=createBlob;
+createBlob.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Blob},$ps:[{$nm:'parts',$mt:'prm',$def:1,$t:{t:'u',l:[{t:m$1.Null},{t:m$1.Sequential,a:{Element$Sequential:{t:m$1.String}}}]},$an:function(){return[];}},{$nm:'properties',$mt:'prm',$def:1,$t:{t:'u',l:[{t:m$1.Null},{t:BlobPropertyBag}]},$an:function(){return[];}}],$an:function(){return[m$1.doc("create a blob from an array of Strings"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.file','createBlob']};};
+function createBlobJS($p5,$p6){
+    if($p6===undefined){$p6=null;}
     /*Begin dynamic block*/
-    var props$907;
-    if((props$907=properties$906)!==null){
-        return Blob((typeof Blob==='undefined'||Blob===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Blob")),'28:15-28:18','blob.ceylon'):Blob)((function(){
-            var lst$908=[];
-            var it$909=parts$905.iterator();
-            var elem$910;
-            while ((elem$910=it$909.next())!==$$$cl1.getFinished()){
-                lst$908.push(elem$910.$native);
+    var $p7;
+    if(($p7=$p6)!==null&&$p7!==undefined){
+        return Blob((typeof Blob==='undefined'||Blob===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Blob"),'28:15-28:18','blob.ceylon'):Blob)((function(){
+            var $p8=[];
+            var $p9=$p5.iterator();
+            var $pa;
+            while(($pa=$p9.next())!==m$1.getFinished()){
+                $p8.push($pa.$_native);
             }
-            return $$$cl1.ArraySequence(lst$908);
-        }()),props$907.toJson().$native));
+            return m$1.ArraySequence($p8,{Element$Sequential:'Element'});
+        }()),$p7.toJson().$_native));
     }else {
-        return Blob((typeof Blob==='undefined'||Blob===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Blob")),'30:15-30:18','blob.ceylon'):Blob)((function(){
-            var lst$911=[];
-            var it$912=parts$905.iterator();
-            var elem$913;
-            while ((elem$913=it$912.next())!==$$$cl1.getFinished()){
-                lst$911.push(elem$913.$native);
+        return Blob((typeof Blob==='undefined'||Blob===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Blob"),'30:15-30:18','blob.ceylon'):Blob)((function(){
+            var $pb=[];
+            var $pc=$p5.iterator();
+            var $pd;
+            while(($pd=$pc.next())!==m$1.getFinished()){
+                $pb.push($pd.$_native);
             }
-            return $$$cl1.ArraySequence(lst$911);
+            return m$1.ArraySequence($pb,{Element$Sequential:'Element'});
         }())));
     }/*End dynamic block*/
 }
-exports.createBlobJS=createBlobJS;
-createBlobJS.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Blob},$ps:[{$nm:'parts',$mt:'prm',$t:{t:$$$cl1.Sequential,a:{Element:{t:$$$cocjl339.JSString}}},$an:function(){return[];}},{$nm:'properties',$mt:'prm',$def:1,$t:{t:'u', l:[{t:$$$cl1.Null},{t:BlobPropertyBag}]},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("create a blob from an array of JS Strings",41)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.file','createBlobJS']};};
-function createBlobBlobs(parts$914,properties$915){
-    if(properties$915===undefined){properties$915=null;}
+ex$.createBlobJS=createBlobJS;
+createBlobJS.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Blob},$ps:[{$nm:'parts',$mt:'prm',$t:{t:m$1.Sequential,a:{Element$Sequential:{t:m$9f.JSString}}},$an:function(){return[];}},{$nm:'properties',$mt:'prm',$def:1,$t:{t:'u',l:[{t:m$1.Null},{t:BlobPropertyBag}]},$an:function(){return[];}}],$an:function(){return[m$1.doc("create a blob from an array of JS Strings"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.file','createBlobJS']};};
+function createBlobBlobs($pe,$pf){
+    if($pf===undefined){$pf=null;}
     /*Begin dynamic block*/
-    var props$916;
-    if((props$916=properties$915)!==null){
-        return Blob((typeof Blob==='undefined'||Blob===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Blob")),'39:15-39:18','blob.ceylon'):Blob)((function(){
-            var lst$917=[];
-            var it$918=parts$914.iterator();
-            var elem$919;
-            while ((elem$919=it$918.next())!==$$$cl1.getFinished()){
-                lst$917.push(elem$919.$native);
+    var $pg;
+    if(($pg=$pf)!==null&&$pg!==undefined){
+        return Blob((typeof Blob==='undefined'||Blob===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Blob"),'39:15-39:18','blob.ceylon'):Blob)((function(){
+            var $ph=[];
+            var $pi=$pe.iterator();
+            var $pj;
+            while(($pj=$pi.next())!==m$1.getFinished()){
+                $ph.push($pj.$_native);
             }
-            return $$$cl1.ArraySequence(lst$917);
-        }()),props$916.toJson().$native));
+            return m$1.ArraySequence($ph,{Element$Sequential:'Element'});
+        }()),$pg.toJson().$_native));
     }else {
-        return Blob((typeof Blob==='undefined'||Blob===null?$$$cl1.throwexc($$$cl1.Exception($$$cl1.String("Undefined or null reference: Blob")),'41:15-41:18','blob.ceylon'):Blob)((function(){
-            var lst$920=[];
-            var it$921=parts$914.iterator();
-            var elem$922;
-            while ((elem$922=it$921.next())!==$$$cl1.getFinished()){
-                lst$920.push(elem$922.$native);
+        return Blob((typeof Blob==='undefined'||Blob===null?m$1.throwexc(m$1.Exception("Undefined or null reference: Blob"),'41:15-41:18','blob.ceylon'):Blob)((function(){
+            var $pk=[];
+            var $pl=$pe.iterator();
+            var $pm;
+            while(($pm=$pl.next())!==m$1.getFinished()){
+                $pk.push($pm.$_native);
             }
-            return $$$cl1.ArraySequence(lst$920);
+            return m$1.ArraySequence($pk,{Element$Sequential:'Element'});
         }())));
     }/*End dynamic block*/
 }
-exports.createBlobBlobs=createBlobBlobs;
-createBlobBlobs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Blob},$ps:[{$nm:'parts',$mt:'prm',$t:{t:$$$cl1.Sequential,a:{Element:{t:Blob}}},$an:function(){return[];}},{$nm:'properties',$mt:'prm',$def:1,$t:{t:'u', l:[{t:$$$cl1.Null},{t:BlobPropertyBag}]},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("create a blob from an array of blobs",36)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.file','createBlobBlobs']};};
-function BlobPropertyBag(type, $$blobPropertyBag){
+ex$.createBlobBlobs=createBlobBlobs;
+createBlobBlobs.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Blob},$ps:[{$nm:'parts',$mt:'prm',$t:{t:m$1.Sequential,a:{Element$Sequential:{t:Blob}}},$an:function(){return[];}},{$nm:'properties',$mt:'prm',$def:1,$t:{t:'u',l:[{t:m$1.Null},{t:BlobPropertyBag}]},$an:function(){return[];}}],$an:function(){return[m$1.doc("create a blob from an array of blobs"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.file','createBlobBlobs']};};
+function BlobPropertyBag(type,blobPropertyBag$){
     $init$BlobPropertyBag();
-    if ($$blobPropertyBag===undefined)$$blobPropertyBag=new BlobPropertyBag.$$;
-    if(type===undefined){type=$$$cl1.String("",0);}
-    $$blobPropertyBag.type_=type;
-    return $$blobPropertyBag;
+    if(blobPropertyBag$===undefined)blobPropertyBag$=new BlobPropertyBag.$$;
+    if(type===undefined){type="";}
+    blobPropertyBag$.type_=type;
+    return blobPropertyBag$;
 }
-BlobPropertyBag.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cl1.Basic},$ps:[{$nm:'type',$mt:'prm',$def:1,$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$an:function(){return[$$$cl1.shared()];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("blob creation options",21)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.file','BlobPropertyBag']};};
-exports.BlobPropertyBag=BlobPropertyBag;
+BlobPropertyBag.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$1.Basic},$ps:[{$nm:'type',$mt:'prm',$def:1,$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$an:function(){return[m$1.shared()];}}],$an:function(){return[m$1.doc("blob creation options"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.file','BlobPropertyBag']};};
+ex$.BlobPropertyBag=BlobPropertyBag;
 function $init$BlobPropertyBag(){
-    if (BlobPropertyBag.$$===undefined){
-        $$$cl1.initTypeProto(BlobPropertyBag,'com.openswimsoftware.ceylon.js.file::BlobPropertyBag',$$$cl1.Basic);
-        (function($$blobPropertyBag){
-            $$blobPropertyBag.toJson=function toJson(){
-                var $$blobPropertyBag=this;
-                var t$923;
-                var json$924;
+    if(BlobPropertyBag.$$===undefined){
+        m$1.initTypeProto(BlobPropertyBag,'com.openswimsoftware.ceylon.js.file::BlobPropertyBag',m$1.Basic);
+        (function(blobPropertyBag$){
+            blobPropertyBag$.toJson=function toJson(){
+                var blobPropertyBag$=this;
+                var $pn;
+                var $po;
                 /*Begin dynamic block*/
-                
-                var case$925=$$blobPropertyBag.type;
-                if ($$$cl1.isOfType($$blobPropertyBag.type,{t:$$$cl1.String})) {
-                    t$923=case$925;
-                }else if ($$$cl1.isOfType($$blobPropertyBag.type,{t:$$$cocjl339.JSString})) {
-                    t$923=case$925.$native;
-                }json$924=(values$926=[$$$cl1.Entry($$$cl1.String("type",4),t$923,{})].reifyCeylonType({Absent:{t:$$$cl1.Null},Element:{t:$$$cl1.Anything}}),$$$cocjj639.JSON(values$926));/*End dynamic block*/
-                var values$926;
-                return json$924.toJson();
-            };$$blobPropertyBag.toJson.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjj639.JSJSON},$ps:[],$cont:BlobPropertyBag,$an:function(){return[$$$cl1.doc($$$cl1.String("convert the options to a native JSON object",43)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.file','BlobPropertyBag','$m','toJson']};};
-            $$$cl1.defineAttr($$blobPropertyBag,'type',function(){return this.type_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:'u', l:[{t:$$$cl1.String},{t:$$$cocjl339.JSString}]},$cont:BlobPropertyBag,$an:function(){return[$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.file','BlobPropertyBag','$at','type']};});
+                var $pp=blobPropertyBag$.type;
+                if(m$1.is$(blobPropertyBag$.type,{t:m$1.String})) {
+                    $pn=$pp;
+                }else if(m$1.is$(blobPropertyBag$.type,{t:m$9f.JSString})) {
+                    $pn=$pp.$_native;
+                }$po=($pq=[m$1.Entry("type",$pn,{})].reifyCeylonType({t:m$1.Anything}),m$hr.JSON($pq));/*End dynamic block*/
+                var $pq;
+                return $po.toJson();
+            };blobPropertyBag$.toJson.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hr.JSJSON},$ps:[],$cont:BlobPropertyBag,$an:function(){return[m$1.doc("convert the options to a native JSON object"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.file','BlobPropertyBag','$m','toJson']};};
+            m$1.atr$(blobPropertyBag$,'type',function(){return this.type_;},undefined,function(){return{mod:$CCMM$,$t:{t:'u',l:[{t:m$1.String},{t:m$9f.JSString}]},$cont:BlobPropertyBag,$an:function(){return[m$1.shared()];},d:['com.openswimsoftware.ceylon.js.file','BlobPropertyBag','$at','type']};});
         })(BlobPropertyBag.$$.prototype);
     }
     return BlobPropertyBag;
 }
-exports.$init$BlobPropertyBag=$init$BlobPropertyBag;
+ex$.$init$BlobPropertyBag=$init$BlobPropertyBag;
 $init$BlobPropertyBag();
-function BlobAbs($$blobAbs){
+function BlobAbs(blobAbs$){
     $init$BlobAbs();
-    if ($$blobAbs===undefined)$$$cl1.throwexc($$$cl1.InvocationException$meta$model($$$cl1.String("Cannot instantiate abstract class")),'?','?')
-    $$$cocjl339.JSObjectAbs($$blobAbs);
-    return $$blobAbs;
+    if(blobAbs$===undefined)m$1.throwexc(m$1.InvocationException$meta$model("Cannot instantiate abstract class"),'?','?')
+    m$9f.JSObjectAbs(blobAbs$);
+    return blobAbs$;
 }
-BlobAbs.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:$$$cocjl339.JSObjectAbs},$ps:[],$an:function(){return[$$$cl1.shared(),$$$cl1.abstract()];},d:['com.openswimsoftware.ceylon.js.file','BlobAbs']};};
-exports.BlobAbs=BlobAbs;
+BlobAbs.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$9f.JSObjectAbs},$ps:[],$an:function(){return[m$1.shared(),m$1.abstract()];},d:['com.openswimsoftware.ceylon.js.file','BlobAbs']};};
+ex$.BlobAbs=BlobAbs;
 function $init$BlobAbs(){
-    if (BlobAbs.$$===undefined){
-        $$$cl1.initTypeProto(BlobAbs,'com.openswimsoftware.ceylon.js.file::BlobAbs',$$$cocjl339.JSObjectAbs);
-        (function($$blobAbs){
-            $$blobAbs.size=function size(){
-                var $$blobAbs=this;
+    if(BlobAbs.$$===undefined){
+        m$1.initTypeProto(BlobAbs,'com.openswimsoftware.ceylon.js.file::BlobAbs',m$9f.JSObjectAbs);
+        (function(blobAbs$){
+            blobAbs$.size=function size(){
+                var blobAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSNumber($$blobAbs.$native.size);
+                return m$9f.JSNumber(blobAbs$.$_native.size);
                 /*End dynamic block*/
-            };$$blobAbs.size.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSNumber},$ps:[],$cont:BlobAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the size of the blob",28)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.file','BlobAbs','$m','size']};};
-            $$blobAbs.type=function type(){
-                var $$blobAbs=this;
+            };blobAbs$.size.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSNumber},$ps:[],$cont:BlobAbs,$an:function(){return[m$1.doc("returns the size of the blob"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.file','BlobAbs','$m','size']};};
+            blobAbs$.type=function type(){
+                var blobAbs$=this;
                 /*Begin dynamic block*/
-                return $$$cocjl339.JSString($$blobAbs.$native.type);
+                return m$9f.JSString(blobAbs$.$_native.type);
                 /*End dynamic block*/
-            };$$blobAbs.type.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cocjl339.JSString},$ps:[],$cont:BlobAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns the blobs mime type",27)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.file','BlobAbs','$m','type']};};
-            $$blobAbs.slice$defs$start=function(start$927,end$928,contentType$929){var $$blobAbs=this;
-            return null;};
-            $$blobAbs.slice$defs$end=function(start$927,end$928,contentType$929){var $$blobAbs=this;
-            return null;};
-            $$blobAbs.slice$defs$contentType=function(start$927,end$928,contentType$929){var $$blobAbs=this;
-            return null;};
-            $$blobAbs.slice=function slice(start$927,end$928,contentType$929){
-                var $$blobAbs=this;
-                if(start$927===undefined){start$927=$$blobAbs.slice$defs$start(start$927,end$928,contentType$929);}
-                if(end$928===undefined){end$928=$$blobAbs.slice$defs$end(start$927,end$928,contentType$929);}
-                if(contentType$929===undefined){contentType$929=$$blobAbs.slice$defs$contentType(start$927,end$928,contentType$929);}
-                
-                var case$930=start$927;
-                if ($$$cl1.isOfType(start$927,{t:$$$cl1.Integer})) {
-                    
-                    var case$931=end$928;
-                    if ($$$cl1.isOfType(end$928,{t:$$$cl1.Integer})) {
-                        
-                        var case$932=contentType$929;
-                        if ($$$cl1.isOfType(contentType$929,{t:$$$cl1.String})) {
+            };blobAbs$.type.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$9f.JSString},$ps:[],$cont:BlobAbs,$an:function(){return[m$1.doc("returns the blobs mime type"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.file','BlobAbs','$m','type']};};
+            blobAbs$.slice$defs$start=function($pr,$ps,$pt){return null;};
+            blobAbs$.slice$defs$end=function($pr,$ps,$pt){return null;};
+            blobAbs$.slice$defs$contentType=function($pr,$ps,$pt){return null;};
+            blobAbs$.slice=function slice($pr,$ps,$pt){
+                var blobAbs$=this;
+                if($pr===undefined){$pr=blobAbs$.slice$defs$start($pr,$ps,$pt);}
+                if($ps===undefined){$ps=blobAbs$.slice$defs$end($pr,$ps,$pt);}
+                if($pt===undefined){$pt=blobAbs$.slice$defs$contentType($pr,$ps,$pt);}
+                var $pu=$pr;
+                if(m$1.is$($pr,{t:m$1.Integer})) {
+                    var $pv=$ps;
+                    if(m$1.is$($ps,{t:m$1.Integer})) {
+                        var $pw=$pt;
+                        if(m$1.is$($pt,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(case$930,case$931,case$932.valueOf()));
+                            return Blob(blobAbs$.$_native.slice($pu,$pv,$pw.valueOf()));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(contentType$929,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($pt,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(case$930,case$931,case$932.$native));
+                            return Blob(blobAbs$.$_native.slice($pu,$pv,$pw.$_native));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(contentType$929,{t:$$$cl1.Null})) {
+                        }else if(m$1.is$($pt,{t:m$1.Null})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(case$930,case$931));
+                            return Blob(blobAbs$.$_native.slice($pu,$pv));
                             /*End dynamic block*/
                         }
-                    }else if ($$$cl1.isOfType(end$928,{t:$$$cocjl339.JSNumber})) {
-                        
-                        var case$933=contentType$929;
-                        if ($$$cl1.isOfType(contentType$929,{t:$$$cl1.String})) {
+                    }else if(m$1.is$($ps,{t:m$9f.JSNumber})) {
+                        var $px=$pt;
+                        if(m$1.is$($pt,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(case$930,case$931.$native,case$933.valueOf()));
+                            return Blob(blobAbs$.$_native.slice($pu,$pv.$_native,$px.valueOf()));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(contentType$929,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($pt,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(case$930,case$931.$native,case$933.$native));
+                            return Blob(blobAbs$.$_native.slice($pu,$pv.$_native,$px.$_native));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(contentType$929,{t:$$$cl1.Null})) {
+                        }else if(m$1.is$($pt,{t:m$1.Null})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(case$930,case$931.$native));
+                            return Blob(blobAbs$.$_native.slice($pu,$pv.$_native));
                             /*End dynamic block*/
                         }
-                    }else if ($$$cl1.isOfType(end$928,{t:$$$cl1.Null})) {
-                        
-                        var case$934=contentType$929;
-                        if ($$$cl1.isOfType(contentType$929,{t:$$$cl1.String})) {
+                    }else if(m$1.is$($ps,{t:m$1.Null})) {
+                        var $py=$pt;
+                        if(m$1.is$($pt,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(case$930,null,case$934.valueOf()));
+                            return Blob(blobAbs$.$_native.slice($pu,null,$py.valueOf()));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(contentType$929,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($pt,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(case$930,null,case$934.$native));
+                            return Blob(blobAbs$.$_native.slice($pu,null,$py.$_native));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(contentType$929,{t:$$$cl1.Null})) {
+                        }else if(m$1.is$($pt,{t:m$1.Null})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(case$930));
+                            return Blob(blobAbs$.$_native.slice($pu));
                             /*End dynamic block*/
                         }
                     }
-                }else if ($$$cl1.isOfType(start$927,{t:$$$cocjl339.JSNumber})) {
-                    
-                    var case$935=end$928;
-                    if ($$$cl1.isOfType(end$928,{t:$$$cl1.Integer})) {
-                        
-                        var case$936=contentType$929;
-                        if ($$$cl1.isOfType(contentType$929,{t:$$$cl1.String})) {
+                }else if(m$1.is$($pr,{t:m$9f.JSNumber})) {
+                    var $pz=$ps;
+                    if(m$1.is$($ps,{t:m$1.Integer})) {
+                        var $q0=$pt;
+                        if(m$1.is$($pt,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(case$930.$native,case$935,case$936.valueOf()));
+                            return Blob(blobAbs$.$_native.slice($pu.$_native,$pz,$q0.valueOf()));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(contentType$929,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($pt,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(case$930.$native,case$935,case$936.$native));
+                            return Blob(blobAbs$.$_native.slice($pu.$_native,$pz,$q0.$_native));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(contentType$929,{t:$$$cl1.Null})) {
+                        }else if(m$1.is$($pt,{t:m$1.Null})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(case$930.$native,case$935));
+                            return Blob(blobAbs$.$_native.slice($pu.$_native,$pz));
                             /*End dynamic block*/
                         }
-                    }else if ($$$cl1.isOfType(end$928,{t:$$$cocjl339.JSNumber})) {
-                        
-                        var case$937=contentType$929;
-                        if ($$$cl1.isOfType(contentType$929,{t:$$$cl1.String})) {
+                    }else if(m$1.is$($ps,{t:m$9f.JSNumber})) {
+                        var $q1=$pt;
+                        if(m$1.is$($pt,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(case$930.$native,case$935.$native,case$937.valueOf()));
+                            return Blob(blobAbs$.$_native.slice($pu.$_native,$pz.$_native,$q1.valueOf()));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(contentType$929,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($pt,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(case$930.$native,case$935.$native,case$937.$native));
+                            return Blob(blobAbs$.$_native.slice($pu.$_native,$pz.$_native,$q1.$_native));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(contentType$929,{t:$$$cl1.Null})) {
+                        }else if(m$1.is$($pt,{t:m$1.Null})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(case$930.$native,case$935.$native));
+                            return Blob(blobAbs$.$_native.slice($pu.$_native,$pz.$_native));
                             /*End dynamic block*/
                         }
-                    }else if ($$$cl1.isOfType(end$928,{t:$$$cl1.Null})) {
-                        
-                        var case$938=contentType$929;
-                        if ($$$cl1.isOfType(contentType$929,{t:$$$cl1.String})) {
+                    }else if(m$1.is$($ps,{t:m$1.Null})) {
+                        var $q2=$pt;
+                        if(m$1.is$($pt,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(case$930.$native,null,case$938.valueOf()));
+                            return Blob(blobAbs$.$_native.slice($pu.$_native,null,$q2.valueOf()));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(contentType$929,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($pt,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(case$930.$native,null,case$938.$native));
+                            return Blob(blobAbs$.$_native.slice($pu.$_native,null,$q2.$_native));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(contentType$929,{t:$$$cl1.Null})) {
+                        }else if(m$1.is$($pt,{t:m$1.Null})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(case$930.$native));
+                            return Blob(blobAbs$.$_native.slice($pu.$_native));
                             /*End dynamic block*/
                         }
                     }
-                }else if ($$$cl1.isOfType(start$927,{t:$$$cl1.Null})) {
-                    
-                    var case$939=end$928;
-                    if ($$$cl1.isOfType(end$928,{t:$$$cl1.Integer})) {
-                        
-                        var case$940=contentType$929;
-                        if ($$$cl1.isOfType(contentType$929,{t:$$$cl1.String})) {
+                }else if(m$1.is$($pr,{t:m$1.Null})) {
+                    var $q3=$ps;
+                    if(m$1.is$($ps,{t:m$1.Integer})) {
+                        var $q4=$pt;
+                        if(m$1.is$($pt,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(null,case$939,case$940.valueOf()));
+                            return Blob(blobAbs$.$_native.slice(null,$q3,$q4.valueOf()));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(contentType$929,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($pt,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(null,case$939,case$940.$native));
+                            return Blob(blobAbs$.$_native.slice(null,$q3,$q4.$_native));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(contentType$929,{t:$$$cl1.Null})) {
+                        }else if(m$1.is$($pt,{t:m$1.Null})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(null,case$939));
+                            return Blob(blobAbs$.$_native.slice(null,$q3));
                             /*End dynamic block*/
                         }
-                    }else if ($$$cl1.isOfType(end$928,{t:$$$cocjl339.JSNumber})) {
-                        
-                        var case$941=contentType$929;
-                        if ($$$cl1.isOfType(contentType$929,{t:$$$cl1.String})) {
+                    }else if(m$1.is$($ps,{t:m$9f.JSNumber})) {
+                        var $q5=$pt;
+                        if(m$1.is$($pt,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(null,case$939.$native,case$941.valueOf()));
+                            return Blob(blobAbs$.$_native.slice(null,$q3.$_native,$q5.valueOf()));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(contentType$929,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($pt,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(null,case$939.$native,case$941.$native));
+                            return Blob(blobAbs$.$_native.slice(null,$q3.$_native,$q5.$_native));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(contentType$929,{t:$$$cl1.Null})) {
+                        }else if(m$1.is$($pt,{t:m$1.Null})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(null,case$939.$native));
+                            return Blob(blobAbs$.$_native.slice(null,$q3.$_native));
                             /*End dynamic block*/
                         }
-                    }else if ($$$cl1.isOfType(end$928,{t:$$$cl1.Null})) {
-                        
-                        var case$942=contentType$929;
-                        if ($$$cl1.isOfType(contentType$929,{t:$$$cl1.String})) {
+                    }else if(m$1.is$($ps,{t:m$1.Null})) {
+                        var $q6=$pt;
+                        if(m$1.is$($pt,{t:m$1.String})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(null,null,case$942.valueOf()));
+                            return Blob(blobAbs$.$_native.slice(null,null,$q6.valueOf()));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(contentType$929,{t:$$$cocjl339.JSString})) {
+                        }else if(m$1.is$($pt,{t:m$9f.JSString})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice(null,null,case$942.$native));
+                            return Blob(blobAbs$.$_native.slice(null,null,$q6.$_native));
                             /*End dynamic block*/
-                        }else if ($$$cl1.isOfType(contentType$929,{t:$$$cl1.Null})) {
+                        }else if(m$1.is$($pt,{t:m$1.Null})) {
                             /*Begin dynamic block*/
-                            return Blob($$blobAbs.$native.slice());
+                            return Blob(blobAbs$.$_native.slice());
                             /*End dynamic block*/
                         }
                     }
                 }
-            };$$blobAbs.slice.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:Blob},$ps:[{$nm:'start',$mt:'prm',$def:1,$t:{t:'u', l:[{t:$$$cl1.Integer},{t:'u', l:[{t:$$$cl1.Null},{t:$$$cocjl339.JSNumber}]}]},$an:function(){return[];}},{$nm:'end',$mt:'prm',$def:1,$t:{t:'u', l:[{t:$$$cl1.Integer},{t:'u', l:[{t:$$$cl1.Null},{t:$$$cocjl339.JSNumber}]}]},$an:function(){return[];}},{$nm:'contentType',$mt:'prm',$def:1,$t:{t:'u', l:[{t:$$$cl1.String},{t:'u', l:[{t:$$$cl1.Null},{t:$$$cocjl339.JSString}]}]},$an:function(){return[];}}],$cont:BlobAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("returns a new blob with data between start and end with the given content type",78)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.file','BlobAbs','$m','slice']};};
-            $$blobAbs.close=function close(){
-                var $$blobAbs=this;
+            };blobAbs$.slice.$crtmm$=function(){return{mod:$CCMM$,$t:{t:Blob},$ps:[{$nm:'start',$mt:'prm',$def:1,$t:{t:'u',l:[{t:m$1.Integer},{t:'u',l:[{t:m$1.Null},{t:m$9f.JSNumber}]}]},$an:function(){return[];}},{$nm:'end',$mt:'prm',$def:1,$t:{t:'u',l:[{t:m$1.Integer},{t:'u',l:[{t:m$1.Null},{t:m$9f.JSNumber}]}]},$an:function(){return[];}},{$nm:'contentType',$mt:'prm',$def:1,$t:{t:'u',l:[{t:m$1.String},{t:'u',l:[{t:m$1.Null},{t:m$9f.JSString}]}]},$an:function(){return[];}}],$cont:BlobAbs,$an:function(){return[m$1.doc("returns a new blob with data between start and end with the given content type"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.file','BlobAbs','$m','slice']};};
+            blobAbs$.close=function close(){
+                var blobAbs$=this;
                 /*Begin dynamic block*/
-                $$blobAbs.$native.close();
+                blobAbs$.$_native.close();
                 /*End dynamic block*/
-            };$$blobAbs.close.$$metamodel$$=function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$ps:[],$cont:BlobAbs,$an:function(){return[$$$cl1.doc($$$cl1.String("neuters the blob from further changes",37)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.file','BlobAbs','$m','close']};};
+            };blobAbs$.close.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$ps:[],$cont:BlobAbs,$an:function(){return[m$1.doc("neuters the blob from further changes"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.file','BlobAbs','$m','close']};};
         })(BlobAbs.$$.prototype);
     }
     return BlobAbs;
 }
-exports.$init$BlobAbs=$init$BlobAbs;
+ex$.$init$BlobAbs=$init$BlobAbs;
 $init$BlobAbs();
-function Blob(n$943, $$blob){
+function Blob($q7,blob$){
     $init$Blob();
-    if ($$blob===undefined)$$blob=new Blob.$$;
-    $$blob.n$943_=n$943;
-    BlobAbs($$blob);
-    $$blob.$prop$getNative={$$metamodel$$:function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:Blob,$an:function(){return[$$$cl1.shared(),$$$cl1.actual()];},d:['com.openswimsoftware.ceylon.js.file','Blob','$at','native']};}};
+    if(blob$===undefined)blob$=new Blob.$$;
+    blob$.$q7_=$q7;
+    BlobAbs(blob$);
+    blob$.$prop$getNative={$crtmm$:function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:Blob,$an:function(){return[m$1.shared(),m$1.actual()];},d:['com.openswimsoftware.ceylon.js.file','Blob','$at','native']};}};
     /*Begin dynamic block*/
-    $$blob.$native=$$blob.n$943;/*End dynamic block*/
-    return $$blob;
+    blob$.$_native=blob$.$q7;/*End dynamic block*/
+    return blob$;
 }
-Blob.$$metamodel$$=function(){return{mod:$$METAMODEL$$,'super':{t:BlobAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:$$$cl1.Anything},$an:function(){return[];}}],$an:function(){return[$$$cl1.doc($$$cl1.String("DOM Blob",8)),$$$cl1.shared()];},d:['com.openswimsoftware.ceylon.js.file','Blob']};};
-exports.Blob=Blob;
+Blob.$crtmm$=function(){return{mod:$CCMM$,'super':{t:BlobAbs},$ps:[{$nm:'n',$mt:'prm',$t:{t:m$1.Anything},$an:function(){return[];}}],$an:function(){return[m$1.doc("DOM Blob"),m$1.shared()];},d:['com.openswimsoftware.ceylon.js.file','Blob']};};
+ex$.Blob=Blob;
 function $init$Blob(){
-    if (Blob.$$===undefined){
-        $$$cl1.initTypeProto(Blob,'com.openswimsoftware.ceylon.js.file::Blob',$init$BlobAbs());
-        (function($$blob){
-            $$$cl1.defineAttr($$blob,'n$943',function(){return this.n$943_;},undefined,function(){return{mod:$$METAMODEL$$,$t:{t:$$$cl1.Anything},$cont:Blob,d:['com.openswimsoftware.ceylon.js.file','Blob','$at','n']};});
+    if(Blob.$$===undefined){
+        m$1.initTypeProto(Blob,'com.openswimsoftware.ceylon.js.file::Blob',$init$BlobAbs());
+        (function(blob$){
+            m$1.atr$(blob$,'$q7',function(){return this.$q7_;},undefined,function(){return{mod:$CCMM$,$t:{t:m$1.Anything},$cont:Blob,d:['com.openswimsoftware.ceylon.js.file','Blob','$at','n$jhy2fd']};});
         })(Blob.$$.prototype);
     }
     return Blob;
 }
-exports.$init$Blob=$init$Blob;
+ex$.$init$Blob=$init$Blob;
 $init$Blob();
-exports.$mod$ans$=function(){return[$$$cl1.doc($$$cl1.String("based on the File working draft 12",34))];};
-exports.$mod$imps=function(){return{
-'com.openswimsoftware.ceylon.js.language/1.8.0':function(){return[$$$cl1.shared()];},
-'com.openswimsoftware.ceylon.js.json/1.0.0':function(){return[$$$cl1.shared()];}
+ex$.$mod$ans$=function(){return[m$1.doc("based on the File working draft 12")];};
+ex$.$mod$imps=function(){return{
+'com.openswimsoftware.ceylon.js.language/1.8.0':function(){return[m$1.shared()];},
+'com.openswimsoftware.ceylon.js.json/1.0.0':function(){return[m$1.shared()];}
 };};
-exports.$pkg$ans$com$openswimsoftware$ceylon$js$file=function(){return[$$$cl1.shared()];};
+ex$.$pkg$ans$com$openswimsoftware$ceylon$js$file=function(){return[m$1.shared()];};
 });
 }(typeof define==='function' && define.amd ? define : function (factory) {
 if (typeof exports!=='undefined') { factory(require, exports, module);
