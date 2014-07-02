@@ -7,7 +7,7 @@ doc("settings for a JQuery AJAX request")
 shared class JQueryAjaxSettingsBuilder(shared Boolean async = true, shared Boolean? cache = null, 
 										shared String contentType = "application/x-www-form-urlencoded; charset=UTF-8",
 										shared JSObject? context = null, shared Boolean? crossDomain = null, 
-										shared String|JSObject data = "", shared DataType[] dataType = {}, 
+										shared String|JSObject data = "", shared DataType[] dataType = [], 
 										shared Boolean global = true, shared Boolean ifModified = true, 
 										shared Boolean? isLocal = null, shared JSONPOptions jsonp = JSONPOptions(), 
 										shared String|String()? jsonpCallback = null, shared String? mimeType = null, 
@@ -31,15 +31,15 @@ shared class JQueryAjaxSettingsBuilder(shared Boolean async = true, shared Boole
 	shared variable dynamic success = null;
 	
 	doc("the data types the request accepts")
-	shared variable Entry<String, String>[] accepts = {};
+	shared variable Entry<String, String>[] accepts = [];
 	
 	doc("a set of content types paired with regular expression pairs that determine how jQuery will parse the response")
-	shared variable Entry<String, RegExp>[] contents = {};
+	shared variable Entry<String, RegExp>[] contents = [];
 	doc("the request headers")
-	shared variable Entry<String, String>[] headers = {};
+	shared variable Entry<String, String>[] headers = [];
 	
 	doc("data type converters")
-	shared variable Entry<String, JSObject>[] converters = {};
+	shared variable Entry<String, JSObject>[] converters = [];
 	doc("the base XHR settings")
 	shared variable dynamic xhrFields = null;
 	

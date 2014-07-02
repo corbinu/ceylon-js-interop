@@ -187,9 +187,9 @@ shared JSObject createJSObject() {
 	}
 }
 
-shared abstract class JSObjectAbs() {
-	shared formal dynamic native;
-	
+
+doc("native Object")
+dynamic JSObject {
 	doc("returns the objects prototype")
 	shared JSObject getPrototype() {
 		dynamic {
@@ -217,92 +217,83 @@ shared abstract class JSObjectAbs() {
 			native.constructor = constructor.native;
 		}
 	}
-    
-    doc("does the object have the propery")
+	
+	doc("does the object have the propery")
 	shared Boolean hasOwnProperty(String|JSString prop) {
-        dynamic has;
-        switch (prop) 
-        case (is String) {
-            dynamic {
-            	has = native.hasOwnProperty(prop);
-        	}
-        }
-        case (is JSString) {
-            dynamic {
-                has = native.hasOwnProperty(prop.native);
-            }
-        }
-        dynamic {
-            if (has) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    }
-    
-    doc("is the object in the passed objects prototype chain")
-    shared Boolean isPrototypeOf(JSObject obj) {
+		dynamic has;
+		switch (prop) 
+		case (is String) {
+			dynamic {
+				has = native.hasOwnProperty(prop);
+			}
+		}
+		case (is JSString) {
+			dynamic {
+				has = native.hasOwnProperty(prop.native);
+			}
+		}
+		dynamic {
+			if (has) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+	
+	doc("is the object in the passed objects prototype chain")
+	shared Boolean isPrototypeOf(JSObject obj) {
 		dynamic {
 			if (native.isPrototypeOf(obj.native)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    }
-    
-    doc("is the property enumerable by a for in loop")
-    shared Boolean propertyIsEnumerable(String|JSString prop) {
-        dynamic enum;
-        switch (prop) 
-        case (is String) {
-            dynamic {
-                enum = native.propertyIsEnumerable(prop);
-            }
-        }
-        case (is JSString) {
-            dynamic {
-                enum = native.propertyIsEnumerable(prop.native);
-            }
-        }
-        dynamic {
-            if (enum) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    }
-    
-    doc("calls a function with thisArg as this and an array of args")
-    shared void apply(dynamic thisArg, dynamic args) {
-		dynamic {
-	        native.apply(a, args);
-	    }
-    }
-    
-    doc("calls a function with thisArg as this and an argument list")
-    shared void call(dynamic thisArg, dynamic args) {
-    	dynamic {
-    		//TODO Args should be spread
-    		native.call(thisArg, args);
-        }
-    }
-    
-    doc("convert the object to a string")
-    shared JSString toString() {
-        dynamic {
-            return JSString(native.toString());
-        }
-    }
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
 	
-}
-
-doc("native Object")
-shared class JSObject(dynamic n) extends JSObjectAbs() {
-	shared actual dynamic native;
-	dynamic {
-		native = n;
+	doc("is the property enumerable by a for in loop")
+	shared Boolean propertyIsEnumerable(String|JSString prop) {
+		dynamic enum;
+		switch (prop) 
+		case (is String) {
+			dynamic {
+				enum = native.propertyIsEnumerable(prop);
+			}
+		}
+		case (is JSString) {
+			dynamic {
+				enum = native.propertyIsEnumerable(prop.native);
+			}
+		}
+		dynamic {
+			if (enum) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+	
+	doc("calls a function with thisArg as this and an array of args")
+	shared void apply(dynamic thisArg, dynamic args) {
+		dynamic {
+			native.apply(a, args);
+		}
+	}
+	
+	doc("calls a function with thisArg as this and an argument list")
+	shared void call(dynamic thisArg, dynamic args) {
+		dynamic {
+			//TODO Args should be spread
+			native.call(thisArg, args);
+		}
+	}
+	
+	doc("convert the object to a string")
+	shared JSString toString() {
+		dynamic {
+			return JSString(native.toString());
+		}
 	}
 }

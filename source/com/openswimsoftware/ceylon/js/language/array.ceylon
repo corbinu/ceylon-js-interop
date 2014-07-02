@@ -1,3 +1,4 @@
+import com.openswimsoftware.ceylon.js.language { JSString, JSNumber, JSFunction, JSObjectAbs, native }
 doc("crate a new native array")
 shared JSArray createJSArray(dynamic arg) {
 	dynamic {
@@ -131,7 +132,7 @@ shared abstract class JSArrayAbs() extends JSObjectAbs() {
             return JSArray(native.concat(elements));
         }
     }
-    
+	    
     doc("returns array after combining it with the passed arrays")
     shared JSArray concatArrays(JSArray* arrays) {
         dynamic {
